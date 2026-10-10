@@ -197,11 +197,11 @@ The proposed properties follow from the encoding model: components are letters, 
 
 | Characters | General\_Category | Combining class | Grapheme\_Cluster\_Break | Line\_Break | Bidi\_Class |
 | --- | --- | --- | --- | --- | --- |
-| Cán Tự, Chi Tự | Lo | 0 | Other | ID | L |
-| Cán Lược | Lo | 0 | Other | ID | L |
-| Tham Thư combiner | Cf | 0 | \[TBD\] | CM | \[TBD\] |
-| Component joiner | Cf | 0 | \[TBD\] | CM | \[TBD\] |
+| Cán Tự, Cán Lược, Chi Tự | Lo | 0 | Other | ID | L |
+| Tham Thư combiner, component joiner | Cf | 0 | Extend \[TBD\] | GL \[TBD\] | BN \[TBD\] |
 | Tone marks (8) | Mn | 0 | Extend | CM | NSM |
+
+The draft data files list every value, including Indic\_Conjunct\_Break, East\_Asian\_Width and Vertical\_Orientation; the questions on the values marked \[TBD\] are collected for review.
 
 ### 6.1 Combining class of the tone marks
 
@@ -209,7 +209,7 @@ The corner is part of each tone mark's identity, so no positional combining clas
 
 ### 6.2 Grapheme clusters
 
-Segmentation uses pairwise rules only: there is no break directly before or after either joiner and no break before a tone mark; every other boundary is a break. Tone marks match Extend. Components that are not joined, including a standalone Cán Lược, form clusters of their own, so all components behave alike. Whether a cluster is well-formed is left to validation (5.5). \[TBD: decide between existing property values and new ones; compare with the Egyptian hieroglyph format controls; Bidi\_Class of the joiners, since format characters usually take BN\]
+Segmentation uses pairwise rules only: there is no break directly before or after either joiner and no break before a tone mark; every other boundary is a break. Tone marks match Extend. Components that are not joined, including a standalone Cán Lược, form clusters of their own, so all components behave alike. Whether a cluster is well-formed is left to validation (5.5). One way to express this with existing properties is Grapheme\_Cluster\_Break=Extend for both joiners, which prevents a break before them, together with the Indic\_Conjunct\_Break mechanism of rule GB9c for the break after them: components as Consonant, joiners as Linker, tone marks as Extend. \[TBD: whether Indic\_Conjunct\_Break may be used for a non-Indic script, or a new value or rule is preferred; compare with the Egyptian hieroglyph format controls\]
 
 ### 6.3 Line breaking and direction
 

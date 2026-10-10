@@ -26,7 +26,7 @@ Record each passage in [evidence/catalog.csv](evidence/catalog.csv).
 
 ## Phase D – Technical
 
-1. Draft Unicode Character Database entries (UnicodeData.txt fields, grapheme cluster break, line break, bidi, vertical orientation, East Asian width) and a list of questions for the Unicode text-segmentation experts.
+1. Draft Unicode Character Database entries and a list of questions for the Unicode experts. Drafted in [ucd/](ucd/); next: review of [ucd/questions.md](ucd/questions.md).
 2. Reference font and code chart glyphs: check existing QATT glyphs; designer and licence to be decided.
 3. Horizontal use: record as an assumption rather than an open point.
 
