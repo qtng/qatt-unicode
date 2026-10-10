@@ -375,8 +375,8 @@ Passages located in the source, by page. Page references are to Source 1 (sectio
 | 5 | 其同字全識於其字之左足，洞字全識於其字之左肩，動字全識於其字之右肩，獨字全識於其字之右足；東字半識於其字之左足，董字半識於其字之左肩，凍字半識於其字之右肩，篤字半識於其字之右足。如下。他倣此。 | The source lists the tones first with the four half circles, then the four full circles, each starting lower left and running clockwise (E28) | located |
 | 5 | – | Marked Cán and unmarked Cán both appear standalone, with the same reading, also with tone marks; only the unmarked Cán combines, never the marked Cán (E34) | located |
 | 6 | 如{CU 翁}{CH 宜}{PT 反}反云{CU 翁}{CU 翁}{PT 鳥}{PT 衣}是合取{PT 衣}{PT 字}也 | Components written standalone and side by side when the text explains combination, including a standalone unmarked Cán and two adjacent unmarked Cán (E04) | located |
-| 6 | – | Hợp Thư: same-base pairs only, Chi first (scope of the term) (E07) | located |
-| 6 | – | Function in a Hợp Thư: Chi gives the initial, unmarked Cán the rhyme (main argument for the reading order) (E08) | located |
+| 6 | 合書左從枝体右從幹体畧法  {QT 螉}乃{QT 喊}{CM 翁}{PT 反}法合螉字也他倣此切法亦如之  {QT 癰} {QT 螉} {QT 嗡} {QT ⿰口癰}  {QT 嚥}乃{CM 翁}{QT ⿰口昭}{PT 反}法合嚥字也他倣此切法亦然  {QT ⿰口淵} {QT 馬} {QT 淵} {QT 卬} {QT 喧} | Hợp Thư: same-base pairs only, Chi first (scope of the term) (E07) | located |
+| 6 | See E07, the transcription of the whole section. | Function in a Hợp Thư: Chi gives the initial, unmarked Cán the rhyme (main argument for the reading order) (E08) | located |
 | 6 | – | Tone marks are optional: marked and unmarked characters in the same passage (E24) | located |
 | 6 | – | The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone (E25) | located |
 | 6 | – | Tone marks on standalone components (unmarked Cán and Chi) (E26) | located |

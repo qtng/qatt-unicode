@@ -37,7 +37,7 @@ status: located
 | image | Image files in `images/`, in the order of `source` |
 | status | `missing`, `located` (passage known, citation incomplete) or `cited` (all fields filled) |
 
-Transcriptions write QATT characters as placeholders until a font exists: `{CU 翁}` is a standalone unmarked Cán annotated 翁, `{CH …}` a standalone Chi, `{PT …}` a phản thiết pair.
+Transcriptions write QATT characters as placeholders until a font exists: `{CU 翁}` is a standalone unmarked Cán annotated 翁, `{CM 翁}` a standalone marked Cán, `{CH …}` a standalone Chi, `{PT …}` a phản thiết pair, `{QT …}` a QATT character whose class has not been determined.
 
 Cite Source 1, and add Source 2 only where it differs or where its reading matters. Both witnesses share the page numbering and the layout of the columns. The proposal cites by page only, for example (p. 2), and names a source only where it matters.
 
