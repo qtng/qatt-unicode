@@ -58,10 +58,10 @@ TONE_OFFSET = 0x9C            # +9C..+A3, 8 code points
 RESERVED_OFFSET = 0xA4        # +A4..+AF
 BLOCK_SIZE = 0xB0             # 176
 
-# Names of the 22 Cán Tự in source order (Source 1, p. 2, section 幹音二十二字),
+# Names of the 22 Cán Tự in source order (Source 2, p. 2, section 幹音二十二字),
 # as used in character names; each Cán Lược takes the name of its Cán Tự.
 CAN_TU_NAMES = ("ONG", "NGONG", "HONG", "GONG", "CONG", "LONG", "TRONG", "DDONG",
-                "NONG", "TONG", "THONG", "NHONG", "CHONG", "DONG", "XONG", "KHONG",
+                "NONG", "TONG", "THONG", "NHONG", "CHONG", "DZONG", "XONG", "KHONG",
                 "SONG", "RONG", "MONG", "BONG", "VONG", "PHONG")
 
 TONE_SHAPES = ("CIRCLE", "SEMICIRCLE")

@@ -32,7 +32,7 @@ In the attested sources the script appears in running Han Nôm text and is treat
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are vertical Han Nôm texts, and the text of the sources describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses; Source 2 serves to confirm and clarify the character forms of Source 1. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are vertical Han Nôm texts, and the text of the sources describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Citations in this proposal refer to Source 2, the corrected copy; Source 1 is cited in addition where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
@@ -45,7 +45,7 @@ Two sources attest the script. Both are vertical Han Nôm texts, and the text of
 
 | Feature | Evidence | Status |
 | --- | --- | --- |
-| Cán Tự, Chi Tự, Cán Lược | Described in the sources; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (Source 1, p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
+| Cán Tự, Chi Tự, Cán Lược | Described in the sources; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (Source 2, p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
 | Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | \[TBD: cite passages and examples; function of the two components\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme | \[TBD: list the examples; cite the passage on the function of the components; confirm that the term covers only same-base pairs\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base and the third component extending the rhyme; two examples attested, both on a Hợp Thư | \[TBD: cite both examples\] |
@@ -206,7 +206,7 @@ The sources do not state a writing direction. Both attested sources contain vert
 
 ### 6.4 Code point order
 
-Source 1 lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (Source 1, p. 2; identical in Source 2, p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
+Source 1 lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (Source 2, p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
 
 ## 7. Character Table and Code Chart
 
@@ -238,7 +238,7 @@ QUOC AM TAN TU TONE SEMICIRCLE LOWER RIGHT
 
 The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. \[TBD: names of the five marking-stroke positions\]
 
-The names of the 22 Cán Tự come from the source listing (6.4). Each name is the syllable of the initial with the rhyme ông. The sources give the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped; đ is written DD, as in đông → DDONG, because DONG is the name of dông.
+The names of the 22 Cán Tự come from the source listing (6.4). Each name is the syllable of the initial with the rhyme ông. The sources give the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
 
 | No. | Name (Chữ Nôm reading) | Initial | Name in character names | Cán Tự | Cán Lược |
 | --- | --- | --- | --- | --- | --- |
@@ -255,7 +255,7 @@ The names of the 22 Cán Tự come from the source listing (6.4). Each name is t
 | 11 | thông | Th | THONG | +0A | +20 |
 | 12 | nhông | Nh | NHONG | +0B | +21 |
 | 13 | chông | Ch | CHONG | +0C | +22 |
-| 14 | dông | D | DONG | +0D | +23 |
+| 14 | dông | D | DZONG | +0D | +23 |
 | 15 | xông | X | XONG | +0E | +24 |
 | 16 | không | Kh | KHONG | +0F | +25 |
 | 17 | sông | S | SONG | +10 | +26 |

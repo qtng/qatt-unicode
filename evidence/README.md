@@ -16,4 +16,6 @@
 | status | `missing`, `located` (passage known, citation incomplete) or `cited` (all fields filled) |
 | notes | Anything else |
 
+Cite Source 2, the corrected copy, and add Source 1 only where it differs or where its reading matters. List the source cited first in `source`.
+
 Images go in `images/`, named after the row id, for example `E08-1.png`. Publish scans only where the holding institution permits it.
