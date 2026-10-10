@@ -14,7 +14,7 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 | Characters | 164: 154 components, 2 joiners, 8 tone marks |
 | Model | Atomic components in reading order; every combination written with an explicit joiner |
 | Plane | Supplementary Multilingual Plane \[TBD: block position assigned by the UTC\] |
-| Direction | Follows Han Nôm; the sources are vertical |
+| Direction | Follows Han Nôm; the source is vertical |
 | Attested sources | Two: a vertical Han Nôm text and a handwritten copy of it |
 | Official form | \[TBD: complete the UTC Proposal Summary Form\] |
 
@@ -24,7 +24,7 @@ Quốc Âm Tân Tự is a Vietnamese script built from 22 base components, each 
 
 ### 2.1 Background
 
-In the attested sources the script appears in running Han Nôm text and is treated exactly like Han Nôm characters. Three-component characters (Tham Thư) record dialectal vowel clusters. Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: date and provenance of the sources; scholarly literature\]
+In the source the script appears in running Han Nôm text and is treated exactly like Han Nôm characters. Three-component characters (Tham Thư) record dialectal vowel clusters. Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: date and provenance of the sources; scholarly literature\]
 
 ### 2.2 Reasons for encoding
 
@@ -32,7 +32,7 @@ In the attested sources the script appears in running Han Nôm text and is treat
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are vertical Han Nôm texts, and the text of the sources describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are vertical Han Nôm texts, and the text describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
@@ -45,14 +45,14 @@ Two sources attest the script. Both are vertical Han Nôm texts, and the text of
 
 | Feature | Evidence | Status |
 | --- | --- | --- |
-| Cán Tự, Chi Tự, Cán Lược | Described in the sources; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
+| Cán Tự, Chi Tự, Cán Lược | Described in the source; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
 | Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | \[TBD: cite passages and examples; function of the two components\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme | \[TBD: list the examples; cite the passage on the function of the components; confirm that the term covers only same-base pairs\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base and the third component extending the rhyme; two examples attested, both on a Hợp Thư | \[TBD: cite both examples\] |
 | Standalone and adjacent components | When the text explains how components combine, it writes components on their own and side by side without combining them, including a standalone Cán Lược and two adjacent Cán Lược, in a passage of the form 如{CL}{CT}反切云{CL}{CL}鳥衣是合取衣字也 | \[TBD: exact components, source and page\] |
-| Omission of the Cán Lược | Wherever a phản thiết pair of the same base would occur, the sources write the Chi Tự alone | \[TBD: list the places\] |
+| Omission of the Cán Lược | Wherever a phản thiết pair of the same base would occur, the source writes the Chi Tự alone | \[TBD: list the places\] |
 | Tone marks | Eight tones in four corners; semicircle orientation visible only in the examples | \[TBD: examples for all four corners\] |
-| Writing direction | The text is silent; both sources are vertical Han Nôm | Assumption: Han Nôm habits |
+| Writing direction | The text is silent; both witnesses are vertical Han Nôm | Assumption: Han Nôm habits |
 
 ### 3.3 Modern use
 
@@ -68,7 +68,7 @@ Quốc Âm Tân Tự is built from 22 base components that stand alone. Their de
 
 ### 4.1 Components
 
-Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. Repositioning the marking stroke yields five variants per base (*Chi Tự*). Omitting it yields one reduced form per base (*Cán Lược*). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the sources write it standalone when they explain how components combine (3.2).
+Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. Repositioning the marking stroke yields five variants per base (*Chi Tự*). Omitting it yields one reduced form per base (*Cán Lược*). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the source writes it standalone when it explains how components combine (3.2).
 
 | Component | Count | Derivation | Standalone | In combination |
 | --- | --- | --- | --- | --- |
@@ -78,12 +78,12 @@ Each of the 22 base components (*Cán Tự*) consists of three strokes and one s
 
 ### 4.2 Two-component characters: phản thiết and Hợp Thư
 
-A Cán Lược and a Chi Tự combine into one character. The sources describe two methods.
+A Cán Lược and a Chi Tự combine into one character. The source describes two methods.
 
-- **Phản thiết.** The Cán Lược and the Chi Tự derive from different Cán Tự, and the Cán Lược comes first. The section Phản Thiết Hài Âm Pháp (反切諧音法) describes these pairs; the sources give them no name of their own, and this proposal calls them phản thiết pairs. A phản thiết pair of the same base would add nothing to the Chi Tự, so the sources write the Chi Tự alone instead. \[TBD: function of the two components in a phản thiết pair\]
-- **Hợp Thư.** The Chi Tự and the Cán Lược derive from the same Cán Tự, and the Chi Tự comes first. The sources describe this arrangement as an exchange of positions. It is not only visual: in reading, the Chi Tự gives the initial consonant and the Cán Lược the rhyme. There are 110 Hợp Thư, one for each Chi Tự.
+- **Phản thiết.** The Cán Lược and the Chi Tự derive from different Cán Tự, and the Cán Lược comes first. The section Phản Thiết Hài Âm Pháp (反切諧音法) describes these pairs; the source gives them no name of its own, and this proposal calls them phản thiết pairs. A phản thiết pair of the same base would add nothing to the Chi Tự, so the source writes the Chi Tự alone instead. \[TBD: function of the two components in a phản thiết pair\]
+- **Hợp Thư.** The Chi Tự and the Cán Lược derive from the same Cán Tự, and the Chi Tự comes first. The source describes this arrangement as an exchange of positions. It is not only visual: in reading, the Chi Tự gives the initial consonant and the Cán Lược the rhyme. There are 110 Hợp Thư, one for each Chi Tự.
 
-When the sources explain these methods, they also write components on their own and side by side without combining them (3.2). In a Hợp Thư the written order of the components is also their reading order. \[TBD: cite the source passages for both methods, the function of the components and the attested examples; whether the written order is also the reading order in a phản thiết pair\]
+When the source explains these methods, it also writes components on their own and side by side without combining them (3.2). In a Hợp Thư the written order of the components is also their reading order. \[TBD: cite the source passages for both methods, the function of the components and the attested examples; whether the written order is also the reading order in a phản thiết pair\]
 
 ### 4.3 Tham Thư (three components)
 
@@ -93,7 +93,7 @@ The two attested Tham Thư both have a Hợp Thư as the base, as the rule requi
 
 ### 4.4 Tone marks
 
-A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving eight tones. The sources do not specify the orientation of the semicircle; every example shows its open side facing the centre of the character. Round versus angular forms of the semicircle are handwriting variation. A character carries at most one tone mark, and many carry none. \[TBD: cite the source passage and examples for all four corners\]
+A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving eight tones. The source does not specify the orientation of the semicircle; every example shows its open side facing the centre of the character. Round versus angular forms of the semicircle are handwriting variation. A character carries at most one tone mark, and many carry none. \[TBD: cite the source passage and examples for all four corners\]
 
 ### 4.5 Layout
 
@@ -149,7 +149,7 @@ Sequences outside these patterns are not prohibited. They are not attested, and 
 
 In a Hợp Thư the Chi Tự gives the initial and the Cán Lược the rhyme (4.2). Storing the Chi Tự first follows the reading order, which is also the written order, so rendering needs no reordering.
 
-The joiner carries information that the components alone do not. The sources write components side by side without combining them (3.2), so `CL CT` may be two separate components or a phản thiết pair, and `CT CL` may be a Chi Tự followed by a separate Cán Lược or a Hợp Thư. The joiner decides. Every attested two-component character therefore contains it.
+The joiner carries information that the components alone do not. The source writes components side by side without combining them (3.2), so `CL CT` may be two separate components or a phản thiết pair, and `CT CL` may be a Chi Tự followed by a separate Cán Lược or a Hợp Thư. The joiner decides. Every attested two-component character therefore contains it.
 
 ### 5.5 Edit stability
 
@@ -166,13 +166,13 @@ The eight tone marks are combining characters that follow the complete cluster. 
 ### 5.7 Alternatives considered
 
 - Automatic exchange: a Hợp Thư stored as Cán Lược, Chi Tự, with the font exchanging the components when both share a Cán Tự. Not adopted, because it stores the rhyme before the initial, against the reading order, and relies on a rendering rule that compares bases. It would also fix `CL(X) CT(X)` to the Hợp Thư for good.
-- Implicit phản thiết, in which a Cán Lược binds to the following character without a joiner and only a Hợp Thư uses the joiner: not adopted, because the sources also write a Cán Lược standalone and components side by side (3.2). A forward-binding Cán Lược would join them wrongly, for example with a following Han character.
+- Implicit phản thiết, in which a Cán Lược binds to the following character without a joiner and only a Hợp Thư uses the joiner: not adopted, because the source also writes a Cán Lược standalone and components side by side (3.2). A forward-binding Cán Lược would join them wrongly, for example with a following Han character.
 - Joiner that exchanges the components (`CL(X) JOIN CT(X)`, drawn exchanged): not adopted, because it keeps the order against reading.
 - Joiner as a suffix (`CT(X) CL(X) JOIN`): not adopted, because it groups preceding characters retroactively, which needs right context in segmentation. Joiners such as U+200D ZERO WIDTH JOINER stand between the parts they join, and so does the Tham Thư combiner.
 - One joiner for both two- and three-component characters (163 characters): not adopted, because the structure would follow from position instead of from the joiner, and the decision in 5.8 could no longer be taken for the Tham Thư combiner alone.
 - Variation selector: rejected, because the two orders differ in reading, and a variation selector may only select a glyph variant of the same character.
 - Separate code points for the Cán Lược of a Hợp Thư: rejected, 22 code points instead of one joiner.
-- Broad reading of Hợp Thư, in which the term covers every Cán Lược + Chi Tự pair and a Tham Thư base may be any pair or a single Chi Tự (278,300 Tham Thư): not adopted, because it needs an unattested base and does not match the division of the sources into Hợp Thư and Phản Thiết Hài Âm Pháp. \[TBD: cite the passages that support the narrow reading\]
+- Broad reading of Hợp Thư, in which the term covers every Cán Lược + Chi Tự pair and a Tham Thư base may be any pair or a single Chi Tự (278,300 Tham Thư): not adopted, because it needs an unattested base and does not match the division of the source into Hợp Thư and Phản Thiết Hài Âm Pháp. \[TBD: cite the passages that support the narrow reading\]
 - Two tone marks plus a position selector: rejected, because the corner is contrastive.
 - Precomposed Hợp Thư and Tham Thư: rejected for size (5.2).
 
@@ -182,7 +182,7 @@ Propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add
 
 ## 6. Character Properties
 
-The proposed properties follow from the encoding model: components are letters, the two joiners are format characters, and tone marks are nonspacing marks. Cells marked \[TBD\] depend on evidence from the sources or on review by the Unicode text-segmentation experts.
+The proposed properties follow from the encoding model: components are letters, the two joiners are format characters, and tone marks are nonspacing marks. Cells marked \[TBD\] depend on evidence from the source or on review by the Unicode text-segmentation experts.
 
 | Characters | General\_Category | Combining class | Grapheme\_Cluster\_Break | Line\_Break | Bidi\_Class |
 | --- | --- | --- | --- | --- | --- |
@@ -202,7 +202,7 @@ Segmentation uses pairwise rules only: there is no break directly before or afte
 
 ### 6.3 Line breaking and direction
 
-The sources do not state a writing direction. Both attested sources contain vertical Han Nôm text, and in every case the script is treated exactly like Han Nôm and flows with it: vertical lines, columns running right to left, no spaces between words. No horizontal use is attested. The proposal therefore assumes the writing habits of Han Nôm. The characters behave like ideographs, each occupying one square cell. Proposed for the components: Bidi\_Class L, Line\_Break ID, East\_Asian\_Width W, Vertical\_Orientation U. Tone marks and the joiners never start a line, because they belong to the preceding cluster.
+The source does not state a writing direction. Both witnesses contain vertical Han Nôm text, and in every case the script is treated exactly like Han Nôm and flows with it: vertical lines, columns running right to left, no spaces between words. No horizontal use is attested. The proposal therefore assumes the writing habits of Han Nôm. The characters behave like ideographs, each occupying one square cell. Proposed for the components: Bidi\_Class L, Line\_Break ID, East\_Asian\_Width W, Vertical\_Orientation U. Tone marks and the joiners never start a line, because they belong to the preceding cluster.
 
 ### 6.4 Code point order
 
@@ -238,7 +238,7 @@ QUOC AM TAN TU TONE SEMICIRCLE LOWER RIGHT
 
 The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. \[TBD: names of the five marking-stroke positions\]
 
-The names of the 22 Cán Tự come from the source listing (6.4). Each name is the syllable of the initial with the rhyme ông. The sources give the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
+The names of the 22 Cán Tự come from the source listing (6.4). Each name is the syllable of the initial with the rhyme ông. The source gives the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
 
 | No. | Name (Chữ Nôm reading) | Initial | Name in character names | Cán Tự | Cán Lược |
 | --- | --- | --- | --- | --- | --- |
@@ -277,7 +277,7 @@ A conforming font draws every cluster in one square cell and composes it with su
 - **Two-component characters:** The two component glyphs share the cell. \[TBD: positions, see 4.5\]
 - **No reordering:** Components are drawn in stored order. The component joiner tells the font to compose the two components in one cell; their order gives the arrangement, Cán Lược first for a phản thiết pair and Chi Tự first for a Hợp Thư. Components without a joiner are drawn as separate characters. \[TBD: positions, see 4.5\]
 - **Tham Thư:** After the combiner, the Chi Tự is drawn above the Hợp Thư. The font composes the cluster by contextual substitution and positioning, because 12,100 precomposed glyphs are impractical. The two attested examples serve as test cases for the reference font.
-- **Tone marks:** Eight combining glyphs sit in the four corners of the whole cluster cell. The open side of the semicircle faces the centre. Round or angular outlines are a design choice, since the sources treat the difference as handwriting variation.
+- **Tone marks:** Eight combining glyphs sit in the four corners of the whole cluster cell. The open side of the semicircle faces the centre. Round or angular outlines are a design choice, since the source treats the difference as handwriting variation.
 - **Reference font:** \[TBD: designer and licence\]
 
 ## 9. Open Points
@@ -309,7 +309,7 @@ Thirteen points remain before the proposal can be submitted. The alternatives al
 | Cán Tự | One of 22 base components; three strokes and one marking stroke; standalone only, never combined |
 | Chi Tự | One of five variants per Cán Tự, made by repositioning the marking stroke (110 in total); standalone or combined |
 | Cán Lược | The variant without a marking stroke (22 in total); combines with a Chi Tự; written standalone only where the text discusses components |
-| Phản thiết pair | Combination of a Cán Lược and a Chi Tự of different Cán Tự, Cán Lược first, joined by the component joiner; described under Phản Thiết Hài Âm Pháp (反切諧音法); 2,310 in total; descriptive term of this proposal, unnamed in the sources |
+| Phản thiết pair | Combination of a Cán Lược and a Chi Tự of different Cán Tự, Cán Lược first, joined by the component joiner; described under Phản Thiết Hài Âm Pháp (反切諧音法); 2,310 in total; descriptive term of this proposal, unnamed in the source |
 | Hợp Thư | Combination of a Chi Tự and a Cán Lược of the same Cán Tự, joined by the component joiner; the Chi Tự gives the initial, the Cán Lược the rhyme; 110 in total |
 | Tham Thư | Hợp Thư with a third component, a Chi Tự, above it that extends the rhyme; 12,100 in total; records dialectal vowel clusters |
 | Component joiner | Format character that joins two components into one character; their order gives the arrangement |
