@@ -146,7 +146,7 @@ An unmarked Cán and a Chi Tự allow 2,420 two-component characters (22 unmarke
 
 ```
 Character := Cluster [ToneMark]
-Cluster   := CanTu | ChiTu | UnmarkedCan | PhanThiet | HopThu | ThamThu
+Cluster   := MarkedCan | ChiTu | UnmarkedCan | PhanThiet | HopThu | ThamThu
 PhanThiet := UnmarkedCan(X) Joiner ChiTu(Y)  X ≠ Y; unmarked Cán first
 HopThu    := ChiTu(X) Joiner UnmarkedCan(X)  same Cán X; initial, then rhyme
 ThamThu   := HopThu Combiner ChiTu            third component added to a complete Hợp Thư
