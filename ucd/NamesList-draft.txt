@@ -52,49 +52,49 @@ F0015	QUOC AM TAN TU CAN TU PHONG
 	* name from the source listing: phông ⿰口風
 @		Cán Lược (reduced components)
 F0016	QUOC AM TAN TU CAN LUOC ONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0017	QUOC AM TAN TU CAN LUOC NGONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0018	QUOC AM TAN TU CAN LUOC HONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0019	QUOC AM TAN TU CAN LUOC GONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F001A	QUOC AM TAN TU CAN LUOC CONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F001B	QUOC AM TAN TU CAN LUOC LONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F001C	QUOC AM TAN TU CAN LUOC TRONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F001D	QUOC AM TAN TU CAN LUOC DDONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F001E	QUOC AM TAN TU CAN LUOC NONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F001F	QUOC AM TAN TU CAN LUOC TONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0020	QUOC AM TAN TU CAN LUOC THONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0021	QUOC AM TAN TU CAN LUOC NHONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0022	QUOC AM TAN TU CAN LUOC CHONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0023	QUOC AM TAN TU CAN LUOC DZONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0024	QUOC AM TAN TU CAN LUOC XONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0025	QUOC AM TAN TU CAN LUOC KHONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0026	QUOC AM TAN TU CAN LUOC SONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0027	QUOC AM TAN TU CAN LUOC RONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0028	QUOC AM TAN TU CAN LUOC MONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F0029	QUOC AM TAN TU CAN LUOC BONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F002A	QUOC AM TAN TU CAN LUOC VONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 F002B	QUOC AM TAN TU CAN LUOC PHONG
-	* written standalone only where the text discusses components
+	* standalone, it has the reading of its Cán Tự
 @		Chi Tự (variant components)
 F002C	QUOC AM TAN TU CHI TU ONG-1
 F002D	QUOC AM TAN TU CHI TU ONG-2

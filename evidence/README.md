@@ -84,6 +84,8 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E31](E31.md) | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) | 2.1 | – | missing |
 | [E32](E32.md) | Classification of the manuscripts as tiểu học (小學) and catalogued as nôm văn thư (喃文書) | 2.1 | – | missing |
 | [E33](E33.md) | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 | 1, 2, 2.1 | 1 | cited |
+| [E34](E34.md) | Cán Tự and Cán Lược both appear standalone, with the same reading, also with tone marks; only the Cán Lược combines, never the Cán Tự | 4.1, 5.3 | 5 | located |
+| [E35](E35.md) | The source contains no running text in the script: only single characters given as examples and spelling formulas in the phản thiết manner, within Hán Nôm text | 2.1, 4.1 | – | located |
 <!-- overview:end -->
 
 ## Corrections

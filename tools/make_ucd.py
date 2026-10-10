@@ -96,7 +96,7 @@ def names_list() -> list[str]:
         if k is q.Kind.CAN_TU:
             lines.append(f"\t* name from the source listing: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
         elif k is q.Kind.CAN_LUOC:
-            lines.append(f"\t* written standalone only where the text discusses components")
+            lines.append("\t* standalone, it has the reading of its Cán Tự")
         elif k is q.Kind.COMBINER:
             lines.append("\t* places the following Chi Tự above a Hợp Thư")
         elif k is q.Kind.JOINER:

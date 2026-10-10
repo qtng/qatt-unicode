@@ -26,7 +26,7 @@ Quốc Âm Tân Tự (國音新字, "new script for the sounds of the national l
 
 The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text names the script in the heading of its preface, 國音新字序, "preface to the new script for the sounds of the national language" (p. 1). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa. The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành. The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents).
 
-In the source the script appears in running Hán Nôm text and is treated exactly like Hán Nôm characters. Three-component characters (Tham Thư) are attested in two examples; their reading is not established (4.3). Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: pages of the taboo character and of the signature (E30, E31); scholarly literature\]
+In the source the script appears within Hán Nôm text and is treated exactly like Hán Nôm characters. The source contains no running text written in the script: it gives single characters as examples and spelling formulas in the phản thiết manner (4.1). Three-component characters (Tham Thư) are attested in two examples; their reading is not established (4.3). Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: pages of the taboo character and of the signature (E30, E31); scholarly literature\]
 
 ### 2.2 Reasons for encoding
 
@@ -74,15 +74,19 @@ Quốc Âm Tân Tự is built from 22 base components that stand alone. Their de
 
 ### 4.1 Components
 
-Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. The source lists the Chi Tự in the section 枝字一百一十字, "the 110 Chi Tự", in blocks of five per base (pp. 3–4); the table shows 109, one having been left out by oversight. Omitting it yields one reduced form per base (*Cán Lược*).
+Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. Omitting it yields one reduced form per base (*Cán Lược*). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form.
 
-The three classes have distinct functions. A Cán Lược gives the initial consonant of its base, and a Chi Tự gives a rhyme; together the 110 Chi Tự form the rhyme table of the script, arranged in blocks of five per base. A Cán Tự stands for the whole syllable of its initial with the rhyme ông and names its base: it serves to pronounce the Cán Lược in the phản thiết method, and it is not combined. Cán Lược and Chi Tự also serve as the components of a Tham Thư (4.3). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the source writes it standalone when it explains how components combine (3.2).
+The source lists the 22 Cán Tự with their names (p. 2), and the Chi Tự in the section 枝字一百一十字, "the 110 Chi Tự", in blocks of five per base (pp. 3–4); the table shows 109, one having been left out by oversight.
+
+The three classes have distinct functions. A Cán Lược gives the initial consonant of its base, and a Chi Tự gives a rhyme; together the 110 Chi Tự form the rhyme table of the script. A Cán Tự stands for the whole syllable of its initial with the rhyme ông and names its base; it serves to pronounce the Cán Lược in the phản thiết method. Cán Lược and Chi Tự also serve as the components of a Tham Thư (4.3).
+
+The source contains no running text in the script. Within its Hán Nôm text it gives single characters as examples and spelling formulas in the phản thiết manner, so whether a component may stand alone in running text cannot be decided from it. In these examples the Cán Tự, the Cán Lược and the Chi Tự all appear standalone, also with tone marks. A standalone Cán Lược has the same reading as its Cán Tự: the source illustrates the eight tones on the standalone Cán Lược of đông (p. 5). Only the Cán Lược and the Chi Tự combine; the Cán Tự never does.
 
 | Component | Count | Derivation | Standalone | In combination |
 | --- | --- | --- | --- | --- |
 | Cán Tự | 22 | 3 strokes + 1 marking stroke | yes | never |
 | Chi Tự | 110 (22 × 5) | marking stroke repositioned | yes | yes |
-| Cán Lược | 22 | marking stroke omitted | only when the text discusses components | with a Chi Tự |
+| Cán Lược | 22 | marking stroke omitted | yes, with the reading of its Cán Tự | with a Chi Tự |
 
 ### 4.2 Two-component characters: phản thiết and Hợp Thư
 
@@ -148,13 +152,13 @@ HopThu    := ChiTu(X) Joiner CanLuoc(X)      same Cán Tự X; initial, then rhy
 ThamThu   := HopThu Combiner ChiTu           third component added to a complete Hợp Thư
 ```
 
-The component joiner joins two components into one character, and their order gives the arrangement. Components without a joiner are separate characters; a standalone Cán Lược occurs only where the text discusses components (3.2). The same-base conditions do not affect segmentation; they are checked by validation (6.2).
+The component joiner joins two components into one character, and their order gives the arrangement. Components without a joiner are separate characters; a standalone Cán Lược has the reading of its Cán Tự (4.1). The same-base conditions do not affect segmentation; they are checked by validation (6.2).
 
 | Intended character | Sequence |
 | --- | --- |
 | Standalone Cán Tự | CAN |
 | Standalone Chi Tự | CT |
-| Standalone Cán Lược (discussion of components) | CL |
+| Standalone Cán Lược (reading of its Cán Tự) | CL |
 | Components side by side, not combined | CL(X) CT(Y) |
 | Phản thiết pair | CL(X) JOIN CT(Y) |
 | Same-base phản thiết reading (written as the Chi Tự alone) | CT(X) |
@@ -345,7 +349,7 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | --- | --- |
 | Cán Tự | One of 22 base components; three strokes and one marking stroke; standalone only, never combined |
 | Chi Tự | One of five variants per Cán Tự, made by repositioning the marking stroke (110 in total); standalone or combined |
-| Cán Lược | The variant without a marking stroke (22 in total); combines with a Chi Tự; written standalone only where the text discusses components |
+| Cán Lược | The variant without a marking stroke (22 in total); combines with a Chi Tự; standalone, it has the reading of its Cán Tự |
 | Phản thiết pair | Combination of a Cán Lược and a Chi Tự of different Cán Tự, Cán Lược first, joined by the component joiner; described under Phản Thiết Hài Âm Pháp (反切諧音法); 2,310 in total; descriptive term of this proposal, unnamed in the source |
 | Hợp Thư | Combination of a Chi Tự and a Cán Lược of the same Cán Tự, joined by the component joiner; the Chi Tự gives the initial, the Cán Lược the rhyme; 110 in total |
 | Tham Thư | Hợp Thư with a third component, a Chi Tự, above it; 12,100 possible, two attested; reading not established |
@@ -367,6 +371,7 @@ Passages located in the source, by page. Page references are to Source 2 (sectio
 | 5 | 反切諧音法 | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first (E05) | located |
 | 5 | {CL 東}{CL 董}{CL 凍}{CL 篤}{CL 同}{CL 洞}{CL 動}{CL 獨} | Tone marks in all four corners, both shapes: the Cán Lược of đông written with all eight tone marks, annotated 東 董 凍 篤 同 洞 動 獨 (E15) | located |
 | 5 | 其同字全識於其字之左足，洞字全識於其字之左肩，動字全識於其字之右肩，獨字全識於其字之右足；東字半識於其字之左足，董字半識於其字之左肩，凍字半識於其字之右肩，篤字半識於其字之右足。如下。他倣此。 | The source lists the tones first with the four half circles, then the four full circles, each starting lower left and running clockwise (E28) | located |
+| 5 | – | Cán Tự and Cán Lược both appear standalone, with the same reading, also with tone marks; only the Cán Lược combines, never the Cán Tự (E34) | located |
 | 6 | 如{CL 翁}{CT 宜}{PT 反}反云{CL 翁}{CL 翁}{PT 鳥}{PT 衣}是合取{PT 衣}{PT 字}也 | Components written standalone and side by side when the text explains combination, including a standalone Cán Lược and two adjacent Cán Lược (E04) | located |
 | 6 | – | Tone marks are optional: marked and unmarked characters in the same passage (E24) | located |
 | 6 | – | The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone (E25) | located |
