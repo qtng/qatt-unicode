@@ -51,7 +51,7 @@ Two sources attest the script. Both are vertical Han Nôm texts, and the text de
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base and the third component extending the rhyme; two examples attested, both on a Hợp Thư | \[TBD: cite both examples\] |
 | Standalone and adjacent components | When the text explains how components combine, it writes components on their own and side by side without combining them, including a standalone Cán Lược and two adjacent Cán Lược, in a passage of the form 如{CL}{CT}反切云{CL}{CL}鳥衣是合取衣字也 | \[TBD: exact components, source and page\] |
 | Omission of the Cán Lược | Wherever a phản thiết pair of the same base would occur, the source writes the Chi Tự alone | \[TBD: list the places\] |
-| Tone marks | Eight tones in four corners; semicircle orientation visible only in the examples | \[TBD: examples for all four corners\] |
+| Tone marks | Eight tones in four corners; the neutral tone marked with a semicircle lower left; marked and unmarked characters in one passage; round and angular forms of the same mark (p. 6) | \[TBD: passage explaining the tone system; examples for the other corners\] |
 | Writing direction | The text is silent; both witnesses are vertical Han Nôm | Assumption: Han Nôm habits |
 
 ### 3.3 Modern use
@@ -93,7 +93,18 @@ The two attested Tham Thư both have a Hợp Thư as the base, as the rule requi
 
 ### 4.4 Tone marks
 
-A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving eight tones. The source does not specify the orientation of the semicircle; every example shows its open side facing the centre of the character. Round versus angular forms of the semicircle are handwriting variation. A character carries at most one tone mark, and many carry none. \[TBD: cite the source passage and examples for all four corners\]
+A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving the eight tones of the Chinese yin-yang system. The corner gives the tone class and the shape gives the register: a semicircle marks âm (陰), a circle dương (陽).
+
+| Corner | Tone class | Semicircle (âm) | Circle (dương) |
+| --- | --- | --- | --- |
+| Lower left | bình 平 | âm bình (ngang) | dương bình (huyền) |
+| Upper left | thượng 上 | âm thượng (hỏi) | dương thượng (ngã) |
+| Upper right | khứ 去 | âm khứ (sắc) | dương khứ (nặng) |
+| Lower right | nhập 入 | âm nhập (sắc in syllables ending in -p, -t, -c) | dương nhập (nặng in syllables ending in -p, -t, -c) |
+
+The neutral tone ngang has its own mark, a semicircle in the lower left corner (p. 6). A character carries at most one tone mark, and many carry none; on p. 6 a passage marks every Quốc Âm Tân Tự character with the neutral tone except the last two, which carry no mark. An unmarked character therefore leaves the tone unspecified. Standalone components carry tone marks as well (p. 6).
+
+The source does not specify the orientation of the semicircle; every example shows its open side facing the centre of the character. Round and angular forms of the semicircle are handwriting variation, not different marks: Source 1 writes the same mark now round, now close to a hook, while Source 2 writes every tone mark of the passage on p. 6 angular. \[TBD: cite a passage that explains the tone system; examples for the other corners\]
 
 ### 4.5 Layout
 
@@ -161,7 +172,7 @@ The guarantee also holds for ill-formed text, because segmentation uses pairwise
 
 ### 5.6 Tone marks
 
-The eight tone marks are combining characters that follow the complete cluster. Each corner and each mark type is contrastive, so a tone is a character and not a glyph variant. The orientation of the semicircle follows from its corner and is a glyph property. A cluster takes at most one tone mark.
+The eight tone marks are combining characters that follow the complete cluster. Each corner and each mark type is contrastive, so a tone is a character and not a glyph variant. An unmarked cluster leaves the tone unspecified; it does not denote the neutral tone, which has its own mark (4.4). All eight marks are therefore needed. The orientation of the semicircle follows from its corner and is a glyph property. A cluster takes at most one tone mark.
 
 ### 5.7 Alternatives considered
 
@@ -219,7 +230,7 @@ The 164 characters fit in a block of 176 code points (11 columns of 16), propose
 | Chi Tự | +2C to +99 | 110 |
 | Tham Thư combiner | +9A | 1 |
 | Component joiner | +9B | 1 |
-| Tone marks | +9C to +A3 | 8 |
+| Tone marks | +9C to +A3 | 8, in the order of the table in 4.4: bình, thượng, khứ, nhập, each âm before dương |
 | Reserved | +A4 to +AF | 12 |
 
 ### 7.1 Character names
@@ -236,7 +247,7 @@ QUOC AM TAN TU TONE CIRCLE UPPER LEFT
 QUOC AM TAN TU TONE SEMICIRCLE LOWER RIGHT
 ```
 
-The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. \[TBD: names of the five marking-stroke positions\]
+The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. The names describe the mark; the tone it denotes is given as an annotation, for example QUOC AM TAN TU TONE SEMICIRCLE LOWER LEFT = âm bình (ngang). \[TBD: names of the five marking-stroke positions\]
 
 The names of the 22 Cán Tự come from the source listing (6.4), where each Cán Tự is annotated with a Chữ Nôm character; annotations without an encoded character are given as Ideographic Description Sequences. Each name is the syllable of the initial with the rhyme ông. The source gives the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
 

@@ -10,7 +10,7 @@ CT = chi_tu
 CL = can_luoc
 COMB = COMBINER
 JOIN = JOINER
-TONE = tone("CIRCLE", "UPPER LEFT")
+TONE = tone("SEMICIRCLE", "LOWER LEFT")
 HAN = "字"
 
 
@@ -46,6 +46,13 @@ def test_offsets():
     assert ord(JOIN) - q.BLOCK_BASE == 0x9B
     tones = {tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS}
     assert {ord(t) - q.BLOCK_BASE for t in tones} == set(range(0x9C, 0xA4))
+
+
+def test_tone_order_follows_tone_classes():
+    order = [tone(s, c) for c in q.TONE_CORNERS for s in q.TONE_SHAPES]
+    assert [ord(t) - q.BLOCK_BASE for t in order] == list(range(0x9C, 0xA4))
+    assert ord(tone("SEMICIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0x9C  # âm bình (ngang)
+    assert len(q.TONE_NAMES) == 8
 
 
 def test_base_of():

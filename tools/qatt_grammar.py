@@ -34,8 +34,7 @@ Segmentation and validation are separate steps:
 
 The block position is not assigned yet ([TBD] in the proposal). ``BLOCK_BASE``
 is a provisional stand-in in Supplementary Private Use Area-A so that the module
-can run; only the offsets come from the proposal. The order of the eight tone
-marks inside +9C..+A3 is not fixed by the proposal either and is provisional.
+can run; only the offsets come from the proposal.
 """
 
 from __future__ import annotations
@@ -64,8 +63,21 @@ CAN_TU_NAMES = ("ONG", "NGONG", "HONG", "GONG", "CONG", "LONG", "TRONG", "DDONG"
                 "NONG", "TONG", "THONG", "NHONG", "CHONG", "DZONG", "XONG", "KHONG",
                 "SONG", "RONG", "MONG", "BONG", "VONG", "PHONG")
 
-TONE_SHAPES = ("CIRCLE", "SEMICIRCLE")
-TONE_CORNERS = ("UPPER LEFT", "UPPER RIGHT", "LOWER LEFT", "LOWER RIGHT")
+# Tone marks in code point order (proposal 4.4 and 7): the corner gives the tone
+# class (bình, thượng, khứ, nhập), the shape the register (semicircle = âm,
+# circle = dương), âm before dương.
+TONE_CORNERS = ("LOWER LEFT", "UPPER LEFT", "UPPER RIGHT", "LOWER RIGHT")
+TONE_SHAPES = ("SEMICIRCLE", "CIRCLE")
+TONE_NAMES = {
+    ("SEMICIRCLE", "LOWER LEFT"): "âm bình (ngang)",
+    ("CIRCLE", "LOWER LEFT"): "dương bình (huyền)",
+    ("SEMICIRCLE", "UPPER LEFT"): "âm thượng (hỏi)",
+    ("CIRCLE", "UPPER LEFT"): "dương thượng (ngã)",
+    ("SEMICIRCLE", "UPPER RIGHT"): "âm khứ (sắc)",
+    ("CIRCLE", "UPPER RIGHT"): "dương khứ (nặng)",
+    ("SEMICIRCLE", "LOWER RIGHT"): "âm nhập",
+    ("CIRCLE", "LOWER RIGHT"): "dương nhập",
+}
 
 
 class Kind(Enum):
@@ -107,8 +119,8 @@ JOINER = chr(BLOCK_BASE + JOINER_OFFSET)
 
 def tone(shape: str, corner: str) -> str:
     return chr(BLOCK_BASE + TONE_OFFSET
-               + TONE_SHAPES.index(shape) * len(TONE_CORNERS)
-               + TONE_CORNERS.index(corner))
+               + TONE_CORNERS.index(corner) * len(TONE_SHAPES)
+               + TONE_SHAPES.index(shape))
 
 
 def _check_base(base: int) -> None:

@@ -12,7 +12,7 @@ E10,Tham Thư rule: the base is a Hợp Thư,4.3,,,,,,,missing,
 E11,Tham Thư: the third component extends the rhyme,4.3,,,,,,,missing,
 E12,"Attested Tham Thư, first example","4.3, B",,,,,,,missing,
 E13,"Attested Tham Thư, second example","4.3, B",,,,,,,missing,
-E14,"Tone marks: circle and semicircle in four corners, eight tones",4.4,,,,,,,missing,
+E14,"Tone marks: circle and semicircle in four corners, eight tones",4.4,,,,,,,missing,"Eight-tone yin-yang system (corner = tone class, semicircle = âm, circle = dương) confirmed by the proposer; a passage explaining it is still to be cited."
 E15,Tone mark examples for all four corners,"4.4, B",,,,,,,missing,
 E16,Semicircle orientation: open side facing the centre in every example,4.4,,,,,,,missing,
 E17,Eight tones follow the Chinese yin-yang method,2.1,,,,,,,missing,
@@ -23,5 +23,6 @@ E21,Date and provenance of source 2,"2.1, 3.1",,,,,,,missing,
 E22,"Modern use of the script, including written forms in online discussion",3.3,,,,,,,missing,
 E23,Source 2 is a handwritten copy of Source 1 with the same content and page numbering; it corrects unclear Quốc Âm Tân Tự characters and obvious scribal errors,"1, 3",Source 1; Source 2,,,,,,located,Stated by the proposer; E18-1/E18-2 show one identical page. List of corrected places to be compiled.
 E24,Tone marks are optional: marked and unmarked characters in the same passage,"4.4, 5.6",Source 2; Source 1,6,,E04-2.png; E04-1.png,,,located,Passage of E04: all QATT characters marked except the last two. Location of the unmarked pair: last two QATT characters of the E04 quotation.
-E25,The neutral tone (ngang) has its own tone mark; an unmarked character does not mean the neutral tone,"4.4, 5.6",Source 2; Source 1,6,,E04-2.png; E04-1.png,,,located,Passage of E04. Corner and shape of the neutral-tone mark to be confirmed.
+E25,"The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone","4.4, 5.6",Source 2; Source 1,6,,E04-2.png; E04-1.png,,,located,Passage of E04; corner and shape confirmed by the proposer.
 E26,Tone marks on standalone components (Cán Lược and Chi Tự),"4.4, 5.3",Source 2; Source 1,6,,E04-2.png; E04-1.png,,,located,Passage of E04: standalone Cán Lược and Chi Tự carry the neutral-tone mark.
+E27,"Round and angular forms of the same tone mark are handwriting variation: Source 1 writes the mark now round, now close to a hook; Source 2 writes all tone marks of the passage angular","4.4, 8",Source 1; Source 2,6,,E04-1.png; E04-2.png,,,located,Passage of E04
