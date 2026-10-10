@@ -22,7 +22,7 @@ Images go in `images/`, named after the row id, for example `E08-1.png`. Publish
 
 ## Corrections
 
-`corrections.csv` lists the places where Source 2 differs from Source 1: corrections of characters that are unclear or wrong in Source 1, and corrections the scribe of Source 2 made to the copy itself.
+`corrections.csv` lists the places where Source 2 differs from Source 1: corrections of characters that are unclear or wrong in Source 1, and local rewrites where the scribe of Source 2 struck out and rewrote his own unclear character.
 
 | Field | Content |
 | --- | --- |
@@ -31,7 +31,7 @@ Images go in `images/`, named after the row id, for example `E08-1.png`. Publish
 | location | Column and position on the page |
 | source_1 | Reading in Source 1 |
 | source_2 | Reading in Source 2 |
-| type | `correction of Source 1` (unclear or wrong character) or `scribal self-correction in Source 2` |
+| type | `correction of Source 1` (character unclear or wrong in Source 1) or `local rewrite in Source 2` (the scribe of Source 2 rewrote his own unclear character; no difference in reading) |
 | image | Image file in `images/` |
 | notes | Anything else |
 
