@@ -74,7 +74,7 @@ Quốc Âm Tân Tự is built from 22 base components that stand alone. Their de
 
 ### 4.1 Components
 
-Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. Omitting it yields one abbreviated form per base. The source does not name this form; it describes it as 幹体畧 (cán thể lược), "abbreviated trunk body" \[TBD: cite the passage\]. This proposal calls it the *abbreviated Cán*. In the count section the source calls both the Cán Tự standing alone (單幹書) and the component of a combination, which is always the abbreviated form, 幹 (幹体, p. 8). The heading of the section on the Tham Thư contains the similar expression 枝体畧 (p. 7). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form.
+Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. Omitting it yields one abbreviated form per base. The source gives this form no name of its own; this proposal calls it the *abbreviated Cán*, an English description of the form. In the count section the source calls both the Cán Tự standing alone (單幹書) and the component of a combination, which is always the abbreviated form, 幹 (幹体, p. 8). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form.
 
 The source lists the 22 Cán Tự with their names (p. 2), and the Chi Tự in the section 枝字一百一十字, "the 110 Chi Tự", in blocks of five per base (pp. 3–4); the table shows 109, one having been left out by oversight.
 
@@ -279,7 +279,7 @@ The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIG
 
 The five Chi Tự of a base are named after their Cán Tự and numbered 1 to 5 in the order of the marking-stroke position, counter-clockwise from the position of the Cán Tự (4.1), for example QUOC AM TAN TU CHI TU ONG-1 to QUOC AM TAN TU CHI TU ONG-5. The positions are relative to the Cán Tự and lie in different places for different bases, so the names number them instead of describing them geometrically.
 
-The names of the 22 Cán Tự come from the source listing (6.4), where each Cán Tự is annotated with a Chữ Nôm character; annotations without an encoded character are given as Ideographic Description Sequences. Each name is the syllable of the initial with the rhyme ông. Each abbreviated Cán takes the name of its Cán Tự followed by ABBREVIATED, the translation of 畧 in the source expression 幹体畧 (4.1). Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
+The names of the 22 Cán Tự come from the source listing (6.4), where each Cán Tự is annotated with a Chữ Nôm character; annotations without an encoded character are given as Ideographic Description Sequences. Each name is the syllable of the initial with the rhyme ông. Each abbreviated Cán takes the name of its Cán Tự followed by ABBREVIATED, an English description of the form that has no counterpart in the source (4.1). Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
 
 | No. | Nôm annotation | Reading | Initial | Name in character names | Abbreviated Cán | Cán Tự |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -323,7 +323,7 @@ A conforming font draws every cluster in one square cell and composes it with su
 
 ## 9. Open Points
 
-Fourteen points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
+Thirteen points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
 
 | Point | Section | What is needed |
 | --- | --- | --- |
@@ -331,7 +331,6 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
 | UTC Proposal Summary Form | 1 | Completed form |
 | Scholarly literature | 2.1, D | References |
-| Passage of the expression 幹体畧 (cán thể lược), the source description of the abbreviated Cán | 4.1, 7.1 | Page and column (E03) |
 | Places where Source 2 corrects Source 1 | 3 | List in the corrections file of the evidence catalogue |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Open evidence items listed in 3.2 | 3.2, B, C | Passages, pages and images |

@@ -7,49 +7,49 @@
 @@	F0000	Quoc Am Tan Tu	F00AF
 @		Cán Tự, abbreviated (marking stroke omitted)
 F0000	QUOC AM TAN TU CAN TU ONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0001	QUOC AM TAN TU CAN TU NGONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0002	QUOC AM TAN TU CAN TU HONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0003	QUOC AM TAN TU CAN TU GONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0004	QUOC AM TAN TU CAN TU CONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0005	QUOC AM TAN TU CAN TU LONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0006	QUOC AM TAN TU CAN TU TRONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0007	QUOC AM TAN TU CAN TU DDONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0008	QUOC AM TAN TU CAN TU NONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0009	QUOC AM TAN TU CAN TU TONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F000A	QUOC AM TAN TU CAN TU THONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F000B	QUOC AM TAN TU CAN TU NHONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F000C	QUOC AM TAN TU CAN TU CHONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F000D	QUOC AM TAN TU CAN TU DZONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F000E	QUOC AM TAN TU CAN TU XONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F000F	QUOC AM TAN TU CAN TU KHONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0010	QUOC AM TAN TU CAN TU SONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0011	QUOC AM TAN TU CAN TU RONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0012	QUOC AM TAN TU CAN TU MONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0013	QUOC AM TAN TU CAN TU BONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0014	QUOC AM TAN TU CAN TU VONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 F0015	QUOC AM TAN TU CAN TU PHONG ABBREVIATED
-	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+	* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự
 @		Cán Tự (base components)
 F0016	QUOC AM TAN TU CAN TU ONG
 	* name from the source listing: ông 翁
