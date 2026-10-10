@@ -15,7 +15,7 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 | Model | Atomic components in reading order; every combination written with an explicit joiner |
 | Plane | Supplementary Multilingual Plane \[TBD: block position assigned by the UTC\] |
 | Direction | Follows Han Nôm; the source is vertical |
-| Attested sources | Two: a vertical Han Nôm text and a handwritten copy of it |
+| Attested sources | Two manuscripts of one text, Institute of Hán Nôm Studies, Hanoi, AB.630; reign of Thiệu Trị (1841–1847) |
 | Official form | \[TBD: complete the UTC Proposal Summary Form\] |
 
 ## 2. Introduction
@@ -24,7 +24,9 @@ Quốc Âm Tân Tự is a Vietnamese script built from 22 base components, each 
 
 ### 2.1 Background
 
-In the source the script appears in running Han Nôm text and is treated exactly like Han Nôm characters. Three-component characters (Tham Thư) record dialectal vowel clusters. Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: date and provenance of the sources; scholarly literature\]
+The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa. The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành. The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents).
+
+In the source the script appears in running Han Nôm text and is treated exactly like Han Nôm characters. Three-component characters (Tham Thư) record dialectal vowel clusters. Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: pages of the taboo character and of the signature; scholarly literature\]
 
 ### 2.2 Reasons for encoding
 
@@ -32,24 +34,26 @@ In the source the script appears in running Han Nôm text and is treated exactly
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are vertical Han Nôm texts, and the text describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are manuscripts of the same vertical Han Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
 | Source | Date | Location | Text type | Direction |
 | --- | --- | --- | --- | --- |
-| Source 1 | \[TBD\] | \[TBD\] | Han Nôm | Vertical |
-| Source 2 | \[TBD\] | \[TBD\] | Han Nôm, handwritten copy of Source 1 | Vertical |
+| Source 1 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Han Nôm, 4 double pages | Vertical |
+| Source 2 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Han Nôm, 4 double pages; corrects Source 1 | Vertical |
+
+Both manuscripts share the shelfmark AB.630. The date is that of the text, from the naming taboo (2.1); the dates of the two copies are not known.
 
 ### 3.2 Evidence by feature
 
 | Feature | Evidence | Status |
 | --- | --- | --- |
 | Cán Tự, Chi Tự, Cán Lược | Described in the source; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
-| Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | \[TBD: cite passages and examples; function of the two components\] |
+| Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first; the Cán Lược gives the initial, the Chi Tự the rhyme; pairs in running text (p. 6) | \[TBD: cite the passage on the function of the components\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme | \[TBD: list the examples; cite the passage on the function of the components; confirm that the term covers only same-base pairs\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base and the third component extending the rhyme; two examples attested, both on a Hợp Thư | \[TBD: cite both examples\] |
-| Standalone and adjacent components | When the text explains how components combine, it writes components on their own and side by side without combining them, including a standalone Cán Lược and two adjacent Cán Lược, in a passage of the form 如{CL}{CT}反切云{CL}{CL}鳥衣是合取衣字也 | \[TBD: exact components, source and page\] |
+| Standalone and adjacent components | When the text explains how components combine, it writes components on their own and side by side without combining them: a standalone Cán Lược before a Chi Tự, and two standalone Cán Lược before a phản thiết pair (p. 6) | Cited |
 | Omission of the Cán Lược | Wherever a phản thiết pair of the same base would occur, the source writes the Chi Tự alone | \[TBD: list the places\] |
 | Tone marks | Eight tones in four corners; the neutral tone marked with a semicircle lower left; marked and unmarked characters in one passage; round and angular forms of the same mark (p. 6) | \[TBD: passage explaining the tone system; examples for the other corners\] |
 | Writing direction | The text is silent; both witnesses are vertical Han Nôm | Assumption: Han Nôm habits |
@@ -68,7 +72,9 @@ Quốc Âm Tân Tự is built from 22 base components that stand alone. Their de
 
 ### 4.1 Components
 
-Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. \[TBD: cite the passage on the positions\] Omitting it yields one reduced form per base (*Cán Lược*). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the source writes it standalone when it explains how components combine (3.2).
+Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. \[TBD: cite the passage on the positions\] Omitting it yields one reduced form per base (*Cán Lược*).
+
+The three classes have distinct functions. A Cán Lược gives the initial consonant of its base, and a Chi Tự gives a rhyme; together the 110 Chi Tự form the rhyme table of the script, arranged in blocks of five per base. A Cán Tự stands for the whole syllable of its initial with the rhyme ông and names its base: it serves to pronounce the Cán Lược in the phản thiết method, and it is not combined. Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the source writes it standalone when it explains how components combine (3.2).
 
 | Component | Count | Derivation | Standalone | In combination |
 | --- | --- | --- | --- | --- |
@@ -80,10 +86,10 @@ Each of the 22 base components (*Cán Tự*) consists of three strokes and one s
 
 A Cán Lược and a Chi Tự combine into one character. The source describes two methods.
 
-- **Phản thiết.** The Cán Lược and the Chi Tự derive from different Cán Tự, and the Cán Lược comes first. The section Phản Thiết Hài Âm Pháp (反切諧音法) describes these pairs; the source gives them no name of its own, and this proposal calls them phản thiết pairs. A phản thiết pair of the same base would add nothing to the Chi Tự, so the source writes the Chi Tự alone instead. \[TBD: function of the two components in a phản thiết pair\]
-- **Hợp Thư.** The Chi Tự and the Cán Lược derive from the same Cán Tự, and the Chi Tự comes first. The source describes this arrangement as an exchange of positions. It is not only visual: in reading, the Chi Tự gives the initial consonant and the Cán Lược the rhyme. There are 110 Hợp Thư, one for each Chi Tự.
+- **Phản thiết.** The Cán Lược and the Chi Tự derive from different Cán Tự, and the Cán Lược comes first. The Cán Lược gives the initial and the Chi Tự the rhyme, as in the Chinese fanqie (反切) method of spelling a syllable by the initial of one character and the rhyme of another. The section Phản Thiết Hài Âm Pháp (反切諧音法) describes these pairs; the source gives them no name of its own, and this proposal calls them phản thiết pairs. A phản thiết pair of the same base would add nothing to the Chi Tự, so the source writes the Chi Tự alone instead.
+- **Hợp Thư.** The Chi Tự and the Cán Lược derive from the same Cán Tự, and the Chi Tự comes first. The source describes this arrangement as an exchange of positions. It is not only visual: compared with a phản thiết pair, the components also exchange their functions, so that the Chi Tự gives the initial consonant and the Cán Lược the rhyme. There are 110 Hợp Thư, one for each Chi Tự.
 
-When the source explains these methods, it also writes components on their own and side by side without combining them (3.2). In a Hợp Thư the written order of the components is also their reading order. \[TBD: cite the source passages for both methods, the function of the components and the attested examples; whether the written order is also the reading order in a phản thiết pair\]
+When the source explains these methods, it also writes components on their own and side by side without combining them (3.2). In both methods the written order of the components is also their reading order: initial, then rhyme. \[TBD: cite the source passages for both methods, the function of the components and the attested examples\]
 
 ### 4.3 Tham Thư (three components)
 
