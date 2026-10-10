@@ -57,6 +57,11 @@ def test_base_of():
     assert q.base_of(HAN) is None
 
 
+def test_can_tu_names_are_unique_ascii():
+    assert len(q.CAN_TU_NAMES) == q.NUM_BASES == len(set(q.CAN_TU_NAMES))
+    assert all(n.isascii() and n.isupper() for n in q.CAN_TU_NAMES)
+
+
 def test_constructors_reject_out_of_range():
     with pytest.raises(ValueError):
         can_tu(22)

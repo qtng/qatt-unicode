@@ -45,7 +45,7 @@ Two sources attest the script. Both are vertical Han Nôm texts, and the text of
 
 | Feature | Evidence | Status |
 | --- | --- | --- |
-| Cán Tự, Chi Tự, Cán Lược | Described in the sources | \[TBD: cite passages and examples\] |
+| Cán Tự, Chi Tự, Cán Lược | Described in the sources; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (Source 1, p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
 | Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | \[TBD: cite passages and examples; function of the two components\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme | \[TBD: list the examples; cite the passage on the function of the components; confirm that the term covers only same-base pairs\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base and the third component extending the rhyme; two examples attested, both on a Hợp Thư | \[TBD: cite both examples\] |
@@ -206,7 +206,7 @@ The sources do not state a writing direction. Both attested sources contain vert
 
 ### 6.4 Code point order
 
-The sources list the 22 Cán Tự roughly by place of articulation. \[TBD: cite the listing\] This order has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
+Source 1 lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (Source 1, p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
 
 ## 7. Character Table and Code Chart
 
@@ -236,7 +236,34 @@ QUOC AM TAN TU TONE CIRCLE UPPER LEFT
 QUOC AM TAN TU TONE SEMICIRCLE LOWER RIGHT
 ```
 
-The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. \[TBD: names of the 22 Cán Tự and of the five marking-stroke positions\]
+The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. \[TBD: names of the five marking-stroke positions\]
+
+The names of the 22 Cán Tự come from the source listing (6.4). Each name is the syllable of the initial with the rhyme ông. The sources give the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped; đ is written DD, as in đông → DDONG, because DONG is the name of dông.
+
+| No. | Name (Chữ Nôm reading) | Initial | Name in character names | Cán Tự | Cán Lược |
+| --- | --- | --- | --- | --- | --- |
+| 1 | ông | Ɂ | ONG | +00 | +16 |
+| 2 | ngông | Ng | NGONG | +01 | +17 |
+| 3 | hông | H | HONG | +02 | +18 |
+| 4 | gông | G | GONG | +03 | +19 |
+| 5 | công | C | CONG | +04 | +1A |
+| 6 | lông | L | LONG | +05 | +1B |
+| 7 | trông | Tr | TRONG | +06 | +1C |
+| 8 | đông | Đ | DDONG | +07 | +1D |
+| 9 | nông | N | NONG | +08 | +1E |
+| 10 | tông | T | TONG | +09 | +1F |
+| 11 | thông | Th | THONG | +0A | +20 |
+| 12 | nhông | Nh | NHONG | +0B | +21 |
+| 13 | chông | Ch | CHONG | +0C | +22 |
+| 14 | dông | D | DONG | +0D | +23 |
+| 15 | xông | X | XONG | +0E | +24 |
+| 16 | không | Kh | KHONG | +0F | +25 |
+| 17 | sông | S | SONG | +10 | +26 |
+| 18 | rông | R | RONG | +11 | +27 |
+| 19 | mông | M | MONG | +12 | +28 |
+| 20 | bông | B | BONG | +13 | +29 |
+| 21 | vông | V | VONG | +14 | +2A |
+| 22 | phông | Ph | PHONG | +15 | +2B |
 
 ### 7.2 Code chart
 
@@ -267,7 +294,7 @@ Thirteen points remain before the proposal can be submitted. The alternatives al
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Source passages and scans for the components, standalone and adjacent components, phản thiết pairs, Hợp Thư, the omission convention, Tham Thư and the tone corners | 3.2, 3.4, 4.1 to 4.4, B, C | Citations and images |
 | Layout of the components in two-component characters and Tham Thư | 4.5, 8 | Positions from the source examples |
-| Names of the 22 Cán Tự, the five marking-stroke positions and their order | 6.4, 7.1 | Names, order and the cited source listing |
+| Names and order of the five marking-stroke positions | 6.4, 7.1 | Names and order; the Cán Tự names and order are taken from the source listing |
 | Unicode properties: combining class, grapheme cluster rules, Bidi\_Class of both joiners | 6, 6.1, 6.2 | Review by Unicode experts |
 | Block position in the Supplementary Multilingual Plane | 7 | Assignment by the UTC |
 | Reference font and code chart glyphs | 7.2, 8 | Designer, licence and glyphs |
