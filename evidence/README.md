@@ -19,3 +19,20 @@
 Cite Source 2, the corrected copy, and add Source 1 only where it differs or where its reading matters. List the source cited first in `source`. The proposal cites by page only, for example (p. 2), and names a source only where it matters.
 
 Images go in `images/`, named after the row id, for example `E08-1.png`. Publish scans only where the holding institution permits it.
+
+## Corrections
+
+`corrections.csv` lists the places where Source 2 differs from Source 1: corrections of characters that are unclear or wrong in Source 1, and corrections the scribe of Source 2 made to the copy itself.
+
+| Field | Content |
+| --- | --- |
+| id | Stable identifier (C01, C02, …) |
+| page | Page, shared by both sources |
+| location | Column and position on the page |
+| source_1 | Reading in Source 1 |
+| source_2 | Reading in Source 2 |
+| type | `correction of Source 1` (unclear or wrong character) or `scribal self-correction in Source 2` |
+| image | Image file in `images/` |
+| notes | Anything else |
+
+A character struck out with three dots is deleted and does not count.
