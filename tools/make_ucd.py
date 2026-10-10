@@ -29,7 +29,7 @@ SCRIPT = "Quoc_Am_Tan_Tu"
 # East_Asian_Width, Vertical_Orientation
 PROPS = {
     q.Kind.CAN_TU:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
-    q.Kind.CAN_ABBR: ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
+    q.Kind.UNMARKED: ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.CHI_TU:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.COMBINER: ("Cf", 0, "BN",  "Extend", "Linker",    "GL", "N", "U"),
     q.Kind.JOINER:   ("Cf", 0, "BN",  "Extend", "Linker",    "GL", "N", "U"),
@@ -84,20 +84,25 @@ def property_file(index: int, prop: str) -> list[str]:
 def names_list() -> list[str]:
     first, last = q.BLOCK_BASE, q.BLOCK_BASE + q.BLOCK_SIZE - 1
     lines = [f"@@\t{first:05X}\t{BLOCK_NAME}\t{last:05X}"]
-    headings = {q.Kind.CAN_ABBR: "Cán Tự, abbreviated (marking stroke omitted)",
-                q.Kind.CAN_TU: "Cán Tự (base components)",
-                q.Kind.CHI_TU: "Chi Tự (variant components)", q.Kind.COMBINER: "Format characters",
+    headings = {q.Kind.UNMARKED: "Forms without marking stroke",
+                q.Kind.CAN_TU: "Forms with marking stroke (the six positions of each base)",
+                q.Kind.COMBINER: "Format characters",
                 q.Kind.TONE: "Tone marks"}
+    shown = None
     for ch in assigned():
         k = q.kind(ch)
-        if k in headings and (ord(ch) == first or q.kind(chr(ord(ch) - 1)) is not k):
-            lines.append(f"@\t\t{headings[k]}")
+        group = q.Kind.CAN_TU if k is q.Kind.CHI_TU else k
+        if group is not shown and group in headings:
+            lines.append(f"@\t\t{headings[group]}")
+        shown = group
         lines.append(f"{ord(ch):05X}\t{q.character_name(ch)}")
         base = q.base_of(ch)
-        if k is q.Kind.CAN_TU:
-            lines.append(f"\t* name from the source listing: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
-        elif k is q.Kind.CAN_ABBR:
-            lines.append("\t* the Cán Tự without its marking stroke; standalone, it has the reading of its Cán Tự")
+        if k is q.Kind.UNMARKED:
+            lines.append(f"\t* no marking stroke; standalone, it has the reading of the Cán Tự of its base: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
+        elif k is q.Kind.CAN_TU:
+            lines.append(f"\t* Cán Tự of the source listing: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
+        elif k is q.Kind.CHI_TU:
+            lines.append(f"\t* Chi Tự of the base {READINGS[base]}")
         elif k is q.Kind.COMBINER:
             lines.append("\t* places the following Chi Tự above a Hợp Thư")
         elif k is q.Kind.JOINER:

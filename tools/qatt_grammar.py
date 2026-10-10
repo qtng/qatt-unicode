@@ -23,9 +23,9 @@ Segmentation and validation are separate steps:
   proposal, which describes the attested forms:
 
       Character := Cluster [ToneMark]
-      Cluster   := CanTu | ChiTu | AbbrCan | PhanThiet | HopThu | ThamThu
-      PhanThiet := AbbrCan(X) Joiner ChiTu(Y)     X ≠ Y
-      HopThu    := ChiTu(X) Joiner AbbrCan(X)     same Cán Tự X
+      Cluster   := CanTu | ChiTu | UnmarkedCan | PhanThiet | HopThu | ThamThu
+      PhanThiet := UnmarkedCan(X) Joiner ChiTu(Y)     X ≠ Y
+      HopThu    := ChiTu(X) Joiner UnmarkedCan(X)     same Cán Tự X
       ThamThu   := HopThu Combiner ChiTu
 
   With ``extended=True`` it accepts the sequences the proposal leaves
@@ -46,12 +46,11 @@ import re
 BLOCK_BASE = 0xF0000  # provisional, see module docstring
 
 NUM_BASES = 22
-NUM_POSITIONS = 5
+NUM_POSITIONS = 5   # Chi Tự per base
 
-CAN_ABBR_OFFSET = 0x00        # +00..+15, 22 code points, marking stroke omitted
-CAN_TU_OFFSET = 0x16          # +16..+2B, 22 code points
-CHI_TU_OFFSET = 0x2C          # +2C..+99, 110 code points, five per base
-                              # Cán Tự and Chi Tự form one run of marked forms, +16..+99
+UNMARKED_OFFSET = 0x00        # +00..+15, 22 code points, marking stroke omitted
+MARKED_OFFSET = 0x16          # +16..+99, 132 code points, six per base: MARKED-1 .. MARKED-6
+NUM_MARKED = 6                # marking-stroke positions, counted counter-clockwise from the start position
 COMBINER_OFFSET = 0x9A        # +9A, Tham Thư combiner
 JOINER_OFFSET = 0x9B          # +9B, component joiner
 TONE_OFFSET = 0x9C            # +9C..+A3, 8 code points
@@ -59,7 +58,7 @@ RESERVED_OFFSET = 0xA4        # +A4..+AF
 BLOCK_SIZE = 0xB0             # 176
 
 # Names of the 22 Cán Tự in source order (Source 1, p. 2, section 幹音二十二字),
-# as used in character names; each abbreviated Cán takes the name of its Cán Tự.
+# as used in character names; each form of a base takes the name of its Cán Tự.
 CAN_TU_NAMES = ("ONG", "NGONG", "HONG", "GONG", "CONG", "LONG", "TRONG", "DDONG",
                 "NONG", "TONG", "THONG", "NHONG", "CHONG", "DZONG", "XONG", "KHONG",
                 "SONG", "RONG", "MONG", "BONG", "VONG", "PHONG")
@@ -83,7 +82,7 @@ TONE_NAMES = {
 
 class Kind(Enum):
     CAN_TU = "A"
-    CAN_ABBR = "B"
+    UNMARKED = "U"
     CHI_TU = "C"
     COMBINER = "J"
     JOINER = "H"
@@ -92,26 +91,34 @@ class Kind(Enum):
 
 
 # Letter codes of Kind, used to match the grammar as a regular expression.
-_ATTESTED_RE = re.compile(r"(?:A|C|B|BHC|CHB|CHBJC)T?")
-_EXTENDED_RE = re.compile(r"(?:A|C|B|BHC|CHB|(?:CHB|BHC|C)JC)T?")
+_ATTESTED_RE = re.compile(r"(?:A|C|U|UHC|CHU|CHUJC)T?")
+_EXTENDED_RE = re.compile(r"(?:A|C|U|UHC|CHU|(?:CHU|UHC|C)JC)T?")
 _JOINERS = (Kind.COMBINER, Kind.JOINER)
 
 
+def unmarked(base: int) -> str:
+    _check_base(base)
+    return chr(BLOCK_BASE + UNMARKED_OFFSET + base)
+
+
+def marked(base: int, n: int) -> str:
+    """The form of a base with the marking stroke at position n, 1 to 6."""
+    _check_base(base)
+    if not 1 <= n <= NUM_MARKED:
+        raise ValueError(f"marking-stroke position must be 1..{NUM_MARKED}, got {n}")
+    return chr(BLOCK_BASE + MARKED_OFFSET + base * NUM_MARKED + n - 1)
+
+
 def can_tu(base: int) -> str:
-    _check_base(base)
-    return chr(BLOCK_BASE + CAN_TU_OFFSET + base)
-
-
-def can_abbr(base: int) -> str:
-    _check_base(base)
-    return chr(BLOCK_BASE + CAN_ABBR_OFFSET + base)
+    """The Cán Tự of a base: the marked form at position 1."""
+    return marked(base, 1)
 
 
 def chi_tu(base: int, position: int) -> str:
-    _check_base(base)
+    """A Chi Tự of a base, position 0..4: the marked forms at positions 2 to 6."""
     if not 0 <= position < NUM_POSITIONS:
         raise ValueError(f"position must be 0..{NUM_POSITIONS - 1}, got {position}")
-    return chr(BLOCK_BASE + CHI_TU_OFFSET + base * NUM_POSITIONS + position)
+    return marked(base, position + 2)
 
 
 COMBINER = chr(BLOCK_BASE + COMBINER_OFFSET)
@@ -133,12 +140,10 @@ def kind(ch: str) -> Kind:
     offset = ord(ch) - BLOCK_BASE
     if offset < 0 or offset >= RESERVED_OFFSET:
         return Kind.OTHER
-    if offset < CAN_TU_OFFSET:
-        return Kind.CAN_ABBR
-    if offset < CHI_TU_OFFSET:
-        return Kind.CAN_TU
+    if offset < MARKED_OFFSET:
+        return Kind.UNMARKED
     if offset < COMBINER_OFFSET:
-        return Kind.CHI_TU
+        return Kind.CAN_TU if (offset - MARKED_OFFSET) % NUM_MARKED == 0 else Kind.CHI_TU
     if offset == COMBINER_OFFSET:
         return Kind.COMBINER
     if offset == JOINER_OFFSET:
@@ -150,12 +155,17 @@ def base_of(ch: str) -> int | None:
     """Index of the Cán Tự a component derives from, or None for other code points."""
     offset = ord(ch) - BLOCK_BASE
     k = kind(ch)
-    if k is Kind.CAN_TU:
-        return offset - CAN_TU_OFFSET
-    if k is Kind.CAN_ABBR:
-        return offset - CAN_ABBR_OFFSET
-    if k is Kind.CHI_TU:
-        return (offset - CHI_TU_OFFSET) // NUM_POSITIONS
+    if k is Kind.UNMARKED:
+        return offset - UNMARKED_OFFSET
+    if k in (Kind.CAN_TU, Kind.CHI_TU):
+        return (offset - MARKED_OFFSET) // NUM_MARKED
+    return None
+
+
+def marked_position(ch: str) -> int | None:
+    """Position of the marking stroke, 1 to 6, or None for other code points."""
+    if kind(ch) in (Kind.CAN_TU, Kind.CHI_TU):
+        return (ord(ch) - BLOCK_BASE - MARKED_OFFSET) % NUM_MARKED + 1
     return None
 
 
@@ -191,7 +201,7 @@ class Cluster:
 
 NOT_HOP_THU_BASE = "base of a Tham Thư must be a Hợp Thư"
 SAME_BASE_PHAN_THIET = "same-base phản thiết pair is written as the Chi Tự alone"
-MIXED_HOP_THU = "Hợp Thư joins a Chi Tự and an abbreviated Cán of different Cán Tự"
+MIXED_HOP_THU = "Hợp Thư joins a Chi Tự and an unmarked Cán of different Cán Tự"
 NOT_JOINED = "components must be combined with the component joiner"
 
 
@@ -214,9 +224,9 @@ def validate_cluster(cluster: str, extended: bool = False) -> str | None:
     if extended:
         return None
     core = kinds.rstrip("T")
-    if core == "BHC" and base_of(cluster[0]) == base_of(cluster[2]):
+    if core == "UHC" and base_of(cluster[0]) == base_of(cluster[2]):
         return SAME_BASE_PHAN_THIET
-    if core.startswith("CHB") and base_of(cluster[0]) != base_of(cluster[2]):
+    if core.startswith("CHU") and base_of(cluster[0]) != base_of(cluster[2]):
         return MIXED_HOP_THU
     return None
 
@@ -238,13 +248,13 @@ def _describe(kinds: str, extended: bool) -> str:
     if core.count("H") > 1:
         return "more than one component joiner"
     for i, k in enumerate(core):
-        if k == "H" and (i == 0 or core[i - 1:i + 2] not in ("CHB", "BHC")):
-            return "component joiner must stand between a Chi Tự and an abbreviated Cán"
+        if k == "H" and (i == 0 or core[i - 1:i + 2] not in ("CHU", "UHC")):
+            return "component joiner must stand between a Chi Tự and an unmarked Cán"
     if "A" in core:
         return "Cán Tự combined with other components"
-    if "B" in core and "H" not in core:
+    if "U" in core and "H" not in core:
         return NOT_JOINED
-    if "J" in core and not extended and core.split("J", 1)[0] != "CHB":
+    if "J" in core and not extended and core.split("J", 1)[0] != "CHU":
         return NOT_HOP_THU_BASE
     return "sequence does not match the grammar"
 
@@ -263,13 +273,10 @@ def character_name(ch: str) -> str | None:
     offset = ord(ch) - BLOCK_BASE
     k = kind(ch)
     prefix = "QUOC AM TAN TU "
-    if k is Kind.CAN_TU:
-        return prefix + "CAN TU " + CAN_TU_NAMES[base_of(ch)]
-    if k is Kind.CAN_ABBR:
-        return prefix + "CAN TU " + CAN_TU_NAMES[base_of(ch)] + " ABBREVIATED"
-    if k is Kind.CHI_TU:
-        position = (offset - CHI_TU_OFFSET) % NUM_POSITIONS + 1
-        return prefix + f"CHI TU {CAN_TU_NAMES[base_of(ch)]}-{position}"
+    if k is Kind.UNMARKED:
+        return prefix + CAN_TU_NAMES[base_of(ch)] + " UNMARKED"
+    if k in (Kind.CAN_TU, Kind.CHI_TU):
+        return prefix + f"{CAN_TU_NAMES[base_of(ch)]} MARKED-{marked_position(ch)}"
     if k is Kind.COMBINER:
         return prefix + "THAM THU COMBINER"
     if k is Kind.JOINER:
@@ -283,13 +290,13 @@ def character_name(ch: str) -> str | None:
 
 
 def is_hop_thu(cluster: str) -> bool:
-    """Whether the cluster begins with a Hợp Thư: Chi Tự, joiner, abbreviated Cán."""
-    return _starts_with(cluster, Kind.CHI_TU, Kind.JOINER, Kind.CAN_ABBR)
+    """Whether the cluster begins with a Hợp Thư: Chi Tự, joiner, unmarked Cán."""
+    return _starts_with(cluster, Kind.CHI_TU, Kind.JOINER, Kind.UNMARKED)
 
 
 def is_phan_thiet(cluster: str) -> bool:
-    """Whether the cluster begins with a phản thiết pair: abbreviated Cán, joiner, Chi Tự."""
-    return _starts_with(cluster, Kind.CAN_ABBR, Kind.JOINER, Kind.CHI_TU)
+    """Whether the cluster begins with a phản thiết pair: unmarked Cán, joiner, Chi Tự."""
+    return _starts_with(cluster, Kind.UNMARKED, Kind.JOINER, Kind.CHI_TU)
 
 
 def _starts_with(cluster: str, *kinds: Kind) -> bool:
