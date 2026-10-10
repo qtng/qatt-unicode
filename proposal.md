@@ -230,8 +230,21 @@ The 164 characters fit in a block of 176 code points (11 columns of 16), propose
 | Chi Tự | +2C to +99 | 110 |
 | Tham Thư combiner | +9A | 1 |
 | Component joiner | +9B | 1 |
-| Tone marks | +9C to +A3 | 8: first the four semicircles (âm), then the four circles (dương), each starting lower left and running clockwise |
+| Tone marks | +9C to +A3 | 8, in the traditional order of the eight tones (see below) |
 | Reserved | +A4 to +AF | 12 |
+
+The tone marks follow the traditional order of the eight tones, the numbering 1 to 8 used in Chinese dialectology: âm bình, dương bình, âm thượng, dương thượng, âm khứ, dương khứ, âm nhập, dương nhập, that is by tone class and within each class âm before dương. The first six correspond to the Vietnamese tone order ngang, huyền, hỏi, ngã, sắc, nặng used in dictionaries and in Vietnamese collation. The source lists the marks in a different order, first the four semicircles and then the four circles, each starting lower left and running clockwise; that order presents the marks by shape and is not adopted for the code points. \[TBD: cite the passage that lists the tone marks\]
+
+| Offset | Mark | Tone |
+| --- | --- | --- |
+| +9C | Semicircle, lower left | âm bình (ngang) |
+| +9D | Circle, lower left | dương bình (huyền) |
+| +9E | Semicircle, upper left | âm thượng (hỏi) |
+| +9F | Circle, upper left | dương thượng (ngã) |
+| +A0 | Semicircle, upper right | âm khứ (sắc) |
+| +A1 | Circle, upper right | dương khứ (nặng) |
+| +A2 | Semicircle, lower right | âm nhập |
+| +A3 | Circle, lower right | dương nhập |
 
 ### 7.1 Character names
 

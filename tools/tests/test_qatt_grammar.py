@@ -48,12 +48,15 @@ def test_offsets():
     assert {ord(t) - q.BLOCK_BASE for t in tones} == set(range(0x9C, 0xA4))
 
 
-def test_tone_order_semicircles_then_circles_clockwise():
-    order = [tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS]
+def test_tone_order_is_traditional():
+    # âm bình, dương bình, âm thượng, dương thượng, âm khứ, dương khứ, âm nhập, dương nhập
+    order = [tone(s, c) for c in q.TONE_CORNERS for s in q.TONE_SHAPES]
     assert [ord(t) - q.BLOCK_BASE for t in order] == list(range(0x9C, 0xA4))
     assert ord(tone("SEMICIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0x9C  # âm bình (ngang)
-    assert ord(tone("CIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0xA0  # dương bình (huyền)
-    assert q.TONE_CORNERS == ("LOWER LEFT", "UPPER LEFT", "UPPER RIGHT", "LOWER RIGHT")  # clockwise
+    assert ord(tone("CIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0x9D  # dương bình (huyền)
+    assert [q.TONE_NAMES[(s, c)] for c in q.TONE_CORNERS for s in q.TONE_SHAPES][:6] == [
+        "âm bình (ngang)", "dương bình (huyền)", "âm thượng (hỏi)",
+        "dương thượng (ngã)", "âm khứ (sắc)", "dương khứ (nặng)"]
     assert len(q.TONE_NAMES) == 8
 
 
