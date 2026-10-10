@@ -19,3 +19,12 @@ def test_files_are_in_canonical_form():
     for f in evidence.entry_files():
         text = f.read_text(encoding="utf-8")
         assert evidence.render(evidence.parse(text)) == text, f.name
+
+
+def test_headers_are_valid_yaml():
+    # GitHub renders the header as YAML; an unquoted ": " inside a value breaks it.
+    yaml = __import__("pytest").importorskip("yaml")
+    for f in evidence.entry_files():
+        header = f.read_text(encoding="utf-8").split("---\n")[1]
+        data = yaml.safe_load(header)
+        assert data["id"] == f.stem
