@@ -85,6 +85,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E33](E33.md) | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 | 1, 2, 2.1 | 1 | cited |
 | [E34](E34.md) | Cán Tự and Cán Lược both appear standalone, with the same reading, also with tone marks; only the Cán Lược combines, never the Cán Tự | 4.1, 5.3 | 5 | located |
 | [E35](E35.md) | The source contains no running text in the script: only single characters given as examples and spelling formulas in the phản thiết manner, within Hán Nôm text | 2.1, 4.1 | – | located |
+| [E36](E36.md) | Counts of the characters in the section 音数: 176 Cán Tự, 880 single characters, 880 合書 with Chi Tự left and Cán Tự right, 18,480 合書 with Cán Tự left and Chi Tự right, each including the tone marks; eight times 22, 110, 110 and 2,310 | 4.1, 4.2, 4.5 | 8 | located |
 <!-- overview:end -->
 
 ## Corrections

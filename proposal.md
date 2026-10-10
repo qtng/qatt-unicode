@@ -140,7 +140,7 @@ The script is encoded as 164 atomic characters: 154 components, two joiners and 
 
 ### 5.2 Why not precomposed
 
-A Cán Lược and a Chi Tự allow 2,420 two-component characters (22 Cán Lược × 110 Chi Tự): 2,310 phản thiết pairs and 110 Hợp Thư. Tham Thư allows 110 × 110 = 12,100. Precomposing would need 14,520 code points, most of them for combinations of which only two are attested. Precomposing is neither feasible nor justified.
+A Cán Lược and a Chi Tự allow 2,420 two-component characters (22 Cán Lược × 110 Chi Tự): 2,310 phản thiết pairs and 110 Hợp Thư. The source gives the same counts multiplied by the eight tones: 880 with the Chi Tự left and 18,480 with the Cán Tự left, besides 176 Cán Tự and 880 single characters (p. 8). Tham Thư allows 110 × 110 = 12,100. Precomposing would need 14,520 code points, most of them for combinations of which only two are attested. Precomposing is neither feasible nor justified.
 
 ### 5.3 Sequence grammar
 
@@ -328,14 +328,14 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | Point | Section | What is needed |
 | --- | --- | --- |
 | Tham Thư combiner now, or IDS first | 4.3, 5.8 | Decision, taken last: the reading of Tham Thư is not established and only two examples exist |
-| Scope of the term Hợp Thư (same-base pairs only) | 3.2, 4.2, 5.7 | Source passages for the narrow reading |
+| Scope of the term Hợp Thư (same-base pairs only) | 3.2, 4.2, 5.7 | Source passages for the narrow reading; the count section uses 合書 for both arrangements (p. 8, E36) |
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
 | UTC Proposal Summary Form | 1 | Completed form |
 | Pages of the taboo character and the signature; scholarly literature | 2.1, D | Pages and images (E30, E31); references |
 | Places where Source 2 corrects Source 1 | 3 | List in the corrections file of the evidence catalogue |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Open evidence items listed in 3.2 | 3.2, B, C | Passages, pages and images |
-| Layout of the components in two-component characters and Tham Thư | 4.5, 8 | Positions from the source examples |
+| Layout of the components in two-component characters and Tham Thư | 4.5, 8 | Positions from the source examples; the count section names left and right (p. 8, E36) |
 | Table of the 110 Chi Tự | 4.1, 7.1 | Source passage and image; check of the numbering against it |
 | Unicode properties: combining class, grapheme cluster rules, Bidi\_Class of both joiners | 6, 6.1, 6.2 | Review by Unicode experts |
 | Block position in the Supplementary Multilingual Plane | 7 | Assignment by the UTC |
@@ -381,6 +381,7 @@ Passages located in the source, by page. Page references are to Source 1 (sectio
 | 6 | – | Tone marks on standalone components (Cán Lược and Chi Tự) (E26) | located |
 | 6 | – | Round and angular forms of the same tone mark are handwriting variation: Source 1 writes the mark now round, now close to a hook; Source 2 writes all tone marks of the passage angular (E27) | located |
 | 7 | – | Tham Thư rule: the base is a Hợp Thư (E10) | located |
+| 8 | 音数  單幹書協契象（即識別也）成一百七十六字。單書協契象成八百八十字（內有喊字等四十六字其八聲稀微置語）。合書左從枝体右從幹体協契象成八百八十字。合書左從幹体右從枝体協契象成一萬八千四百八十字（內有一千九百三十二字其八声稀微置語）。參書倣此。  Text in parentheses: small two-column notes in the manuscript. | Counts of the characters in the section 音数: 176 Cán Tự, 880 single characters, 880 合書 with Chi Tự left and Cán Tự right, 18,480 合書 with Cán Tự left and Chi Tự right, each including the tone marks; eight times 22, 110, 110 and 2,310 (E36) | located |
 <!-- appendix-b:end -->
 
 ### C. Scans of the sources
