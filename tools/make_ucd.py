@@ -30,7 +30,7 @@ SCRIPT = "Quoc_Am_Tan_Tu"
 PROPS = {
     q.Kind.MARKED_CAN:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.UNMARKED: ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
-    q.Kind.CHI_TU:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
+    q.Kind.CHI:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.COMBINER: ("Cf", 0, "BN",  "Extend", "Linker",    "GL", "N", "U"),
     q.Kind.JOINER:   ("Cf", 0, "BN",  "Extend", "Linker",    "GL", "N", "U"),
     q.Kind.TONE:     ("Mn", 0, "NSM", "Extend", "Extend",    "CM", "N", "U"),
@@ -91,7 +91,7 @@ def names_list() -> list[str]:
     shown = None
     for ch in assigned():
         k = q.kind(ch)
-        group = q.Kind.MARKED_CAN if k is q.Kind.CHI_TU else k
+        group = q.Kind.MARKED_CAN if k is q.Kind.CHI else k
         if group is not shown and group in headings:
             lines.append(f"@\t\t{headings[group]}")
         shown = group
@@ -101,10 +101,10 @@ def names_list() -> list[str]:
             lines.append(f"\t* no marking stroke; standalone, it has the reading of the marked Cán of its base: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
         elif k is q.Kind.MARKED_CAN:
             lines.append(f"\t* marked Cán, the Cán of the source listing: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
-        elif k is q.Kind.CHI_TU:
-            lines.append(f"\t* Chi Tự of the base {READINGS[base]}")
+        elif k is q.Kind.CHI:
+            lines.append(f"\t* Chi of the base {READINGS[base]}")
         elif k is q.Kind.COMBINER:
-            lines.append("\t* places the following Chi Tự above a Hợp Thư")
+            lines.append("\t* places the following Chi above a Hợp Thư")
         elif k is q.Kind.JOINER:
             lines.append("\t* joins two components into one character; their order gives the arrangement")
         elif k is q.Kind.TONE:

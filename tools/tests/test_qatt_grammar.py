@@ -4,9 +4,9 @@ import pytest
 from hypothesis import given, settings, strategies as st
 
 import qatt_grammar as q
-from qatt_grammar import COMBINER, JOINER, Kind, unmarked, marked_can, chi_tu, tone
+from qatt_grammar import COMBINER, JOINER, Kind, unmarked, marked_can, chi, tone
 
-CT = chi_tu
+CH = chi
 CU = unmarked
 COMB = COMBINER
 JOIN = JOINER
@@ -15,11 +15,11 @@ HAN = "字"
 
 
 def hop(base, position=0):
-    return CT(base, position) + JOIN + CU(base)
+    return CH(base, position) + JOIN + CU(base)
 
 
 def pt(cl_base, ct_base, position=0):
-    return CU(cl_base) + JOIN + CT(ct_base, position)
+    return CU(cl_base) + JOIN + CH(ct_base, position)
 
 
 # --- Block layout (proposal section 7) ---------------------------------------
@@ -29,7 +29,7 @@ def test_block_layout_counts():
     for offset in range(q.BLOCK_SIZE):
         k = q.kind(chr(q.BLOCK_BASE + offset))
         counts[k] = counts.get(k, 0) + 1
-    assert counts == {Kind.MARKED_CAN: 22, Kind.UNMARKED: 22, Kind.CHI_TU: 110,
+    assert counts == {Kind.MARKED_CAN: 22, Kind.UNMARKED: 22, Kind.CHI: 110,
                       Kind.COMBINER: 1, Kind.JOINER: 1, Kind.TONE: 8,
                       Kind.OTHER: 12}
     assert sum(v for k, v in counts.items() if k is not Kind.OTHER) == 164
@@ -39,11 +39,11 @@ def test_offsets():
     assert ord(unmarked(0)) - q.BLOCK_BASE == 0x00
     assert ord(unmarked(21)) - q.BLOCK_BASE == 0x15
     assert ord(marked_can(0)) - q.BLOCK_BASE == 0x16
-    assert ord(chi_tu(0, 0)) - q.BLOCK_BASE == 0x17
-    assert ord(chi_tu(0, 4)) - q.BLOCK_BASE == 0x1B
+    assert ord(chi(0, 0)) - q.BLOCK_BASE == 0x17
+    assert ord(chi(0, 4)) - q.BLOCK_BASE == 0x1B
     assert ord(marked_can(1)) - q.BLOCK_BASE == 0x1C      # six marked forms per base
     assert ord(marked_can(21)) - q.BLOCK_BASE == 0x94
-    assert ord(chi_tu(21, 4)) - q.BLOCK_BASE == 0x99
+    assert ord(chi(21, 4)) - q.BLOCK_BASE == 0x99
     assert ord(COMB) - q.BLOCK_BASE == 0x9A
     assert ord(JOIN) - q.BLOCK_BASE == 0x9B
     tones = {tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS}
@@ -65,7 +65,7 @@ def test_tone_order_is_traditional():
 def test_base_of():
     assert q.base_of(marked_can(7)) == 7
     assert q.base_of(unmarked(7)) == 7
-    assert all(q.base_of(chi_tu(7, p)) == 7 for p in range(5))
+    assert all(q.base_of(chi(7, p)) == 7 for p in range(5))
     assert q.base_of(COMB) is None
     assert q.base_of(JOIN) is None
     assert q.base_of(HAN) is None
@@ -78,15 +78,15 @@ def test_marked_can_names_are_unique_ascii():
 
 def test_marked_forms_form_one_run():
     # The 132 marked forms are consecutive, six per base, MARKED-1 to MARKED-6.
-    marked = [ord(c) - q.BLOCK_BASE for c in ALL_MARKED_CAN + ALL_CHI_TU]
+    marked = [ord(c) - q.BLOCK_BASE for c in ALL_MARKED_CAN + ALL_CHI]
     assert sorted(marked) == list(range(0x16, 0x9A))
     for base in range(22):
         forms = [q.marked(base, n) for n in range(1, 7)]
         assert forms[0] == marked_can(base)
-        assert forms[1:] == [chi_tu(base, p) for p in range(5)]
+        assert forms[1:] == [chi(base, p) for p in range(5)]
         assert [q.marked_position(c) for c in forms] == [1, 2, 3, 4, 5, 6]
         assert all(q.base_of(c) == base for c in forms)
-        assert [q.kind(c) for c in forms] == [Kind.MARKED_CAN] + [Kind.CHI_TU] * 5
+        assert [q.kind(c) for c in forms] == [Kind.MARKED_CAN] + [Kind.CHI] * 5
     with pytest.raises(ValueError):
         q.marked(0, 0)
     with pytest.raises(ValueError):
@@ -101,8 +101,8 @@ def test_character_names():
     assert q.character_name(marked_can(0)) == "QUOC AM TAN TU ONG MARKED-1"
     assert q.character_name(marked_can(13)) == "QUOC AM TAN TU DZONG MARKED-1"
     assert q.character_name(unmarked(13)) == "QUOC AM TAN TU DZONG UNMARKED"
-    assert q.character_name(chi_tu(0, 0)) == "QUOC AM TAN TU ONG MARKED-2"
-    assert q.character_name(chi_tu(21, 4)) == "QUOC AM TAN TU PHONG MARKED-6"
+    assert q.character_name(chi(0, 0)) == "QUOC AM TAN TU ONG MARKED-2"
+    assert q.character_name(chi(21, 4)) == "QUOC AM TAN TU PHONG MARKED-6"
     assert q.character_name(tone("SEMICIRCLE", "LOWER LEFT")) == "QUOC AM TAN TU TONE SEMICIRCLE LOWER LEFT"
     assert q.character_name(HAN) is None
 
@@ -111,14 +111,14 @@ def test_constructors_reject_out_of_range():
     with pytest.raises(ValueError):
         marked_can(22)
     with pytest.raises(ValueError):
-        chi_tu(0, 5)
+        chi(0, 5)
 
 
 # --- Counts from proposal 5.2 ------------------------------------------------
 
 ALL_MARKED_CAN = [marked_can(b) for b in range(22)]
 ALL_UNMARKED = [unmarked(b) for b in range(22)]
-ALL_CHI_TU = [chi_tu(b, p) for b in range(22) for p in range(5)]
+ALL_CHI = [chi(b, p) for b in range(22) for p in range(5)]
 
 
 def count_valid(sequences, extended=False):
@@ -126,21 +126,21 @@ def count_valid(sequences, extended=False):
 
 
 def test_two_component_counts_match_proposal():
-    phan_thiet = list(itertools.product(ALL_UNMARKED, [JOIN], ALL_CHI_TU))
-    hop_thu = list(itertools.product(ALL_CHI_TU, [JOIN], ALL_UNMARKED))
+    phan_thiet = list(itertools.product(ALL_UNMARKED, [JOIN], ALL_CHI))
+    hop_thu = list(itertools.product(ALL_CHI, [JOIN], ALL_UNMARKED))
     assert count_valid(phan_thiet) == 2_310
     assert count_valid(hop_thu) == 110
     assert count_valid(phan_thiet) + count_valid(hop_thu) == 2_420
 
 
 def test_tham_thu_count_matches_proposal():
-    on_hop_thu = itertools.product(ALL_CHI_TU, [JOIN], ALL_UNMARKED, [COMB], ALL_CHI_TU)
+    on_hop_thu = itertools.product(ALL_CHI, [JOIN], ALL_UNMARKED, [COMB], ALL_CHI)
     assert count_valid(on_hop_thu) == 110 * 110 == 12_100
 
 
 def test_every_cluster_takes_any_of_eight_tones():
     tones = [tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS]
-    samples = [ALL_MARKED_CAN[0], ALL_CHI_TU[0], ALL_UNMARKED[0], pt(1, 2), hop(1), hop(1) + COMB + CT(3, 0)]
+    samples = [ALL_MARKED_CAN[0], ALL_CHI[0], ALL_UNMARKED[0], pt(1, 2), hop(1), hop(1) + COMB + CH(3, 0)]
     assert count_valid((s, t) for s in samples for t in tones) == len(samples) * 8
 
 
@@ -148,13 +148,13 @@ def test_every_cluster_takes_any_of_eight_tones():
 
 WELL_FORMED = {
     "standalone marked Cán": marked_can(3),
-    "standalone Chi Tự": CT(3, 1),
+    "standalone Chi": CH(3, 1),
     "standalone unmarked Cán": CU(3),
     "phản thiết pair": pt(3, 5, 2),
     "Hợp Thư": hop(3, 2),
-    "Tham Thư": hop(3, 2) + COMB + CT(9, 0),
+    "Tham Thư": hop(3, 2) + COMB + CH(9, 0),
     "marked Cán with tone": marked_can(3) + TONE,
-    "Tham Thư with tone": hop(3, 2) + COMB + CT(9, 0) + TONE,
+    "Tham Thư with tone": hop(3, 2) + COMB + CH(9, 0) + TONE,
 }
 
 
@@ -167,20 +167,20 @@ def test_well_formed_cluster(name):
 
 
 ILL_FORMED = [
-    (CU(3) + JOIN + marked_can(4), "component joiner must stand between a Chi Tự and an unmarked Cán"),
-    (CU(3) + JOIN + CU(4), "component joiner must stand between a Chi Tự and an unmarked Cán"),
-    (CT(3, 0) + JOIN + CT(4, 0), "component joiner must stand between a Chi Tự and an unmarked Cán"),
-    (JOIN + CT(4, 0), "component joiner must stand between a Chi Tự and an unmarked Cán"),
-    (CU(3) + COMB + CT(4, 0), q.NOT_JOINED),
-    (CT(1, 0) + COMB, "combiner without a component on both sides"),
-    (COMB + CT(1, 0), "combiner without a component on both sides"),
-    (CT(1, 0) + JOIN, "component joiner must stand between a Chi Tự and an unmarked Cán"),
-    (hop(1) + JOIN + CT(2, 0), "more than one component joiner"),
-    (hop(1) + COMB + hop(2), "top component of a Tham Thư must be a single Chi Tự"),
-    (hop(1) + COMB + CT(2, 0) + COMB + CT(3, 0), "more than one combiner"),
-    (marked_can(1) + COMB + CT(2, 0), "marked Cán combined with other components"),
-    (CT(1, 0) + TONE + COMB + CT(2, 0), "tone mark inside a cluster"),
-    (CT(1, 0) + TONE + TONE, "more than one tone mark"),
+    (CU(3) + JOIN + marked_can(4), "component joiner must stand between a Chi and an unmarked Cán"),
+    (CU(3) + JOIN + CU(4), "component joiner must stand between a Chi and an unmarked Cán"),
+    (CH(3, 0) + JOIN + CH(4, 0), "component joiner must stand between a Chi and an unmarked Cán"),
+    (JOIN + CH(4, 0), "component joiner must stand between a Chi and an unmarked Cán"),
+    (CU(3) + COMB + CH(4, 0), q.NOT_JOINED),
+    (CH(1, 0) + COMB, "combiner without a component on both sides"),
+    (COMB + CH(1, 0), "combiner without a component on both sides"),
+    (CH(1, 0) + JOIN, "component joiner must stand between a Chi and an unmarked Cán"),
+    (hop(1) + JOIN + CH(2, 0), "more than one component joiner"),
+    (hop(1) + COMB + hop(2), "top component of a Tham Thư must be a single Chi"),
+    (hop(1) + COMB + CH(2, 0) + COMB + CH(3, 0), "more than one combiner"),
+    (marked_can(1) + COMB + CH(2, 0), "marked Cán combined with other components"),
+    (CH(1, 0) + TONE + COMB + CH(2, 0), "tone mark inside a cluster"),
+    (CH(1, 0) + TONE + TONE, "more than one tone mark"),
     (TONE, "tone mark without a base"),
     (HAN + TONE, "QATT code point combined with a code point outside the block"),
 ]
@@ -196,10 +196,10 @@ def test_ill_formed_cluster(seq, reason):
 # Not attested, not prohibited (proposal 5.3): rejected by default, accepted with extended=True.
 UNATTESTED = [
     (pt(3, 3, 1), q.SAME_BASE_PHAN_THIET),
-    (CT(3, 1) + JOIN + CU(4), q.MIXED_HOP_THU),
-    (pt(3, 5, 2) + COMB + CT(9, 0), q.NOT_HOP_THU_BASE),
-    (CT(3, 1) + COMB + CT(9, 0), q.NOT_HOP_THU_BASE),
-    (CT(3, 1) + JOIN + CU(4) + COMB + CT(9, 0), q.MIXED_HOP_THU),
+    (CH(3, 1) + JOIN + CU(4), q.MIXED_HOP_THU),
+    (pt(3, 5, 2) + COMB + CH(9, 0), q.NOT_HOP_THU_BASE),
+    (CH(3, 1) + COMB + CH(9, 0), q.NOT_HOP_THU_BASE),
+    (CH(3, 1) + JOIN + CU(4) + COMB + CH(9, 0), q.MIXED_HOP_THU),
 ]
 
 
@@ -211,47 +211,47 @@ def test_unattested_but_not_prohibited(seq, reason):
 
 
 def test_ill_formed_chain_is_one_cluster():
-    chain = CT(1, 0) + COMB + CT(2, 0) + COMB + CT(3, 0) + COMB + CT(4, 0)
+    chain = CH(1, 0) + COMB + CH(2, 0) + COMB + CH(3, 0) + COMB + CH(4, 0)
     [cluster] = q.analyse(chain)
     assert not cluster.valid
 
 
 def test_mixed_text():
-    text = HAN + pt(0, 1, 1) + TONE + hop(2) + CT(2, 2) + HAN
-    assert q.segment(text) == [HAN, pt(0, 1, 1) + TONE, hop(2), CT(2, 2), HAN]
+    text = HAN + pt(0, 1, 1) + TONE + hop(2) + CH(2, 2) + HAN
+    assert q.segment(text) == [HAN, pt(0, 1, 1) + TONE, hop(2), CH(2, 2), HAN]
     assert q.is_well_formed(text)
 
 
-def test_adjacent_chi_tu_are_separate_clusters():
-    assert q.segment(CT(1, 0) + CT(1, 0)) == [CT(1, 0), CT(1, 0)]
+def test_adjacent_chi_are_separate_clusters():
+    assert q.segment(CH(1, 0) + CH(1, 0)) == [CH(1, 0), CH(1, 0)]
 
 
 def test_components_without_joiner_stay_separate():
-    # Passage of the form 如{CU}{CT}反切云{CU}{CU}... (proposal 3.2).
-    text = "如" + CU(1) + CT(2, 0) + "反切云" + CU(3) + CU(4) + "鳥衣"
-    assert q.segment(text) == ["如", CU(1), CT(2, 0), "反", "切", "云", CU(3), CU(4), "鳥", "衣"]
+    # Passage of the form 如{CU}{CH}反切云{CU}{CU}... (proposal 3.2).
+    text = "如" + CU(1) + CH(2, 0) + "反切云" + CU(3) + CU(4) + "鳥衣"
+    assert q.segment(text) == ["如", CU(1), CH(2, 0), "反", "切", "云", CU(3), CU(4), "鳥", "衣"]
     assert q.is_well_formed(text)
-    assert q.segment(hop(1) + CT(1, 0)) == [hop(1), CT(1, 0)]
+    assert q.segment(hop(1) + CH(1, 0)) == [hop(1), CH(1, 0)]
     assert q.segment(CU(1) + HAN) == [CU(1), HAN]
 
 
 def test_is_hop_thu_and_is_phan_thiet():
     assert q.is_hop_thu(hop(3))
-    assert q.is_hop_thu(hop(3) + COMB + CT(8, 0))
+    assert q.is_hop_thu(hop(3) + COMB + CH(8, 0))
     assert not q.is_hop_thu(pt(3, 3, 4))
-    assert not q.is_hop_thu(CT(3, 4))
+    assert not q.is_hop_thu(CH(3, 4))
     assert q.is_phan_thiet(pt(3, 4))
     assert not q.is_phan_thiet(hop(3))
 
 
 def test_examples_from_section_5_5():
-    b, a = CT(1, 0), CU(1)
+    b, a = CH(1, 0), CU(1)
     # With the joiner each reading has one spelling.
     assert q.segment(b + JOIN + a + b) == [b + JOIN + a, b]
     assert q.segment(b + a + JOIN + b) == [b, a + JOIN + b]
     assert q.segment(b + a + b) == [b, a, b]
-    # Deleting the top component of a Tham Thư merges the next Chi Tự into it.
-    x, z, w = hop(1), CT(2, 0), CT(3, 0)
+    # Deleting the top component of a Tham Thư merges the next Chi into it.
+    x, z, w = hop(1), CH(2, 0), CH(3, 0)
     assert q.analyse(x + COMB + z + w) == [q.Cluster(x + COMB + z, None), q.Cluster(w, None)]
     assert q.analyse(x + COMB + w) == [q.Cluster(x + COMB + w, None)]
     # Deleting the combiner splits the cluster.
@@ -260,14 +260,14 @@ def test_examples_from_section_5_5():
 
 # --- Properties --------------------------------------------------------------
 
-ALPHABET = (ALL_UNMARKED + ALL_MARKED_CAN + ALL_CHI_TU + [COMB, JOIN]
+ALPHABET = (ALL_UNMARKED + ALL_MARKED_CAN + ALL_CHI + [COMB, JOIN]
             + [tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS]
             + [chr(q.BLOCK_BASE + 0xA4), HAN, " "])
 
 # Skewed towards the code points that join, so long clusters and chains are common.
 code_points = st.one_of(
     st.sampled_from(ALPHABET),
-    st.sampled_from([COMB, JOIN, JOIN, CU(0), CU(5), TONE, CT(0, 0), CT(5, 3)]),
+    st.sampled_from([COMB, JOIN, JOIN, CU(0), CU(5), TONE, CH(0, 0), CH(5, 3)]),
 )
 texts = st.lists(code_points, max_size=30).map("".join)
 
@@ -314,7 +314,7 @@ def test_segment_concatenates_to_input(text):
 
 
 def well_formed_cluster():
-    ct = st.builds(chi_tu, st.integers(0, 21), st.integers(0, 4))
+    ct = st.builds(chi, st.integers(0, 21), st.integers(0, 4))
     ca = st.builds(marked_can, st.integers(0, 21))
     phan_thiet = (st.tuples(st.integers(0, 21), st.integers(0, 21), st.integers(0, 4))
                   .filter(lambda t: t[0] != t[1])
