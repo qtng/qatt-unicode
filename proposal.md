@@ -24,7 +24,7 @@ Quốc Âm Tân Tự (國音新字, "new script for the sounds of the national l
 
 ### 2.1 Background
 
-The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text names the script in the heading of its preface, 國音新字序, "preface to the new script for the sounds of the national language" (p. 1). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa (p. 1). The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành, at the end of the preface (p. 2). The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents).
+The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text names the script in the heading of its preface, 國音新字序, "preface to the new script for the sounds of the national language" (p. 1). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa (p. 1). \[TBD: reference for the taboo and for Hồ Thị Hoa as the emperor's mother\] The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành, at the end of the preface (p. 2). The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents). \[TBD: catalogue reference (E32)\]
 
 In the source the script appears within Hán Nôm text and is treated exactly like Hán Nôm characters. The source contains no running text written in the script: it gives single characters as examples and spelling formulas in the phản thiết manner (4.1). Three-component characters (Tham Thư) are attested in two examples; their reading is not established (4.3). Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: scholarly literature\]
 
@@ -34,14 +34,14 @@ In the source the script appears within Hán Nôm text and is treated exactly li
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are manuscripts of the same vertical Hán Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Both are bound in one volume with continuous folio numbers, Source 1 on folios 3–10 and Source 2 on folios 11–18; page references in this proposal give the page within each manuscript, 1 to 8. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 1; since both witnesses share the page numbering and the layout of the columns, they apply to Source 2 as well. Source 2 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are manuscripts of the same vertical Hán Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Both are bound in one volume with continuous folio numbers, Source 1 on folios 3–10 and Source 2 on folios 11–18; page references in this proposal give the page within each manuscript, 1 to 8. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. The two sources are one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 1; since both witnesses share the page numbering and the layout of the columns, they apply to Source 2 as well. Source 2 is named only where it differs or where its reading matters.
 
 ### 3.1 Attested sources
 
 | Source | Date | Location | Text type | Direction |
 | --- | --- | --- | --- | --- |
 | Source 1 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Hán Nôm, 4 double pages | Vertical |
-| Source 2 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Hán Nôm, 4 double pages; corrects Source 1 | Vertical |
+| Source 2 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Hán Nôm, 4 double pages | Vertical |
 
 Both manuscripts share the shelfmark AB.630. The date is that of the text, from the naming taboo (2.1); the dates of the two copies are not known.
 
@@ -74,26 +74,26 @@ Quốc Âm Tân Tự is built from 22 bases, each in seven forms. Every form can
 
 ### 4.1 Components
 
-Each of the 22 bases (*Cán*) consists of three strokes and, in its marked form, one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In the Cán of the source listing it sits at the start position, upper left or upper middle depending on the base; this form is the *marked Cán*. Moving the marking stroke counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi*), in order. Omitting it yields one unmarked form per base. The source gives this form no name of its own; this proposal calls it the *unmarked Cán*, a description of the form. In the count section the source calls both the Cán standing alone (單幹書) and the component of a combination, which is always the unmarked form, 幹 (幹体, p. 8). Because every Chi moves the marking stroke, no Chi coincides with the marked Cán: each base has six distinct marked forms and one unmarked form.
+Each of the 22 bases (*Cán*) consists of three strokes and, in its marked form, one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In the Cán of the source listing it sits at the start position, upper left or upper middle depending on the base; this form is the *marked Cán*. The marking stroke at the five other positions, counted counter-clockwise from one stroke end to the next, gives the five forms *Chi*, in order. A seventh form has no marking stroke; the source gives it no name of its own, and this proposal calls it the *unmarked Cán*, a description of the form. In the count section the source calls both the Cán standing alone (單幹書) and the component of a combination, which is always the unmarked form, 幹 (幹体, p. 8). Because the marking stroke of every Chi lies at another position than that of the marked Cán, no Chi coincides with the marked Cán: each base has six distinct marked forms and one unmarked form.
 
 The source lists the 22 Cán with their names (p. 2), and the Chi in the section 枝字一百一十字, "the 110 Chi", in blocks of five per base (pp. 3–4); the table shows 109, one having been left out by oversight.
 
-The three classes have distinct functions. An unmarked Cán gives the initial consonant of its base, and a Chi gives a rhyme; together the 110 Chi form the rhyme table of the script. A marked Cán stands for the whole syllable of its initial with the rhyme ông and names its base; it serves to pronounce the unmarked Cán in the phản thiết method. The unmarked Cán and the Chi also serve as the components of a Tham Thư (4.3).
+The three classes have distinct functions. An unmarked Cán gives the initial consonant of its base, and a Chi gives a rhyme; together the 110 Chi form the rhyme table of the script. A marked Cán stands for the whole syllable of its initial with the rhyme ông and names its base; it serves to pronounce the unmarked Cán in the phản thiết method. The unmarked Cán and the Chi also serve as the components of a Tham Thư (4.3). \[TBD: passages for these functions (E06, E08)\]
 
 The source contains no running text in the script. Within its Hán Nôm text it gives single characters as examples and spelling formulas in the phản thiết manner, so whether a component may stand alone in running text cannot be decided from it. In these examples the marked Cán, the unmarked Cán and the Chi all appear standalone, also with tone marks. A standalone unmarked Cán has the same reading as the marked Cán of its base: the source illustrates the eight tones on the standalone unmarked Cán of đông (p. 5). Only the unmarked Cán and the Chi combine; the marked Cán never does. Outside the listing of the 22 Cán (p. 2) the marked Cán occurs only twice, both times as a separate character with a reading, in the chapter on the Hợp Thư (p. 6, p. 7); the second carries a tone mark.
 
-| Component | Count | Derivation | Standalone | In combination |
+| Component | Count | Form | Standalone | In combination |
 | --- | --- | --- | --- | --- |
-| Marked Cán | 22 | 3 strokes + 1 marking stroke | yes | never |
-| Chi | 110 (22 × 5) | marking stroke repositioned | yes | yes |
-| Unmarked Cán | 22 | marking stroke omitted | yes, with the reading of the marked Cán | with a Chi |
+| Marked Cán | 22 | marking stroke at position 1 | yes | never |
+| Chi | 110 (22 × 5) | marking stroke at position 2 to 6 | yes | yes |
+| Unmarked Cán | 22 | no marking stroke | yes, with the reading of the marked Cán | with a Chi |
 
 ### 4.2 Two-component characters: phản thiết and Hợp Thư
 
 An unmarked Cán and a Chi combine into one character. The source describes two methods.
 
-- **Phản thiết.** The unmarked Cán and the Chi derive from different Cán, and the unmarked Cán comes first. The unmarked Cán gives the initial and the Chi the rhyme, as in the Chinese fanqie (反切) method of spelling a syllable by the initial of one character and the rhyme of another. The section Phản Thiết Hài Âm Pháp (反切諧音法) describes these pairs; the source gives them no name of its own, and this proposal calls them phản thiết pairs. A phản thiết pair of the same base would add nothing to the Chi, so the source writes the Chi alone instead.
-- **Hợp Thư.** The Chi and the unmarked Cán derive from the same Cán, and the Chi comes first. The source describes this arrangement as an exchange of positions. It is not only visual: compared with a phản thiết pair, the components also exchange their functions, so that the Chi gives the initial consonant and the unmarked Cán the rhyme. There are 110 Hợp Thư, one for each Chi.
+- **Phản thiết.** The unmarked Cán and the Chi belong to different Cán, and the unmarked Cán comes first. The unmarked Cán gives the initial and the Chi the rhyme, as in the Chinese fanqie (反切) method of spelling a syllable by the initial of one character and the rhyme of another. The section Phản Thiết Hài Âm Pháp (反切諧音法) describes these pairs; the source gives them no name of its own, and this proposal calls them phản thiết pairs. A phản thiết pair of the same base would add nothing to the Chi, so the source writes the Chi alone instead. \[TBD: E09\]
+- **Hợp Thư.** The Chi and the unmarked Cán belong to the same Cán, and the Chi comes first. The source describes this arrangement as an exchange of positions. It is not only visual: compared with a phản thiết pair, the components also exchange their functions, so that the Chi gives the initial consonant and the unmarked Cán the rhyme. There are 110 Hợp Thư, one for each Chi.
 
 When the source explains these methods, it also writes components on their own and side by side without combining them (3.2). In both methods the written order of the components is also their reading order: initial, then rhyme.
 
@@ -116,7 +116,7 @@ A tone mark is a circle or a semicircle placed in one of the four corners of the
 
 The neutral tone ngang has its own mark, a semicircle in the lower left corner (p. 6). A character carries at most one tone mark, and many carry none; on p. 6 a passage marks every Quốc Âm Tân Tự character with the neutral tone except the last two, which carry no mark. An unmarked character therefore leaves the tone unspecified. Standalone components carry tone marks as well (p. 6).
 
-The source does not specify the orientation of the semicircle; every example shows its open side facing the centre of the character. Round and angular forms of the semicircle are handwriting variation, not different marks: Source 1 writes the same mark now round, now close to a hook, while Source 2 writes every tone mark of the passage on p. 6 angular.
+The source does not specify the orientation of the semicircle; every example shows its open side facing the centre of the character. \[TBD: E16\] Round and angular forms of the semicircle are handwriting variation, not different marks: Source 1 writes the same mark now round, now close to a hook, while Source 2 writes every tone mark of the passage on p. 6 angular.
 
 ### 4.5 Layout
 
@@ -329,8 +329,8 @@ Thirteen points remain before the proposal can be submitted. The alternatives al
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
 | UTC Proposal Summary Form | 1 | Completed form |
 | Scholarly literature | 2.1, D | References |
-| Places where Source 2 corrects Source 1 | 3 | List in the corrections file of the evidence catalogue |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
+| Evidence for the naming taboo, the catalogue classification, the omission convention and the semicircle orientation | 2.1, 4.2, 4.4 | E32, E09, E16; reference for the taboo |
 | Open evidence items listed in 3.2 | 3.2, B, C | Passages, pages and images |
 | Layout of the components in two-component characters and Tham Thư | 4.5, 8 | Positions from the source examples; the count section names left and right (p. 8, E36) |
 | Table of the 110 Chi | 4.1, 7.1 | Source passage and image; check of the numbering against it |
@@ -345,9 +345,9 @@ Thirteen points remain before the proposal can be submitted. The alternatives al
 
 | Term | Meaning |
 | --- | --- |
-| Cán | One of 22 base components of three strokes, listed in the section 幹音二十二字 (p. 2); each exists as a marked Cán and as an unmarked Cán |
+| Cán | One of the 22 bases, each of three strokes, listed in the section 幹音二十二字 (p. 2); each exists as a marked Cán and as an unmarked Cán |
 | Marked Cán | The Cán with the marking stroke at the start position (22 in total); standalone only, never combined; character name MARKED-1 |
-| Chi | One of five variants per Cán, made by repositioning the marking stroke (110 in total); standalone or combined |
+| Chi | One of the five forms per Cán with the marking stroke at position 2 to 6 (110 in total); standalone or combined |
 | Unmarked Cán | The form of a base without a marking stroke (22 in total); combines with a Chi; standalone, it has the reading of the marked Cán; character name UNMARKED |
 | Phản thiết pair | Combination of an unmarked Cán and a Chi of different Cán, unmarked Cán first, joined by the component joiner; described under Phản Thiết Hài Âm Pháp (反切諧音法); 2,310 in total; descriptive term of this proposal, unnamed in the source |
 | Hợp Thư | Combination of a Chi and an unmarked Cán of the same Cán, joined by the component joiner; the Chi gives the initial, the unmarked Cán the rhyme; 110 in total |

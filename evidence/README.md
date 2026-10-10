@@ -72,7 +72,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E20](E20.md) | Date and provenance of source 1 | 2.1, 3.1 | – | located |
 | [E21](E21.md) | Date and provenance of source 2 | 2.1, 3.1 | – | located |
 | [E22](E22.md) | Modern use of the script, including written forms in online discussion | 3.3 | – | missing |
-| [E23](E23.md) | Source 2 has the same content and page numbering as Source 1 and corrects unclear Quốc Âm Tân Tự characters and obvious scribal errors; whether it was copied from Source 1 or from an earlier original cannot be determined | 1, 3 | – | located |
+| [E23](E23.md) | Source 2 has the same content and page numbering as Source 1; whether it was copied from Source 1 or from an earlier original cannot be determined | 1, 3 | – | located |
 | [E24](E24.md) | Tone marks are optional: marked and unmarked characters in the same passage | 4.4, 5.6 | 6 | located |
 | [E25](E25.md) | The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone | 4.4, 5.6 | 6 | located |
 | [E26](E26.md) | Tone marks on standalone components (unmarked Cán and Chi) | 4.4, 5.3 | 6 | located |
