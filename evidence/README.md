@@ -57,8 +57,8 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E04](E04.md) | Components written standalone and side by side when the text explains combination, including a standalone Cán Lược and two adjacent Cán Lược | 3.2, 4.1, 5.4 | 6 | located |
 | [E05](E05.md) | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | 3.2, 4.2 | 5 | located |
 | [E06](E06.md) | Function in a phản thiết pair: the Cán Lược gives the initial, the Chi Tự the rhyme | 4.2 | – | located |
-| [E07](E07.md) | Hợp Thư: same-base pairs only, Chi Tự first (scope of the term) | 3.2, 4.2, 5.7 | – | missing |
-| [E08](E08.md) | Function in a Hợp Thư: Chi Tự gives the initial, Cán Lược the rhyme (main argument for the reading order) | 4.2, 5.4 | – | missing |
+| [E07](E07.md) | Hợp Thư: same-base pairs only, Chi Tự first (scope of the term) | 3.2, 4.2, 5.7 | 6 | located |
+| [E08](E08.md) | Function in a Hợp Thư: Chi Tự gives the initial, Cán Lược the rhyme (main argument for the reading order) | 4.2, 5.4 | 6 | located |
 | [E09](E09.md) | Omission convention: a same-base phản thiết pair is written as the Chi Tự alone | 3.2, 4.2 | – | missing |
 | [E10](E10.md) | Tham Thư rule: the base is a Hợp Thư | 4.3 | – | missing |
 | [E11](E11.md) | Reading of a Tham Thư and function of its components | 4.3 | – | missing |
