@@ -42,7 +42,9 @@ Transcriptions write QATT characters as placeholders until a font exists: `{CL �
 
 Cite Source 2, the corrected copy, and add Source 1 only where it differs or where its reading matters. The proposal cites by page only, for example (p. 2), and names a source only where it matters.
 
-Images go in `images/`, named after the entry id, for example `E08-1.png` (Source 1) and `E08-2.png` (Source 2). Publish scans only where the holding institution permits it.
+Full pages are in `pages/`: `S1-p1.jpg` … `S1-p8.jpg` for Source 1 and `S2-p1.jpg` … `S2-p8.jpg` for Source 2, extracted unchanged from the scan of the volume (folios 3–18, 785 × 1525 pixels each). An entry can show a full page by giving its path, for example `image: [pages/S2-p4.jpg, pages/S1-p4.jpg]`.
+
+Cut-outs go in `images/`, named after the entry id, for example `E08-1.png` (Source 1) and `E08-2.png` (Source 2). Publish scans only where the holding institution permits it.
 
 ## Overview
 

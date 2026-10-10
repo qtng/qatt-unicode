@@ -25,6 +25,12 @@ def entry_files() -> list[Path]:
                   key=lambda p: (int(re.sub(r"\D", "", p.stem)), p.stem))
 
 
+def image_path(image: str) -> str:
+    """Path of an image relative to the evidence folder: a cut-out in images/ or a
+    full page given as pages/S1-p3.jpg."""
+    return image if "/" in image else f"images/{image}"
+
+
 def parse(text: str) -> dict:
     _, header, body = text.split("---\n", 2)
     entry: dict = {}
@@ -57,7 +63,7 @@ def render(entry: dict) -> str:
         lines.append(f"{key}: {value}".rstrip())
     lines += ["---", ""]
     for image, source in zip(entry.get("image", []), entry.get("source", [])):
-        lines.append(f"![{source}](images/{image})")
+        lines.append(f"![{source}]({image_path(image)})")
     if entry.get("image"):
         lines.append("")
     for field in BODY_FIELDS:

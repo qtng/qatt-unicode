@@ -10,7 +10,7 @@ def test_entries_are_consistent():
         assert e["status"] in evidence.STATUSES, e["id"]
         assert len(e["image"]) in (0, len(e["source"])), e["id"]
         for image in e["image"]:
-            assert (evidence.EVIDENCE / "images" / image).is_file(), (e["id"], image)
+            assert (evidence.EVIDENCE / evidence.image_path(image)).is_file(), (e["id"], image)
         if e["status"] == "cited":
             assert e["page"] and e["image"] and e["transcription"], e["id"]
 
@@ -28,3 +28,8 @@ def test_headers_are_valid_yaml():
         header = f.read_text(encoding="utf-8").split("---\n")[1]
         data = yaml.safe_load(header)
         assert data["id"] == f.stem
+
+
+def test_all_pages_present():
+    names = {p.name for p in (evidence.EVIDENCE / "pages").glob("*.jpg")}
+    assert names == {f"S{s}-p{p}.jpg" for s in (1, 2) for p in range(1, 9)}

@@ -373,7 +373,7 @@ Passages located in the source, by page. Page references are to Source 2 (sectio
 
 ### C. Scans of the sources
 
-&#91;TBD: images of the relevant pages\]
+All 16 pages of both manuscripts (Source 1, pp. 1–8, folios 3–10; Source 2, pp. 1–8, folios 11–18) are in the evidence catalogue of the working repository. \[TBD: include the pages in the submitted document, subject to permission of the Institute of Hán Nôm Studies\]
 
 ### D. References
 
