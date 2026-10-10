@@ -1,4 +1,4 @@
-> **Archived variant (broad reading of Hợp Thư).** Hợp Thư covers every Cán Lược + Chi Tự pair; a Tham Thư base may be any Hợp Thư or a single Chi Tự. Superseded; see proposal.md (current) and proposal-narrow.md. Kept for reference.
+> **Archived variant (broad reading of Hợp Thư).** Hợp Thư covers every Cán Lược + Chi Tự pair; a Tham Thư base may be any Hợp Thư or a single Chi Tự. Superseded; see proposal.md (current), proposal-3c.md and proposal-narrow.md. Kept for reference.
 
 # QATT Unicode Proposal – Draft
 

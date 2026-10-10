@@ -1,19 +1,18 @@
 """Validation and cluster segmentation for Quốc Âm Tân Tự (QATT) sequences.
 
 Reference implementation of the encoding model in proposal.md (sections 5 and 6).
-Components are stored in reading order; a Hợp Thư is Chi Tự + Hợp Thư joiner +
-Cán Lược, and nothing is reordered.
+Components are stored in reading order and nothing is reordered. Every
+combination is written with an explicit joiner; components without a joiner are
+separate characters.
 
 Segmentation and validation are separate steps:
 
-* ``segment`` splits text into clusters with local rules only, in the style of
-  UAX #29. Whether to break between two adjacent code points depends on those two
-  code points and, for one rule, the code point before them:
+* ``segment`` splits text into clusters with pairwise rules only, in the style
+  of UAX #29. Whether to break between two adjacent code points depends on those
+  two code points and nothing else:
 
-      CanLuoc  x  (any)        Cán Lược behaves like Prepend ...
-      HJ CanLuoc ÷ (any)       ... except directly after the Hợp Thư joiner
       (any)    x  ToneMark     tone marks behave like Extend
-      (any)    x  Joiner       never break before a joiner (HJ or COMB)
+      (any)    x  Joiner       never break before a joiner (JOIN or COMB)
       Joiner   x  (any)        never break after a joiner
       otherwise ÷
 
@@ -24,9 +23,9 @@ Segmentation and validation are separate steps:
   proposal, which describes the attested forms:
 
       Character := Cluster [ToneMark]
-      Cluster   := CanTu | ChiTu | PhanThiet | HopThu | ThamThu
-      PhanThiet := CanLuoc(X) ChiTu(Y)                X ≠ Y
-      HopThu    := ChiTu(X) HopThuJoiner CanLuoc(X)   same Cán Tự X
+      Cluster   := CanTu | ChiTu | CanLuoc | PhanThiet | HopThu | ThamThu
+      PhanThiet := CanLuoc(X) Joiner ChiTu(Y)     X ≠ Y
+      HopThu    := ChiTu(X) Joiner CanLuoc(X)     same Cán Tự X
       ThamThu   := HopThu Combiner ChiTu
 
   With ``extended=True`` it accepts the sequences the proposal leaves
@@ -54,7 +53,7 @@ CAN_TU_OFFSET = 0x00          # +00..+15, 22 code points
 CAN_LUOC_OFFSET = 0x16        # +16..+2B, 22 code points
 CHI_TU_OFFSET = 0x2C          # +2C..+99, 110 code points, five per base
 COMBINER_OFFSET = 0x9A        # +9A, Tham Thư combiner
-HOP_THU_JOINER_OFFSET = 0x9B  # +9B
+JOINER_OFFSET = 0x9B          # +9B, component joiner
 TONE_OFFSET = 0x9C            # +9C..+A3, 8 code points
 RESERVED_OFFSET = 0xA4        # +A4..+AF
 BLOCK_SIZE = 0xB0             # 176
@@ -68,15 +67,15 @@ class Kind(Enum):
     CAN_LUOC = "L"
     CHI_TU = "C"
     COMBINER = "J"
-    HOP_THU_JOINER = "H"
+    JOINER = "H"
     TONE = "T"
     OTHER = "O"  # outside the block, or a reserved code point
 
 
 # Letter codes of Kind, used to match the grammar as a regular expression.
-_ATTESTED_RE = re.compile(r"(?:A|C|LC|CHL|CHLJC)T?")
-_EXTENDED_RE = re.compile(r"(?:A|C|LC|CHL|(?:CHL|LC|C)JC)T?")
-_JOINERS = (Kind.COMBINER, Kind.HOP_THU_JOINER)
+_ATTESTED_RE = re.compile(r"(?:A|C|L|LHC|CHL|CHLJC)T?")
+_EXTENDED_RE = re.compile(r"(?:A|C|L|LHC|CHL|(?:CHL|LHC|C)JC)T?")
+_JOINERS = (Kind.COMBINER, Kind.JOINER)
 
 
 def can_tu(base: int) -> str:
@@ -97,7 +96,7 @@ def chi_tu(base: int, position: int) -> str:
 
 
 COMBINER = chr(BLOCK_BASE + COMBINER_OFFSET)
-HOP_THU_JOINER = chr(BLOCK_BASE + HOP_THU_JOINER_OFFSET)
+JOINER = chr(BLOCK_BASE + JOINER_OFFSET)
 
 
 def tone(shape: str, corner: str) -> str:
@@ -123,8 +122,8 @@ def kind(ch: str) -> Kind:
         return Kind.CHI_TU
     if offset == COMBINER_OFFSET:
         return Kind.COMBINER
-    if offset == HOP_THU_JOINER_OFFSET:
-        return Kind.HOP_THU_JOINER
+    if offset == JOINER_OFFSET:
+        return Kind.JOINER
     return Kind.TONE
 
 
@@ -141,15 +140,10 @@ def base_of(ch: str) -> int | None:
     return None
 
 
-def is_break(prev: str | None, before: str, after: str) -> bool:
-    """Whether a cluster boundary lies between `before` and `after`.
-    `prev` is the code point before `before`, or None at the start of the text."""
+def is_break(before: str, after: str) -> bool:
+    """Whether a cluster boundary lies between two adjacent code points."""
     k_before, k_after = kind(before), kind(after)
-    if k_after is Kind.TONE or k_after in _JOINERS or k_before in _JOINERS:
-        return False
-    if k_before is Kind.CAN_LUOC:
-        return prev is not None and kind(prev) is Kind.HOP_THU_JOINER
-    return True
+    return not (k_after is Kind.TONE or k_after in _JOINERS or k_before in _JOINERS)
 
 
 def segment(text: str) -> list[str]:
@@ -158,8 +152,7 @@ def segment(text: str) -> list[str]:
     clusters: list[str] = []
     start = 0
     for i in range(1, len(text)):
-        prev = text[i - 2] if i >= 2 else None
-        if is_break(prev, text[i - 1], text[i]):
+        if is_break(text[i - 1], text[i]):
             clusters.append(text[start:i])
             start = i
     if text:
@@ -180,6 +173,7 @@ class Cluster:
 NOT_HOP_THU_BASE = "base of a Tham Thư must be a Hợp Thư"
 SAME_BASE_PHAN_THIET = "same-base phản thiết pair is written as the Chi Tự alone"
 MIXED_HOP_THU = "Hợp Thư joins a Chi Tự and a Cán Lược of different Cán Tự"
+NOT_JOINED = "components must be combined with the component joiner"
 
 
 def validate_cluster(cluster: str, extended: bool = False) -> str | None:
@@ -201,7 +195,7 @@ def validate_cluster(cluster: str, extended: bool = False) -> str | None:
     if extended:
         return None
     core = kinds.rstrip("T")
-    if core == "LC" and base_of(cluster[0]) == base_of(cluster[1]):
+    if core == "LHC" and base_of(cluster[0]) == base_of(cluster[2]):
         return SAME_BASE_PHAN_THIET
     if core.startswith("CHL") and base_of(cluster[0]) != base_of(cluster[2]):
         return MIXED_HOP_THU
@@ -223,17 +217,14 @@ def _describe(kinds: str, extended: bool) -> str:
     if "J" in core and core.split("J", 1)[1] != "C":
         return "top component of a Tham Thư must be a single Chi Tự"
     if core.count("H") > 1:
-        return "more than one Hợp Thư joiner"
+        return "more than one component joiner"
     for i, k in enumerate(core):
-        if k == "H" and not (0 < i < len(core) - 1 and core[i - 1] == "C" and core[i + 1] == "L"):
-            return "Hợp Thư joiner must stand between a Chi Tự and a Cán Lược"
+        if k == "H" and (i == 0 or core[i - 1:i + 2] not in ("CHL", "LHC")):
+            return "component joiner must stand between a Chi Tự and a Cán Lược"
     if "A" in core:
         return "Cán Tự combined with other components"
-    for i, k in enumerate(core):
-        after_joiner = i > 0 and core[i - 1] == "H"
-        before_chi_tu = i + 1 < len(core) and core[i + 1] == "C"
-        if k == "L" and not (after_joiner or before_chi_tu):
-            return "Cán Lược neither followed by a Chi Tự nor joined to a preceding one"
+    if "L" in core and "H" not in core:
+        return NOT_JOINED
     if "J" in core and not extended and core.split("J", 1)[0] != "CHL":
         return NOT_HOP_THU_BASE
     return "sequence does not match the grammar"
@@ -249,8 +240,14 @@ def is_well_formed(text: str, extended: bool = False) -> bool:
 
 
 def is_hop_thu(cluster: str) -> bool:
-    """Whether the cluster begins with a Hợp Thư: Chi Tự, Hợp Thư joiner, Cán Lược."""
-    return (len(cluster) >= 3
-            and kind(cluster[0]) is Kind.CHI_TU
-            and kind(cluster[1]) is Kind.HOP_THU_JOINER
-            and kind(cluster[2]) is Kind.CAN_LUOC)
+    """Whether the cluster begins with a Hợp Thư: Chi Tự, joiner, Cán Lược."""
+    return _starts_with(cluster, Kind.CHI_TU, Kind.JOINER, Kind.CAN_LUOC)
+
+
+def is_phan_thiet(cluster: str) -> bool:
+    """Whether the cluster begins with a phản thiết pair: Cán Lược, joiner, Chi Tự."""
+    return _starts_with(cluster, Kind.CAN_LUOC, Kind.JOINER, Kind.CHI_TU)
+
+
+def _starts_with(cluster: str, *kinds: Kind) -> bool:
+    return len(cluster) >= len(kinds) and all(kind(c) is k for c, k in zip(cluster, kinds))

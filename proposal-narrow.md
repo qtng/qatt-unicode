@@ -1,4 +1,4 @@
-> **Archived variant (narrow reading, automatic exchange).** Hợp Thư is stored as Cán Lược + Chi Tự and the font exchanges the components when both share a Cán Tự. Superseded by proposal.md, which stores components in reading order with a Hợp Thư joiner. Kept for reference.
+> **Archived variant (narrow reading, automatic exchange).** Hợp Thư is stored as Cán Lược + Chi Tự and the font exchanges the components when both share a Cán Tự. Superseded; see proposal.md (current) and proposal-3c.md. Kept for reference.
 
 # QATT Unicode Proposal – Draft
 
