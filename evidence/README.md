@@ -37,7 +37,7 @@ status: located
 | image | Image files in `images/`, in the order of `source` |
 | status | `missing`, `located` (passage known, citation incomplete) or `cited` (all fields filled) |
 
-Transcriptions write QATT characters as placeholders until a font exists: `{CL 翁}` is a standalone Cán Lược annotated 翁, `{CT …}` a standalone Chi Tự, `{PT …}` a phản thiết pair.
+Transcriptions write QATT characters as placeholders until a font exists: `{CA 翁}` is a standalone abbreviated Cán annotated 翁, `{CT …}` a standalone Chi Tự, `{PT …}` a phản thiết pair.
 
 Cite Source 1, and add Source 2 only where it differs or where its reading matters. Both witnesses share the page numbering and the layout of the columns. The proposal cites by page only, for example (p. 2), and names a source only where it matters.
 
@@ -52,19 +52,19 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | --- | --- | --- | --- | --- |
 | [E01](E01.md) | 22 Cán Tự, each of three strokes and one short marking stroke | 4.1, 6.4 | – | missing |
 | [E02](E02.md) | Five Chi Tự per Cán Tự: the marking stroke sits only at stroke ends (six positions); the Cán Tự has it at the start position (upper left or upper middle), and moving it counter-clockwise gives the Chi Tự in order | 4.1 | – | missing |
-| [E03](E03.md) | One Cán Lược per Cán Tự, made by omitting the marking stroke | 4.1 | – | missing |
-| [E04](E04.md) | Components written standalone and side by side when the text explains combination, including a standalone Cán Lược and two adjacent Cán Lược | 3.2, 4.1, 5.4 | 6 | located |
-| [E05](E05.md) | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | 3.2, 4.2 | 5 | located |
-| [E06](E06.md) | Function in a phản thiết pair: the Cán Lược gives the initial, the Chi Tự the rhyme | 4.2 | – | located |
+| [E03](E03.md) | One abbreviated Cán per Cán Tự, made by omitting the marking stroke | 4.1 | – | missing |
+| [E04](E04.md) | Components written standalone and side by side when the text explains combination, including a standalone abbreviated Cán and two adjacent abbreviated Cán | 3.2, 4.1, 5.4 | 6 | located |
+| [E05](E05.md) | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, abbreviated Cán first | 3.2, 4.2 | 5 | located |
+| [E06](E06.md) | Function in a phản thiết pair: the abbreviated Cán gives the initial, the Chi Tự the rhyme | 4.2 | – | located |
 | [E07](E07.md) | Hợp Thư: same-base pairs only, Chi Tự first (scope of the term) | 3.2, 4.2, 5.7 | 6 | located |
-| [E08](E08.md) | Function in a Hợp Thư: Chi Tự gives the initial, Cán Lược the rhyme (main argument for the reading order) | 4.2, 5.4 | 6 | located |
+| [E08](E08.md) | Function in a Hợp Thư: Chi Tự gives the initial, abbreviated Cán the rhyme (main argument for the reading order) | 4.2, 5.4 | 6 | located |
 | [E09](E09.md) | Omission convention: a same-base phản thiết pair is written as the Chi Tự alone | 3.2, 4.2 | – | missing |
 | [E10](E10.md) | Tham Thư rule: the base is a Hợp Thư | 4.3 | 7 | located |
 | [E11](E11.md) | Reading of a Tham Thư and function of its components | 4.3 | – | missing |
 | [E12](E12.md) | Attested Tham Thư, first example | 4.3, B | – | missing |
 | [E13](E13.md) | Attested Tham Thư, second example | 4.3, B | – | missing |
 | [E14](E14.md) | Tone marks: circle and semicircle in four corners, eight tones | 4.4 | 4 | located |
-| [E15](E15.md) | Tone marks in all four corners, both shapes: the Cán Lược of đông written with all eight tone marks, annotated 東 董 凍 篤 同 洞 動 獨 | 4.4, B | 5 | located |
+| [E15](E15.md) | Tone marks in all four corners, both shapes: the abbreviated Cán of đông written with all eight tone marks, annotated 東 董 凍 篤 同 洞 動 獨 | 4.4, B | 5 | located |
 | [E16](E16.md) | Semicircle orientation: open side facing the centre in every example | 4.4 | – | missing |
 | [E17](E17.md) | Eight tones follow the Chinese yin-yang method | 2.1 | 4 | located |
 | [E18](E18.md) | Listing of the 22 Cán Tự in source order, each annotated with its name in Chữ Nôm | 6.4, 7.1 | 2 | cited |
@@ -75,7 +75,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E23](E23.md) | Source 2 has the same content and page numbering as Source 1 and corrects unclear Quốc Âm Tân Tự characters and obvious scribal errors; whether it was copied from Source 1 or from an earlier original cannot be determined | 1, 3 | – | located |
 | [E24](E24.md) | Tone marks are optional: marked and unmarked characters in the same passage | 4.4, 5.6 | 6 | located |
 | [E25](E25.md) | The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone | 4.4, 5.6 | 6 | located |
-| [E26](E26.md) | Tone marks on standalone components (Cán Lược and Chi Tự) | 4.4, 5.3 | 6 | located |
+| [E26](E26.md) | Tone marks on standalone components (abbreviated Cán and Chi Tự) | 4.4, 5.3 | 6 | located |
 | [E27](E27.md) | Round and angular forms of the same tone mark are handwriting variation: Source 1 writes the mark now round, now close to a hook; Source 2 writes all tone marks of the passage angular | 4.4, 8 | 6 | located |
 | [E28](E28.md) | The source lists the tones first with the four half circles, then the four full circles, each starting lower left and running clockwise | 7 | 5 | located |
 | [E29](E29.md) | Table of the Chi Tự under the heading 枝字一百一十字, 'the 110 Chi Tự'; the table shows 109, one left out by oversight | 4.1, 6.4, 7.1 | 3 | located |
@@ -83,7 +83,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E31](E31.md) | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) | 2.1 | 2 | cited |
 | [E32](E32.md) | Classification of the manuscripts as tiểu học (小學) and catalogued as nôm văn thư (喃文書) | 2.1 | – | missing |
 | [E33](E33.md) | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 | 1, 2, 2.1 | 1 | cited |
-| [E34](E34.md) | Cán Tự and Cán Lược both appear standalone, with the same reading, also with tone marks; only the Cán Lược combines, never the Cán Tự | 4.1, 5.3 | 5 | located |
+| [E34](E34.md) | Cán Tự and abbreviated Cán both appear standalone, with the same reading, also with tone marks; only the abbreviated Cán combines, never the Cán Tự | 4.1, 5.3 | 5 | located |
 | [E35](E35.md) | The source contains no running text in the script: only single characters given as examples and spelling formulas in the phản thiết manner, within Hán Nôm text | 2.1, 4.1 | – | located |
 | [E36](E36.md) | Counts of the characters in the section 音数: 176 Cán Tự, 880 single characters, 880 合書 with Chi Tự left and Cán Tự right, 18,480 合書 with Cán Tự left and Chi Tự right, each including the tone marks; eight times 22, 110, 110 and 2,310 | 4.1, 4.2, 4.5 | 8 | located |
 <!-- overview:end -->

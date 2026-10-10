@@ -5,96 +5,96 @@
 # position the UTC will assign; only the offsets come from the proposal.
 
 @@	F0000	Quoc Am Tan Tu	F00AF
+@		Cán Tự, abbreviated (marking stroke omitted)
+F0000	QUOC AM TAN TU CAN TU ONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0001	QUOC AM TAN TU CAN TU NGONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0002	QUOC AM TAN TU CAN TU HONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0003	QUOC AM TAN TU CAN TU GONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0004	QUOC AM TAN TU CAN TU CONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0005	QUOC AM TAN TU CAN TU LONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0006	QUOC AM TAN TU CAN TU TRONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0007	QUOC AM TAN TU CAN TU DDONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0008	QUOC AM TAN TU CAN TU NONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0009	QUOC AM TAN TU CAN TU TONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F000A	QUOC AM TAN TU CAN TU THONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F000B	QUOC AM TAN TU CAN TU NHONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F000C	QUOC AM TAN TU CAN TU CHONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F000D	QUOC AM TAN TU CAN TU DZONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F000E	QUOC AM TAN TU CAN TU XONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F000F	QUOC AM TAN TU CAN TU KHONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0010	QUOC AM TAN TU CAN TU SONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0011	QUOC AM TAN TU CAN TU RONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0012	QUOC AM TAN TU CAN TU MONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0013	QUOC AM TAN TU CAN TU BONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0014	QUOC AM TAN TU CAN TU VONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
+F0015	QUOC AM TAN TU CAN TU PHONG ABBREVIATED
+	* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự
 @		Cán Tự (base components)
-F0000	QUOC AM TAN TU CAN TU ONG
+F0016	QUOC AM TAN TU CAN TU ONG
 	* name from the source listing: ông 翁
-F0001	QUOC AM TAN TU CAN TU NGONG
+F0017	QUOC AM TAN TU CAN TU NGONG
 	* name from the source listing: ngông ⿰木禺
-F0002	QUOC AM TAN TU CAN TU HONG
+F0018	QUOC AM TAN TU CAN TU HONG
 	* name from the source listing: hông 胸
-F0003	QUOC AM TAN TU CAN TU GONG
+F0019	QUOC AM TAN TU CAN TU GONG
 	* name from the source listing: gông ⿰木功
-F0004	QUOC AM TAN TU CAN TU CONG
+F001A	QUOC AM TAN TU CAN TU CONG
 	* name from the source listing: công 工
-F0005	QUOC AM TAN TU CAN TU LONG
+F001B	QUOC AM TAN TU CAN TU LONG
 	* name from the source listing: lông ⿰竜羽
-F0006	QUOC AM TAN TU CAN TU TRONG
+F001C	QUOC AM TAN TU CAN TU TRONG
 	* name from the source listing: trông ⿰竜里
-F0007	QUOC AM TAN TU CAN TU DDONG
+F001D	QUOC AM TAN TU CAN TU DDONG
 	* name from the source listing: đông 東
-F0008	QUOC AM TAN TU CAN TU NONG
+F001E	QUOC AM TAN TU CAN TU NONG
 	* name from the source listing: nông 農
-F0009	QUOC AM TAN TU CAN TU TONG
+F001F	QUOC AM TAN TU CAN TU TONG
 	* name from the source listing: tông 宗
-F000A	QUOC AM TAN TU CAN TU THONG
+F0020	QUOC AM TAN TU CAN TU THONG
 	* name from the source listing: thông 通
-F000B	QUOC AM TAN TU CAN TU NHONG
+F0021	QUOC AM TAN TU CAN TU NHONG
 	* name from the source listing: nhông ⿰亻戍
-F000C	QUOC AM TAN TU CAN TU CHONG
+F0022	QUOC AM TAN TU CAN TU CHONG
 	* name from the source listing: chông 柊
-F000D	QUOC AM TAN TU CAN TU DZONG
+F0023	QUOC AM TAN TU CAN TU DZONG
 	* name from the source listing: dông ⿰月容
-F000E	QUOC AM TAN TU CAN TU XONG
+F0024	QUOC AM TAN TU CAN TU XONG
 	* name from the source listing: xông 衝
-F000F	QUOC AM TAN TU CAN TU KHONG
+F0025	QUOC AM TAN TU CAN TU KHONG
 	* name from the source listing: không 空
-F0010	QUOC AM TAN TU CAN TU SONG
+F0026	QUOC AM TAN TU CAN TU SONG
 	* name from the source listing: sông 滝
-F0011	QUOC AM TAN TU CAN TU RONG
+F0027	QUOC AM TAN TU CAN TU RONG
 	* name from the source listing: rông ⿱山庸
-F0012	QUOC AM TAN TU CAN TU MONG
+F0028	QUOC AM TAN TU CAN TU MONG
 	* name from the source listing: mông 蒙
-F0013	QUOC AM TAN TU CAN TU BONG
+F0029	QUOC AM TAN TU CAN TU BONG
 	* name from the source listing: bông 芃
-F0014	QUOC AM TAN TU CAN TU VONG
+F002A	QUOC AM TAN TU CAN TU VONG
 	* name from the source listing: vông ⿰木芃
-F0015	QUOC AM TAN TU CAN TU PHONG
+F002B	QUOC AM TAN TU CAN TU PHONG
 	* name from the source listing: phông ⿰口風
-@		Cán Lược (reduced components)
-F0016	QUOC AM TAN TU CAN LUOC ONG
-	* standalone, it has the reading of its Cán Tự
-F0017	QUOC AM TAN TU CAN LUOC NGONG
-	* standalone, it has the reading of its Cán Tự
-F0018	QUOC AM TAN TU CAN LUOC HONG
-	* standalone, it has the reading of its Cán Tự
-F0019	QUOC AM TAN TU CAN LUOC GONG
-	* standalone, it has the reading of its Cán Tự
-F001A	QUOC AM TAN TU CAN LUOC CONG
-	* standalone, it has the reading of its Cán Tự
-F001B	QUOC AM TAN TU CAN LUOC LONG
-	* standalone, it has the reading of its Cán Tự
-F001C	QUOC AM TAN TU CAN LUOC TRONG
-	* standalone, it has the reading of its Cán Tự
-F001D	QUOC AM TAN TU CAN LUOC DDONG
-	* standalone, it has the reading of its Cán Tự
-F001E	QUOC AM TAN TU CAN LUOC NONG
-	* standalone, it has the reading of its Cán Tự
-F001F	QUOC AM TAN TU CAN LUOC TONG
-	* standalone, it has the reading of its Cán Tự
-F0020	QUOC AM TAN TU CAN LUOC THONG
-	* standalone, it has the reading of its Cán Tự
-F0021	QUOC AM TAN TU CAN LUOC NHONG
-	* standalone, it has the reading of its Cán Tự
-F0022	QUOC AM TAN TU CAN LUOC CHONG
-	* standalone, it has the reading of its Cán Tự
-F0023	QUOC AM TAN TU CAN LUOC DZONG
-	* standalone, it has the reading of its Cán Tự
-F0024	QUOC AM TAN TU CAN LUOC XONG
-	* standalone, it has the reading of its Cán Tự
-F0025	QUOC AM TAN TU CAN LUOC KHONG
-	* standalone, it has the reading of its Cán Tự
-F0026	QUOC AM TAN TU CAN LUOC SONG
-	* standalone, it has the reading of its Cán Tự
-F0027	QUOC AM TAN TU CAN LUOC RONG
-	* standalone, it has the reading of its Cán Tự
-F0028	QUOC AM TAN TU CAN LUOC MONG
-	* standalone, it has the reading of its Cán Tự
-F0029	QUOC AM TAN TU CAN LUOC BONG
-	* standalone, it has the reading of its Cán Tự
-F002A	QUOC AM TAN TU CAN LUOC VONG
-	* standalone, it has the reading of its Cán Tự
-F002B	QUOC AM TAN TU CAN LUOC PHONG
-	* standalone, it has the reading of its Cán Tự
 @		Chi Tự (variant components)
 F002C	QUOC AM TAN TU CHI TU ONG-1
 F002D	QUOC AM TAN TU CHI TU ONG-2

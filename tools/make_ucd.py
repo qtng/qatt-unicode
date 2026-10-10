@@ -29,7 +29,7 @@ SCRIPT = "Quoc_Am_Tan_Tu"
 # East_Asian_Width, Vertical_Orientation
 PROPS = {
     q.Kind.CAN_TU:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
-    q.Kind.CAN_LUOC: ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
+    q.Kind.CAN_ABBR: ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.CHI_TU:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.COMBINER: ("Cf", 0, "BN",  "Extend", "Linker",    "GL", "N", "U"),
     q.Kind.JOINER:   ("Cf", 0, "BN",  "Extend", "Linker",    "GL", "N", "U"),
@@ -84,7 +84,8 @@ def property_file(index: int, prop: str) -> list[str]:
 def names_list() -> list[str]:
     first, last = q.BLOCK_BASE, q.BLOCK_BASE + q.BLOCK_SIZE - 1
     lines = [f"@@\t{first:05X}\t{BLOCK_NAME}\t{last:05X}"]
-    headings = {q.Kind.CAN_TU: "Cán Tự (base components)", q.Kind.CAN_LUOC: "Cán Lược (reduced components)",
+    headings = {q.Kind.CAN_ABBR: "Cán Tự, abbreviated (marking stroke omitted)",
+                q.Kind.CAN_TU: "Cán Tự (base components)",
                 q.Kind.CHI_TU: "Chi Tự (variant components)", q.Kind.COMBINER: "Format characters",
                 q.Kind.TONE: "Tone marks"}
     for ch in assigned():
@@ -95,8 +96,8 @@ def names_list() -> list[str]:
         base = q.base_of(ch)
         if k is q.Kind.CAN_TU:
             lines.append(f"\t* name from the source listing: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
-        elif k is q.Kind.CAN_LUOC:
-            lines.append("\t* standalone, it has the reading of its Cán Tự")
+        elif k is q.Kind.CAN_ABBR:
+            lines.append("\t* source term 幹体畧 (cán thể lược); standalone, it has the reading of its Cán Tự")
         elif k is q.Kind.COMBINER:
             lines.append("\t* places the following Chi Tự above a Hợp Thư")
         elif k is q.Kind.JOINER:
