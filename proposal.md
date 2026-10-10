@@ -52,12 +52,12 @@ The status column names the open items of the evidence catalogue (E01, E02, …)
 | Feature | Evidence | Status |
 | --- | --- | --- |
 | Cán Tự, Chi Tự, Cán Lược | Described in the source; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: E01–E03, E29\] |
-| Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first; the Cán Lược gives the initial, the Chi Tự the rhyme; pairs in running text (p. 6) | \[TBD: E05, E06\] |
+| Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法, from p. 5); components of different bases, Cán Lược first; the Cán Lược gives the initial, the Chi Tự the rhyme; pairs in running text (p. 6) | \[TBD: E05, E06\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme | \[TBD: E07, E08\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base; two examples attested, both on a Hợp Thư; reading not established | \[TBD: E10, E12, E13; deferred\] |
 | Standalone and adjacent components | When the text explains how components combine, it writes components on their own and side by side without combining them: a standalone Cán Lược before a Chi Tự, and two standalone Cán Lược before a phản thiết pair (p. 6) | Cited |
 | Omission of the Cán Lược | Wherever a phản thiết pair of the same base would occur, the source writes the Chi Tự alone | \[TBD: E09\] |
-| Tone marks | Eight tones in four corners; the neutral tone marked with a semicircle lower left; marked and unmarked characters in one passage; round and angular forms of the same mark (p. 6) | \[TBD: E14–E17, E28\] |
+| Tone marks | Eight tones in four corners, explained with the corner of each tone class and illustrated on one character (pp. 4–5); the neutral tone marked with a semicircle lower left; marked and unmarked characters in one passage; round and angular forms of the same mark (p. 6) | \[TBD: E16\] |
 | Writing direction | The text is silent; both witnesses are vertical Hán Nôm | Assumption: Hán Nôm habits \[TBD: E19\] |
 
 ### 3.3 Modern use
@@ -101,7 +101,7 @@ Tham Thư is the least certain part of the script. The source describes its stru
 
 ### 4.4 Tone marks
 
-A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving the eight tones of the Chinese yin-yang system. The source explains the system after the Chi Tự table: "yang uses a full circle, yin a half circle" (陽用全圈，陰用半圈, p. 4). The corner gives the tone class and the shape gives the register: a semicircle marks âm (陰), a circle dương (陽).
+A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving the eight tones of the Chinese yin-yang system. The source explains the system after the Chi Tự table: "yang uses a full circle, yin a half circle" (陽用全圈，陰用半圈, p. 4), and names the corner for each tone class: the left foot (左足) for bình, the left shoulder (左肩) for thượng, the right shoulder (右肩) for khứ and the right foot (右足) for nhập (p. 5). It illustrates the eight marks on one character, the Cán Lược of đông, annotated 東 董 凍 篤 for âm and 同 洞 動 獨 for dương (p. 5). The corner gives the tone class and the shape gives the register: a semicircle marks âm (陰), a circle dương (陽).
 
 | Corner | Tone class | Semicircle (âm) | Circle (dương) |
 | --- | --- | --- | --- |
@@ -240,10 +240,10 @@ The 164 characters fit in a block of 176 code points (11 columns of 16), propose
 | Chi Tự | +2C to +99 | 110 |
 | Tham Thư combiner | +9A | 1 |
 | Component joiner | +9B | 1 |
-| Tone marks | +9C to +A3 | \[TBD: E14–E17, E28\] |
+| Tone marks | +9C to +A3 | 8, in the traditional order of the eight tones (see below) |
 | Reserved | +A4 to +AF | 12 |
 
-The tone marks follow the traditional order of the eight tones, the numbering 1 to 8 used in Chinese dialectology: âm bình, dương bình, âm thượng, dương thượng, âm khứ, dương khứ, âm nhập, dương nhập, that is by tone class and within each class âm before dương. The first six correspond to the Vietnamese tone order ngang, huyền, hỏi, ngã, sắc, nặng used in dictionaries and in Vietnamese collation. The source lists the marks in a different order, first the four semicircles and then the four circles, each starting lower left and running clockwise; that order presents the marks by shape and is not adopted for the code points.
+The tone marks follow the traditional order of the eight tones, the numbering 1 to 8 used in Chinese dialectology: âm bình, dương bình, âm thượng, dương thượng, âm khứ, dương khứ, âm nhập, dương nhập, that is by tone class and within each class âm before dương. The first six correspond to the Vietnamese tone order ngang, huyền, hỏi, ngã, sắc, nặng used in dictionaries and in Vietnamese collation. The source lists the marks in a different order, first the four semicircles and then the four circles, each starting lower left and running clockwise (p. 5); that order presents the marks by shape and is not adopted for the code points.
 
 | Offset | Mark | Tone |
 | --- | --- | --- |
