@@ -385,6 +385,6 @@ All 16 pages of both manuscripts (Source 1, pp. 1–8, folios 3–10; Source 2, 
 
 ### D. References
 
-- *Tự điển chữ Nôm trích dẫn* (字典𡨸喃摘引). \[TBD: editors, publisher, place, year\] P. 403, entry 洞 đỗng (động, đùng), U+6D1E, with a cross-reference to 洞 động.
+- Nguyễn Hữu Vinh, Đặng Thế Kiệt, Nguyễn Doãn Vượng, Lê Văn Đặng, Nguyễn Văn Sâm, Nguyễn Ngọc Bích, Trần Uyên Thi. *Tự điển chữ Nôm trích dẫn* (字典𡨸喃摘引) / *Dictionary of Nôm Characters with Excerpts*. USA: Viện Việt-Học (Institute of Vietnamese Studies), 2009. P. 403, entry 洞 đỗng (động, đùng), U+6D1E, with a cross-reference to 洞 động.
 
 &#91;TBD: scholarly literature and prior work on the script\]
