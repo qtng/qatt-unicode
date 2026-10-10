@@ -8,7 +8,7 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 
 | Item | Entry |
 | --- | --- |
-| Script | Quốc Âm Tân Tự (QATT) |
+| Script | Quốc Âm Tân Tự (國音新字, QATT) |
 | Proposer | \[TBD: name and affiliation\] |
 | Draft date | 2026-10-09 |
 | Characters | 164: 154 components, 2 joiners, 8 tone marks |
@@ -20,11 +20,11 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 
 ## 2. Introduction
 
-Quốc Âm Tân Tự is a Vietnamese script built from 22 base components, each of three strokes and one short marking stroke. The base components stand alone; forms derived from them stand alone or combine in groups of two or three, and any character may carry a tone mark in one of its corners.
+Quốc Âm Tân Tự (國音新字, "new script of the national language") is a Vietnamese script built from 22 base components, each of three strokes and one short marking stroke. The base components stand alone; forms derived from them stand alone or combine in groups of two or three, and any character may carry a tone mark in one of its corners.
 
 ### 2.1 Background
 
-The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa. The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành. The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents).
+The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text names the script in the heading of its preface, 國音新字序, "preface to the new script of the national language". The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa. The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành. The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents).
 
 In the source the script appears in running Han Nôm text and is treated exactly like Han Nôm characters. Three-component characters (Tham Thư) are attested in two examples; their reading is not established (4.3). Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: pages of the taboo character and of the signature; scholarly literature\]
 
