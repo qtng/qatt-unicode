@@ -23,6 +23,7 @@ After changing the evidence catalogue or the reference implementation, regenerat
 
 ```
 python tools/make_appendix.py   # Appendix B of proposal.md and evidence overview from evidence/E*.md
+python tools/make_crops.py      # evidence cut-outs from the full pages (evidence/crops.csv)
 python tools/make_ucd.py        # draft character data in ucd/
 ```
 

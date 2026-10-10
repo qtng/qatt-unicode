@@ -33,3 +33,12 @@ def test_headers_are_valid_yaml():
 def test_all_pages_present():
     names = {p.name for p in (evidence.EVIDENCE / "pages").glob("*.jpg")}
     assert names == {f"S{s}-p{p}.jpg" for s in (1, 2) for p in range(1, 9)}
+
+
+def test_crops_refer_to_pages_and_images():
+    import csv
+    with (evidence.EVIDENCE / "crops.csv").open(encoding="utf-8") as f:
+        for row in csv.DictReader(f):
+            assert (evidence.EVIDENCE / "pages" / f"{row['page']}.jpg").is_file(), row
+            assert (evidence.EVIDENCE / "images" / row["image"]).is_file(), row
+            assert int(row["left"]) < int(row["right"]) and int(row["top"]) < int(row["bottom"]), row
