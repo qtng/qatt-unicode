@@ -68,7 +68,7 @@ Quốc Âm Tân Tự is built from 22 base components that stand alone. Their de
 
 ### 4.1 Components
 
-Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. Repositioning the marking stroke yields five variants per base (*Chi Tự*). Omitting it yields one reduced form per base (*Cán Lược*). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the source writes it standalone when it explains how components combine (3.2).
+Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. \[TBD: cite the passage on the positions\] Omitting it yields one reduced form per base (*Cán Lược*). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the source writes it standalone when it explains how components combine (3.2).
 
 | Component | Count | Derivation | Standalone | In combination |
 | --- | --- | --- | --- | --- |
@@ -217,7 +217,7 @@ The source does not state a writing direction. Both witnesses contain vertical H
 
 ### 6.4 Code point order
 
-The source lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
+The source lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow the order of the marking-stroke position, counter-clockwise from the position of the Cán Tự (4.1).
 
 ## 7. Character Table and Code Chart
 
@@ -318,7 +318,7 @@ Thirteen points remain before the proposal can be submitted. The alternatives al
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Source passages and scans for the components, standalone and adjacent components, phản thiết pairs, Hợp Thư, the omission convention, Tham Thư and the tone corners | 3.2, 3.4, 4.1 to 4.4, B, C | Citations and images |
 | Layout of the components in two-component characters and Tham Thư | 4.5, 8 | Positions from the source examples |
-| Names and order of the five marking-stroke positions | 6.4, 7.1 | Names and order; the Cán Tự names and order are taken from the source listing |
+| Names of the five Chi Tự of each base | 7.1 | Naming scheme; the order is counter-clockwise from the Cán Tự position (4.1), the Cán Tự names come from the source listing |
 | Unicode properties: combining class, grapheme cluster rules, Bidi\_Class of both joiners | 6, 6.1, 6.2 | Review by Unicode experts |
 | Block position in the Supplementary Multilingual Plane | 7 | Assignment by the UTC |
 | Reference font and code chart glyphs | 7.2, 8 | Designer, licence and glyphs |
