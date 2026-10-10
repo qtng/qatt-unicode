@@ -9,7 +9,7 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 | Item | Entry |
 | --- | --- |
 | Script | Quốc Âm Tân Tự (國音新字, QATT) |
-| Proposer | \[TBD: name and affiliation\] |
+| Proposer | Nguyễn Quốc Trung, independent researcher |
 | Draft date | 2026-10-09 |
 | Characters | 164: 154 components, 2 joiners, 8 tone marks |
 | Model | Atomic components in reading order; every combination written with an explicit joiner |
@@ -323,7 +323,7 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | Tham Thư combiner now, or IDS first | 4.3, 5.8 | Decision, taken last: the reading of Tham Thư is not established and only two examples exist |
 | Scope of the term Hợp Thư (same-base pairs only) | 3.2, 4.2, 5.7 | Source passages for the narrow reading |
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
-| Proposer and UTC Proposal Summary Form | 1 | Name, affiliation, completed form |
+| UTC Proposal Summary Form | 1 | Completed form |
 | Pages of the taboo character and the signature; scholarly literature | 2.1, D | Pages and images (E30, E31); references |
 | Places where Source 2 corrects Source 1 | 3 | List in the corrections file of the evidence catalogue |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |

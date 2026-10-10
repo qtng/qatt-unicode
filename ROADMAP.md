@@ -31,7 +31,7 @@ Record each passage in [evidence/catalog.csv](evidence/catalog.csv).
 
 ## Phase E – Submission
 
-1. Proposer details and the UTC Proposal Summary Form.
+1. UTC Proposal Summary Form (proposer: Nguyễn Quốc Trung, independent researcher).
 2. Check the Unicode roadmap for the Supplementary Multilingual Plane; the block position is assigned by the UTC.
 3. Pre-submission review by the Script Encoding Initiative (UC Berkeley).
 
