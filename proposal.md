@@ -76,15 +76,15 @@ Each of the 22 base components (*Cán Tự*) consists of three strokes and one s
 
 ### 4.2 Hợp Thư (two components)
 
-A Cán Lược and a Chi Tự combine into one character. If both derive from the same Cán Tự, their positions are exchanged. In the sources the non-exchanged form never occurs for such pairs, although the text does not forbid it. When the non-exchanged reading is intended, the Cán Lược is omitted and the Chi Tự stands alone. A standalone Chi Tự therefore always also carries the non-exchanged reading of its same-base Hợp Thư. \[TBD: cite the source passage and the attested examples\]
+A Cán Lược and a Chi Tự combine into one character. If both derive from the same Cán Tự, their positions are exchanged. The exchanged and the non-exchanged arrangement stand for different rhymes, called here the *exchanged reading* and the *non-exchanged reading*. In the sources the non-exchanged arrangement never occurs for such pairs, although the text does not forbid it. When the non-exchanged reading is intended, the Cán Lược is omitted and the Chi Tự stands alone. A standalone Chi Tự therefore always also carries the non-exchanged reading of its same-base Hợp Thư. \[TBD: cite the source passage and the attested examples\]
 
 ### 4.3 Tham Thư (three components)
 
 A Hợp Thư may carry a third component, a single Chi Tự, above it. The third component is otherwise unrestricted. The first two components always form a unit, and the third stands alone above them. The method records dialectal vowel clusters.
 
-Where the sources would require a non-exchanged Hợp Thư of the same base, they write the Chi Tự alone and omit the Cán Lược (4.2). The same convention applies to the base of a Tham Thư, so the base may also be a single Chi Tự that stands for a non-exchanged same-base Hợp Thư. Logically a Tham Thư always has three components; in this case one of them is omitted in writing.
+The sources state that the base of a Tham Thư is a Hợp Thư. For a same-base pair the base can carry either reading. The exchanged reading is encoded as in 4.2 and appears in both attested examples. For the non-exchanged reading the sources give no example; following the omission convention of 4.2, it is encoded as a single Chi Tự. A conforming font draws this base as a non-exchanged Hợp Thư, so the base of every Tham Thư appears as a Hợp Thư, as the sources require (8). Logically a Tham Thư always has three components; for a non-exchanged base the Cán Lược is implied by the Chi Tự.
 
-The two attested Tham Thư both use an exchanged Hợp Thư as the base. A Tham Thư on a single Chi Tự is not attested and follows from the omission convention. \[TBD: cite the source passages for the omission convention and both examples\]
+The two attested Tham Thư both use an exchanged Hợp Thư as the base. A Tham Thư with a non-exchanged base is not attested; its encoding and its rendering follow from the rules above. \[TBD: cite the source passages for the base rule, the omission convention and both examples\]
 
 ### 4.4 Tone marks
 
@@ -129,14 +129,15 @@ A Cán Lược never stands alone and always begins a Hợp Thư, so cluster bou
 | Standalone Cán Tự | CAN |
 | Standalone Chi Tự | CT |
 | Hợp Thư, different bases | CL(X) CT(Y) |
-| Hợp Thư, same base (rendered exchanged) | CL(X) CT(X) |
+| Hợp Thư, same base, exchanged reading (rendered exchanged) | CL(X) CT(X) |
+| Hợp Thư, same base, non-exchanged reading | CT(X) |
 | Tham Thư on a Hợp Thư | CL(X) CT(Y) COMB CT(Z) |
-| Tham Thư on a single Chi Tự (stands for a non-exchanged same-base Hợp Thư, 4.3) | CT(X) COMB CT(Z) |
+| Tham Thư with a non-exchanged same-base Hợp Thư (rendered as a non-exchanged Hợp Thư, 4.3) | CT(X) COMB CT(Z) |
 | Any of the above with a tone | sequence + TONE |
 
 ### 5.4 Positional exchange
 
-For a Cán Lược and a Chi Tự of the same Cán Tự, the exchanged position is the only attested form. It is therefore a rendering rule, implemented with OpenType substitution, and not encoded. Text in the sources writes the non-exchanged reading as a standalone Chi Tự (4.2), so plain text needs no further means. Only the non-exchanged glyph arrangement, which the sources never show, can be described with Ideographic Description Sequences in scholarly notation. \[TBD: IDS operator depends on the layout in 4.5\]
+For a Cán Lược and a Chi Tự of the same Cán Tự, the exchanged position is the only attested form. It is therefore a rendering rule, implemented with OpenType substitution, and not encoded. Text in the sources writes the non-exchanged reading as a standalone Chi Tự (4.2), so plain text needs no further means. The non-exchanged arrangement is drawn only as the base of a Tham Thư, where the font derives it from a single Chi Tự (4.3, 8). Elsewhere it can be described with Ideographic Description Sequences in scholarly notation. \[TBD: IDS operator depends on the layout in 4.5\]
 
 ### 5.5 Edit stability
 
@@ -154,7 +155,10 @@ The eight tone marks are combining characters that follow the complete cluster. 
 
 ### 5.7 Alternatives considered
 
-- Variation selector for the exchange: rejected, because the non-exchanged form is unattested.
+- Variation selector for the exchange: rejected, because the exchanged and the non-exchanged arrangement carry different readings, and a variation selector may only select a glyph variant of the same character. The non-exchanged arrangement is also unattested.
+- Explicit joiner for the exchange (`CT(X) J CL(X)` for the exchanged reading, `CL(X) CT(X)` for the non-exchanged one): rejected, because it needs a further code point, gives the non-exchanged reading two spellings (`CT(X)` and `CL(X) CT(X)`) and needs a same-base restriction.
+- Separate code points for an exchanged Cán Lược: rejected for the same duplication, at the cost of 22 code points.
+- Tham Thư base restricted to a written Hợp Thư: not adopted, because the non-exchanged reading of a same-base pair could then not serve as a base. \[TBD: confirm from the rhyme system that such bases occur\]
 - Exchange by sequence order (hypothetical model with the Chi Tự before the Cán Lược): rejected for ambiguity and edit instability (5.5).
 - Two tone marks plus a position selector: rejected, because the corner is contrastive.
 - Precomposed Hợp Thư and Tham Thư: rejected for size (5.2).
@@ -228,18 +232,19 @@ A conforming font draws every cluster in one square cell and composes it with su
 
 - **Cell:** Each cluster fills one square cell with the metrics of Han Nôm ideographs, so it sits in vertical or horizontal lines without adjustment.
 - **Hợp Thư:** The two component glyphs share the cell. \[TBD: positions, see 4.5\]
-- **Exchange rule:** For a Cán Lược and a Chi Tự of the same Cán Tự (110 pairs), the font swaps the positions of the two components. The non-exchanged form needs no rendering support, because it is notated with IDS.
-- **Tham Thư:** After the combiner, the Chi Tự is drawn above the base cluster. The font composes the cluster by contextual substitution and positioning, because 278,300 precomposed glyphs are impractical. The two attested examples serve as test cases for the reference font.
+- **Exchange rule:** For a Cán Lược and a Chi Tự of the same Cán Tự (110 pairs), the font swaps the positions of the two components. Outside a Tham Thư base the non-exchanged arrangement is never drawn; scholarly notation uses IDS (5.4).
+- **Tham Thư:** After the combiner, the Chi Tự is drawn above the base cluster. When the base is a single Chi Tự, the font draws it as a non-exchanged Hợp Thư by adding the Cán Lược of the same Cán Tự (4.3). The font composes the cluster by contextual substitution and positioning, because 278,300 precomposed glyphs are impractical. The two attested examples serve as test cases for the reference font.
 - **Tone marks:** Eight combining glyphs sit in the four corners of the whole cluster cell. The open side of the semicircle faces the centre. Round or angular outlines are a design choice, since the sources treat the difference as handwriting variation.
 - **Reference font:** \[TBD: designer and licence\]
 
 ## 9. Open Points
 
-Eleven points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
+Twelve points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
 
 | Point | Section | What is needed |
 | --- | --- | --- |
 | Tham Thư combiner now, or IDS first | 5.8 | Decision |
+| Non-exchanged reading as a Tham Thư base | 4.3, 5.7 | Confirmation from the rhyme system |
 | Proposer and UTC Proposal Summary Form | 1 | Name, affiliation, completed form |
 | Date and provenance of the sources, scholarly literature | 2.1, 3.1, D | Source data and references |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
@@ -261,7 +266,9 @@ Eleven points remain before the proposal can be submitted. The alternatives alre
 | Chi Tự | One of five variants per Cán Tự, made by repositioning the marking stroke (110 in total); standalone or combined |
 | Cán Lược | The variant without a marking stroke (22 in total); only in combination with a Chi Tự |
 | Hợp Thư | Combination of a Cán Lược and a Chi Tự; positions are exchanged when both share the same Cán Tự |
-| Tham Thư | Hợp Thư with a third component, a Chi Tự, above it; the base may be written as a single Chi Tự when it stands for a non-exchanged same-base Hợp Thư; records dialectal vowel clusters |
+| Tham Thư | Hợp Thư with a third component, a Chi Tự, above it; a base with the non-exchanged reading is encoded as a single Chi Tự and drawn as a non-exchanged Hợp Thư; records dialectal vowel clusters |
+| Exchanged reading | Reading of a same-base Hợp Thư in exchanged arrangement; encoded as Cán Lược + Chi Tự |
+| Non-exchanged reading | Reading of a same-base Hợp Thư in non-exchanged arrangement; encoded as a standalone Chi Tự |
 
 ### B. Attested examples
 

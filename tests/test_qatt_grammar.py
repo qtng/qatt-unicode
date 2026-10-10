@@ -91,7 +91,7 @@ WELL_FORMED = {
     "Hợp Thư, different bases": CL(3) + CT(5, 2),
     "Hợp Thư, same base": CL(3) + CT(3, 2),
     "Tham Thư on a Hợp Thư": CL(3) + CT(5, 2) + COMB + CT(9, 0),
-    "Tham Thư on a single Chi Tự": CT(3, 1) + COMB + CT(9, 0),
+    "Tham Thư with a non-exchanged base": CT(3, 1) + COMB + CT(9, 0),
     "Cán Tự with tone": can_tu(3) + TONE,
     "Tham Thư with tone": CL(3) + CT(3, 2) + COMB + CT(9, 0) + TONE,
 }
