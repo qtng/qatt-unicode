@@ -105,7 +105,7 @@ Tham Thư is the least certain part of the script. The source describes its stru
 
 ### 4.4 Tone marks
 
-A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving the eight tones of the Chinese yin-yang system. The source explains the system after the Chi Tự table: "yang uses a full circle, yin a half circle" (陽用全圈，陰用半圈, p. 4), and names the corner for each tone class: the left foot (左足) for bình, the left shoulder (左肩) for thượng, the right shoulder (右肩) for khứ and the right foot (右足) for nhập (p. 5). It illustrates the eight marks on one character, the Cán Lược of đông, annotated 東 董 凍 篤 for âm and 同 洞 動 獨 for dương (p. 5). The source gives 同 洞 動 獨 explicitly as the level, rising, departing and entering tones (平上去入, p. 4), whereas the rime tradition assigns 動 to the rising and 洞 to the departing tone. 洞 has the Sino-Vietnamese readings đỗng and động; with đỗng the series 同 洞 動 獨 (đồng, đỗng, động, độc) follows the Vietnamese tones huyền, ngã, nặng and the entering nặng. \[TBD: printed dictionary reference for đỗng; the source does not state how it reads 洞\] The corner gives the tone class and the shape gives the register: a semicircle marks âm (陰), a circle dương (陽).
+A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving the eight tones of the Chinese yin-yang system. The source explains the system after the Chi Tự table: "yang uses a full circle, yin a half circle" (陽用全圈，陰用半圈, p. 4), and names the corner for each tone class: the left foot (左足) for bình, the left shoulder (左肩) for thượng, the right shoulder (右肩) for khứ and the right foot (右足) for nhập (p. 5). It illustrates the eight marks on one character, the Cán Lược of đông, annotated 東 董 凍 篤 for âm and 同 洞 動 獨 for dương (p. 5). The source gives 同 洞 動 獨 explicitly as the level, rising, departing and entering tones (平上去入, p. 4), whereas the rime tradition assigns 動 to the rising and 洞 to the departing tone. 洞 has the Sino-Vietnamese readings đỗng and động; by placing 洞 in the rising tone, the source reads it đỗng, so that 同 洞 動 獨 (đồng, đỗng, động, độc) follow the Vietnamese tones huyền, ngã, nặng and the entering nặng. \[TBD: printed dictionary reference for đỗng\] The corner gives the tone class and the shape gives the register: a semicircle marks âm (陰), a circle dương (陽).
 
 | Corner | Tone class | Semicircle (âm) | Circle (dương) |
 | --- | --- | --- | --- |
@@ -330,7 +330,7 @@ Fifteen points remain before the proposal can be submitted. The alternatives alr
 | Scope of the term Hợp Thư (same-base pairs only) | 3.2, 4.2, 5.7 | Source passages for the narrow reading |
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
 | UTC Proposal Summary Form | 1 | Completed form |
-| Reading of 洞 in the yang tone examples 同 洞 動 獨 (đỗng or động) | 4.4 | Printed dictionary reference for đỗng; the source does not state the reading |
+| Dictionary reference for the reading đỗng of 洞 in the yang tone examples | 4.4 | Printed dictionary reference |
 | Pages of the taboo character and the signature; scholarly literature | 2.1, D | Pages and images (E30, E31); references |
 | Places where Source 2 corrects Source 1 | 3 | List in the corrections file of the evidence catalogue |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
