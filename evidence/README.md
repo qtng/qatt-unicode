@@ -7,11 +7,11 @@ One Markdown file per claim in the proposal that needs a source citation: `E01.m
 ```markdown
 ---
 id: E04
-claim: The statement in the proposal that the passage supports
+claim: "The statement in the proposal that the passage supports"
 sections: [3.2, 4.1]
 source: [Source 2, Source 1]
 page: 6
-location: Column and line on the page
+location: "Column and line on the page"
 image: [E04-2.png, E04-1.png]
 status: located
 ---
@@ -30,11 +30,11 @@ status: located
 | Field | Content |
 | --- | --- |
 | id | Stable identifier, also the file name; add `E12a` etc. for further passages |
-| claim | The statement in the proposal that the passage supports |
+| claim | The statement in the proposal that the passage supports, in double quotes |
 | sections | Sections of `proposal.md` that rely on the claim |
 | source | Sources shown, the cited source first |
 | page | Page, shared by both sources |
-| location | Column and line on the page |
+| location | Column and line on the page, in double quotes |
 | image | Image files in `images/`, in the order of `source` |
 | status | `missing`, `located` (passage known, citation incomplete) or `cited` (all fields filled) |
 

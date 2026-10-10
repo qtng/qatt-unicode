@@ -1,17 +1,19 @@
 """Read and write the evidence entries in ../evidence (one Markdown file per entry).
 
-Each file starts with a header between --- lines, one `key: value` per line;
-list values are written as [a, b]. The body has optional sections
+Each file starts with a YAML header between --- lines, one `key: value` per line;
+text values are double-quoted, list values are written as [a, b]. The body has optional sections
 ## Transcription, ## Translation and ## Notes, after the images.
 """
 
 from __future__ import annotations
 
+import json
 import re
 from pathlib import Path
 
 EVIDENCE = Path(__file__).resolve().parent.parent / "evidence"
 LIST_FIELDS = ("sections", "source", "image")
+QUOTED_FIELDS = ("claim", "location")
 HEADER_FIELDS = ("id", "claim", "sections", "source", "page", "location", "image", "status")
 BODY_FIELDS = ("transcription", "translation", "notes")
 STATUSES = ("missing", "located", "cited")
@@ -32,6 +34,8 @@ def parse(text: str) -> dict:
         if key in LIST_FIELDS:
             inner = value.strip("[]").strip()
             entry[key] = [v.strip() for v in inner.split(",")] if inner else []
+        elif value.startswith('"'):
+            entry[key] = json.loads(value)
         else:
             entry[key] = value
     sections = re.split(r"^## (\w+)\n", body, flags=re.M)
@@ -48,6 +52,8 @@ def render(entry: dict) -> str:
         value = entry.get(key, [] if key in LIST_FIELDS else "")
         if key in LIST_FIELDS:
             value = "[" + ", ".join(value) + "]"
+        elif key in QUOTED_FIELDS and value:
+            value = json.dumps(value, ensure_ascii=False)
         lines.append(f"{key}: {value}".rstrip())
     lines += ["---", ""]
     for image, source in zip(entry.get("image", []), entry.get("source", [])):
