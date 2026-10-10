@@ -62,7 +62,7 @@ The status column names the open items of the evidence catalogue (E01, E02, …)
 
 ### 3.3 Modern use
 
-&#91;TBD: current use of the script, for example on chunom.org, and any user community\]
+The script has an online presence of recent date, found by the proposer (E22): a website of the proposer (qatt.org), a page on Omniglot (last modified August 2026), a web converter from Quốc Ngữ to the script by an unknown author, and a Facebook group named qatt. The Omniglot page takes its sample from the Vietnamese Wikipedia. \[TBD: dates of first publication, size and activity of the group, how the converter writes the script, other uses such as chunom.org\]
 
 ### 3.4 Scans and images
 
