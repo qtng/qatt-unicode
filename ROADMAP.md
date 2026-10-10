@@ -6,7 +6,7 @@ Plan for resolving the open points in section 9 of the proposal. The source work
 
 Record each passage in [evidence/catalog.csv](evidence/catalog.csv).
 
-1. Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư, rhyme extension in Tham Thư (E06, E08, E11). Main argument for the encoding model.
+1. Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư (E06, E08). Main argument for the encoding model.
 2. Standalone and adjacent components (E04). Main argument for the explicit joiner.
 3. Scope of the term Hợp Thư and the omission convention (E07, E09).
 4. Both Tham Thư, phản thiết examples, tone marks in all four corners (E05, E10–E16).
@@ -22,7 +22,6 @@ Record each passage in [evidence/catalog.csv](evidence/catalog.csv).
 ## Phase C – Justification
 
 1. Reasons for encoding and modern use (proposal 2.2, 3.3), including documented written forms from online discussion (E22).
-2. Decision in proposal 5.8: Tham Thư combiner now or later, once the strength of the Tham Thư evidence is known.
 
 ## Phase D – Technical
 
@@ -35,3 +34,7 @@ Record each passage in [evidence/catalog.csv](evidence/catalog.csv).
 1. Proposer details and the UTC Proposal Summary Form.
 2. Check the Unicode roadmap for the Supplementary Multilingual Plane; the block position is assigned by the UTC.
 3. Pre-submission review by the Script Encoding Initiative (UC Berkeley).
+
+## Deferred – Tham Thư
+
+Tham Thư is the least certain part of the script: two examples, no stated reading. Its reading and the function of its components (E11) stay open. The decision in proposal 5.8, Tham Thư combiner now or later, is taken last.
