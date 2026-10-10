@@ -67,7 +67,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E15](E15.md) | Tone marks in all four corners, both shapes: the unmarked Cán of đông written with all eight tone marks, annotated 東 董 凍 篤 同 洞 動 獨 | 4.4, B | 5 | located |
 | [E16](E16.md) | Semicircle orientation: open side facing the centre in every example | 4.4 | – | missing |
 | [E17](E17.md) | Eight tones follow the Chinese yin-yang method | 2.1 | 4 | located |
-| [E18](E18.md) | Listing of the 22 Cán in source order, each annotated with its name in Chữ Nôm | 6.4, 7.1 | 2 | cited |
+| [E18](E18.md) | Listing of the 22 base sounds (幹音二十二字) in source order, each shown with its QATT character and annotated with the name of its sound in Chữ Nôm | 6.4, 7.1 | 2 | cited |
 | [E19](E19.md) | Script runs with vertical Hán Nôm text, treated like Hán Nôm characters | 3.1, 6.3 | – | missing |
 | [E20](E20.md) | Date and provenance of source 1 | 2.1, 3.1 | – | located |
 | [E21](E21.md) | Date and provenance of source 2 | 2.1, 3.1 | – | located |
