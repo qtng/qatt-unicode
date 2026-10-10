@@ -238,32 +238,32 @@ QUOC AM TAN TU TONE SEMICIRCLE LOWER RIGHT
 
 The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. \[TBD: names of the five marking-stroke positions\]
 
-The names of the 22 Cán Tự come from the source listing (6.4). Each name is the syllable of the initial with the rhyme ông. The source gives the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
+The names of the 22 Cán Tự come from the source listing (6.4), where each Cán Tự is annotated with a Chữ Nôm character; annotations without an encoded character are given as Ideographic Description Sequences. Each name is the syllable of the initial with the rhyme ông. The source gives the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
 
-| No. | Name (Chữ Nôm reading) | Initial | Name in character names | Cán Tự | Cán Lược |
-| --- | --- | --- | --- | --- | --- |
-| 1 | ông | Ɂ | ONG | +00 | +16 |
-| 2 | ngông | Ng | NGONG | +01 | +17 |
-| 3 | hông | H | HONG | +02 | +18 |
-| 4 | gông | G | GONG | +03 | +19 |
-| 5 | công | C | CONG | +04 | +1A |
-| 6 | lông | L | LONG | +05 | +1B |
-| 7 | trông | Tr | TRONG | +06 | +1C |
-| 8 | đông | Đ | DDONG | +07 | +1D |
-| 9 | nông | N | NONG | +08 | +1E |
-| 10 | tông | T | TONG | +09 | +1F |
-| 11 | thông | Th | THONG | +0A | +20 |
-| 12 | nhông | Nh | NHONG | +0B | +21 |
-| 13 | chông | Ch | CHONG | +0C | +22 |
-| 14 | dông | D | DZONG | +0D | +23 |
-| 15 | xông | X | XONG | +0E | +24 |
-| 16 | không | Kh | KHONG | +0F | +25 |
-| 17 | sông | S | SONG | +10 | +26 |
-| 18 | rông | R | RONG | +11 | +27 |
-| 19 | mông | M | MONG | +12 | +28 |
-| 20 | bông | B | BONG | +13 | +29 |
-| 21 | vông | V | VONG | +14 | +2A |
-| 22 | phông | Ph | PHONG | +15 | +2B |
+| No. | Nôm annotation | Reading | Initial | Name in character names | Cán Tự | Cán Lược |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | 翁 | ông | Ɂ | ONG | +00 | +16 |
+| 2 | ⿰木禺 | ngông | Ng | NGONG | +01 | +17 |
+| 3 | 胸 | hông | H | HONG | +02 | +18 |
+| 4 | ⿰木功 | gông | G | GONG | +03 | +19 |
+| 5 | 工 | công | C | CONG | +04 | +1A |
+| 6 | ⿰竜羽 | lông | L | LONG | +05 | +1B |
+| 7 | ⿰竜里 | trông | Tr | TRONG | +06 | +1C |
+| 8 | 東 | đông | Đ | DDONG | +07 | +1D |
+| 9 | 農 | nông | N | NONG | +08 | +1E |
+| 10 | 宗 | tông | T | TONG | +09 | +1F |
+| 11 | 通 | thông | Th | THONG | +0A | +20 |
+| 12 | ⿰亻戍 | nhông | Nh | NHONG | +0B | +21 |
+| 13 | 柊 | chông | Ch | CHONG | +0C | +22 |
+| 14 | ⿰月容 | dông | D | DZONG | +0D | +23 |
+| 15 | 衝 | xông | X | XONG | +0E | +24 |
+| 16 | 空 | không | Kh | KHONG | +0F | +25 |
+| 17 | 滝 | sông | S | SONG | +10 | +26 |
+| 18 | ⿱山庸 | rông | R | RONG | +11 | +27 |
+| 19 | 蒙 | mông | M | MONG | +12 | +28 |
+| 20 | 芃 | bông | B | BONG | +13 | +29 |
+| 21 | ⿰木芃 | vông | V | VONG | +14 | +2A |
+| 22 | ⿰口風 | phông | Ph | PHONG | +15 | +2B |
 
 ### 7.2 Code chart
 
