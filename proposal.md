@@ -165,14 +165,14 @@ The eight tone marks are combining characters that follow the complete cluster. 
 
 ### 5.7 Alternatives considered
 
-- Automatic exchange: a Hợp Thư stored as Cán Lược, Chi Tự, with the font exchanging the components when both share a Cán Tự (archived as proposal-narrow.md). Not adopted, because it stores the rhyme before the initial, against the reading order, and relies on a rendering rule that compares bases. It would also fix `CL(X) CT(X)` to the Hợp Thư for good.
-- Implicit phản thiết, in which a Cán Lược binds to the following character without a joiner and only a Hợp Thư uses the joiner (archived as proposal-3c.md): not adopted, because the sources also write a Cán Lược standalone and components side by side (3.2). A forward-binding Cán Lược would join them wrongly, for example with a following Han character.
+- Automatic exchange: a Hợp Thư stored as Cán Lược, Chi Tự, with the font exchanging the components when both share a Cán Tự. Not adopted, because it stores the rhyme before the initial, against the reading order, and relies on a rendering rule that compares bases. It would also fix `CL(X) CT(X)` to the Hợp Thư for good.
+- Implicit phản thiết, in which a Cán Lược binds to the following character without a joiner and only a Hợp Thư uses the joiner: not adopted, because the sources also write a Cán Lược standalone and components side by side (3.2). A forward-binding Cán Lược would join them wrongly, for example with a following Han character.
 - Joiner that exchanges the components (`CL(X) JOIN CT(X)`, drawn exchanged): not adopted, because it keeps the order against reading.
 - Joiner as a suffix (`CT(X) CL(X) JOIN`): not adopted, because it groups preceding characters retroactively, which needs right context in segmentation. Joiners such as U+200D ZERO WIDTH JOINER stand between the parts they join, and so does the Tham Thư combiner.
 - One joiner for both two- and three-component characters (163 characters): not adopted, because the structure would follow from position instead of from the joiner, and the decision in 5.8 could no longer be taken for the Tham Thư combiner alone.
 - Variation selector: rejected, because the two orders differ in reading, and a variation selector may only select a glyph variant of the same character.
 - Separate code points for the Cán Lược of a Hợp Thư: rejected, 22 code points instead of one joiner.
-- Broad reading of Hợp Thư, in which the term covers every Cán Lược + Chi Tự pair and a Tham Thư base may be any pair or a single Chi Tự (278,300 Tham Thư; archived as proposal-2.md): not adopted, because it needs an unattested base and does not match the division of the sources into Hợp Thư and Phản Thiết Hài Âm Pháp. \[TBD: cite the passages that support the narrow reading\]
+- Broad reading of Hợp Thư, in which the term covers every Cán Lược + Chi Tự pair and a Tham Thư base may be any pair or a single Chi Tự (278,300 Tham Thư): not adopted, because it needs an unattested base and does not match the division of the sources into Hợp Thư and Phản Thiết Hài Âm Pháp. \[TBD: cite the passages that support the narrow reading\]
 - Two tone marks plus a position selector: rejected, because the corner is contrastive.
 - Precomposed Hợp Thư and Tham Thư: rejected for size (5.2).
 
