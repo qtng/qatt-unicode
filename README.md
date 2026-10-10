@@ -9,14 +9,16 @@ Status: draft. Open points are listed in section 9 of the proposal and marked \[
 | File | Content |
 | --- | --- |
 | [proposal.md](proposal.md) | Current proposal draft: every combination written with an explicit joiner, components in reading order |
-| [qatt_grammar.py](qatt_grammar.py) | Reference implementation: segmentation and validation of QATT sequences |
-| [tests/](tests/) | Unit and property tests for the reference implementation |
+| [ROADMAP.md](ROADMAP.md) | Plan for resolving the open points |
+| [evidence/](evidence/) | Evidence catalogue: one row per claim that needs a source citation, with images |
+| [tools/qatt_grammar.py](tools/qatt_grammar.py) | Reference implementation: segmentation and validation of QATT sequences |
+| [tools/tests/](tools/tests/) | Unit and property tests for the reference implementation |
 
 The block position is not assigned yet. The reference implementation uses a provisional base in Supplementary Private Use Area-A; only the offsets within the block come from the proposal.
 
 ## Running the tests
 
 ```
-pip install -r requirements-dev.txt
+pip install -r tools/requirements-dev.txt
 python -m pytest
 ```
