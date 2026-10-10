@@ -1,4 +1,4 @@
-# QATT Unicode Proposal – Draft (Sections 4 and 5)
+# QATT Unicode Proposal – Draft
 
 Oct 9, 2026 · @Trung
 
@@ -20,7 +20,7 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 
 ## 2. Introduction
 
-Quốc Âm Tân Tự is a Vietnamese script built from 22 base components, each of three strokes and one short marking stroke. Components stand alone or combine in groups of two or three, and any character may carry a tone mark in one of its corners.
+Quốc Âm Tân Tự is a Vietnamese script built from 22 base components, each of three strokes and one short marking stroke. The base components stand alone; forms derived from them stand alone or combine in groups of two or three, and any character may carry a tone mark in one of its corners.
 
 ### 2.1 Background
 
@@ -48,6 +48,7 @@ Two sources attest the script. Both are vertical Han Nôm texts, and the text of
 | Cán Tự, Chi Tự, Cán Lược | Described in the sources | \[TBD: cite passages and examples\] |
 | Hợp Thư | Described in the text; every example with a same-base pair shows the exchanged form | \[TBD: list the examples\] |
 | Tham Thư | Rule described in the text; two examples attested, both on an exchanged Hợp Thư | \[TBD: cite both examples\] |
+| Omission of the Cán Lược | Wherever a non-exchanged same-base Hợp Thư would be required, the sources write the Chi Tự alone | \[TBD: list the places\] |
 | Tone marks | Eight tones in four corners; semicircle orientation visible only in the examples | \[TBD: examples for all four corners\] |
 | Writing direction | The text is silent; both sources are vertical Han Nôm | Assumption: Han Nôm habits |
 
@@ -61,11 +62,11 @@ Two sources attest the script. Both are vertical Han Nôm texts, and the text of
 
 ## 4. Structure of the Script
 
-Quốc Âm Tân Tự is built from 22 base components that stand alone or combine in groups of two or three, and any character may carry one tone mark in one of its four corners.
+Quốc Âm Tân Tự is built from 22 base components that stand alone. Their derived forms stand alone or combine in groups of two or three, and any character may carry one tone mark in one of its four corners.
 
 ### 4.1 Components
 
-Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. Repositioning the marking stroke yields five variants per base (*Chi Tự*). Omitting it yields one reduced form per base (*Cán Lược*).
+Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. Repositioning the marking stroke yields five variants per base (*Chi Tự*). Omitting it yields one reduced form per base (*Cán Lược*). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form.
 
 | Component | Count | Derivation | Standalone | In combination |
 | --- | --- | --- | --- | --- |
@@ -75,11 +76,15 @@ Each of the 22 base components (*Cán Tự*) consists of three strokes and one s
 
 ### 4.2 Hợp Thư (two components)
 
-A Cán Lược and a Chi Tự combine into one character. If both derive from the same Cán Tự, their positions are exchanged. In the sources the non-exchanged form never occurs for such pairs, although the text does not forbid it. When the non-exchanged reading is intended, the Cán Lược is omitted and the Chi Tự stands alone. \[TBD: cite the source passage and the attested examples\]
+A Cán Lược and a Chi Tự combine into one character. If both derive from the same Cán Tự, their positions are exchanged. In the sources the non-exchanged form never occurs for such pairs, although the text does not forbid it. When the non-exchanged reading is intended, the Cán Lược is omitted and the Chi Tự stands alone. A standalone Chi Tự therefore always also carries the non-exchanged reading of its same-base Hợp Thư. \[TBD: cite the source passage and the attested examples\]
 
 ### 4.3 Tham Thư (three components)
 
-A Hợp Thư, or a single Chi Tự, may carry a third component above it. The third component must be a single Chi Tự and is otherwise unrestricted. The first two components always form a unit, and the third stands alone above them. The method records dialectal vowel clusters. Two examples are attested, both with an exchanged Hợp Thư as the base. \[TBD: cite the source passage and both examples\]
+A Hợp Thư may carry a third component, a single Chi Tự, above it. The third component is otherwise unrestricted. The first two components always form a unit, and the third stands alone above them. The method records dialectal vowel clusters.
+
+Where the sources would require a non-exchanged Hợp Thư of the same base, they write the Chi Tự alone and omit the Cán Lược (4.2). The same convention applies to the base of a Tham Thư, so the base may also be a single Chi Tự that stands for a non-exchanged same-base Hợp Thư. Logically a Tham Thư always has three components; in this case one of them is omitted in writing.
+
+The two attested Tham Thư both use an exchanged Hợp Thư as the base. A Tham Thư on a single Chi Tự is not attested and follows from the omission convention. \[TBD: cite the source passages for the omission convention and both examples\]
 
 ### 4.4 Tone marks
 
@@ -98,8 +103,8 @@ The script is encoded as 163 atomic characters. Hợp Thư and Tham Thư are seq
 | Group | Characters |
 | --- | --- |
 | Cán Tự | 22 |
-| Chi Tự | 110 |
 | Cán Lược (component only, never standalone) | 22 |
+| Chi Tự | 110 |
 | Tham Thư combiner | 1 |
 | Tone marks (combining) | 8 |
 | **Total** | **163** |
@@ -121,20 +126,23 @@ A Cán Lược never stands alone and always begins a Hợp Thư, so cluster bou
 
 | Intended character | Sequence |
 | --- | --- |
+| Standalone Cán Tự | CAN |
 | Standalone Chi Tự | CT |
 | Hợp Thư, different bases | CL(X) CT(Y) |
 | Hợp Thư, same base (rendered exchanged) | CL(X) CT(X) |
 | Tham Thư on a Hợp Thư | CL(X) CT(Y) COMB CT(Z) |
-| Tham Thư on a single Chi Tự | CT(X) COMB CT(Z) |
+| Tham Thư on a single Chi Tự (stands for a non-exchanged same-base Hợp Thư, 4.3) | CT(X) COMB CT(Z) |
 | Any of the above with a tone | sequence + TONE |
 
 ### 5.4 Positional exchange
 
-For a Cán Lược and a Chi Tự of the same Cán Tự, the exchanged position is the only attested form. It is therefore a rendering rule, implemented with OpenType substitution, and not encoded. The non-exchanged form can be described with Ideographic Description Sequences in scholarly notation. \[TBD: IDS operator depends on the layout in 4.5\]
+For a Cán Lược and a Chi Tự of the same Cán Tự, the exchanged position is the only attested form. It is therefore a rendering rule, implemented with OpenType substitution, and not encoded. Text in the sources writes the non-exchanged reading as a standalone Chi Tự (4.2), so plain text needs no further means. Only the non-exchanged glyph arrangement, which the sources never show, can be described with Ideographic Description Sequences in scholarly notation. \[TBD: IDS operator depends on the layout in 4.5\]
 
 ### 5.5 Edit stability
 
 Deleting or inserting one character alters at most the clusters directly adjacent to the edit point. An edit can split a cluster, merge two neighbours (for example when the top component of a Tham Thư is deleted and the next Chi Tự takes its place) or attach a tone mark to the preceding cluster. Nothing beyond the neighbours changes.
+
+The guarantee also holds for ill-formed text, because segmentation uses local rules only (6.2): there is never a break before or after the combiner. An ill-formed chain such as `CT COMB CT COMB CT` therefore forms one cluster, which a validator reports as ill-formed. Segmentation never pairs up the parts of such a chain, so an edit inside it cannot regroup the text beyond it.
 
 **Hypothetical model, not part of this proposal.** To show why the proposed order matters, consider encoding the exchange by sequence order, with the Chi Tự written before the Cán Lược. This model is rejected, because it fails the test above and is also ambiguous. With B a Chi Tự and A a Cán Lược of the same base, the sequence `BAB` would read as `[BA][B]` or as `[B][AB]`, and both are valid texts. A left-to-right parser takes the first reading, so deleting the first A in `ABABAB` would regroup all following characters from `[AB][AB][AB]` into `[BA][BA][B]`. A parser that binds the Cán Lược forward first avoids that regrouping, but it could no longer express `[BA][B]` at all.
 
@@ -153,7 +161,7 @@ The eight tone marks are combining characters that follow the complete cluster. 
 
 ### 5.8 Open decision
 
-Propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add the combiner once more attestations exist. With two attested examples, the second option lowers the risk of rejection.
+Propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add the combiner once more attestations exist. With two attested examples, the second option lowers the risk of rejection. Without the combiner the repertoire has 162 characters, the tone marks move to +9A to +A1, and the size argument for Tham Thư in 5.2 no longer applies.
 
 ## 6. Character Properties
 
@@ -163,7 +171,7 @@ The proposed properties follow from the encoding model: components are letters, 
 | --- | --- | --- | --- | --- | --- |
 | Cán Tự, Chi Tự | Lo | 0 | Other | ID | L |
 | Cán Lược | Lo | 0 | Prepend | ID | L |
-| Tham Thư combiner | Cf | 0 | \[TBD\] | CM | L |
+| Tham Thư combiner | Cf | 0 | \[TBD\] | CM | \[TBD\] |
 | Tone marks (8) | Mn | 0 | Extend | CM | NSM |
 
 ### 6.1 Combining class of the tone marks
@@ -172,7 +180,7 @@ The corner is part of each tone mark's identity, so no positional combining clas
 
 ### 6.2 Grapheme clusters
 
-A Cán Lược always joins the character that follows it. This matches the behaviour of Prepend characters. Tone marks match Extend. The combiner must keep the preceding cluster, itself and the following Chi Tự together, which resembles the conjunct rule for Indic scripts in UAX #29. \[TBD: decide between an existing property value and a new one\]
+A Cán Lược always joins the character that follows it. This matches the behaviour of Prepend characters. Tone marks match Extend. The combiner must keep the preceding cluster, itself and the following Chi Tự together, which resembles the conjunct rule for Indic scripts in UAX #29. Segmentation never breaks directly before or after the combiner, whatever the neighbouring characters are; whether the result is well-formed is left to validation (5.5). \[TBD: decide between an existing property value and a new one; Bidi\_Class of the combiner, since format characters usually take BN\]
 
 ### 6.3 Line breaking and direction
 
@@ -180,11 +188,11 @@ The sources do not state a writing direction. Both attested sources contain vert
 
 ### 6.4 Code point order
 
-The sources list the 22 Cán Tự roughly by place of articulation. This order has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
+The sources list the 22 Cán Tự roughly by place of articulation. \[TBD: cite the listing\] This order has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
 
 ## 7. Character Table and Code Chart
 
-The 163 characters fit in a block of 176 code points (11 rows of 16), proposed for the Supplementary Multilingual Plane. \[TBD: block position assigned by the UTC\] Code points follow the source order of the 22 Cán Tự, and the five Chi Tự of each base are consecutive.
+The 163 characters fit in a block of 176 code points (11 columns of 16), proposed for the Supplementary Multilingual Plane. \[TBD: block position assigned by the UTC\] Code points follow the source order of the 22 Cán Tự, and the five Chi Tự of each base are consecutive.
 
 | Group | Offset in block | Count |
 | --- | --- | --- |
@@ -227,16 +235,20 @@ A conforming font draws every cluster in one square cell and composes it with su
 
 ## 9. Open Points
 
-Seven points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
+Eleven points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
 
 | Point | Section | What is needed |
 | --- | --- | --- |
 | Tham Thư combiner now, or IDS first | 5.8 | Decision |
-| Layout of the components in Hợp Thư and Tham Thư | 4.5 | Positions from the source examples |
-| Source passages and scans for Hợp Thư, Tham Thư and the tone corners | 4.2 to 4.4 | Citations and images |
-| Names of the 22 Cán Tự, the five marking-stroke positions and their order | 6.4, 7.1 | Names and order |
+| Proposer and UTC Proposal Summary Form | 1 | Name, affiliation, completed form |
+| Date and provenance of the sources, scholarly literature | 2.1, 3.1, D | Source data and references |
+| Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
+| Source passages and scans for the components, Hợp Thư, the omission convention, Tham Thư and the tone corners | 3.2, 3.4, 4.1 to 4.4, B, C | Citations and images |
+| Layout of the components in Hợp Thư and Tham Thư, and the IDS operator that follows from it | 4.5, 5.4 | Positions from the source examples |
+| Names of the 22 Cán Tự, the five marking-stroke positions and their order | 6.4, 7.1 | Names, order and the cited source listing |
+| Unicode properties: combining class, grapheme cluster rule and Bidi\_Class of the combiner | 6, 6.1, 6.2 | Review by Unicode experts |
 | Block position in the Supplementary Multilingual Plane | 7 | Assignment by the UTC |
-| Reference font | 8 | Designer and licence |
+| Reference font and code chart glyphs | 7.2, 8 | Designer, licence and glyphs |
 | Horizontal use | 6.3 | Not attested, so the proposal assumes Han Nôm habits |
 
 ## 10. Appendices
@@ -249,7 +261,7 @@ Seven points remain before the proposal can be submitted. The alternatives alrea
 | Chi Tự | One of five variants per Cán Tự, made by repositioning the marking stroke (110 in total); standalone or combined |
 | Cán Lược | The variant without a marking stroke (22 in total); only in combination with a Chi Tự |
 | Hợp Thư | Combination of a Cán Lược and a Chi Tự; positions are exchanged when both share the same Cán Tự |
-| Tham Thư | Hợp Thư or single Chi Tự with a third component, a Chi Tự, above it; records dialectal vowel clusters |
+| Tham Thư | Hợp Thư with a third component, a Chi Tự, above it; the base may be written as a single Chi Tự when it stands for a non-exchanged same-base Hợp Thư; records dialectal vowel clusters |
 
 ### B. Attested examples
 
