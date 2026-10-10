@@ -60,7 +60,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E07](E07.md) | Hợp Thư: same-base pairs only, Chi Tự first (scope of the term) | 3.2, 4.2, 5.7 | 6 | located |
 | [E08](E08.md) | Function in a Hợp Thư: Chi Tự gives the initial, Cán Lược the rhyme (main argument for the reading order) | 4.2, 5.4 | 6 | located |
 | [E09](E09.md) | Omission convention: a same-base phản thiết pair is written as the Chi Tự alone | 3.2, 4.2 | – | missing |
-| [E10](E10.md) | Tham Thư rule: the base is a Hợp Thư | 4.3 | – | missing |
+| [E10](E10.md) | Tham Thư rule: the base is a Hợp Thư | 4.3 | 7 | located |
 | [E11](E11.md) | Reading of a Tham Thư and function of its components | 4.3 | – | missing |
 | [E12](E12.md) | Attested Tham Thư, first example | 4.3, B | – | missing |
 | [E13](E13.md) | Attested Tham Thư, second example | 4.3, B | – | missing |

@@ -380,6 +380,7 @@ Passages located in the source, by page. Page references are to Source 2 (sectio
 | 6 | – | The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone (E25) | located |
 | 6 | – | Tone marks on standalone components (Cán Lược and Chi Tự) (E26) | located |
 | 6 | – | Round and angular forms of the same tone mark are handwriting variation: Source 1 writes the mark now round, now close to a hook; Source 2 writes all tone marks of the passage angular (E27) | located |
+| 7 | – | Tham Thư rule: the base is a Hợp Thư (E10) | located |
 <!-- appendix-b:end -->
 
 ### C. Scans of the sources
