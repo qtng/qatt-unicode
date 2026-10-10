@@ -33,7 +33,7 @@ status: located
 | claim | The statement in the proposal that the passage supports, in double quotes |
 | sections | Sections of `proposal.md` that rely on the claim |
 | source | Sources shown, the cited source first |
-| page | Page, shared by both sources |
+| page | Page within the manuscript, 1 to 8, shared by both sources (not the folio number of the volume: Source 1 is on folios 3–10, Source 2 on folios 11–18) |
 | location | Column and line on the page, in double quotes |
 | image | Image files in `images/`, in the order of `source` |
 | status | `missing`, `located` (passage known, citation incomplete) or `cited` (all fields filled) |
@@ -91,7 +91,7 @@ Images go in `images/`, named after the entry id, for example `E08-1.png` (Sourc
 | Field | Content |
 | --- | --- |
 | id | Stable identifier (C01, C02, …) |
-| page | Page, shared by both sources |
+| page | Page within the manuscript, 1 to 8, shared by both sources |
 | location | Column and position on the page |
 | source_1 | Reading in Source 1 |
 | source_2 | Reading in Source 2 |
