@@ -15,9 +15,9 @@ Record each passage as an entry in [evidence/](evidence/), one Markdown file per
 
 ## Phase B – Names and order
 
-1. Names of the 22 Cán, starting from the letter names in the QATT description code (Ɂ, B, C, Ch, …); ASCII name for Ɂ.
-2. Which marking-stroke position belongs to the marked Cán, and the names and order of the five Chi Tự positions. Gives the code point order (proposal 6.4).
-3. Final name of the component joiner.
+1. Names of the 22 Cán from the source listing; ASCII names with DD and DZ (done, proposal 7.1).
+2. Forms named by the position of the marking stroke, UNMARKED and MARKED-1 to MARKED-6, and code point order (done, proposal 6.4 and 7).
+3. Final name of the component joiner (open).
 
 ## Phase C – Justification
 
