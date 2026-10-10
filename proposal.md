@@ -62,7 +62,7 @@ The status column names the open items of the evidence catalogue (E01, E02, …)
 
 ### 3.3 Modern use
 
-The script has an online presence of recent date, found by the proposer (E22): a website of the proposer (qatt.org), a page on Omniglot (last modified August 2026), a web converter from Quốc Ngữ to the script by an unknown author, a Facebook group named qatt and a YouTube video on the script (Maruhi Academy, about 12,000 views in October 2026). The Omniglot page takes its sample from the Vietnamese Wikipedia. \[TBD: dates of first publication, upload date and sources of the video, size and activity of the group, how the converter writes the script, other uses such as chunom.org\]
+The script has an online presence of recent date, found by the proposer (E22): a website of the proposer (qatt.org), a page on Omniglot (last modified August 2026), a web converter from Quốc Ngữ to the script by an unknown author, a Facebook group named qatt, regular posts on Threads by one person and posts on Reddit, and a YouTube video on the script (Maruhi Academy, about 12,000 views in October 2026). The Omniglot page takes its sample from the Vietnamese Wikipedia. \[TBD: dates of first publication, upload date and sources of the video, size and activity of the group, how the converter writes the script, other uses such as chunom.org\]
 
 ### 3.4 Scans and images
 
