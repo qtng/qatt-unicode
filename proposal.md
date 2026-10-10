@@ -146,9 +146,9 @@ An abbreviated Cán and a Chi Tự allow 2,420 two-component characters (22 abbr
 
 ```
 Character := Cluster [ToneMark]
-Cluster   := CanTu | ChiTu | CanLuoc | PhanThiet | HopThu | ThamThu
-PhanThiet := CanLuoc(X) Joiner ChiTu(Y)      X ≠ Y; abbreviated Cán first
-HopThu    := ChiTu(X) Joiner CanLuoc(X)      same Cán Tự X; initial, then rhyme
+Cluster   := CanTu | ChiTu | AbbrCan | PhanThiet | HopThu | ThamThu
+PhanThiet := AbbrCan(X) Joiner ChiTu(Y)      X ≠ Y; abbreviated Cán first
+HopThu    := ChiTu(X) Joiner AbbrCan(X)      same Cán Tự X; initial, then rhyme
 ThamThu   := HopThu Combiner ChiTu           third component added to a complete Hợp Thư
 ```
 
