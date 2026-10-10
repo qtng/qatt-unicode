@@ -15,7 +15,7 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 | Model | Atomic components in reading order; every combination written with an explicit joiner |
 | Plane | Supplementary Multilingual Plane \[TBD: block position assigned by the UTC\] |
 | Direction | Follows Han Nôm; the sources are vertical |
-| Attested sources | Two, both vertical Han Nôm texts |
+| Attested sources | Two: a vertical Han Nôm text and a handwritten copy of it |
 | Official form | \[TBD: complete the UTC Proposal Summary Form\] |
 
 ## 2. Introduction
@@ -32,14 +32,14 @@ In the attested sources the script appears in running Han Nôm text and is treat
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are vertical Han Nôm texts, and the text of the sources describes the methods of combination.
+Two sources attest the script. Both are vertical Han Nôm texts, and the text of the sources describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses; Source 2 serves to confirm and clarify the character forms of Source 1. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
 | Source | Date | Location | Text type | Direction |
 | --- | --- | --- | --- | --- |
 | Source 1 | \[TBD\] | \[TBD\] | Han Nôm | Vertical |
-| Source 2 | \[TBD\] | \[TBD\] | Han Nôm | Vertical |
+| Source 2 | \[TBD\] | \[TBD\] | Han Nôm, handwritten copy of Source 1 | Vertical |
 
 ### 3.2 Evidence by feature
 
@@ -206,7 +206,7 @@ The sources do not state a writing direction. Both attested sources contain vert
 
 ### 6.4 Code point order
 
-Source 1 lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (Source 1, p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
+Source 1 lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (Source 1, p. 2; identical in Source 2, p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
 
 ## 7. Character Table and Code Chart
 
