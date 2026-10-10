@@ -80,7 +80,7 @@ The source lists the 22 Cán with their names (p. 2), and the Chi Tự in the se
 
 The three classes have distinct functions. An unmarked Cán gives the initial consonant of its base, and a Chi Tự gives a rhyme; together the 110 Chi Tự form the rhyme table of the script. A marked Cán stands for the whole syllable of its initial with the rhyme ông and names its base; it serves to pronounce the unmarked Cán in the phản thiết method. The unmarked Cán and the Chi Tự also serve as the components of a Tham Thư (4.3).
 
-The source contains no running text in the script. Within its Hán Nôm text it gives single characters as examples and spelling formulas in the phản thiết manner, so whether a component may stand alone in running text cannot be decided from it. In these examples the marked Cán, the unmarked Cán and the Chi Tự all appear standalone, also with tone marks. A standalone unmarked Cán has the same reading as the marked Cán of its base: the source illustrates the eight tones on the standalone unmarked Cán of đông (p. 5). Only the unmarked Cán and the Chi Tự combine; the marked Cán never does. \[TBD: the two occurrences of the marked Cán in the chapter on the Tham Thư (E34)\]
+The source contains no running text in the script. Within its Hán Nôm text it gives single characters as examples and spelling formulas in the phản thiết manner, so whether a component may stand alone in running text cannot be decided from it. In these examples the marked Cán, the unmarked Cán and the Chi Tự all appear standalone, also with tone marks. A standalone unmarked Cán has the same reading as the marked Cán of its base: the source illustrates the eight tones on the standalone unmarked Cán of đông (p. 5). Only the unmarked Cán and the Chi Tự combine; the marked Cán never does. Outside the listing of the 22 Cán (p. 2) the marked Cán occurs only twice, both times in the chapter on the Tham Thư, as a separate character with a tone and a reading. \[TBD: pages and columns of the two occurrences (E34)\]
 
 | Component | Count | Derivation | Standalone | In combination |
 | --- | --- | --- | --- | --- |
@@ -194,7 +194,7 @@ The eight tone marks are combining characters that follow the complete cluster. 
 - Joiner as a suffix (`CT(X) CU(X) JOIN`): not adopted, because it groups preceding characters retroactively, which needs right context in segmentation. Joiners such as U+200D ZERO WIDTH JOINER stand between the parts they join, and so does the Tham Thư combiner.
 - One joiner for both two- and three-component characters (163 characters): not adopted, because the structure would follow from position instead of from the joiner, and the decision in 5.8 could no longer be taken for the Tham Thư combiner alone.
 - Variation selector: rejected, because the two orders differ in reading, and a variation selector may only select a glyph variant of the same character.
-- Unification of the marked Cán with the unmarked Cán: not adopted. The marked Cán does not appear to be a productive part of the script: it never combines (\[TBD: see 4.1\]), and wherever it stands alone, the standalone unmarked Cán of the same base has the same reading (p. 5), so it could be replaced by the unmarked Cán throughout. Its main purpose is to serve as a kind of alphabet, as in the listing of the 22 Cán with their names (p. 2). The two forms are nevertheless distinct, differing by the marking stroke, and both are attested, so each has its own code point.
+- Unification of the marked Cán with the unmarked Cán: not adopted. The marked Cán does not appear to be a productive part of the script: it never combines and outside the listing occurs only twice, as a separate character (4.1), and wherever the unmarked Cán stands alone, the standalone unmarked Cán of the same base has the same reading (p. 5), so it could be replaced by the unmarked Cán throughout. Its main purpose is to serve as a kind of alphabet, as in the listing of the 22 Cán with their names (p. 2). The two forms are nevertheless distinct, differing by the marking stroke, and both are attested, so each has its own code point.
 - Separate code points for the unmarked Cán of a Hợp Thư: rejected, 22 code points instead of one joiner.
 - Broad reading of Hợp Thư, in which the term covers every unmarked Cán + Chi Tự pair and a Tham Thư base may be any pair or a single Chi Tự (278,300 Tham Thư): not adopted, because it needs an unattested base and does not match the division of the source into Hợp Thư and Phản Thiết Hài Âm Pháp. The count section confirms the narrow reading: the source counts 880 characters with the Chi Tự on the left and the Cán on the right, eight tones on each of the 110 same-base pairs, and no others in this arrangement (p. 8).
 - Reuse of U+A700..U+A707 MODIFIER LETTER CHINESE TONE YIN PING to YANG RU: not adopted. These eight characters cover the same eight tones in the same order, but they are spacing modifier letters (General\_Category Sk) written beside a syllable, not combining marks placed in a corner of a character. As separate grapheme clusters they would break the cluster structure, and a font could not place them within the cell. Their forms also differ: they distinguish yin and yang by an underline, Quốc Âm Tân Tự by semicircle and circle.
@@ -329,7 +329,7 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
 | UTC Proposal Summary Form | 1 | Completed form |
 | Scholarly literature | 2.1, D | References |
-| The two occurrences of the marked Cán in the chapter on the Tham Thư | 4.1, 5.7 | Pages, columns and function; whether the marked Cán never combines (E34) |
+| The two occurrences of the marked Cán outside the listing, in the chapter on the Tham Thư | 4.1 | Pages and columns (E34) |
 | Places where Source 2 corrects Source 1 | 3 | List in the corrections file of the evidence catalogue |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Open evidence items listed in 3.2 | 3.2, B, C | Passages, pages and images |
@@ -347,7 +347,7 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | Term | Meaning |
 | --- | --- |
 | Cán | One of 22 base components of three strokes, listed in the section 幹音二十二字 (p. 2); each exists as a marked Cán and as an unmarked Cán |
-| Marked Cán | The Cán with the marking stroke at the start position (22 in total); standalone only, never combined; character name MARKED-1 \[TBD: see 4.1\] |
+| Marked Cán | The Cán with the marking stroke at the start position (22 in total); standalone only, never combined; character name MARKED-1 |
 | Chi Tự | One of five variants per Cán, made by repositioning the marking stroke (110 in total); standalone or combined |
 | Unmarked Cán | The form of a base without a marking stroke (22 in total); combines with a Chi Tự; standalone, it has the reading of the marked Cán; character name UNMARKED |
 | Phản thiết pair | Combination of an unmarked Cán and a Chi Tự of different Cán, unmarked Cán first, joined by the component joiner; described under Phản Thiết Hài Âm Pháp (反切諧音法); 2,310 in total; descriptive term of this proposal, unnamed in the source |
@@ -373,7 +373,7 @@ Passages located in the source, by page. Page references are to Source 1 (sectio
 | 5 | 反切諧音法 | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, unmarked Cán first (E05) | located |
 | 5 | {CU 東}{CU 董}{CU 凍}{CU 篤}{CU 同}{CU 洞}{CU 動}{CU 獨} | Tone marks in all four corners, both shapes: the unmarked Cán of đông written with all eight tone marks, annotated 東 董 凍 篤 同 洞 動 獨 (E15) | located |
 | 5 | 其同字全識於其字之左足，洞字全識於其字之左肩，動字全識於其字之右肩，獨字全識於其字之右足；東字半識於其字之左足，董字半識於其字之左肩，凍字半識於其字之右肩，篤字半識於其字之右足。如下。他倣此。 | The source lists the tones first with the four half circles, then the four full circles, each starting lower left and running clockwise (E28) | located |
-| 5 | – | Marked Cán and unmarked Cán both appear standalone, with the same reading, also with tone marks; only the unmarked Cán combines in phản thiết pairs and Hợp Thư (E34) | located |
+| 5 | – | Marked Cán and unmarked Cán both appear standalone, with the same reading, also with tone marks; only the unmarked Cán combines, never the marked Cán (E34) | located |
 | 6 | 如{CU 翁}{CT 宜}{PT 反}反云{CU 翁}{CU 翁}{PT 鳥}{PT 衣}是合取{PT 衣}{PT 字}也 | Components written standalone and side by side when the text explains combination, including a standalone unmarked Cán and two adjacent unmarked Cán (E04) | located |
 | 6 | – | Hợp Thư: same-base pairs only, Chi Tự first (scope of the term) (E07) | located |
 | 6 | – | Function in a Hợp Thư: Chi Tự gives the initial, unmarked Cán the rhyme (main argument for the reading order) (E08) | located |
