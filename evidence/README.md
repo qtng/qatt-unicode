@@ -55,7 +55,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E02](E02.md) | Five Chi Tự per Cán Tự: the marking stroke sits only at stroke ends (six positions); the Cán Tự has it at the start position (upper left or upper middle), and moving it counter-clockwise gives the Chi Tự in order | 4.1 | – | missing |
 | [E03](E03.md) | One Cán Lược per Cán Tự, made by omitting the marking stroke | 4.1 | – | missing |
 | [E04](E04.md) | Components written standalone and side by side when the text explains combination, including a standalone Cán Lược and two adjacent Cán Lược | 3.2, 4.1, 5.4 | 6 | located |
-| [E05](E05.md) | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | 3.2, 4.2 | – | missing |
+| [E05](E05.md) | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | 3.2, 4.2 | 5 | located |
 | [E06](E06.md) | Function in a phản thiết pair: the Cán Lược gives the initial, the Chi Tự the rhyme | 4.2 | – | located |
 | [E07](E07.md) | Hợp Thư: same-base pairs only, Chi Tự first (scope of the term) | 3.2, 4.2, 5.7 | – | missing |
 | [E08](E08.md) | Function in a Hợp Thư: Chi Tự gives the initial, Cán Lược the rhyme (main argument for the reading order) | 4.2, 5.4 | – | missing |
@@ -65,7 +65,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E12](E12.md) | Attested Tham Thư, first example | 4.3, B | – | missing |
 | [E13](E13.md) | Attested Tham Thư, second example | 4.3, B | – | missing |
 | [E14](E14.md) | Tone marks: circle and semicircle in four corners, eight tones | 4.4 | 4 | located |
-| [E15](E15.md) | Tone mark examples for all four corners | 4.4, B | – | missing |
+| [E15](E15.md) | Tone marks in all four corners, both shapes: the Cán Lược of đông written with all eight tone marks, annotated 東 董 凍 篤 同 洞 動 獨 | 4.4, B | 5 | located |
 | [E16](E16.md) | Semicircle orientation: open side facing the centre in every example | 4.4 | – | missing |
 | [E17](E17.md) | Eight tones follow the Chinese yin-yang method | 2.1 | 4 | located |
 | [E18](E18.md) | Listing of the 22 Cán Tự in source order, each annotated with its name in Chữ Nôm | 6.4, 7.1 | 2 | cited |
@@ -78,7 +78,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E25](E25.md) | The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone | 4.4, 5.6 | 6 | located |
 | [E26](E26.md) | Tone marks on standalone components (Cán Lược and Chi Tự) | 4.4, 5.3 | 6 | located |
 | [E27](E27.md) | Round and angular forms of the same tone mark are handwriting variation: Source 1 writes the mark now round, now close to a hook; Source 2 writes all tone marks of the passage angular | 4.4, 8 | 6 | located |
-| [E28](E28.md) | The source lists the tone marks first as four semicircles, then four circles, each starting lower left and running clockwise | 7 | – | missing |
+| [E28](E28.md) | The source lists the tones first with the four half circles, then the four full circles, each starting lower left and running clockwise | 7 | 5 | located |
 | [E29](E29.md) | Table of the Chi Tự under the heading 枝字一百一十字, 'the 110 Chi Tự'; the table shows 109, one left out by oversight | 4.1, 6.4, 7.1 | 3 | located |
 | [E30](E30.md) | Dating: the character 華 lacks its final stroke, a naming taboo for Hồ Thị Hoa, mother of Emperor Thiệu Trị (1841–1847) | 1, 2.1, 3.1 | – | missing |
 | [E31](E31.md) | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) | 2.1 | – | missing |
