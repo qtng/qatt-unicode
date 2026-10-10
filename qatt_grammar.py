@@ -20,9 +20,12 @@ Segmentation and validation are separate steps:
 * ``validate_cluster`` checks one cluster against the sequence grammar:
 
       Character := Cluster [ToneMark]
-      Cluster   := CanTu | ChiTu | HopThu | ThamThu
-      HopThu    := CanLuoc ChiTu
-      ThamThu   := (HopThu | ChiTu) Combiner ChiTu
+      Cluster   := CanTu | ChiTu | Pair | ThamThu
+      Pair      := CanLuoc ChiTu              phản thiết or Hợp Thư
+      ThamThu   := HopThu Combiner ChiTu
+      HopThu    := CanLuoc(X) ChiTu(X)        same Cán Tự X
+
+  The same-base condition is checked here, not in segmentation.
 
 The block position is not assigned yet ([TBD] in the proposal). ``BLOCK_BASE``
 is a provisional stand-in in Supplementary Private Use Area-A so that the module
@@ -63,7 +66,7 @@ class Kind(Enum):
 
 
 # Letter codes of Kind, used to match the grammar as a regular expression.
-_CLUSTER_RE = re.compile(r"(?:A|C|LC|(?:LC|C)JC)T?")
+_CLUSTER_RE = re.compile(r"(?:A|C|LC|LCJC)T?")
 
 
 def can_tu(base: int) -> str:
@@ -171,9 +174,14 @@ def validate_cluster(cluster: str) -> str | None:
         return None
     if Kind.OTHER.value in kinds:
         return "QATT code point combined with a code point outside the block"
-    if _CLUSTER_RE.fullmatch(kinds):
-        return None
-    return _describe(kinds)
+    if not _CLUSTER_RE.fullmatch(kinds):
+        return _describe(kinds)
+    if "J" in kinds and base_of(cluster[0]) != base_of(cluster[1]):
+        return _NOT_HOP_THU
+    return None
+
+
+_NOT_HOP_THU = "base of a Tham Thư must be a Hợp Thư (Cán Lược and Chi Tự of the same Cán Tự)"
 
 
 def _describe(kinds: str) -> str:
@@ -194,6 +202,8 @@ def _describe(kinds: str) -> str:
         return "Cán Lược not followed by a Chi Tự"
     if "J" in core and "L" in core.split("J", 1)[1]:
         return "top component of a Tham Thư must be a single Chi Tự"
+    if "J" in core and not core.startswith("LCJ"):
+        return _NOT_HOP_THU
     return "sequence does not match the grammar"
 
 
@@ -208,7 +218,7 @@ def is_well_formed(text: str) -> bool:
 
 def is_exchanged(cluster: str) -> bool:
     """Whether the rendering rule of proposal 5.4 applies: the cluster begins with a
-    Hợp Thư whose Cán Lược and Chi Tự derive from the same Cán Tự."""
+    Hợp Thư, a Cán Lược and a Chi Tự of the same Cán Tự."""
     return (len(cluster) >= 2
             and kind(cluster[0]) is Kind.CAN_LUOC
             and kind(cluster[1]) is Kind.CHI_TU
