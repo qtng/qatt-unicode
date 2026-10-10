@@ -80,7 +80,7 @@ The source lists the 22 Cán with their names (p. 2), and the Chi Tự in the se
 
 The three classes have distinct functions. An unmarked Cán gives the initial consonant of its base, and a Chi Tự gives a rhyme; together the 110 Chi Tự form the rhyme table of the script. A marked Cán stands for the whole syllable of its initial with the rhyme ông and names its base; it serves to pronounce the unmarked Cán in the phản thiết method. The unmarked Cán and the Chi Tự also serve as the components of a Tham Thư (4.3).
 
-The source contains no running text in the script. Within its Hán Nôm text it gives single characters as examples and spelling formulas in the phản thiết manner, so whether a component may stand alone in running text cannot be decided from it. In these examples the marked Cán, the unmarked Cán and the Chi Tự all appear standalone, also with tone marks. A standalone unmarked Cán has the same reading as the marked Cán of its base: the source illustrates the eight tones on the standalone unmarked Cán of đông (p. 5). Only the unmarked Cán and the Chi Tự combine; the marked Cán never does. Outside the listing of the 22 Cán (p. 2) the marked Cán occurs only twice, both times in the chapter on the Tham Thư, as a separate character with a tone and a reading. \[TBD: pages and columns of the two occurrences (E34)\]
+The source contains no running text in the script. Within its Hán Nôm text it gives single characters as examples and spelling formulas in the phản thiết manner, so whether a component may stand alone in running text cannot be decided from it. In these examples the marked Cán, the unmarked Cán and the Chi Tự all appear standalone, also with tone marks. A standalone unmarked Cán has the same reading as the marked Cán of its base: the source illustrates the eight tones on the standalone unmarked Cán of đông (p. 5). Only the unmarked Cán and the Chi Tự combine; the marked Cán never does. Outside the listing of the 22 Cán (p. 2) the marked Cán occurs only twice, both times as a separate character with a reading, in the chapter on the Hợp Thư (p. 6, p. 7); the second carries a tone mark.
 
 | Component | Count | Derivation | Standalone | In combination |
 | --- | --- | --- | --- | --- |
@@ -321,7 +321,7 @@ A conforming font draws every cluster in one square cell and composes it with su
 
 ## 9. Open Points
 
-Fourteen points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
+Thirteen points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
 
 | Point | Section | What is needed |
 | --- | --- | --- |
@@ -329,7 +329,6 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
 | UTC Proposal Summary Form | 1 | Completed form |
 | Scholarly literature | 2.1, D | References |
-| The two occurrences of the marked Cán outside the listing, in the chapter on the Tham Thư | 4.1 | Pages and columns (E34) |
 | Places where Source 2 corrects Source 1 | 3 | List in the corrections file of the evidence catalogue |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Open evidence items listed in 3.2 | 3.2, B, C | Passages, pages and images |
