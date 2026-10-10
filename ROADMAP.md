@@ -4,7 +4,7 @@ Plan for resolving the open points in section 9 of the proposal. The source work
 
 ## Phase A – Sources (evidence catalogue)
 
-Record each passage in [evidence/catalog.csv](evidence/catalog.csv).
+Record each passage as an entry in [evidence/](evidence/), one Markdown file per claim.
 
 1. Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư (E06, E08). Main argument for the encoding model.
 2. Standalone and adjacent components (E04). Main argument for the explicit joiner.

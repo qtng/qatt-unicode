@@ -1,44 +1,58 @@
-"""Fill Appendix B of proposal.md from evidence/catalog.csv.
+"""Fill Appendix B of proposal.md and the overview in evidence/README.md from the
+evidence entries (evidence/E*.md).
 
 Usage: python tools/make_appendix.py
 
-Writes a table of every catalogue entry with a located page between the
-markers <!-- appendix-b:start --> and <!-- appendix-b:end -->.
+Both tables are written between <!-- …:start --> and <!-- …:end --> markers.
 """
 
 from __future__ import annotations
 
-import csv
 from pathlib import Path
 
+import evidence
+
 ROOT = Path(__file__).resolve().parent.parent
-PROPOSAL = ROOT / "proposal.md"
-CATALOG = ROOT / "evidence" / "catalog.csv"
-START, END = "<!-- appendix-b:start -->", "<!-- appendix-b:end -->"
 
 
-def page_key(row):
-    first = row["page"].split(";")[0].strip()
-    return (int(first) if first.isdigit() else 999, row["id"])
+def page_key(entry):
+    return (int(entry["page"]) if entry["page"].isdigit() else 999, entry["id"])
 
 
-def table() -> str:
-    rows = [r for r in csv.DictReader(CATALOG.open(encoding="utf-8")) if r["status"] != "missing" and r["page"]]
+def cell(text: str) -> str:
+    return text.replace("|", "\\|").replace("\n", " ")
+
+
+def appendix_b(entries) -> str:
+    located = [e for e in entries if e["status"] != "missing" and e["page"]]
     lines = ["Passages located in the source, by page. Page references are to Source 2 (section 3); images are in the evidence catalogue.",
              "",
              "| Page | Passage | Shows | Status |",
              "| --- | --- | --- | --- |"]
-    for r in sorted(rows, key=page_key):
-        passage = r["transcription"].replace("|", "\\|") or "–"
-        lines.append(f"| {r['page'].split(';')[0].strip()} | {passage} | {r['claim']} ({r['id']}) | {r['status']} |")
+    for e in sorted(located, key=page_key):
+        lines.append(f"| {e['page']} | {cell(e['transcription']) or '–'} | {cell(e['claim'])} ({e['id']}) | {e['status']} |")
     return "\n".join(lines)
 
 
+def overview(entries) -> str:
+    lines = ["| Entry | Claim | Sections | Page | Status |", "| --- | --- | --- | --- | --- |"]
+    for e in entries:
+        lines.append(f"| [{e['id']}]({e['id']}.md) | {cell(e['claim'])} | {', '.join(e['sections'])} | {e['page'] or '–'} | {e['status']} |")
+    return "\n".join(lines)
+
+
+def fill(path: Path, marker: str, content: str) -> None:
+    start, end = f"<!-- {marker}:start -->", f"<!-- {marker}:end -->"
+    text = path.read_text(encoding="utf-8")
+    head, rest = text.split(start, 1)
+    _, tail = rest.split(end, 1)
+    path.write_text(f"{head}{start}\n{content}\n{end}{tail}", encoding="utf-8")
+
+
 def main() -> None:
-    text = PROPOSAL.read_text(encoding="utf-8")
-    head, rest = text.split(START, 1)
-    _, tail = rest.split(END, 1)
-    PROPOSAL.write_text(f"{head}{START}\n{table()}\n{END}{tail}", encoding="utf-8")
+    entries = evidence.load()
+    fill(ROOT / "proposal.md", "appendix-b", appendix_b(entries))
+    fill(evidence.EVIDENCE / "README.md", "overview", overview(entries))
 
 
 if __name__ == "__main__":
