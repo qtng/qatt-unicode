@@ -230,7 +230,7 @@ The 164 characters fit in a block of 176 code points (11 columns of 16), propose
 | Chi Tự | +2C to +99 | 110 |
 | Tham Thư combiner | +9A | 1 |
 | Component joiner | +9B | 1 |
-| Tone marks | +9C to +A3 | 8, in the order of the table in 4.4: bình, thượng, khứ, nhập, each âm before dương |
+| Tone marks | +9C to +A3 | 8: first the four semicircles (âm), then the four circles (dương), each starting lower left and running clockwise |
 | Reserved | +A4 to +AF | 12 |
 
 ### 7.1 Character names

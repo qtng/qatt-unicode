@@ -63,9 +63,9 @@ CAN_TU_NAMES = ("ONG", "NGONG", "HONG", "GONG", "CONG", "LONG", "TRONG", "DDONG"
                 "NONG", "TONG", "THONG", "NHONG", "CHONG", "DZONG", "XONG", "KHONG",
                 "SONG", "RONG", "MONG", "BONG", "VONG", "PHONG")
 
-# Tone marks in code point order (proposal 4.4 and 7): the corner gives the tone
-# class (bình, thượng, khứ, nhập), the shape the register (semicircle = âm,
-# circle = dương), âm before dương.
+# Tone marks in code point order (proposal 4.4 and 7): first the four semicircles
+# (âm), then the four circles (dương), each starting lower left and running
+# clockwise. The corner gives the tone class (bình, thượng, khứ, nhập).
 TONE_CORNERS = ("LOWER LEFT", "UPPER LEFT", "UPPER RIGHT", "LOWER RIGHT")
 TONE_SHAPES = ("SEMICIRCLE", "CIRCLE")
 TONE_NAMES = {
@@ -119,8 +119,8 @@ JOINER = chr(BLOCK_BASE + JOINER_OFFSET)
 
 def tone(shape: str, corner: str) -> str:
     return chr(BLOCK_BASE + TONE_OFFSET
-               + TONE_CORNERS.index(corner) * len(TONE_SHAPES)
-               + TONE_SHAPES.index(shape))
+               + TONE_SHAPES.index(shape) * len(TONE_CORNERS)
+               + TONE_CORNERS.index(corner))
 
 
 def _check_base(base: int) -> None:
