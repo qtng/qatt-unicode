@@ -10,6 +10,7 @@ filled with the most likely value and listed in ucd/questions.md.
 from __future__ import annotations
 
 from pathlib import Path
+import unicodedata
 
 import qatt_grammar as q
 
@@ -105,6 +106,10 @@ def names_list() -> list[str]:
             corner = q.TONE_CORNERS[index // len(q.TONE_SHAPES)]
             shape = q.TONE_SHAPES[index % len(q.TONE_SHAPES)]
             lines.append(f"\t= {q.TONE_NAMES[(shape, corner)]}")
+            modifier = chr(0xA700 + index)       # same tone, spacing modifier letter
+            ideographic = chr(0x302A + q.TONE_CORNERS.index(corner))  # same corner, no register
+            for related in (modifier, ideographic):
+                lines.append(f"\tx ({unicodedata.name(related).lower()} - {ord(related):04X})")
     return lines
 
 

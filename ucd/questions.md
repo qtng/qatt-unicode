@@ -19,7 +19,12 @@ Each question concerns a value marked \[TBD\] in section 6 of the proposal. The 
 6. **Vertical_Orientation and East_Asian_Width of the tone marks and joiners.** Draft: Vertical_Orientation=U, East_Asian_Width=N. The components are W and U like Han ideographs.
 7. **Script code.** No ISO 15924 code is known to exist for Quốc Âm Tân Tự. Draft script name: Quoc_Am_Tan_Tu. A code would have to be requested from the ISO 15924 Registration Authority.
 
+## Relation to existing characters
+
+8. **Tone marks and existing characters.** U+A700..U+A707 MODIFIER LETTER CHINESE TONE YIN PING to YANG RU cover the same eight tones but are spacing modifier letters (Sk); U+302A..U+302D IDEOGRAPHIC LEVEL to ENTERING TONE MARK are combining marks for the same corners but without the âm/dương distinction. The draft encodes eight new combining marks and cross-references both sets in the names list (proposal 5.7).
+    Question: does the UTC accept eight new marks, or would it prefer unification with U+302A..U+302D for one register? If new marks are accepted, should they take the positional combining classes of U+302A..U+302D (218, 228, 232, 222) instead of 0?
+
 ## Names
 
-8. **Name conventions.** đ is written DD and d is written DZ (DDONG, DZONG); the Chi Tự are numbered with a hyphen (CHI TU ONG-1 to ONG-5); the tone marks have descriptive names with the tone as annotation. Are these acceptable?
-9. **Block name and position.** Draft block name: Quoc Am Tan Tu, 176 code points in the Supplementary Multilingual Plane.
+9. **Name conventions.** đ is written DD and d is written DZ (DDONG, DZONG); the Chi Tự are numbered with a hyphen (CHI TU ONG-1 to ONG-5); the tone marks have descriptive names with the tone as annotation. Are these acceptable?
+10. **Block name and position.** Draft block name: Quoc Am Tan Tu, 176 code points in the Supplementary Multilingual Plane.

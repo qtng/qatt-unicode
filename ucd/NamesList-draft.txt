@@ -214,17 +214,33 @@ F009B	QUOC AM TAN TU COMPONENT JOINER
 @		Tone marks
 F009C	QUOC AM TAN TU TONE SEMICIRCLE LOWER LEFT
 	= âm bình (ngang)
+	x (modifier letter chinese tone yin ping - A700)
+	x (ideographic level tone mark - 302A)
 F009D	QUOC AM TAN TU TONE CIRCLE LOWER LEFT
 	= dương bình (huyền)
+	x (modifier letter chinese tone yang ping - A701)
+	x (ideographic level tone mark - 302A)
 F009E	QUOC AM TAN TU TONE SEMICIRCLE UPPER LEFT
 	= âm thượng (hỏi)
+	x (modifier letter chinese tone yin shang - A702)
+	x (ideographic rising tone mark - 302B)
 F009F	QUOC AM TAN TU TONE CIRCLE UPPER LEFT
 	= dương thượng (ngã)
+	x (modifier letter chinese tone yang shang - A703)
+	x (ideographic rising tone mark - 302B)
 F00A0	QUOC AM TAN TU TONE SEMICIRCLE UPPER RIGHT
 	= âm khứ (sắc)
+	x (modifier letter chinese tone yin qu - A704)
+	x (ideographic departing tone mark - 302C)
 F00A1	QUOC AM TAN TU TONE CIRCLE UPPER RIGHT
 	= dương khứ (nặng)
+	x (modifier letter chinese tone yang qu - A705)
+	x (ideographic departing tone mark - 302C)
 F00A2	QUOC AM TAN TU TONE SEMICIRCLE LOWER RIGHT
 	= âm nhập
+	x (modifier letter chinese tone yin ru - A706)
+	x (ideographic entering tone mark - 302D)
 F00A3	QUOC AM TAN TU TONE CIRCLE LOWER RIGHT
 	= dương nhập
+	x (modifier letter chinese tone yang ru - A707)
+	x (ideographic entering tone mark - 302D)
