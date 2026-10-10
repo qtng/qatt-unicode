@@ -62,10 +62,10 @@ Images go in `images/`, named after the entry id, for example `E08-1.png` (Sourc
 | [E11](E11.md) | Reading of a Tham Thư and function of its components | 4.3 | – | missing |
 | [E12](E12.md) | Attested Tham Thư, first example | 4.3, B | – | missing |
 | [E13](E13.md) | Attested Tham Thư, second example | 4.3, B | – | missing |
-| [E14](E14.md) | Tone marks: circle and semicircle in four corners, eight tones | 4.4 | 6 | located |
+| [E14](E14.md) | Tone marks: circle and semicircle in four corners, eight tones | 4.4 | 4 | located |
 | [E15](E15.md) | Tone mark examples for all four corners | 4.4, B | – | missing |
 | [E16](E16.md) | Semicircle orientation: open side facing the centre in every example | 4.4 | – | missing |
-| [E17](E17.md) | Eight tones follow the Chinese yin-yang method | 2.1 | 6 | located |
+| [E17](E17.md) | Eight tones follow the Chinese yin-yang method | 2.1 | 4 | located |
 | [E18](E18.md) | Listing of the 22 Cán Tự in source order, each annotated with its name in Chữ Nôm | 6.4, 7.1 | 2 | cited |
 | [E19](E19.md) | Script runs with vertical Hán Nôm text, treated like Hán Nôm characters | 3.1, 6.3 | – | missing |
 | [E20](E20.md) | Date and provenance of source 1 | 2.1, 3.1 | – | located |
@@ -77,7 +77,7 @@ Images go in `images/`, named after the entry id, for example `E08-1.png` (Sourc
 | [E26](E26.md) | Tone marks on standalone components (Cán Lược and Chi Tự) | 4.4, 5.3 | 6 | located |
 | [E27](E27.md) | Round and angular forms of the same tone mark are handwriting variation: Source 1 writes the mark now round, now close to a hook; Source 2 writes all tone marks of the passage angular | 4.4, 8 | 6 | located |
 | [E28](E28.md) | The source lists the tone marks first as four semicircles, then four circles, each starting lower left and running clockwise | 7 | – | missing |
-| [E29](E29.md) | Table of the Chi Tự under the heading 枝字一百一十字, 'the 110 Chi Tự'; the table shows 109, one left out by oversight | 4.1, 6.4, 7.1 | 5 | located |
+| [E29](E29.md) | Table of the Chi Tự under the heading 枝字一百一十字, 'the 110 Chi Tự'; the table shows 109, one left out by oversight | 4.1, 6.4, 7.1 | 3 | located |
 | [E30](E30.md) | Dating: the character 華 lacks its final stroke, a naming taboo for Hồ Thị Hoa, mother of Emperor Thiệu Trị (1841–1847) | 1, 2.1, 3.1 | – | missing |
 | [E31](E31.md) | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) | 2.1 | – | missing |
 | [E32](E32.md) | Classification of the manuscripts as tiểu học (小學) and catalogued as nôm văn thư (喃文書) | 2.1 | – | missing |

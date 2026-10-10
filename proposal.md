@@ -34,7 +34,7 @@ In the source the script appears in running Hán Nôm text and is treated exactl
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are manuscripts of the same vertical Hán Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are manuscripts of the same vertical Hán Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Both are bound in one volume with continuous folio numbers, Source 1 on folios 3–10 and Source 2 on folios 11–18; page references in this proposal give the page within each manuscript, 1 to 8. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
@@ -74,7 +74,7 @@ Quốc Âm Tân Tự is built from 22 base components that stand alone. Their de
 
 ### 4.1 Components
 
-Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. Omitting it yields one reduced form per base (*Cán Lược*).
+Each of the 22 base components (*Cán Tự*) consists of three strokes and one short marking stroke. The marking stroke always sits at the end of a stroke, so the three strokes give six positions. In every attested Cán Tự it sits at the start position, upper left or upper middle depending on the base. Moving it counter-clockwise from one stroke end to the next yields the five variants of the base (*Chi Tự*), in order. The source lists the Chi Tự in the section 枝字一百一十字, "the 110 Chi Tự", in blocks of five per base (pp. 3–4); the table shows 109, one having been left out by oversight. Omitting it yields one reduced form per base (*Cán Lược*).
 
 The three classes have distinct functions. A Cán Lược gives the initial consonant of its base, and a Chi Tự gives a rhyme; together the 110 Chi Tự form the rhyme table of the script, arranged in blocks of five per base. A Cán Tự stands for the whole syllable of its initial with the rhyme ông and names its base: it serves to pronounce the Cán Lược in the phản thiết method, and it is not combined. Cán Lược and Chi Tự also serve as the components of a Tham Thư (4.3). Because every Chi Tự moves the marking stroke, no Chi Tự coincides with its Cán Tự: each base has six distinct marked forms and one unmarked form. A Cán Lược does not form a character on its own, but the source writes it standalone when it explains how components combine (3.2).
 
@@ -101,7 +101,7 @@ Tham Thư is the least certain part of the script. The source describes its stru
 
 ### 4.4 Tone marks
 
-A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving the eight tones of the Chinese yin-yang system. The corner gives the tone class and the shape gives the register: a semicircle marks âm (陰), a circle dương (陽).
+A tone mark is a circle or a semicircle placed in one of the four corners of the character, giving the eight tones of the Chinese yin-yang system. The source explains the system after the Chi Tự table: "yang uses a full circle, yin a half circle" (陽用全圈，陰用半圈, p. 4). The corner gives the tone class and the shape gives the register: a semicircle marks âm (陰), a circle dương (陽).
 
 | Corner | Tone class | Semicircle (âm) | Circle (dương) |
 | --- | --- | --- | --- |
@@ -361,10 +361,10 @@ Passages located in the source, by page. Page references are to Source 2 (sectio
 | --- | --- | --- | --- |
 | 1 | 國音新字序 | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 (E33) | cited |
 | 2 | 幹音二十二字 · Nôm annotations in order (IDS where no encoded character is used): 翁 ông · ⿰木禺 ngông · 胸 hông · ⿰木功 gông · 工 công · ⿰竜羽 lông · ⿰竜里 trông · 東 đông · 農 nông · 宗 tông · 通 thông · ⿰亻戍 nhông · 柊 chông · ⿰月容 dông · 衝 xông · 空 không · 滝 sông · ⿱山庸 rông · 蒙 mông · 芃 bông · ⿰木芃 vông · ⿰口風 phông | Listing of the 22 Cán Tự in source order, each annotated with its name in Chữ Nôm (E18) | cited |
-| 5 | 枝字一百一十字 · 109 Chi Tự, each annotated with a Nôm character | Table of the Chi Tự under the heading 枝字一百一十字, 'the 110 Chi Tự'; the table shows 109, one left out by oversight (E29) | located |
+| 3 | 枝字一百一十字 · 109 Chi Tự, each annotated with a Nôm character | Table of the Chi Tự under the heading 枝字一百一十字, 'the 110 Chi Tự'; the table shows 109, one left out by oversight (E29) | located |
+| 4 | 本字八音識別法。於本字上依陰陽四象識別，每一字各成八字。如同東合一字，惟同音其聲在上為陽，東音其聲在下為陰。以陰陽分配，則東董凍篤四音是陰之平上去入，同洞動獨四音是陽之平上去入。以四象識別，則陽用全圈，陰用半圈。 | Tone marks: circle and semicircle in four corners, eight tones (E14) | located |
+| 4 | 本字八音識別法。於本字上依陰陽四象識別，每一字各成八字。如同東合一字，惟同音其聲在上為陽，東音其聲在下為陰。以陰陽分配，則東董凍篤四音是陰之平上去入，同洞動獨四音是陽之平上去入。以四象識別，則陽用全圈，陰用半圈。 | Eight tones follow the Chinese yin-yang method (E17) | located |
 | 6 | 如{CL 翁}{CT 宜}{PT 反}反云{CL 翁}{CL 翁}{PT 鳥}{PT 衣}是合取{PT 衣}{PT 字}也 | Components written standalone and side by side when the text explains combination, including a standalone Cán Lược and two adjacent Cán Lược (E04) | located |
-| 6 | 本字八音識別法。於本字上依陰陽四象識別，每一字各成八字。如同東合一字，惟同音其聲在上為陽，東音其聲在下為陰。以陰陽分配，則東董凍篤四音是陰之平上去入，同洞動獨四音是陽之平上去入。以四象識別，則陽用全圈，陰用半圈。 | Tone marks: circle and semicircle in four corners, eight tones (E14) | located |
-| 6 | 本字八音識別法。於本字上依陰陽四象識別，每一字各成八字。如同東合一字，惟同音其聲在上為陽，東音其聲在下為陰。以陰陽分配，則東董凍篤四音是陰之平上去入，同洞動獨四音是陽之平上去入。以四象識別，則陽用全圈，陰用半圈。 | Eight tones follow the Chinese yin-yang method (E17) | located |
 | 6 | – | Tone marks are optional: marked and unmarked characters in the same passage (E24) | located |
 | 6 | – | The neutral tone (ngang, âm bình) has its own mark, a semicircle in the lower left corner; an unmarked character does not mean the neutral tone (E25) | located |
 | 6 | – | Tone marks on standalone components (Cán Lược and Chi Tự) (E26) | located |
