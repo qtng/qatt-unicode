@@ -32,7 +32,7 @@ In the attested sources the script appears in running Han Nôm text and is treat
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are vertical Han Nôm texts, and the text of the sources describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Citations in this proposal refer to Source 2, the corrected copy; Source 1 is cited in addition where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are vertical Han Nôm texts, and the text of the sources describes the methods of combination. Source 2 is a handwritten copy of Source 1 with the same content and the same page numbering. It corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
@@ -45,7 +45,7 @@ Two sources attest the script. Both are vertical Han Nôm texts, and the text of
 
 | Feature | Evidence | Status |
 | --- | --- | --- |
-| Cán Tự, Chi Tự, Cán Lược | Described in the sources; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (Source 2, p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
+| Cán Tự, Chi Tự, Cán Lược | Described in the sources; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: cite passages and examples for Chi Tự and Cán Lược\] |
 | Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, Cán Lược first | \[TBD: cite passages and examples; function of the two components\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme | \[TBD: list the examples; cite the passage on the function of the components; confirm that the term covers only same-base pairs\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base and the third component extending the rhyme; two examples attested, both on a Hợp Thư | \[TBD: cite both examples\] |
@@ -206,7 +206,7 @@ The sources do not state a writing direction. Both attested sources contain vert
 
 ### 6.4 Code point order
 
-Source 1 lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (Source 2, p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
+The source lists the 22 Cán Tự in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán Tự, the five Chi Tự follow one fixed order of the marking-stroke position. \[TBD: define that order of the five positions\]
 
 ## 7. Character Table and Code Chart
 
