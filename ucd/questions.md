@@ -26,5 +26,5 @@ Each question concerns a value marked \[TBD\] in section 6 of the proposal. The 
 
 ## Names
 
-9. **Name conventions.** đ is written DD and d is written DZ (DDONG, DZONG); the forms are named by the position of the marking stroke, with a numeral after a hyphen (ONG MARKED-1 to ONG MARKED-6, and ONG UNMARKED); the names describe the form only. Should the numerals be digits, as drafted, or words (MARKED-ONE)? The tone marks have descriptive names with the tone as annotation. Are these acceptable?
+9. **Name conventions.** đ is written DD and d is written DZ (DDONG, DZONG); the forms are named by the position of the marking stroke, with digits after a hyphen (ONG MARKED-1 to ONG MARKED-6, and ONG UNMARKED); the names describe the form only. The tone marks have descriptive names with the tone as annotation. Are these acceptable?
 10. **Block name and position.** Draft block name: Quoc Am Tan Tu, 176 code points in the Supplementary Multilingual Plane.

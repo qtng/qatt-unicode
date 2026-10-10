@@ -50,9 +50,9 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 <!-- overview:start -->
 | Entry | Claim | Sections | Page | Status |
 | --- | --- | --- | --- | --- |
-| [E01](E01.md) | 22 Cán Tự, each of three strokes and one short marking stroke | 4.1, 6.4 | – | missing |
-| [E02](E02.md) | Five Chi Tự per Cán Tự: the marking stroke sits only at stroke ends (six positions); the Cán Tự has it at the start position (upper left or upper middle), and moving it counter-clockwise gives the Chi Tự in order | 4.1 | – | missing |
-| [E03](E03.md) | One unmarked Cán per Cán Tự, made by omitting the marking stroke | 4.1 | – | missing |
+| [E01](E01.md) | 22 Cán, each of three strokes and one short marking stroke | 4.1, 6.4 | – | missing |
+| [E02](E02.md) | Five Chi Tự per Cán: the marking stroke sits only at stroke ends (six positions); the marked Cán has it at the start position (upper left or upper middle), and moving it counter-clockwise gives the Chi Tự in order | 4.1 | – | missing |
+| [E03](E03.md) | Each Cán has an unmarked form, made by omitting the marking stroke | 4.1 | – | missing |
 | [E04](E04.md) | Components written standalone and side by side when the text explains combination, including a standalone unmarked Cán and two adjacent unmarked Cán | 3.2, 4.1, 5.4 | 6 | located |
 | [E05](E05.md) | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, unmarked Cán first | 3.2, 4.2 | 5 | located |
 | [E06](E06.md) | Function in a phản thiết pair: the unmarked Cán gives the initial, the Chi Tự the rhyme | 4.2 | – | located |
@@ -67,7 +67,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E15](E15.md) | Tone marks in all four corners, both shapes: the unmarked Cán of đông written with all eight tone marks, annotated 東 董 凍 篤 同 洞 動 獨 | 4.4, B | 5 | located |
 | [E16](E16.md) | Semicircle orientation: open side facing the centre in every example | 4.4 | – | missing |
 | [E17](E17.md) | Eight tones follow the Chinese yin-yang method | 2.1 | 4 | located |
-| [E18](E18.md) | Listing of the 22 Cán Tự in source order, each annotated with its name in Chữ Nôm | 6.4, 7.1 | 2 | cited |
+| [E18](E18.md) | Listing of the 22 Cán in source order, each annotated with its name in Chữ Nôm | 6.4, 7.1 | 2 | cited |
 | [E19](E19.md) | Script runs with vertical Hán Nôm text, treated like Hán Nôm characters | 3.1, 6.3 | – | missing |
 | [E20](E20.md) | Date and provenance of source 1 | 2.1, 3.1 | – | located |
 | [E21](E21.md) | Date and provenance of source 2 | 2.1, 3.1 | – | located |
@@ -83,9 +83,9 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E31](E31.md) | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) | 2.1 | 2 | cited |
 | [E32](E32.md) | Classification of the manuscripts as tiểu học (小學) and catalogued as nôm văn thư (喃文書) | 2.1 | – | missing |
 | [E33](E33.md) | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 | 1, 2, 2.1 | 1 | cited |
-| [E34](E34.md) | Cán Tự and unmarked Cán both appear standalone, with the same reading, also with tone marks; only the unmarked Cán combines, never the Cán Tự | 4.1, 5.3 | 5 | located |
+| [E34](E34.md) | Marked Cán and unmarked Cán both appear standalone, with the same reading, also with tone marks; only the unmarked Cán combines in phản thiết pairs and Hợp Thư | 4.1, 5.3 | 5 | located |
 | [E35](E35.md) | The source contains no running text in the script: only single characters given as examples and spelling formulas in the phản thiết manner, within Hán Nôm text | 2.1, 4.1 | – | located |
-| [E36](E36.md) | Counts of the characters in the section 音数: 176 Cán Tự, 880 single characters, 880 合書 with Chi Tự left and Cán Tự right, 18,480 合書 with Cán Tự left and Chi Tự right, each including the tone marks; eight times 22, 110, 110 and 2,310 | 4.1, 4.2, 4.5 | 8 | located |
+| [E36](E36.md) | Counts of the characters in the section 音数: 176 single Cán, 880 single characters, 880 合書 with Chi Tự left and Cán right, 18,480 合書 with Cán left and Chi Tự right, each including the tone marks; eight times 22, 110, 110 and 2,310 | 4.1, 4.2, 4.5 | 8 | located |
 <!-- overview:end -->
 
 ## Corrections

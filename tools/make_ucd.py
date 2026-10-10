@@ -28,7 +28,7 @@ SCRIPT = "Quoc_Am_Tan_Tu"
 # Grapheme_Cluster_Break, Indic_Conjunct_Break, Line_Break,
 # East_Asian_Width, Vertical_Orientation
 PROPS = {
-    q.Kind.CAN_TU:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
+    q.Kind.MARKED_CAN:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.UNMARKED: ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.CHI_TU:   ("Lo", 0, "L",   "Other",  "Consonant", "ID", "W", "U"),
     q.Kind.COMBINER: ("Cf", 0, "BN",  "Extend", "Linker",    "GL", "N", "U"),
@@ -85,22 +85,22 @@ def names_list() -> list[str]:
     first, last = q.BLOCK_BASE, q.BLOCK_BASE + q.BLOCK_SIZE - 1
     lines = [f"@@\t{first:05X}\t{BLOCK_NAME}\t{last:05X}"]
     headings = {q.Kind.UNMARKED: "Forms without marking stroke",
-                q.Kind.CAN_TU: "Forms with marking stroke (the six positions of each base)",
+                q.Kind.MARKED_CAN: "Forms with marking stroke (the six positions of each base)",
                 q.Kind.COMBINER: "Format characters",
                 q.Kind.TONE: "Tone marks"}
     shown = None
     for ch in assigned():
         k = q.kind(ch)
-        group = q.Kind.CAN_TU if k is q.Kind.CHI_TU else k
+        group = q.Kind.MARKED_CAN if k is q.Kind.CHI_TU else k
         if group is not shown and group in headings:
             lines.append(f"@\t\t{headings[group]}")
         shown = group
         lines.append(f"{ord(ch):05X}\t{q.character_name(ch)}")
         base = q.base_of(ch)
         if k is q.Kind.UNMARKED:
-            lines.append(f"\t* no marking stroke; standalone, it has the reading of the Cán Tự of its base: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
-        elif k is q.Kind.CAN_TU:
-            lines.append(f"\t* Cán Tự of the source listing: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
+            lines.append(f"\t* no marking stroke; standalone, it has the reading of the marked Cán of its base: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
+        elif k is q.Kind.MARKED_CAN:
+            lines.append(f"\t* marked Cán, the Cán of the source listing: {READINGS[base]} {NOM_ANNOTATIONS[base]}")
         elif k is q.Kind.CHI_TU:
             lines.append(f"\t* Chi Tự of the base {READINGS[base]}")
         elif k is q.Kind.COMBINER:

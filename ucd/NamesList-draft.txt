@@ -7,52 +7,52 @@
 @@	F0000	Quoc Am Tan Tu	F00AF
 @		Forms without marking stroke
 F0000	QUOC AM TAN TU ONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: ông 翁
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: ông 翁
 F0001	QUOC AM TAN TU NGONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: ngông ⿰木禺
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: ngông ⿰木禺
 F0002	QUOC AM TAN TU HONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: hông 胸
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: hông 胸
 F0003	QUOC AM TAN TU GONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: gông ⿰木功
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: gông ⿰木功
 F0004	QUOC AM TAN TU CONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: công 工
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: công 工
 F0005	QUOC AM TAN TU LONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: lông ⿰竜羽
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: lông ⿰竜羽
 F0006	QUOC AM TAN TU TRONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: trông ⿰竜里
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: trông ⿰竜里
 F0007	QUOC AM TAN TU DDONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: đông 東
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: đông 東
 F0008	QUOC AM TAN TU NONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: nông 農
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: nông 農
 F0009	QUOC AM TAN TU TONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: tông 宗
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: tông 宗
 F000A	QUOC AM TAN TU THONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: thông 通
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: thông 通
 F000B	QUOC AM TAN TU NHONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: nhông ⿰亻戍
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: nhông ⿰亻戍
 F000C	QUOC AM TAN TU CHONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: chông 柊
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: chông 柊
 F000D	QUOC AM TAN TU DZONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: dông ⿰月容
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: dông ⿰月容
 F000E	QUOC AM TAN TU XONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: xông 衝
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: xông 衝
 F000F	QUOC AM TAN TU KHONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: không 空
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: không 空
 F0010	QUOC AM TAN TU SONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: sông 滝
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: sông 滝
 F0011	QUOC AM TAN TU RONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: rông ⿱山庸
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: rông ⿱山庸
 F0012	QUOC AM TAN TU MONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: mông 蒙
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: mông 蒙
 F0013	QUOC AM TAN TU BONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: bông 芃
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: bông 芃
 F0014	QUOC AM TAN TU VONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: vông ⿰木芃
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: vông ⿰木芃
 F0015	QUOC AM TAN TU PHONG UNMARKED
-	* no marking stroke; standalone, it has the reading of the Cán Tự of its base: phông ⿰口風
+	* no marking stroke; standalone, it has the reading of the marked Cán of its base: phông ⿰口風
 @		Forms with marking stroke (the six positions of each base)
 F0016	QUOC AM TAN TU ONG MARKED-1
-	* Cán Tự of the source listing: ông 翁
+	* marked Cán, the Cán of the source listing: ông 翁
 F0017	QUOC AM TAN TU ONG MARKED-2
 	* Chi Tự of the base ông
 F0018	QUOC AM TAN TU ONG MARKED-3
@@ -64,7 +64,7 @@ F001A	QUOC AM TAN TU ONG MARKED-5
 F001B	QUOC AM TAN TU ONG MARKED-6
 	* Chi Tự of the base ông
 F001C	QUOC AM TAN TU NGONG MARKED-1
-	* Cán Tự of the source listing: ngông ⿰木禺
+	* marked Cán, the Cán of the source listing: ngông ⿰木禺
 F001D	QUOC AM TAN TU NGONG MARKED-2
 	* Chi Tự of the base ngông
 F001E	QUOC AM TAN TU NGONG MARKED-3
@@ -76,7 +76,7 @@ F0020	QUOC AM TAN TU NGONG MARKED-5
 F0021	QUOC AM TAN TU NGONG MARKED-6
 	* Chi Tự of the base ngông
 F0022	QUOC AM TAN TU HONG MARKED-1
-	* Cán Tự of the source listing: hông 胸
+	* marked Cán, the Cán of the source listing: hông 胸
 F0023	QUOC AM TAN TU HONG MARKED-2
 	* Chi Tự of the base hông
 F0024	QUOC AM TAN TU HONG MARKED-3
@@ -88,7 +88,7 @@ F0026	QUOC AM TAN TU HONG MARKED-5
 F0027	QUOC AM TAN TU HONG MARKED-6
 	* Chi Tự of the base hông
 F0028	QUOC AM TAN TU GONG MARKED-1
-	* Cán Tự of the source listing: gông ⿰木功
+	* marked Cán, the Cán of the source listing: gông ⿰木功
 F0029	QUOC AM TAN TU GONG MARKED-2
 	* Chi Tự of the base gông
 F002A	QUOC AM TAN TU GONG MARKED-3
@@ -100,7 +100,7 @@ F002C	QUOC AM TAN TU GONG MARKED-5
 F002D	QUOC AM TAN TU GONG MARKED-6
 	* Chi Tự of the base gông
 F002E	QUOC AM TAN TU CONG MARKED-1
-	* Cán Tự of the source listing: công 工
+	* marked Cán, the Cán of the source listing: công 工
 F002F	QUOC AM TAN TU CONG MARKED-2
 	* Chi Tự of the base công
 F0030	QUOC AM TAN TU CONG MARKED-3
@@ -112,7 +112,7 @@ F0032	QUOC AM TAN TU CONG MARKED-5
 F0033	QUOC AM TAN TU CONG MARKED-6
 	* Chi Tự of the base công
 F0034	QUOC AM TAN TU LONG MARKED-1
-	* Cán Tự of the source listing: lông ⿰竜羽
+	* marked Cán, the Cán of the source listing: lông ⿰竜羽
 F0035	QUOC AM TAN TU LONG MARKED-2
 	* Chi Tự of the base lông
 F0036	QUOC AM TAN TU LONG MARKED-3
@@ -124,7 +124,7 @@ F0038	QUOC AM TAN TU LONG MARKED-5
 F0039	QUOC AM TAN TU LONG MARKED-6
 	* Chi Tự of the base lông
 F003A	QUOC AM TAN TU TRONG MARKED-1
-	* Cán Tự of the source listing: trông ⿰竜里
+	* marked Cán, the Cán of the source listing: trông ⿰竜里
 F003B	QUOC AM TAN TU TRONG MARKED-2
 	* Chi Tự of the base trông
 F003C	QUOC AM TAN TU TRONG MARKED-3
@@ -136,7 +136,7 @@ F003E	QUOC AM TAN TU TRONG MARKED-5
 F003F	QUOC AM TAN TU TRONG MARKED-6
 	* Chi Tự of the base trông
 F0040	QUOC AM TAN TU DDONG MARKED-1
-	* Cán Tự of the source listing: đông 東
+	* marked Cán, the Cán of the source listing: đông 東
 F0041	QUOC AM TAN TU DDONG MARKED-2
 	* Chi Tự of the base đông
 F0042	QUOC AM TAN TU DDONG MARKED-3
@@ -148,7 +148,7 @@ F0044	QUOC AM TAN TU DDONG MARKED-5
 F0045	QUOC AM TAN TU DDONG MARKED-6
 	* Chi Tự of the base đông
 F0046	QUOC AM TAN TU NONG MARKED-1
-	* Cán Tự of the source listing: nông 農
+	* marked Cán, the Cán of the source listing: nông 農
 F0047	QUOC AM TAN TU NONG MARKED-2
 	* Chi Tự of the base nông
 F0048	QUOC AM TAN TU NONG MARKED-3
@@ -160,7 +160,7 @@ F004A	QUOC AM TAN TU NONG MARKED-5
 F004B	QUOC AM TAN TU NONG MARKED-6
 	* Chi Tự of the base nông
 F004C	QUOC AM TAN TU TONG MARKED-1
-	* Cán Tự of the source listing: tông 宗
+	* marked Cán, the Cán of the source listing: tông 宗
 F004D	QUOC AM TAN TU TONG MARKED-2
 	* Chi Tự of the base tông
 F004E	QUOC AM TAN TU TONG MARKED-3
@@ -172,7 +172,7 @@ F0050	QUOC AM TAN TU TONG MARKED-5
 F0051	QUOC AM TAN TU TONG MARKED-6
 	* Chi Tự of the base tông
 F0052	QUOC AM TAN TU THONG MARKED-1
-	* Cán Tự of the source listing: thông 通
+	* marked Cán, the Cán of the source listing: thông 通
 F0053	QUOC AM TAN TU THONG MARKED-2
 	* Chi Tự of the base thông
 F0054	QUOC AM TAN TU THONG MARKED-3
@@ -184,7 +184,7 @@ F0056	QUOC AM TAN TU THONG MARKED-5
 F0057	QUOC AM TAN TU THONG MARKED-6
 	* Chi Tự of the base thông
 F0058	QUOC AM TAN TU NHONG MARKED-1
-	* Cán Tự of the source listing: nhông ⿰亻戍
+	* marked Cán, the Cán of the source listing: nhông ⿰亻戍
 F0059	QUOC AM TAN TU NHONG MARKED-2
 	* Chi Tự of the base nhông
 F005A	QUOC AM TAN TU NHONG MARKED-3
@@ -196,7 +196,7 @@ F005C	QUOC AM TAN TU NHONG MARKED-5
 F005D	QUOC AM TAN TU NHONG MARKED-6
 	* Chi Tự of the base nhông
 F005E	QUOC AM TAN TU CHONG MARKED-1
-	* Cán Tự of the source listing: chông 柊
+	* marked Cán, the Cán of the source listing: chông 柊
 F005F	QUOC AM TAN TU CHONG MARKED-2
 	* Chi Tự of the base chông
 F0060	QUOC AM TAN TU CHONG MARKED-3
@@ -208,7 +208,7 @@ F0062	QUOC AM TAN TU CHONG MARKED-5
 F0063	QUOC AM TAN TU CHONG MARKED-6
 	* Chi Tự of the base chông
 F0064	QUOC AM TAN TU DZONG MARKED-1
-	* Cán Tự of the source listing: dông ⿰月容
+	* marked Cán, the Cán of the source listing: dông ⿰月容
 F0065	QUOC AM TAN TU DZONG MARKED-2
 	* Chi Tự of the base dông
 F0066	QUOC AM TAN TU DZONG MARKED-3
@@ -220,7 +220,7 @@ F0068	QUOC AM TAN TU DZONG MARKED-5
 F0069	QUOC AM TAN TU DZONG MARKED-6
 	* Chi Tự of the base dông
 F006A	QUOC AM TAN TU XONG MARKED-1
-	* Cán Tự of the source listing: xông 衝
+	* marked Cán, the Cán of the source listing: xông 衝
 F006B	QUOC AM TAN TU XONG MARKED-2
 	* Chi Tự of the base xông
 F006C	QUOC AM TAN TU XONG MARKED-3
@@ -232,7 +232,7 @@ F006E	QUOC AM TAN TU XONG MARKED-5
 F006F	QUOC AM TAN TU XONG MARKED-6
 	* Chi Tự of the base xông
 F0070	QUOC AM TAN TU KHONG MARKED-1
-	* Cán Tự of the source listing: không 空
+	* marked Cán, the Cán of the source listing: không 空
 F0071	QUOC AM TAN TU KHONG MARKED-2
 	* Chi Tự of the base không
 F0072	QUOC AM TAN TU KHONG MARKED-3
@@ -244,7 +244,7 @@ F0074	QUOC AM TAN TU KHONG MARKED-5
 F0075	QUOC AM TAN TU KHONG MARKED-6
 	* Chi Tự of the base không
 F0076	QUOC AM TAN TU SONG MARKED-1
-	* Cán Tự of the source listing: sông 滝
+	* marked Cán, the Cán of the source listing: sông 滝
 F0077	QUOC AM TAN TU SONG MARKED-2
 	* Chi Tự of the base sông
 F0078	QUOC AM TAN TU SONG MARKED-3
@@ -256,7 +256,7 @@ F007A	QUOC AM TAN TU SONG MARKED-5
 F007B	QUOC AM TAN TU SONG MARKED-6
 	* Chi Tự of the base sông
 F007C	QUOC AM TAN TU RONG MARKED-1
-	* Cán Tự of the source listing: rông ⿱山庸
+	* marked Cán, the Cán of the source listing: rông ⿱山庸
 F007D	QUOC AM TAN TU RONG MARKED-2
 	* Chi Tự of the base rông
 F007E	QUOC AM TAN TU RONG MARKED-3
@@ -268,7 +268,7 @@ F0080	QUOC AM TAN TU RONG MARKED-5
 F0081	QUOC AM TAN TU RONG MARKED-6
 	* Chi Tự of the base rông
 F0082	QUOC AM TAN TU MONG MARKED-1
-	* Cán Tự of the source listing: mông 蒙
+	* marked Cán, the Cán of the source listing: mông 蒙
 F0083	QUOC AM TAN TU MONG MARKED-2
 	* Chi Tự of the base mông
 F0084	QUOC AM TAN TU MONG MARKED-3
@@ -280,7 +280,7 @@ F0086	QUOC AM TAN TU MONG MARKED-5
 F0087	QUOC AM TAN TU MONG MARKED-6
 	* Chi Tự of the base mông
 F0088	QUOC AM TAN TU BONG MARKED-1
-	* Cán Tự of the source listing: bông 芃
+	* marked Cán, the Cán of the source listing: bông 芃
 F0089	QUOC AM TAN TU BONG MARKED-2
 	* Chi Tự of the base bông
 F008A	QUOC AM TAN TU BONG MARKED-3
@@ -292,7 +292,7 @@ F008C	QUOC AM TAN TU BONG MARKED-5
 F008D	QUOC AM TAN TU BONG MARKED-6
 	* Chi Tự of the base bông
 F008E	QUOC AM TAN TU VONG MARKED-1
-	* Cán Tự of the source listing: vông ⿰木芃
+	* marked Cán, the Cán of the source listing: vông ⿰木芃
 F008F	QUOC AM TAN TU VONG MARKED-2
 	* Chi Tự of the base vông
 F0090	QUOC AM TAN TU VONG MARKED-3
@@ -304,7 +304,7 @@ F0092	QUOC AM TAN TU VONG MARKED-5
 F0093	QUOC AM TAN TU VONG MARKED-6
 	* Chi Tự of the base vông
 F0094	QUOC AM TAN TU PHONG MARKED-1
-	* Cán Tự of the source listing: phông ⿰口風
+	* marked Cán, the Cán of the source listing: phông ⿰口風
 F0095	QUOC AM TAN TU PHONG MARKED-2
 	* Chi Tự of the base phông
 F0096	QUOC AM TAN TU PHONG MARKED-3

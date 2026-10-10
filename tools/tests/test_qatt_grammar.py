@@ -4,7 +4,7 @@ import pytest
 from hypothesis import given, settings, strategies as st
 
 import qatt_grammar as q
-from qatt_grammar import COMBINER, JOINER, Kind, unmarked, can_tu, chi_tu, tone
+from qatt_grammar import COMBINER, JOINER, Kind, unmarked, marked_can, chi_tu, tone
 
 CT = chi_tu
 CU = unmarked
@@ -29,7 +29,7 @@ def test_block_layout_counts():
     for offset in range(q.BLOCK_SIZE):
         k = q.kind(chr(q.BLOCK_BASE + offset))
         counts[k] = counts.get(k, 0) + 1
-    assert counts == {Kind.CAN_TU: 22, Kind.UNMARKED: 22, Kind.CHI_TU: 110,
+    assert counts == {Kind.MARKED_CAN: 22, Kind.UNMARKED: 22, Kind.CHI_TU: 110,
                       Kind.COMBINER: 1, Kind.JOINER: 1, Kind.TONE: 8,
                       Kind.OTHER: 12}
     assert sum(v for k, v in counts.items() if k is not Kind.OTHER) == 164
@@ -38,11 +38,11 @@ def test_block_layout_counts():
 def test_offsets():
     assert ord(unmarked(0)) - q.BLOCK_BASE == 0x00
     assert ord(unmarked(21)) - q.BLOCK_BASE == 0x15
-    assert ord(can_tu(0)) - q.BLOCK_BASE == 0x16
+    assert ord(marked_can(0)) - q.BLOCK_BASE == 0x16
     assert ord(chi_tu(0, 0)) - q.BLOCK_BASE == 0x17
     assert ord(chi_tu(0, 4)) - q.BLOCK_BASE == 0x1B
-    assert ord(can_tu(1)) - q.BLOCK_BASE == 0x1C      # six marked forms per base
-    assert ord(can_tu(21)) - q.BLOCK_BASE == 0x94
+    assert ord(marked_can(1)) - q.BLOCK_BASE == 0x1C      # six marked forms per base
+    assert ord(marked_can(21)) - q.BLOCK_BASE == 0x94
     assert ord(chi_tu(21, 4)) - q.BLOCK_BASE == 0x99
     assert ord(COMB) - q.BLOCK_BASE == 0x9A
     assert ord(JOIN) - q.BLOCK_BASE == 0x9B
@@ -63,7 +63,7 @@ def test_tone_order_is_traditional():
 
 
 def test_base_of():
-    assert q.base_of(can_tu(7)) == 7
+    assert q.base_of(marked_can(7)) == 7
     assert q.base_of(unmarked(7)) == 7
     assert all(q.base_of(chi_tu(7, p)) == 7 for p in range(5))
     assert q.base_of(COMB) is None
@@ -71,22 +71,22 @@ def test_base_of():
     assert q.base_of(HAN) is None
 
 
-def test_can_tu_names_are_unique_ascii():
-    assert len(q.CAN_TU_NAMES) == q.NUM_BASES == len(set(q.CAN_TU_NAMES))
-    assert all(n.isascii() and n.isupper() for n in q.CAN_TU_NAMES)
+def test_marked_can_names_are_unique_ascii():
+    assert len(q.CAN_NAMES) == q.NUM_BASES == len(set(q.CAN_NAMES))
+    assert all(n.isascii() and n.isupper() for n in q.CAN_NAMES)
 
 
 def test_marked_forms_form_one_run():
     # The 132 marked forms are consecutive, six per base, MARKED-1 to MARKED-6.
-    marked = [ord(c) - q.BLOCK_BASE for c in ALL_CAN_TU + ALL_CHI_TU]
+    marked = [ord(c) - q.BLOCK_BASE for c in ALL_MARKED_CAN + ALL_CHI_TU]
     assert sorted(marked) == list(range(0x16, 0x9A))
     for base in range(22):
         forms = [q.marked(base, n) for n in range(1, 7)]
-        assert forms[0] == can_tu(base)
+        assert forms[0] == marked_can(base)
         assert forms[1:] == [chi_tu(base, p) for p in range(5)]
         assert [q.marked_position(c) for c in forms] == [1, 2, 3, 4, 5, 6]
         assert all(q.base_of(c) == base for c in forms)
-        assert [q.kind(c) for c in forms] == [Kind.CAN_TU] + [Kind.CHI_TU] * 5
+        assert [q.kind(c) for c in forms] == [Kind.MARKED_CAN] + [Kind.CHI_TU] * 5
     with pytest.raises(ValueError):
         q.marked(0, 0)
     with pytest.raises(ValueError):
@@ -98,8 +98,8 @@ def test_character_names():
     assigned = [n for n in names if n]
     assert len(assigned) == len(set(assigned)) == 164
     assert all(n.replace("-", "").replace(" ", "").isalnum() and n.isupper() for n in assigned)
-    assert q.character_name(can_tu(0)) == "QUOC AM TAN TU ONG MARKED-1"
-    assert q.character_name(can_tu(13)) == "QUOC AM TAN TU DZONG MARKED-1"
+    assert q.character_name(marked_can(0)) == "QUOC AM TAN TU ONG MARKED-1"
+    assert q.character_name(marked_can(13)) == "QUOC AM TAN TU DZONG MARKED-1"
     assert q.character_name(unmarked(13)) == "QUOC AM TAN TU DZONG UNMARKED"
     assert q.character_name(chi_tu(0, 0)) == "QUOC AM TAN TU ONG MARKED-2"
     assert q.character_name(chi_tu(21, 4)) == "QUOC AM TAN TU PHONG MARKED-6"
@@ -109,14 +109,14 @@ def test_character_names():
 
 def test_constructors_reject_out_of_range():
     with pytest.raises(ValueError):
-        can_tu(22)
+        marked_can(22)
     with pytest.raises(ValueError):
         chi_tu(0, 5)
 
 
 # --- Counts from proposal 5.2 ------------------------------------------------
 
-ALL_CAN_TU = [can_tu(b) for b in range(22)]
+ALL_MARKED_CAN = [marked_can(b) for b in range(22)]
 ALL_UNMARKED = [unmarked(b) for b in range(22)]
 ALL_CHI_TU = [chi_tu(b, p) for b in range(22) for p in range(5)]
 
@@ -140,20 +140,20 @@ def test_tham_thu_count_matches_proposal():
 
 def test_every_cluster_takes_any_of_eight_tones():
     tones = [tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS]
-    samples = [ALL_CAN_TU[0], ALL_CHI_TU[0], ALL_UNMARKED[0], pt(1, 2), hop(1), hop(1) + COMB + CT(3, 0)]
+    samples = [ALL_MARKED_CAN[0], ALL_CHI_TU[0], ALL_UNMARKED[0], pt(1, 2), hop(1), hop(1) + COMB + CT(3, 0)]
     assert count_valid((s, t) for s in samples for t in tones) == len(samples) * 8
 
 
 # --- Sequences from proposal 5.3 ---------------------------------------------
 
 WELL_FORMED = {
-    "standalone Cán Tự": can_tu(3),
+    "standalone marked Cán": marked_can(3),
     "standalone Chi Tự": CT(3, 1),
     "standalone unmarked Cán": CU(3),
     "phản thiết pair": pt(3, 5, 2),
     "Hợp Thư": hop(3, 2),
     "Tham Thư": hop(3, 2) + COMB + CT(9, 0),
-    "Cán Tự with tone": can_tu(3) + TONE,
+    "marked Cán with tone": marked_can(3) + TONE,
     "Tham Thư with tone": hop(3, 2) + COMB + CT(9, 0) + TONE,
 }
 
@@ -167,7 +167,7 @@ def test_well_formed_cluster(name):
 
 
 ILL_FORMED = [
-    (CU(3) + JOIN + can_tu(4), "component joiner must stand between a Chi Tự and an unmarked Cán"),
+    (CU(3) + JOIN + marked_can(4), "component joiner must stand between a Chi Tự and an unmarked Cán"),
     (CU(3) + JOIN + CU(4), "component joiner must stand between a Chi Tự and an unmarked Cán"),
     (CT(3, 0) + JOIN + CT(4, 0), "component joiner must stand between a Chi Tự and an unmarked Cán"),
     (JOIN + CT(4, 0), "component joiner must stand between a Chi Tự and an unmarked Cán"),
@@ -178,7 +178,7 @@ ILL_FORMED = [
     (hop(1) + JOIN + CT(2, 0), "more than one component joiner"),
     (hop(1) + COMB + hop(2), "top component of a Tham Thư must be a single Chi Tự"),
     (hop(1) + COMB + CT(2, 0) + COMB + CT(3, 0), "more than one combiner"),
-    (can_tu(1) + COMB + CT(2, 0), "Cán Tự combined with other components"),
+    (marked_can(1) + COMB + CT(2, 0), "marked Cán combined with other components"),
     (CT(1, 0) + TONE + COMB + CT(2, 0), "tone mark inside a cluster"),
     (CT(1, 0) + TONE + TONE, "more than one tone mark"),
     (TONE, "tone mark without a base"),
@@ -260,7 +260,7 @@ def test_examples_from_section_5_5():
 
 # --- Properties --------------------------------------------------------------
 
-ALPHABET = (ALL_UNMARKED + ALL_CAN_TU + ALL_CHI_TU + [COMB, JOIN]
+ALPHABET = (ALL_UNMARKED + ALL_MARKED_CAN + ALL_CHI_TU + [COMB, JOIN]
             + [tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS]
             + [chr(q.BLOCK_BASE + 0xA4), HAN, " "])
 
@@ -315,7 +315,7 @@ def test_segment_concatenates_to_input(text):
 
 def well_formed_cluster():
     ct = st.builds(chi_tu, st.integers(0, 21), st.integers(0, 4))
-    ca = st.builds(can_tu, st.integers(0, 21))
+    ca = st.builds(marked_can, st.integers(0, 21))
     phan_thiet = (st.tuples(st.integers(0, 21), st.integers(0, 21), st.integers(0, 4))
                   .filter(lambda t: t[0] != t[1])
                   .map(lambda t: pt(*t)))
