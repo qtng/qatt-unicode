@@ -53,7 +53,7 @@ The status column names the open items of the evidence catalogue (E01, E02, …)
 | --- | --- | --- |
 | Cán Tự, Chi Tự, Cán Lược | Described in the source; the 22 Cán Tự are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: E01–E03, E29\] |
 | Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法, from p. 5); components of different bases, Cán Lược first; the Cán Lược gives the initial, the Chi Tự the rhyme; pairs in running text (p. 6) | \[TBD: E05, E06\] |
-| Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme | \[TBD: E07, E08\] |
+| Hợp Thư | Described in the text; every example is a same-base pair with the Chi Tự first; the Chi Tự gives the initial, the Cán Lược the rhyme; the count of 880 (110 × 8 tones) covers only same-base pairs (p. 8) | \[TBD: E08\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base; two examples attested, both on a Hợp Thư; reading not established | \[TBD: E10, E12, E13; deferred\] |
 | Standalone and adjacent components | When the text explains how components combine, it writes components on their own and side by side without combining them: a standalone Cán Lược before a Chi Tự, and two standalone Cán Lược before a phản thiết pair (p. 6) | Cited |
 | Omission of the Cán Lược | Wherever a phản thiết pair of the same base would occur, the source writes the Chi Tự alone | \[TBD: E09\] |
@@ -196,7 +196,7 @@ The eight tone marks are combining characters that follow the complete cluster. 
 - Variation selector: rejected, because the two orders differ in reading, and a variation selector may only select a glyph variant of the same character.
 - Unification of each Cán Tự with its Cán Lược: not adopted. The Cán Tự does not appear to be a productive part of the script: it never combines, and wherever it stands alone, the standalone Cán Lược of the same base has the same reading (p. 5), so it could be replaced by the Cán Lược throughout. Its main purpose is to serve as a kind of alphabet, as in the listing of the 22 Cán Tự with their names (p. 2). The two forms are nevertheless distinct, differing by the marking stroke, and both are attested, so each Cán Tự has its own code point.
 - Separate code points for the Cán Lược of a Hợp Thư: rejected, 22 code points instead of one joiner.
-- Broad reading of Hợp Thư, in which the term covers every Cán Lược + Chi Tự pair and a Tham Thư base may be any pair or a single Chi Tự (278,300 Tham Thư): not adopted, because it needs an unattested base and does not match the division of the source into Hợp Thư and Phản Thiết Hài Âm Pháp. \[TBD: cite the passages that support the narrow reading\]
+- Broad reading of Hợp Thư, in which the term covers every Cán Lược + Chi Tự pair and a Tham Thư base may be any pair or a single Chi Tự (278,300 Tham Thư): not adopted, because it needs an unattested base and does not match the division of the source into Hợp Thư and Phản Thiết Hài Âm Pháp. The count section confirms the narrow reading: the source counts 880 characters with the Chi Tự on the left and the Cán Tự on the right, eight tones on each of the 110 same-base pairs, and no others in this arrangement (p. 8).
 - Reuse of U+A700..U+A707 MODIFIER LETTER CHINESE TONE YIN PING to YANG RU: not adopted. These eight characters cover the same eight tones in the same order, but they are spacing modifier letters (General\_Category Sk) written beside a syllable, not combining marks placed in a corner of a character. As separate grapheme clusters they would break the cluster structure, and a font could not place them within the cell. Their forms also differ: they distinguish yin and yang by an underline, Quốc Âm Tân Tự by semicircle and circle.
 - Reuse of U+302A..U+302D IDEOGRAPHIC LEVEL, RISING, DEPARTING and ENTERING TONE MARK: not adopted. These combining marks use the same corners for the same four tone classes, but they do not distinguish âm and dương. Using them for one register and new characters for the other would split one set of eight contrastive marks across two blocks, and the existing marks would carry a register they do not denote.
 - Two tone marks plus a position selector: rejected, because the corner is contrastive.
@@ -323,12 +323,11 @@ A conforming font draws every cluster in one square cell and composes it with su
 
 ## 9. Open Points
 
-Fourteen points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
+Thirteen points remain before the proposal can be submitted. The alternatives already weighed are in 5.7.
 
 | Point | Section | What is needed |
 | --- | --- | --- |
 | Tham Thư combiner now, or IDS first | 4.3, 5.8 | Decision, taken last: the reading of Tham Thư is not established and only two examples exist |
-| Scope of the term Hợp Thư (same-base pairs only) | 3.2, 4.2, 5.7 | Source passages for the narrow reading; the count section uses 合書 for both arrangements (p. 8, E36) |
 | Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư | 3.2, 4.2 | Source passages; this is the main argument for the reading order (5.4) |
 | UTC Proposal Summary Form | 1 | Completed form |
 | Pages of the taboo character and the signature; scholarly literature | 2.1, D | Pages and images (E30, E31); references |
