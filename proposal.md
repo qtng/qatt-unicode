@@ -1,10 +1,10 @@
 # QATT Unicode Proposal – Draft
 
-Oct 9, 2026 · @Trung
+Oct 9, 2026 · Nguyễn Quốc Trung
 
 ## 1. Summary
 
-This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used inside Han Nôm texts, as 164 characters in the Supplementary Multilingual Plane.
+This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used inside Hán Nôm texts, as 164 characters in the Supplementary Multilingual Plane.
 
 | Item | Entry |
 | --- | --- |
@@ -14,7 +14,7 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 | Characters | 164: 154 components, 2 joiners, 8 tone marks |
 | Model | Atomic components in reading order; every combination written with an explicit joiner |
 | Plane | Supplementary Multilingual Plane \[TBD: block position assigned by the UTC\] |
-| Direction | Follows Han Nôm; the source is vertical |
+| Direction | Follows Hán Nôm; the source is vertical |
 | Attested sources | Two manuscripts of one text, Institute of Hán Nôm Studies, Hanoi, AB.630; reign of Thiệu Trị (1841–1847) |
 | Official form | \[TBD: complete the UTC Proposal Summary Form\] |
 
@@ -26,7 +26,7 @@ Quốc Âm Tân Tự (國音新字, "new script for the sounds of the national l
 
 The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text names the script in the heading of its preface, 國音新字序, "preface to the new script for the sounds of the national language" (p. 1). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa. The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành. The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents).
 
-In the source the script appears in running Han Nôm text and is treated exactly like Han Nôm characters. Three-component characters (Tham Thư) are attested in two examples; their reading is not established (4.3). Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: pages of the taboo character and of the signature (E30, E31); scholarly literature\]
+In the source the script appears in running Hán Nôm text and is treated exactly like Hán Nôm characters. Three-component characters (Tham Thư) are attested in two examples; their reading is not established (4.3). Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: pages of the taboo character and of the signature (E30, E31); scholarly literature\]
 
 ### 2.2 Reasons for encoding
 
@@ -34,14 +34,14 @@ In the source the script appears in running Han Nôm text and is treated exactly
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are manuscripts of the same vertical Han Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are manuscripts of the same vertical Hán Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
 | Source | Date | Location | Text type | Direction |
 | --- | --- | --- | --- | --- |
-| Source 1 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Han Nôm, 4 double pages | Vertical |
-| Source 2 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Han Nôm, 4 double pages; corrects Source 1 | Vertical |
+| Source 1 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Hán Nôm, 4 double pages | Vertical |
+| Source 2 | Reign of Thiệu Trị (1841–1847) | Institute of Hán Nôm Studies, Hanoi, AB.630 | Manuscript, Hán Nôm, 4 double pages; corrects Source 1 | Vertical |
 
 Both manuscripts share the shelfmark AB.630. The date is that of the text, from the naming taboo (2.1); the dates of the two copies are not known.
 
@@ -58,7 +58,7 @@ The status column names the open items of the evidence catalogue (E01, E02, …)
 | Standalone and adjacent components | When the text explains how components combine, it writes components on their own and side by side without combining them: a standalone Cán Lược before a Chi Tự, and two standalone Cán Lược before a phản thiết pair (p. 6) | Cited |
 | Omission of the Cán Lược | Wherever a phản thiết pair of the same base would occur, the source writes the Chi Tự alone | \[TBD: E09\] |
 | Tone marks | Eight tones in four corners; the neutral tone marked with a semicircle lower left; marked and unmarked characters in one passage; round and angular forms of the same mark (p. 6) | \[TBD: E14–E17, E28\] |
-| Writing direction | The text is silent; both witnesses are vertical Han Nôm | Assumption: Han Nôm habits \[TBD: E19\] |
+| Writing direction | The text is silent; both witnesses are vertical Hán Nôm | Assumption: Hán Nôm habits \[TBD: E19\] |
 
 ### 3.3 Modern use
 
@@ -221,7 +221,7 @@ Segmentation uses pairwise rules only: there is no break directly before or afte
 
 ### 6.3 Line breaking and direction
 
-The source does not state a writing direction. Both witnesses contain vertical Han Nôm text, and in every case the script is treated exactly like Han Nôm and flows with it: vertical lines, columns running right to left, no spaces between words. No horizontal use is attested. The proposal therefore assumes the writing habits of Han Nôm. The characters behave like ideographs, each occupying one square cell. Proposed for the components: Bidi\_Class L, Line\_Break ID, East\_Asian\_Width W, Vertical\_Orientation U. Tone marks and the joiners never start a line, because they belong to the preceding cluster.
+The source does not state a writing direction. Both witnesses contain vertical Hán Nôm text, and in every case the script is treated exactly like Hán Nôm and flows with it: vertical lines, columns running right to left, no spaces between words. No horizontal use is attested. The proposal therefore assumes the writing habits of Hán Nôm. The characters behave like ideographs, each occupying one square cell. Proposed for the components: Bidi\_Class L, Line\_Break ID, East\_Asian\_Width W, Vertical\_Orientation U. Tone marks and the joiners never start a line, because they belong to the preceding cluster.
 
 ### 6.4 Code point order
 
@@ -307,7 +307,7 @@ The names of the 22 Cán Tự come from the source listing (6.4), where each Cá
 
 A conforming font draws every cluster in one square cell and composes it with substitution and positioning rules, not with precomposed glyphs.
 
-- **Cell:** Each cluster fills one square cell with the metrics of Han Nôm ideographs, so it sits in vertical or horizontal lines without adjustment.
+- **Cell:** Each cluster fills one square cell with the metrics of Hán Nôm ideographs, so it sits in vertical or horizontal lines without adjustment.
 - **Two-component characters:** The two component glyphs share the cell. \[TBD: positions, see 4.5\]
 - **No reordering:** Components are drawn in stored order. The component joiner tells the font to compose the two components in one cell; their order gives the arrangement, Cán Lược first for a phản thiết pair and Chi Tự first for a Hợp Thư. Components without a joiner are drawn as separate characters. \[TBD: positions, see 4.5\]
 - **Tham Thư:** After the combiner, the Chi Tự is drawn above the Hợp Thư. The font composes the cluster by contextual substitution and positioning, because 12,100 precomposed glyphs are impractical. The two attested examples serve as test cases for the reference font.
@@ -333,7 +333,7 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 | Unicode properties: combining class, grapheme cluster rules, Bidi\_Class of both joiners | 6, 6.1, 6.2 | Review by Unicode experts |
 | Block position in the Supplementary Multilingual Plane | 7 | Assignment by the UTC |
 | Reference font and code chart glyphs | 7.2, 8 | Designer, licence and glyphs |
-| Horizontal use | 6.3 | Not attested, so the proposal assumes Han Nôm habits |
+| Horizontal use | 6.3 | Not attested, so the proposal assumes Hán Nôm habits |
 
 ## 10. Appendices
 
