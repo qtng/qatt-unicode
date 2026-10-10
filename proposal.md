@@ -232,7 +232,7 @@ The source does not state a writing direction. Both witnesses contain vertical H
 
 ### 6.4 Code point order
 
-The source lists the 22 Cán in the section 幹音二十二字, "the twenty-two characters of the trunk sounds", each annotated with its name in Chữ Nôm (p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán, the five Chi follow the order of the marking-stroke position, counter-clockwise from the position of the marked Cán (4.1). The unmarked forms come first. The six marked forms of a base follow one another, so that all marked forms form one run of code points (+16 to +99).
+The source lists the 22 Cán in the section 幹音二十二字, "trunk sounds, twenty-two characters", each annotated with its name in Chữ Nôm (p. 2). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán, the five Chi follow the order of the marking-stroke position, counter-clockwise from the position of the marked Cán (4.1). The unmarked forms come first. The six marked forms of a base follow one another, so that all marked forms form one run of code points (+16 to +99).
 
 ## 7. Character Table and Code Chart
 
@@ -366,7 +366,7 @@ Passages located in the source, by page. Page references are to Source 1 (sectio
 | 1 | 國音新字序 | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 (E33) | cited |
 | 2 | 幹音二十二字 · Nôm annotations in order (IDS where no encoded character is used): 翁 ông · ⿰木禺 ngông · 胸 hông · ⿰木功 gông · 工 công · ⿰竜羽 lông · ⿰竜里 trông · 東 đông · 農 nông · 宗 tông · 通 thông · ⿰亻戍 nhông · 柊 chông · ⿰月容 dông · 衝 xông · 空 không · 滝 sông · ⿱山庸 rông · 蒙 mông · 芃 bông · ⿰木芃 vông · ⿰口風 phông | Listing of the 22 Cán in source order, each annotated with its name in Chữ Nôm (E18) | cited |
 | 2 | 五星聚斗南城居士阮子書 | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) (E31) | cited |
-| 2 | 幹音二十二字 | The term Cán (幹): the listing of the 22 Cán is headed 幹音二十二字, 'the twenty-two characters of the trunk sounds' (E37) | cited |
+| 2 | 幹音二十二字 | The term Cán (幹): the listing of the 22 Cán is headed 幹音二十二字, 'trunk sounds, twenty-two characters' (E37) | cited |
 | 3 | 枝字一百一十字 · 109 Chi, each annotated with a Nôm character | Table of the Chi under the heading 枝字一百一十字, 'the 110 Chi'; the table shows 109, one left out by oversight (E29) | located |
 | 4 | 本字八音識別法。於本字上依陰陽四象識別，每一字各成八字。如同東合一字，惟同音其聲在上為陽，東音其聲在下為陰。以陰陽分配，則東董凍篤四音是陰之平上去入，同洞動獨四音是陽之平上去入。以四象識別，則陽用全圈，陰用半圈。  其同字全識於其字之左足，洞字全識於其字之左肩，動字全識於其字之右肩，獨字全識於其字之右足；東字半識於其字之左足，董字半識於其字之左肩，凍字半識於其字之右肩，篤字半識於其字之右足。如下。他倣此。  {CU 東}{CU 董}{CU 凍}{CU 篤}{CU 同}{CU 洞}{CU 動}{CU 獨} | Tone marks: circle and semicircle in four corners, eight tones (E14) | located |
 | 4 | 本字八音識別法。於本字上依陰陽四象識別，每一字各成八字。如同東合一字，惟同音其聲在上為陽，東音其聲在下為陰。以陰陽分配，則東董凍篤四音是陰之平上去入，同洞動獨四音是陽之平上去入。以四象識別，則陽用全圈，陰用半圈。  其同字全識於其字之左足，洞字全識於其字之左肩，動字全識於其字之右肩，獨字全識於其字之右足；東字半識於其字之左足，董字半識於其字之左肩，凍字半識於其字之右肩，篤字半識於其字之右足。如下。他倣此。  {CU 東}{CU 董}{CU 凍}{CU 篤}{CU 同}{CU 洞}{CU 動}{CU 獨} | Eight tones follow the Chinese yin-yang method (E17) | located |
