@@ -34,7 +34,7 @@ In the source the script appears within Hán Nôm text and is treated exactly li
 
 ## 3. Sources and Evidence
 
-Two sources attest the script. Both are manuscripts of the same vertical Hán Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Both are bound in one volume with continuous folio numbers, Source 1 on folios 3–10 and Source 2 on folios 11–18; page references in this proposal give the page within each manuscript, 1 to 8. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 2, the corrected copy; since both witnesses share the page numbering, they apply to Source 1 as well. Source 1 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
+Two sources attest the script. Both are manuscripts of the same vertical Hán Nôm text, which describes the methods of combination. Each has four double pages, numbered as eight pages, with the same content and the same page numbering. Both are bound in one volume with continuous folio numbers, Source 1 on folios 3–10 and Source 2 on folios 11–18; page references in this proposal give the page within each manuscript, 1 to 8. Whether Source 2 was copied from Source 1 or both from an earlier original cannot be determined. Source 2 corrects Quốc Âm Tân Tự characters that are unclear in Source 1 and some obvious scribal errors. The two sources are therefore one text in two witnesses. Page references in this proposal, such as (p. 2), refer to Source 1; since both witnesses share the page numbering and the layout of the columns, they apply to Source 2 as well. Source 2 is named only where it differs or where its reading matters. \[TBD: list the places where Source 2 corrects Source 1\]
 
 ### 3.1 Attested sources
 
@@ -360,7 +360,7 @@ Fourteen points remain before the proposal can be submitted. The alternatives al
 ### B. Attested passages
 
 <!-- appendix-b:start -->
-Passages located in the source, by page. Page references are to Source 2 (section 3); images are in the evidence catalogue.
+Passages located in the source, by page. Page references are to Source 1 (section 3); images are in the evidence catalogue.
 
 | Page | Passage | Shows | Status |
 | --- | --- | --- | --- |

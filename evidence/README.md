@@ -9,14 +9,13 @@ One Markdown file per claim in the proposal that needs a source citation: `E01.m
 id: E04
 claim: "The statement in the proposal that the passage supports"
 sections: [3.2, 4.1]
-source: [Source 2, Source 1]
+source: [Source 1]
 page: 6
 location: "Column and line on the page"
-image: [E04-2.png, E04-1.png]
+image: [E04-1.png]
 status: located
 ---
 
-![Source 2](images/E04-2.png)
 ![Source 1](images/E04-1.png)
 
 ## Transcription
@@ -40,9 +39,9 @@ status: located
 
 Transcriptions write QATT characters as placeholders until a font exists: `{CL 翁}` is a standalone Cán Lược annotated 翁, `{CT …}` a standalone Chi Tự, `{PT …}` a phản thiết pair.
 
-Cite Source 2, the corrected copy, and add Source 1 only where it differs or where its reading matters. The proposal cites by page only, for example (p. 2), and names a source only where it matters.
+Cite Source 1, and add Source 2 only where it differs or where its reading matters. Both witnesses share the page numbering and the layout of the columns. The proposal cites by page only, for example (p. 2), and names a source only where it matters.
 
-Full pages are in `pages/`: `S1-p1.jpg` … `S1-p8.jpg` for Source 1 and `S2-p1.jpg` … `S2-p8.jpg` for Source 2, extracted unchanged from the scan of the volume (folios 3–18, 785 × 1525 pixels each). An entry can show a full page by giving its path, for example `image: [pages/S2-p4.jpg, pages/S1-p4.jpg]`.
+Full pages are in `pages/`: `S1-p1.jpg` … `S1-p8.jpg` for Source 1 and `S2-p1.jpg` … `S2-p8.jpg` for Source 2, extracted unchanged from the scan of the volume (folios 3–18, 785 × 1525 pixels each). An entry can show a full page by giving its path, for example `image: [pages/S1-p4.jpg]`.
 
 Cut-outs go in `images/`. They are cut from the full pages by `python tools/make_crops.py`, using the page and the pixel box (left, top, right, bottom) listed for each image in `crops.csv`; to change a cut-out, edit its box and run the script again. Cut-outs are named after the entry id, for example `E08-1.png` (Source 1) and `E08-2.png` (Source 2). Publish scans only where the holding institution permits it.
 

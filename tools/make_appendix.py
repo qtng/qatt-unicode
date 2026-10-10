@@ -25,7 +25,7 @@ def cell(text: str) -> str:
 
 def appendix_b(entries) -> str:
     located = [e for e in entries if e["status"] != "missing" and e["page"]]
-    lines = ["Passages located in the source, by page. Page references are to Source 2 (section 3); images are in the evidence catalogue.",
+    lines = ["Passages located in the source, by page. Page references are to Source 1 (section 3); images are in the evidence catalogue.",
              "",
              "| Page | Passage | Shows | Status |",
              "| --- | --- | --- | --- |"]
