@@ -17,6 +17,15 @@ Status: draft. Open points are listed in section 9 of the proposal and marked \[
 
 The block position is not assigned yet. The reference implementation uses a provisional base in Supplementary Private Use Area-A; only the offsets within the block come from the proposal.
 
+## Generated content
+
+After changing the evidence catalogue or the reference implementation, regenerate:
+
+```
+python tools/make_appendix.py   # Appendix B of proposal.md from evidence/catalog.csv
+python tools/make_ucd.py        # draft character data in ucd/
+```
+
 ## Running the tests
 
 ```
