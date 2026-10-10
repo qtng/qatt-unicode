@@ -253,14 +253,16 @@ Names use ASCII capitals without diacritics, as Unicode requires. Patterns:
 ```
 QUOC AM TAN TU CAN TU <NAME>
 QUOC AM TAN TU CAN LUOC <NAME>
-QUOC AM TAN TU CHI TU <NAME> <POSITION>
+QUOC AM TAN TU CHI TU <NAME>-<N>
 QUOC AM TAN TU THAM THU COMBINER
 QUOC AM TAN TU COMPONENT JOINER
 QUOC AM TAN TU TONE CIRCLE UPPER LEFT
 QUOC AM TAN TU TONE SEMICIRCLE LOWER RIGHT
 ```
 
-The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. The names describe the mark; the tone it denotes is given as an annotation, for example QUOC AM TAN TU TONE SEMICIRCLE LOWER LEFT = âm bình (ngang). \[TBD: names of the five marking-stroke positions\]
+The tone marks use the corners UPPER LEFT, UPPER RIGHT, LOWER LEFT and LOWER RIGHT, each for circle and semicircle. The names describe the mark; the tone it denotes is given as an annotation, for example QUOC AM TAN TU TONE SEMICIRCLE LOWER LEFT = âm bình (ngang).
+
+The five Chi Tự of a base are named after their Cán Tự and numbered 1 to 5 in the order of the marking-stroke position, counter-clockwise from the position of the Cán Tự (4.1), for example QUOC AM TAN TU CHI TU ONG-1 to QUOC AM TAN TU CHI TU ONG-5. The positions are relative to the Cán Tự and lie in different places for different bases, so the names number them instead of describing them geometrically.
 
 The names of the 22 Cán Tự come from the source listing (6.4), where each Cán Tự is annotated with a Chữ Nôm character; annotations without an encoded character are given as Ideographic Description Sequences. Each name is the syllable of the initial with the rhyme ông. The source gives the Cán Lược no names of their own and sometimes call them by the name of their Cán Tự, so each Cán Lược takes the name of its Cán Tự. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
 
@@ -318,7 +320,7 @@ Thirteen points remain before the proposal can be submitted. The alternatives al
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Source passages and scans for the components, standalone and adjacent components, phản thiết pairs, Hợp Thư, the omission convention, Tham Thư and the tone corners | 3.2, 3.4, 4.1 to 4.4, B, C | Citations and images |
 | Layout of the components in two-component characters and Tham Thư | 4.5, 8 | Positions from the source examples |
-| Names of the five Chi Tự of each base | 7.1 | Naming scheme; the order is counter-clockwise from the Cán Tự position (4.1), the Cán Tự names come from the source listing |
+| Table of the 110 Chi Tự | 4.1, 7.1 | Source passage and image; check of the numbering against it |
 | Unicode properties: combining class, grapheme cluster rules, Bidi\_Class of both joiners | 6, 6.1, 6.2 | Review by Unicode experts |
 | Block position in the Supplementary Multilingual Plane | 7 | Assignment by the UTC |
 | Reference font and code chart glyphs | 7.2, 8 | Designer, licence and glyphs |

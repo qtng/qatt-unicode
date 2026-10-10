@@ -74,6 +74,19 @@ def test_can_tu_names_are_unique_ascii():
     assert all(n.isascii() and n.isupper() for n in q.CAN_TU_NAMES)
 
 
+def test_character_names():
+    names = [q.character_name(chr(q.BLOCK_BASE + o)) for o in range(q.BLOCK_SIZE)]
+    assigned = [n for n in names if n]
+    assert len(assigned) == len(set(assigned)) == 164
+    assert all(n.replace("-", "").replace(" ", "").isalnum() and n.isupper() for n in assigned)
+    assert q.character_name(can_tu(0)) == "QUOC AM TAN TU CAN TU ONG"
+    assert q.character_name(can_luoc(13)) == "QUOC AM TAN TU CAN LUOC DZONG"
+    assert q.character_name(chi_tu(0, 0)) == "QUOC AM TAN TU CHI TU ONG-1"
+    assert q.character_name(chi_tu(21, 4)) == "QUOC AM TAN TU CHI TU PHONG-5"
+    assert q.character_name(tone("SEMICIRCLE", "LOWER LEFT")) == "QUOC AM TAN TU TONE SEMICIRCLE LOWER LEFT"
+    assert q.character_name(HAN) is None
+
+
 def test_constructors_reject_out_of_range():
     with pytest.raises(ValueError):
         can_tu(22)

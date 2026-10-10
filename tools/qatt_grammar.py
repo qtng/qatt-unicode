@@ -257,6 +257,30 @@ def is_well_formed(text: str, extended: bool = False) -> bool:
     return all(c.valid for c in analyse(text, extended))
 
 
+def character_name(ch: str) -> str | None:
+    """Proposed Unicode character name (proposal 7.1), or None outside the encoded repertoire."""
+    offset = ord(ch) - BLOCK_BASE
+    k = kind(ch)
+    prefix = "QUOC AM TAN TU "
+    if k is Kind.CAN_TU:
+        return prefix + "CAN TU " + CAN_TU_NAMES[base_of(ch)]
+    if k is Kind.CAN_LUOC:
+        return prefix + "CAN LUOC " + CAN_TU_NAMES[base_of(ch)]
+    if k is Kind.CHI_TU:
+        position = (offset - CHI_TU_OFFSET) % NUM_POSITIONS + 1
+        return prefix + f"CHI TU {CAN_TU_NAMES[base_of(ch)]}-{position}"
+    if k is Kind.COMBINER:
+        return prefix + "THAM THU COMBINER"
+    if k is Kind.JOINER:
+        return prefix + "COMPONENT JOINER"
+    if k is Kind.TONE:
+        index = offset - TONE_OFFSET
+        corner = TONE_CORNERS[index // len(TONE_SHAPES)]
+        shape = TONE_SHAPES[index % len(TONE_SHAPES)]
+        return prefix + f"TONE {shape} {corner}"
+    return None
+
+
 def is_hop_thu(cluster: str) -> bool:
     """Whether the cluster begins with a Hợp Thư: Chi Tự, joiner, Cán Lược."""
     return _starts_with(cluster, Kind.CHI_TU, Kind.JOINER, Kind.CAN_LUOC)
