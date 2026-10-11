@@ -31,14 +31,14 @@ def appendix_b(entries) -> str:
              "| --- | --- | --- | --- |"]
     for e in sorted(located, key=page_key):
         lines.append(f"| {e['page']} | {cell(e['transcription']) or '–'} | {cell(e['claim'])} ({e['id']}) | {e['status']} |")
-    return "\n".join(lines)
+    return evidence.link_ids("\n".join(lines), "evidence/")
 
 
 def overview(entries) -> str:
     lines = ["| Entry | Claim | Sections | Page | Status |", "| --- | --- | --- | --- | --- |"]
     for e in entries:
         lines.append(f"| [{e['id']}]({e['id']}.md) | {cell(e['claim'])} | {', '.join(e['sections'])} | {e['page'] or '–'} | {e['status']} |")
-    return "\n".join(lines)
+    return evidence.link_ids("\n".join(lines))
 
 
 def fill(path: Path, marker: str, content: str) -> None:

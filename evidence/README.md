@@ -86,7 +86,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E35](E35.md) | The source contains no running text in the script: only single characters given as examples and spelling formulas in the phản thiết manner, within Hán Nôm text | 2.1, 4.1 | – | located |
 | [E36](E36.md) | Counts of the characters in the section 音数: 176 single Cán, 880 single characters, 880 合書 with Chi left and Cán right, 18,480 合書 with Cán left and Chi right, each including the tone marks; eight times 22, 110, 110 and 2,310 | 4.1, 4.2, 4.5 | 8 | located |
 | [E37](E37.md) | The term Cán (幹): the listing of the 22 Cán is headed 幹音二十二字, 'trunk sounds, twenty-two characters' | 4.1, 6.4 | 2 | cited |
-| [E38](E38.md) | The term Cán (幹) also occurs with 字 in 二十二幹字為標, 'the 22 Cán characters as the mark'; with 幹音二十二字 (E37) the source uses 幹 with 音 and with 字 | 4.1 | 7 | cited |
+| [E38](E38.md) | The term Cán (幹) also occurs with 字 in 二十二幹字為標, 'the 22 Cán characters as the mark'; with 幹音二十二字 ([E37](E37.md)) the source uses 幹 with 音 and with 字 | 4.1 | 7 | cited |
 | [E39](E39.md) | Passage on p. 7, first and second column, without heading: a worked example of a phản thiết pair, the unmarked Cán of ONG and the Chi MARKED-5 of CHONG, read yên, and a list of five characters | 4.2 | 7 | located |
 <!-- overview:end -->
 

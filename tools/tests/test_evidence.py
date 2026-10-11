@@ -42,3 +42,10 @@ def test_crops_refer_to_pages_and_images():
             assert (evidence.EVIDENCE / "pages" / f"{row['page']}.jpg").is_file(), row
             assert (evidence.EVIDENCE / "images" / row["image"]).is_file(), row
             assert int(row["left"]) < int(row["right"]) and int(row["top"]) < int(row["bottom"]), row
+
+
+def test_ids_are_linked():
+    import link_ids
+    for path, prefix in link_ids.targets():
+        text = path.read_text(encoding="utf-8")
+        assert evidence.link_ids(text, prefix) == text, f"{path.name}: run python tools/link_ids.py"

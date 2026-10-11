@@ -72,6 +72,25 @@ def render(entry: dict) -> str:
     return "\n".join(lines)
 
 
+_CODE = re.compile(r"(```.*?```|`[^`\n]*`)", re.S)
+_ID = re.compile(r"(?<![\w\[/.-])(E\d{2}[a-z]?)(?![\w]|-\d|\.md|\.png|\]\()")
+
+
+def link_ids(text: str, prefix: str = "") -> str:
+    """Turn every bare entry id (E07) into a link ([E07](<prefix>E07.md)).
+
+    Code spans and code blocks are left alone, and so is the YAML header of an
+    entry. Linking twice changes nothing."""
+    head = ""
+    if text.startswith("---\n"):
+        _, header, body = text.split("---\n", 2)
+        head, text = "---\n" + header + "---\n", body
+    parts = _CODE.split(text)
+    for i in range(0, len(parts), 2):
+        parts[i] = _ID.sub(lambda m: f"[{m.group(1)}]({prefix}{m.group(1)}.md)", parts[i])
+    return head + "".join(parts)
+
+
 def load() -> list[dict]:
     return [parse(p.read_text(encoding="utf-8")) for p in entry_files()]
 

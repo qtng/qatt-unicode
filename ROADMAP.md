@@ -6,12 +6,12 @@ Plan for resolving the open points in section 9 of the proposal. The source work
 
 Record each passage as an entry in [evidence/](evidence/), one Markdown file per claim.
 
-1. Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư (E06, E08). Main argument for the encoding model.
-2. Standalone and adjacent components (E04). Main argument for the explicit joiner.
-3. Scope of the term Hợp Thư and the omission convention (E07, E09).
-4. Both Tham Thư, phản thiết examples, tone marks in all four corners (E05, E10–E16).
+1. Function of the components: initial and rhyme in phản thiết pairs and Hợp Thư ([E06](evidence/E06.md), [E08](evidence/E08.md)). Main argument for the encoding model.
+2. Standalone and adjacent components ([E04](evidence/E04.md)). Main argument for the explicit joiner.
+3. Scope of the term Hợp Thư and the omission convention ([E07](evidence/E07.md), [E09](evidence/E09.md)).
+4. Both Tham Thư, phản thiết examples, tone marks in all four corners ([E05](evidence/E05.md), [E10](evidence/E10.md)–[E16](evidence/E16.md)).
 5. Layout of the components within a cell (proposal 4.5), from the same examples.
-6. Date, provenance and location of both sources; scholarly literature (E17–E21).
+6. Date, provenance and location of both sources; scholarly literature ([E17](evidence/E17.md)–[E21](evidence/E21.md)).
 
 ## Phase B – Names and order
 
@@ -21,7 +21,7 @@ Record each passage as an entry in [evidence/](evidence/), one Markdown file per
 
 ## Phase C – Justification
 
-1. Reasons for encoding and modern use (proposal 2.2, 3.3), including documented written forms from online discussion (E22).
+1. Reasons for encoding and modern use (proposal 2.2, 3.3), including documented written forms from online discussion ([E22](evidence/E22.md)).
 
 ## Phase D – Technical
 
@@ -37,4 +37,4 @@ Record each passage as an entry in [evidence/](evidence/), one Markdown file per
 
 ## Deferred – Tham Thư
 
-Tham Thư is the least certain part of the script: two examples, no stated reading. Its reading and the function of its components (E11) stay open. The decision in proposal 5.8, Tham Thư combiner now or later, is taken last.
+Tham Thư is the least certain part of the script: two examples, no stated reading. Its reading and the function of its components ([E11](evidence/E11.md)) stay open. The decision in proposal 5.8, Tham Thư combiner now or later, is taken last.
