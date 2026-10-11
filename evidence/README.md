@@ -51,7 +51,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | Entry | Claim | Sections | Page | Status |
 | --- | --- | --- | --- | --- |
 | [E01](E01.md) | The listing under the heading 幹音二十二字 shows 22 forms, the marked Cán, each of three strokes and one short marking stroke | 4.1, 6.4 | 2 | cited |
-| [E02](E02.md) | Five Chi per Cán: the marking stroke sits only at stroke ends (six positions); the marked Cán has it at the start position (upper left or upper middle), and moving it counter-clockwise gives the Chi in order | 4.1 | – | missing |
+| [E02](E02.md) | Five Chi per Cán: the marking stroke sits only at stroke ends (six positions); the marked Cán has it at the start position (upper left or upper middle), and moving it counter-clockwise gives the Chi in order | 4.1 | 3 | cited |
 | [E03](E03.md) | Each Cán has an unmarked form, made by omitting the marking stroke | 4.1 | – | missing |
 | [E04](E04.md) | Components written standalone and side by side when the text explains combination, including a standalone unmarked Cán and two adjacent unmarked Cán | 3.2, 4.1, 5.4 | 6 | located |
 | [E05](E05.md) | Phản thiết method described in the section Phản Thiết Hài Âm Pháp (反切諧音法); components of different bases, unmarked Cán first | 3.2, 4.2 | 5 | located |
