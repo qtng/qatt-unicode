@@ -51,7 +51,9 @@ The status column names the open items of the evidence catalogue ([E01](evidence
 
 | Feature | Evidence | Status |
 | --- | --- | --- |
-| Cán (marked and unmarked), Chi | Described in the source; the 22 Cán are listed with their names in the section 幹音二十二字 (p. [2](evidence/pages/S1-p2.jpg)) | \[TBD: [E29](evidence/E29.md)\] |
+| Marked Cán | The 22 marked Cán are listed with the names of their sounds in the section 幹音二十二字 (p. [2](evidence/pages/S1-p2.jpg)) | Cited ([E01](evidence/E01.md), [E18](evidence/E18.md)) |
+| Unmarked Cán | Not listed; shown in the combined characters of the examples and standing alone, for example with the eight tones (pp. [5](evidence/pages/S1-p5.jpg)–[7](evidence/pages/S1-p7.jpg)) | Located ([E34](evidence/E34.md)) |
+| Chi | Tabulated in the section 枝字一百一十字 in blocks of five per Cán: 109 forms shown against 110 named (pp. [3](evidence/pages/S1-p3.jpg)–[4](evidence/pages/S1-p4.jpg)) | \[TBD: [E29](evidence/E29.md)\] |
 | Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法, from p. [5](evidence/pages/S1-p5.jpg)); components of different bases, unmarked Cán first; the unmarked Cán gives the initial, the Chi the rhyme; pairs in running text (p. [6](evidence/pages/S1-p6.jpg)) | \[TBD: [E05](evidence/E05.md), [E06](evidence/E06.md)\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi first; the Chi gives the initial, the unmarked Cán the rhyme; the count of 880 (110 × 8 tones) covers only same-base pairs (p. [8](evidence/pages/S1-p8.jpg)) | \[TBD: [E08](evidence/E08.md)\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base; two examples attested, both on a Hợp Thư; reading not established | \[TBD: [E10](evidence/E10.md), [E12](evidence/E12.md), [E13](evidence/E13.md); deferred\] |
