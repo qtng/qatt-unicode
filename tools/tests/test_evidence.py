@@ -44,8 +44,8 @@ def test_crops_refer_to_pages_and_images():
             assert int(row["left"]) < int(row["right"]) and int(row["top"]) < int(row["bottom"]), row
 
 
-def test_ids_are_linked():
-    import link_ids
-    for path, prefix in link_ids.targets():
+def test_references_are_linked():
+    import link_refs
+    for path, prefix in link_refs.targets():
         text = path.read_text(encoding="utf-8")
-        assert evidence.link_ids(text, prefix) == text, f"{path.name}: run python tools/link_ids.py"
+        assert evidence.link_refs(text, prefix) == text, f"{path.name}: run python tools/link_refs.py"

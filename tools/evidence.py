@@ -74,21 +74,49 @@ def render(entry: dict) -> str:
 
 _CODE = re.compile(r"(```.*?```|`[^`\n]*`)", re.S)
 _ID = re.compile(r"(?<![\w\[/.-])(E\d{2}[a-z]?)(?![\w]|-\d|\.md|\.png|\]\()")
+_PAGES = re.compile(r"(?<![\w])([Pp]p?\.) ?([1-8])(?:([–-])([1-8]))?(?!\d)")
 
 
-def link_ids(text: str, prefix: str = "") -> str:
-    """Turn every bare entry id (E07) into a link ([E07](<prefix>E07.md)).
+def _page_link(text: str, start: int, number: str, prefix: str) -> str:
+    """Link to the full page of Source 1, or of Source 2 where the sentence is about Source 2."""
+    window = text[max(0, start - 160):start]
+    for stop in (". ", "; ", "\n"):
+        window = window.rpartition(stop)[2]
+    source = "S2" if "Source 2" in window and "Source 1" not in window else "S1"
+    return f"[{number}]({prefix}pages/{source}-p{number}.jpg)"
 
-    Code spans and code blocks are left alone, and so is the YAML header of an
-    entry. Linking twice changes nothing."""
+
+def link_refs(text: str, prefix: str = "") -> str:
+    """Link entry ids (E07 -> [E07](<prefix>E07.md)) and page references
+    (p. 6 -> p. [6](<prefix>pages/S1-p6.jpg), pp. 3-4 likewise) to their targets.
+
+    Page numbers 1 to 8 are pages of the manuscripts; other numbers, for example
+    pages of a dictionary, are not linked. Code spans and code blocks are left
+    alone, and so is the YAML header of an entry. Linking twice changes nothing."""
     head = ""
     if text.startswith("---\n"):
         _, header, body = text.split("---\n", 2)
         head, text = "---\n" + header + "---\n", body
+
+    def pages(m: re.Match, whole: str) -> str:
+        first = _page_link(whole, m.start(), m.group(2), prefix)
+        out = f"{m.group(1)} {first}"
+        if m.group(4):
+            out += m.group(3) + _page_link(whole, m.start(), m.group(4), prefix)
+        return out
+
     parts = _CODE.split(text)
-    for i in range(0, len(parts), 2):
-        parts[i] = _ID.sub(lambda m: f"[{m.group(1)}]({prefix}{m.group(1)}.md)", parts[i])
+    offset = 0
+    for i in range(len(parts)):
+        if i % 2 == 0:
+            segment = parts[i]
+            segment = _ID.sub(lambda m: f"[{m.group(1)}]({prefix}{m.group(1)}.md)", segment)
+            segment = _PAGES.sub(lambda m, s=segment: pages(m, s), segment)
+            parts[i] = segment
     return head + "".join(parts)
+
+
+link_ids = link_refs  # earlier name
 
 
 def load() -> list[dict]:

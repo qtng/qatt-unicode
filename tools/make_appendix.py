@@ -23,6 +23,10 @@ def cell(text: str) -> str:
     return text.replace("|", "\\|").replace("\n", " ")
 
 
+def page_link(page: str) -> str:
+    return f"[{page}](pages/S1-p{page}.jpg)" if page else "–"
+
+
 def appendix_b(entries) -> str:
     located = [e for e in entries if e["status"] != "missing" and e["page"]]
     lines = ["Passages located in the source, by page. Page references are to Source 1 (section 3); images are in the evidence catalogue.",
@@ -30,15 +34,15 @@ def appendix_b(entries) -> str:
              "| Page | Passage | Shows | Status |",
              "| --- | --- | --- | --- |"]
     for e in sorted(located, key=page_key):
-        lines.append(f"| {e['page']} | {cell(e['transcription']) or '–'} | {cell(e['claim'])} ({e['id']}) | {e['status']} |")
-    return evidence.link_ids("\n".join(lines), "evidence/")
+        lines.append(f"| [{e['page']}](evidence/pages/S1-p{e['page']}.jpg) | {cell(e['transcription']) or '–'} | {cell(e['claim'])} ({e['id']}) | {e['status']} |")
+    return evidence.link_refs("\n".join(lines), "evidence/")
 
 
 def overview(entries) -> str:
     lines = ["| Entry | Claim | Sections | Page | Status |", "| --- | --- | --- | --- | --- |"]
     for e in entries:
-        lines.append(f"| [{e['id']}]({e['id']}.md) | {cell(e['claim'])} | {', '.join(e['sections'])} | {e['page'] or '–'} | {e['status']} |")
-    return evidence.link_ids("\n".join(lines))
+        lines.append(f"| [{e['id']}]({e['id']}.md) | {cell(e['claim'])} | {', '.join(e['sections'])} | {page_link(e['page'])} | {e['status']} |")
+    return evidence.link_refs("\n".join(lines))
 
 
 def fill(path: Path, marker: str, content: str) -> None:
