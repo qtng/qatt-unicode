@@ -77,7 +77,7 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E26](E26.md) | Tone marks on standalone components (unmarked Cán and Chi) | 4.4, 5.3 | [6](pages/S1-p6.jpg) | located |
 | [E27](E27.md) | Round and angular forms of the same tone mark are handwriting variation: Source 1 writes the mark now round, now close to a hook; Source 2 writes all tone marks of the passage angular | 4.4, 8 | [6](pages/S1-p6.jpg) | located |
 | [E28](E28.md) | The source lists the tones first with the four half circles, then the four full circles, each starting lower left and running clockwise | 7 | [5](pages/S1-p5.jpg) | located |
-| [E29](E29.md) | Table of the Chi under the heading 枝字一百一十字, 'the 110 Chi characters'; the table shows 109, one left out by oversight | 4.1, 6.4, 7.1 | [3](pages/S1-p3.jpg) | located |
+| [E29](E29.md) | Table of the Chi under the heading 枝字一百一十字, 'the 110 Chi characters'; the table shows 109, one left out by oversight | 4.1, 6.4, 7.1 | [3](pages/S1-p3.jpg) | cited |
 | [E30](E30.md) | Dating: the character 華 lacks its final stroke, a naming taboo for Hồ Thị Hoa, mother of Emperor Thiệu Trị (1841–1847) | 1, 2.1, 3.1 | [1](pages/S1-p1.jpg) | cited |
 | [E31](E31.md) | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) | 2.1 | [2](pages/S1-p2.jpg) | cited |
 | [E32](E32.md) | Classification of the manuscripts as tiểu học (小學) and catalogued as nôm văn thư (喃文書) | 2.1 | – | missing |
