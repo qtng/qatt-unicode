@@ -48,13 +48,15 @@ BLOCK_BASE = 0xF0000  # provisional, see module docstring
 NUM_BASES = 22
 NUM_POSITIONS = 5   # Chi per base
 
-UNMARKED_OFFSET = 0x00        # +00..+15, 22 code points, no marking stroke
-MARKED_OFFSET = 0x16          # +16..+99, 132 code points, six per base: MARKED-1 .. MARKED-6
+COMBINER_OFFSET = 0x00        # +00, Tham Thư combiner
+JOINER_OFFSET = 0x01          # +01, component joiner
+TONE_OFFSET = 0x02            # +02..+09, 8 code points
+                              # +0A..+0F reserved, for further marks and format characters
+UNMARKED_OFFSET = 0x10        # +10..+25, 22 code points, no marking stroke
+MARKED_OFFSET = 0x26          # +26..+A9, 132 code points, six per base: MARKED-1 .. MARKED-6
+MARKED_END = 0xAA             # +AA..+AF reserved
 NUM_MARKED = 6                # marking-stroke positions, counted counter-clockwise from the start position
-COMBINER_OFFSET = 0x9A        # +9A, Tham Thư combiner
-JOINER_OFFSET = 0x9B          # +9B, component joiner
-TONE_OFFSET = 0x9C            # +9C..+A3, 8 code points
-RESERVED_OFFSET = 0xA4        # +A4..+AF
+NUM_TONES = 8
 BLOCK_SIZE = 0xB0             # 176
 
 # Names of the 22 Cán in source order (Source 1, p. 2, section 幹音二十二字),
@@ -138,17 +140,19 @@ def _check_base(base: int) -> None:
 
 def kind(ch: str) -> Kind:
     offset = ord(ch) - BLOCK_BASE
-    if offset < 0 or offset >= RESERVED_OFFSET:
+    if offset < 0 or offset >= BLOCK_SIZE:
         return Kind.OTHER
-    if offset < MARKED_OFFSET:
-        return Kind.UNMARKED
-    if offset < COMBINER_OFFSET:
-        return Kind.MARKED_CAN if (offset - MARKED_OFFSET) % NUM_MARKED == 0 else Kind.CHI
     if offset == COMBINER_OFFSET:
         return Kind.COMBINER
     if offset == JOINER_OFFSET:
         return Kind.JOINER
-    return Kind.TONE
+    if TONE_OFFSET <= offset < TONE_OFFSET + NUM_TONES:
+        return Kind.TONE
+    if UNMARKED_OFFSET <= offset < MARKED_OFFSET:
+        return Kind.UNMARKED
+    if MARKED_OFFSET <= offset < MARKED_END:
+        return Kind.MARKED_CAN if (offset - MARKED_OFFSET) % NUM_MARKED == 0 else Kind.CHI
+    return Kind.OTHER  # reserved
 
 
 def base_of(ch: str) -> int | None:

@@ -206,7 +206,7 @@ The eight tone marks are combining characters that follow the complete cluster. 
 
 ### 5.8 Open decision
 
-Propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add the combiner once more attestations exist. With two attested examples, the second option lowers the risk of rejection. Without the combiner the repertoire has 163 characters, the component joiner and the tone marks move up by one code point, and the size argument for Tham Thư in 5.2 no longer applies. The component joiner is needed in either case.
+Propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add the combiner once more attestations exist. With two attested examples, the second option lowers the risk of rejection. Without the combiner the repertoire has 163 characters, the component joiner moves to +00 and every other character one code point down, and the size argument for Tham Thư in 5.2 no longer applies. The component joiner is needed in either case.
 
 ## 6. Character Properties
 
@@ -234,33 +234,34 @@ The source does not state a writing direction. Both witnesses contain vertical H
 
 ### 6.4 Code point order
 
-The source lists the 22 Cán in the section 幹音二十二字, "trunk sounds, twenty-two characters", each annotated with its name in Chữ Nôm (p. [2](evidence/pages/S1-p2.jpg)). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán, the five Chi follow the order of the marking-stroke position, counter-clockwise from the position of the marked Cán (4.1). The unmarked forms come first. The six marked forms of a base follow one another, so that all marked forms form one run of code points (+16 to +99).
+The source lists the 22 Cán in the section 幹音二十二字, "trunk sounds, twenty-two characters", each annotated with its name in Chữ Nôm (p. [2](evidence/pages/S1-p2.jpg)). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán, the five Chi follow the order of the marking-stroke position, counter-clockwise from the position of the marked Cán (4.1). The six marked forms of a base follow one another, so that all marked forms form one run of code points (+26 to +A9), after the 22 unmarked forms (+10 to +25). The combiner, the joiner and the tone marks come first (+00 to +09), followed by six reserved code points for further marks and format characters, because the set of letters is fixed by the structure of the script and the set of marks may grow.
 
 ## 7. Character Table and Code Chart
 
-The 164 characters fit in a block of 176 code points (11 columns of 16), proposed for the Supplementary Multilingual Plane. \[TBD: block position assigned by the UTC\] Code points follow the source order of the 22 Cán, and the six marked forms of each base are consecutive, the marked Cán first and the five Chi after it. The marked forms form one run (+16 to +99).
+The 164 characters fit in a block of 176 code points (11 columns of 16), proposed for the Supplementary Multilingual Plane. \[TBD: block position assigned by the UTC\] Code points follow the source order of the 22 Cán, and the six marked forms of each base are consecutive, the marked Cán first and the five Chi after it. The marked forms form one run (+26 to +A9). The combiner, the joiner and the tone marks come first, followed by reserved code points for further marks; the letters follow.
 
 | Group | Offset in block | Count |
 | --- | --- | --- |
-| Unmarked forms | +00 to +15 | 22 |
-| Marked forms, six per base: the marked Cán and the five Chi | +16 to +99 | 132 |
-| Tham Thư combiner | +9A | 1 |
-| Component joiner | +9B | 1 |
-| Tone marks | +9C to +A3 | 8, in the traditional order of the eight tones (see below) |
-| Reserved | +A4 to +AF | 12 |
+| Tham Thư combiner | +00 | 1 |
+| Component joiner | +01 | 1 |
+| Tone marks | +02 to +09 | 8, in the traditional order of the eight tones (see below) |
+| Reserved | +0A to +0F | 6 |
+| Unmarked forms | +10 to +25 | 22 |
+| Marked forms, six per base: the marked Cán and the five Chi | +26 to +A9 | 132 |
+| Reserved | +AA to +AF | 6 |
 
 The tone marks follow the traditional order of the eight tones, the numbering 1 to 8 used in Chinese dialectology: âm bình, dương bình, âm thượng, dương thượng, âm khứ, dương khứ, âm nhập, dương nhập, that is by tone class and within each class âm before dương. The first six correspond to the Vietnamese tone order ngang, huyền, hỏi, ngã, sắc, nặng used in dictionaries and in Vietnamese collation. The source lists the marks in a different order, first the four semicircles and then the four circles, each starting lower left and running clockwise (p. [5](evidence/pages/S1-p5.jpg)); that order presents the marks by shape and is not adopted for the code points.
 
 | Offset | Mark | Tone |
 | --- | --- | --- |
-| +9C | Semicircle, lower left | âm bình (ngang) |
-| +9D | Circle, lower left | dương bình (huyền) |
-| +9E | Semicircle, upper left | âm thượng (hỏi) |
-| +9F | Circle, upper left | dương thượng (ngã) |
-| +A0 | Semicircle, upper right | âm khứ (sắc) |
-| +A1 | Circle, upper right | dương khứ (nặng) |
-| +A2 | Semicircle, lower right | âm nhập |
-| +A3 | Circle, lower right | dương nhập |
+| +02 | Semicircle, lower left | âm bình (ngang) |
+| +03 | Circle, lower left | dương bình (huyền) |
+| +04 | Semicircle, upper left | âm thượng (hỏi) |
+| +05 | Circle, upper left | dương thượng (ngã) |
+| +06 | Semicircle, upper right | âm khứ (sắc) |
+| +07 | Circle, upper right | dương khứ (nặng) |
+| +08 | Semicircle, lower right | âm nhập |
+| +09 | Circle, lower right | dương nhập |
 
 ### 7.1 Character names
 
@@ -283,28 +284,28 @@ The names of the 22 Cán are the names of their sounds in the source listing (6.
 
 | No. | Nôm annotation | Reading | Initial | Name in character names | UNMARKED | MARKED-1 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 翁 | ông | Ɂ | ONG | +00 | +16 |
-| 2 | ⿰木禺 | ngông | Ng | NGONG | +01 | +1C |
-| 3 | 胸 | hông | H | HONG | +02 | +22 |
-| 4 | ⿰木功 | gông | G | GONG | +03 | +28 |
-| 5 | 工 | công | C | CONG | +04 | +2E |
-| 6 | ⿰竜羽 | lông | L | LONG | +05 | +34 |
-| 7 | ⿰竜里 | trông | Tr | TRONG | +06 | +3A |
-| 8 | 東 | đông | Đ | DDONG | +07 | +40 |
-| 9 | 農 | nông | N | NONG | +08 | +46 |
-| 10 | 宗 | tông | T | TONG | +09 | +4C |
-| 11 | 通 | thông | Th | THONG | +0A | +52 |
-| 12 | ⿰亻戍 | nhông | Nh | NHONG | +0B | +58 |
-| 13 | 柊 | chông | Ch | CHONG | +0C | +5E |
-| 14 | ⿰月容 | dông | D | DZONG | +0D | +64 |
-| 15 | 衝 | xông | X | XONG | +0E | +6A |
-| 16 | 空 | không | Kh | KHONG | +0F | +70 |
-| 17 | 滝 | sông | S | SONG | +10 | +76 |
-| 18 | ⿱山庸 | rông | R | RONG | +11 | +7C |
-| 19 | 蒙 | mông | M | MONG | +12 | +82 |
-| 20 | 芃 | bông | B | BONG | +13 | +88 |
-| 21 | ⿰木芃 | vông | V | VONG | +14 | +8E |
-| 22 | ⿰口風 | phông | Ph | PHONG | +15 | +94 |
+| 1 | 翁 | ông | Ɂ | ONG | +10 | +26 |
+| 2 | ⿰木禺 | ngông | Ng | NGONG | +11 | +2C |
+| 3 | 胸 | hông | H | HONG | +12 | +32 |
+| 4 | ⿰木功 | gông | G | GONG | +13 | +38 |
+| 5 | 工 | công | C | CONG | +14 | +3E |
+| 6 | ⿰竜羽 | lông | L | LONG | +15 | +44 |
+| 7 | ⿰竜里 | trông | Tr | TRONG | +16 | +4A |
+| 8 | 東 | đông | Đ | DDONG | +17 | +50 |
+| 9 | 農 | nông | N | NONG | +18 | +56 |
+| 10 | 宗 | tông | T | TONG | +19 | +5C |
+| 11 | 通 | thông | Th | THONG | +1A | +62 |
+| 12 | ⿰亻戍 | nhông | Nh | NHONG | +1B | +68 |
+| 13 | 柊 | chông | Ch | CHONG | +1C | +6E |
+| 14 | ⿰月容 | dông | D | DZONG | +1D | +74 |
+| 15 | 衝 | xông | X | XONG | +1E | +7A |
+| 16 | 空 | không | Kh | KHONG | +1F | +80 |
+| 17 | 滝 | sông | S | SONG | +20 | +86 |
+| 18 | ⿱山庸 | rông | R | RONG | +21 | +8C |
+| 19 | 蒙 | mông | M | MONG | +22 | +92 |
+| 20 | 芃 | bông | B | BONG | +23 | +98 |
+| 21 | ⿰木芃 | vông | V | VONG | +24 | +9E |
+| 22 | ⿰口風 | phông | Ph | PHONG | +25 | +A4 |
 
 ### 7.2 Code chart
 

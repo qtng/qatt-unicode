@@ -36,26 +36,26 @@ def test_block_layout_counts():
 
 
 def test_offsets():
-    assert ord(unmarked(0)) - q.BLOCK_BASE == 0x00
-    assert ord(unmarked(21)) - q.BLOCK_BASE == 0x15
-    assert ord(marked_can(0)) - q.BLOCK_BASE == 0x16
-    assert ord(chi(0, 0)) - q.BLOCK_BASE == 0x17
-    assert ord(chi(0, 4)) - q.BLOCK_BASE == 0x1B
-    assert ord(marked_can(1)) - q.BLOCK_BASE == 0x1C      # six marked forms per base
-    assert ord(marked_can(21)) - q.BLOCK_BASE == 0x94
-    assert ord(chi(21, 4)) - q.BLOCK_BASE == 0x99
-    assert ord(COMB) - q.BLOCK_BASE == 0x9A
-    assert ord(JOIN) - q.BLOCK_BASE == 0x9B
+    assert ord(unmarked(0)) - q.BLOCK_BASE == 0x10
+    assert ord(unmarked(21)) - q.BLOCK_BASE == 0x25
+    assert ord(marked_can(0)) - q.BLOCK_BASE == 0x26
+    assert ord(chi(0, 0)) - q.BLOCK_BASE == 0x27
+    assert ord(chi(0, 4)) - q.BLOCK_BASE == 0x2B
+    assert ord(marked_can(1)) - q.BLOCK_BASE == 0x2C      # six marked forms per base
+    assert ord(marked_can(21)) - q.BLOCK_BASE == 0xA4
+    assert ord(chi(21, 4)) - q.BLOCK_BASE == 0xA9
+    assert ord(COMB) - q.BLOCK_BASE == 0x00
+    assert ord(JOIN) - q.BLOCK_BASE == 0x01
     tones = {tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS}
-    assert {ord(t) - q.BLOCK_BASE for t in tones} == set(range(0x9C, 0xA4))
+    assert {ord(t) - q.BLOCK_BASE for t in tones} == set(range(0x02, 0x0A))
 
 
 def test_tone_order_is_traditional():
     # âm bình, dương bình, âm thượng, dương thượng, âm khứ, dương khứ, âm nhập, dương nhập
     order = [tone(s, c) for c in q.TONE_CORNERS for s in q.TONE_SHAPES]
-    assert [ord(t) - q.BLOCK_BASE for t in order] == list(range(0x9C, 0xA4))
-    assert ord(tone("SEMICIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0x9C  # âm bình (ngang)
-    assert ord(tone("CIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0x9D  # dương bình (huyền)
+    assert [ord(t) - q.BLOCK_BASE for t in order] == list(range(0x02, 0x0A))
+    assert ord(tone("SEMICIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0x02  # âm bình (ngang)
+    assert ord(tone("CIRCLE", "LOWER LEFT")) - q.BLOCK_BASE == 0x03  # dương bình (huyền)
     assert [q.TONE_NAMES[(s, c)] for c in q.TONE_CORNERS for s in q.TONE_SHAPES][:6] == [
         "âm bình (ngang)", "dương bình (huyền)", "âm thượng (hỏi)",
         "dương thượng (ngã)", "âm khứ (sắc)", "dương khứ (nặng)"]
@@ -79,7 +79,7 @@ def test_marked_can_names_are_unique_ascii():
 def test_marked_forms_form_one_run():
     # The 132 marked forms are consecutive, six per base, MARKED-1 to MARKED-6.
     marked = [ord(c) - q.BLOCK_BASE for c in ALL_MARKED_CAN + ALL_CHI]
-    assert sorted(marked) == list(range(0x16, 0x9A))
+    assert sorted(marked) == list(range(0x26, 0xAA))
     for base in range(22):
         forms = [q.marked(base, n) for n in range(1, 7)]
         assert forms[0] == marked_can(base)
@@ -262,7 +262,7 @@ def test_examples_from_section_5_5():
 
 ALPHABET = (ALL_UNMARKED + ALL_MARKED_CAN + ALL_CHI + [COMB, JOIN]
             + [tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS]
-            + [chr(q.BLOCK_BASE + 0xA4), HAN, " "])
+            + [chr(q.BLOCK_BASE + 0x0A), chr(q.BLOCK_BASE + 0xAA), HAN, " "])
 
 # Skewed towards the code points that join, so long clusters and chains are common.
 code_points = st.one_of(
@@ -332,3 +332,12 @@ def test_well_formed_text_segments_into_its_clusters(clusters):
     text = "".join(clusters)
     assert q.segment(text) == clusters
     assert q.is_well_formed(text)
+
+
+def test_groups_in_block_order():
+    # format characters and tone marks first, then the unmarked forms, then the marked forms
+    assert [q.kind(chr(q.BLOCK_BASE + o)) for o in (0, 1, 2, 9)] == [Kind.COMBINER, Kind.JOINER, Kind.TONE, Kind.TONE]
+    assert all(q.kind(chr(q.BLOCK_BASE + o)) is Kind.OTHER for o in list(range(0x0A, 0x10)) + list(range(0xAA, 0xB0)))
+    assert [q.kind(chr(q.BLOCK_BASE + o)) for o in (0x10, 0x25)] == [Kind.UNMARKED, Kind.UNMARKED]
+    assert q.kind(chr(q.BLOCK_BASE + 0x26)) is Kind.MARKED_CAN
+    assert q.kind(chr(q.BLOCK_BASE + 0xA9)) is Kind.CHI
