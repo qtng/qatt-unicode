@@ -51,18 +51,6 @@ def assigned():
             yield ch
 
 
-def assigned_runs() -> list[tuple[int, int]]:
-    """Contiguous runs of assigned code points, as (first, last)."""
-    runs: list[tuple[int, int]] = []
-    for ch in assigned():
-        cp = ord(ch)
-        if runs and runs[-1][1] == cp - 1:
-            runs[-1] = (runs[-1][0], cp)
-        else:
-            runs.append((cp, cp))
-    return runs
-
-
 def write(name: str, lines: list[str]) -> None:
     text = HEADER.format(name=name, base=q.BLOCK_BASE) + "\n" + "\n".join(lines) + "\n"
     (OUT / name).write_text(text, encoding="utf-8")
@@ -140,7 +128,7 @@ def main() -> None:
         sections += property_file(index, prop) + [""]
     first, last = q.BLOCK_BASE, q.BLOCK_BASE + q.BLOCK_SIZE - 1
     sections += ["# Property: Script", "",
-                 *[f"{a:05X}..{b:05X} ; {SCRIPT}" for a, b in assigned_runs()], "",
+                 f"{first:05X}..{q.BLOCK_BASE + q.RESERVED_OFFSET - 1:05X} ; {SCRIPT}", "",
                  "# Property: Block", "", f"{first:05X}..{last:05X} ; {BLOCK_NAME}"]
     write("Properties-draft.txt", sections)
     write("NamesList-draft.txt", names_list())
