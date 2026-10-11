@@ -51,7 +51,7 @@ The status column names the open items of the evidence catalogue (E01, E02, …)
 
 | Feature | Evidence | Status |
 | --- | --- | --- |
-| Cán (marked and unmarked), Chi | Described in the source; the 22 Cán are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: E01–E03, E29\] |
+| Cán (marked and unmarked), Chi | Described in the source; the 22 Cán are listed with their names in the section 幹音二十二字 (p. 2) | \[TBD: E02, E03, E29\] |
 | Phản thiết pairs | Described in the section Phản Thiết Hài Âm Pháp (反切諧音法, from p. 5); components of different bases, unmarked Cán first; the unmarked Cán gives the initial, the Chi the rhyme; pairs in running text (p. 6) | \[TBD: E05, E06\] |
 | Hợp Thư | Described in the text; every example is a same-base pair with the Chi first; the Chi gives the initial, the unmarked Cán the rhyme; the count of 880 (110 × 8 tones) covers only same-base pairs (p. 8) | \[TBD: E08\] |
 | Tham Thư | Rule described in the text, with a Hợp Thư as the base; two examples attested, both on a Hợp Thư; reading not established | \[TBD: E10, E12, E13; deferred\] |
@@ -364,6 +364,7 @@ Passages located in the source, by page. Page references are to Source 1 (sectio
 | --- | --- | --- | --- |
 | 1 | 我國附於中華日前只 | Dating: the character 華 lacks its final stroke, a naming taboo for Hồ Thị Hoa, mother of Emperor Thiệu Trị (1841–1847) (E30) | cited |
 | 1 | 國音新字序 | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 (E33) | cited |
+| 2 | 幹音二十二字 | The listing under the heading 幹音二十二字 shows 22 forms, the marked Cán, each of three strokes and one short marking stroke (E01) | cited |
 | 2 | 幹音二十二字 · Nôm annotations in order (IDS where no encoded character is used): 翁 ông · ⿰木禺 ngông · 胸 hông · ⿰木功 gông · 工 công · ⿰竜羽 lông · ⿰竜里 trông · 東 đông · 農 nông · 宗 tông · 通 thông · ⿰亻戍 nhông · 柊 chông · ⿰月容 dông · 衝 xông · 空 không · 滝 sông · ⿱山庸 rông · 蒙 mông · 芃 bông · ⿰木芃 vông · ⿰口風 phông | Listing of the 22 base sounds (幹音二十二字) in source order, each shown with its QATT character and annotated with the name of its sound in Chữ Nôm (E18) | cited |
 | 2 | 五星聚斗南城居士阮子書 | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) (E31) | cited |
 | 2 | 幹音二十二字 | The term Cán (幹): the listing of the 22 Cán is headed 幹音二十二字, 'trunk sounds, twenty-two characters' (E37) | cited |
