@@ -48,7 +48,7 @@ BLOCK_BASE = 0xF0000  # provisional, see module docstring
 NUM_BASES = 22
 NUM_POSITIONS = 5   # Chi per base
 
-UNMARKED_OFFSET = 0x00        # +00..+15, 22 code points, marking stroke omitted
+UNMARKED_OFFSET = 0x00        # +00..+15, 22 code points, no marking stroke
 MARKED_OFFSET = 0x16          # +16..+99, 132 code points, six per base: MARKED-1 .. MARKED-6
 NUM_MARKED = 6                # marking-stroke positions, counted counter-clockwise from the start position
 COMBINER_OFFSET = 0x9A        # +9A, Tham Thư combiner
