@@ -43,7 +43,7 @@ Cite Source 1, and add Source 2 only where it differs or where its reading matte
 
 Full pages are in `pages/`: `S1-p1.jpg` … `S1-p8.jpg` for Source 1 and `S2-p1.jpg` … `S2-p8.jpg` for Source 2, extracted unchanged from the scan of the volume (folios 3–18, 785 × 1525 pixels each). An entry can show a full page by giving its path, for example `image: [pages/S1-p4.jpg]`.
 
-Cut-outs go in `images/`. They are cut from the full pages by `python tools/make_crops.py`, using the page and the pixel box (left, top, right, bottom) listed for each image in `crops.csv`; to change a cut-out, edit its box and run the script again. Cut-outs are named after the entry id, for example `E08-1.png` (Source 1) and `E08-2.png` (Source 2). Publish scans only where the holding institution permits it.
+Cut-outs go in `images/`. They are cut from the full pages by `python tools/make_crops.py`, using the page and the pixel box (left, top, right, bottom) listed for each image in `crops.csv`; to change a cut-out, edit its box and run the script again. The optional column `strike` lists boxes (left top right bottom, separated by semicolons) that are not relevant to the evidence; they are framed with a red rectangle and crossed out, so that a full page can be shown with the relevant columns only. Cut-outs are named after the entry id, for example `E08-1.png` (Source 1) and `E08-2.png` (Source 2). Publish scans only where the holding institution permits it.
 
 ## Overview
 
