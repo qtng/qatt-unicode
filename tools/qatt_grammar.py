@@ -48,9 +48,9 @@ BLOCK_BASE = 0xF0000  # provisional, see module docstring
 NUM_BASES = 22
 NUM_POSITIONS = 5   # Chi per base
 
-UNMARKED_OFFSET = 0x00        # +00..+15, 22 code points, no marking stroke
-MARKED_OFFSET = 0x16          # +16..+99, 132 code points, six per base: MARKED-1 .. MARKED-6
 NUM_MARKED = 6                # marking-stroke positions, counted counter-clockwise from the start position
+FORMS_PER_BASE = NUM_MARKED + 1   # form 0: unmarked (no marking stroke); forms 1..6: MARKED-1 .. MARKED-6
+# +00..+99: 154 code points, seven consecutive forms per base in source order
 COMBINER_OFFSET = 0x9A        # +9A, Tham Thư combiner
 JOINER_OFFSET = 0x9B          # +9B, component joiner
 TONE_OFFSET = 0x9C            # +9C..+A3, 8 code points
@@ -98,7 +98,7 @@ _JOINERS = (Kind.COMBINER, Kind.JOINER)
 
 def unmarked(base: int) -> str:
     _check_base(base)
-    return chr(BLOCK_BASE + UNMARKED_OFFSET + base)
+    return chr(BLOCK_BASE + base * FORMS_PER_BASE)
 
 
 def marked(base: int, n: int) -> str:
@@ -106,7 +106,7 @@ def marked(base: int, n: int) -> str:
     _check_base(base)
     if not 1 <= n <= NUM_MARKED:
         raise ValueError(f"marking-stroke position must be 1..{NUM_MARKED}, got {n}")
-    return chr(BLOCK_BASE + MARKED_OFFSET + base * NUM_MARKED + n - 1)
+    return chr(BLOCK_BASE + base * FORMS_PER_BASE + n)
 
 
 def marked_can(base: int) -> str:
@@ -140,10 +140,9 @@ def kind(ch: str) -> Kind:
     offset = ord(ch) - BLOCK_BASE
     if offset < 0 or offset >= RESERVED_OFFSET:
         return Kind.OTHER
-    if offset < MARKED_OFFSET:
-        return Kind.UNMARKED
     if offset < COMBINER_OFFSET:
-        return Kind.MARKED_CAN if (offset - MARKED_OFFSET) % NUM_MARKED == 0 else Kind.CHI
+        form = offset % FORMS_PER_BASE
+        return Kind.UNMARKED if form == 0 else Kind.MARKED_CAN if form == 1 else Kind.CHI
     if offset == COMBINER_OFFSET:
         return Kind.COMBINER
     if offset == JOINER_OFFSET:
@@ -153,19 +152,15 @@ def kind(ch: str) -> Kind:
 
 def base_of(ch: str) -> int | None:
     """Index of the Cán a component derives from, or None for other code points."""
-    offset = ord(ch) - BLOCK_BASE
-    k = kind(ch)
-    if k is Kind.UNMARKED:
-        return offset - UNMARKED_OFFSET
-    if k in (Kind.MARKED_CAN, Kind.CHI):
-        return (offset - MARKED_OFFSET) // NUM_MARKED
+    if kind(ch) in (Kind.UNMARKED, Kind.MARKED_CAN, Kind.CHI):
+        return (ord(ch) - BLOCK_BASE) // FORMS_PER_BASE
     return None
 
 
 def marked_position(ch: str) -> int | None:
     """Position of the marking stroke, 1 to 6, or None for other code points."""
     if kind(ch) in (Kind.MARKED_CAN, Kind.CHI):
-        return (ord(ch) - BLOCK_BASE - MARKED_OFFSET) % NUM_MARKED + 1
+        return (ord(ch) - BLOCK_BASE) % FORMS_PER_BASE
     return None
 
 

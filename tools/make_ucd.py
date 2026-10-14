@@ -84,16 +84,18 @@ def property_file(index: int, prop: str) -> list[str]:
 def names_list() -> list[str]:
     first, last = q.BLOCK_BASE, q.BLOCK_BASE + q.BLOCK_SIZE - 1
     lines = [f"@@\t{first:05X}\t{BLOCK_NAME}\t{last:05X}"]
-    headings = {q.Kind.UNMARKED: "Forms without marking stroke",
-                q.Kind.MARKED_CAN: "Forms with marking stroke (the six positions of each base)",
-                q.Kind.COMBINER: "Format characters",
+    headings = {q.Kind.COMBINER: "Format characters",
                 q.Kind.TONE: "Tone marks"}
     shown = None
     for ch in assigned():
         k = q.kind(ch)
-        group = q.Kind.MARKED_CAN if k is q.Kind.CHI else k
-        if group is not shown and group in headings:
-            lines.append(f"@\t\t{headings[group]}")
+        base = q.base_of(ch)
+        group = ("base", base) if base is not None else k
+        if group != shown:
+            if base is not None:
+                lines.append(f"@\t\t{q.CAN_NAMES[base]}: unmarked form, marked Cán, five Chi")
+            elif k in headings:
+                lines.append(f"@\t\t{headings[k]}")
         shown = group
         lines.append(f"{ord(ch):05X}\t{q.character_name(ch)}")
         base = q.base_of(ch)

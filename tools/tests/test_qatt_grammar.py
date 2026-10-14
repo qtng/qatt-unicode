@@ -37,11 +37,11 @@ def test_block_layout_counts():
 
 def test_offsets():
     assert ord(unmarked(0)) - q.BLOCK_BASE == 0x00
-    assert ord(unmarked(21)) - q.BLOCK_BASE == 0x15
-    assert ord(marked_can(0)) - q.BLOCK_BASE == 0x16
-    assert ord(chi(0, 0)) - q.BLOCK_BASE == 0x17
-    assert ord(chi(0, 4)) - q.BLOCK_BASE == 0x1B
-    assert ord(marked_can(1)) - q.BLOCK_BASE == 0x1C      # six marked forms per base
+    assert ord(marked_can(0)) - q.BLOCK_BASE == 0x01
+    assert ord(chi(0, 0)) - q.BLOCK_BASE == 0x02
+    assert ord(chi(0, 4)) - q.BLOCK_BASE == 0x06
+    assert ord(unmarked(1)) - q.BLOCK_BASE == 0x07      # seven forms per base
+    assert ord(unmarked(21)) - q.BLOCK_BASE == 0x93
     assert ord(marked_can(21)) - q.BLOCK_BASE == 0x94
     assert ord(chi(21, 4)) - q.BLOCK_BASE == 0x99
     assert ord(COMB) - q.BLOCK_BASE == 0x9A
@@ -76,17 +76,29 @@ def test_marked_can_names_are_unique_ascii():
     assert all(n.isascii() and n.isupper() for n in q.CAN_NAMES)
 
 
-def test_marked_forms_form_one_run():
-    # The 132 marked forms are consecutive, six per base, MARKED-1 to MARKED-6.
-    marked = [ord(c) - q.BLOCK_BASE for c in ALL_MARKED_CAN + ALL_CHI]
-    assert sorted(marked) == list(range(0x16, 0x9A))
+def test_forms_are_grouped_by_base():
+    # Seven consecutive forms per base: unmarked, then MARKED-1 to MARKED-6.
+    used = [ord(c) - q.BLOCK_BASE for c in ALL_UNMARKED + ALL_MARKED_CAN + ALL_CHI]
+    assert sorted(used) == list(range(0x9A))
     for base in range(22):
-        forms = [q.marked(base, n) for n in range(1, 7)]
-        assert forms[0] == marked_can(base)
-        assert forms[1:] == [chi(base, p) for p in range(5)]
-        assert [q.marked_position(c) for c in forms] == [1, 2, 3, 4, 5, 6]
+        forms = [unmarked(base)] + [q.marked(base, n) for n in range(1, 7)]
+        assert [ord(c) - q.BLOCK_BASE for c in forms] == list(range(base * 7, base * 7 + 7))
+        assert forms[1] == marked_can(base)
+        assert forms[2:] == [chi(base, p) for p in range(5)]
+        assert [q.marked_position(c) for c in forms[1:]] == [1, 2, 3, 4, 5, 6]
+        assert q.marked_position(forms[0]) is None
         assert all(q.base_of(c) == base for c in forms)
-        assert [q.kind(c) for c in forms] == [Kind.MARKED_CAN] + [Kind.CHI] * 5
+        assert [q.kind(c) for c in forms] == [Kind.UNMARKED, Kind.MARKED_CAN] + [Kind.CHI] * 5
+
+
+def test_binary_order_groups_clusters_by_first_base():
+    # Without collation, clusters sort by the base of their first component, so a
+    # base's Phân Thiết and Hợp Thư lie in one contiguous range.
+    clusters = [unmarked(x) + JOIN + chi(y, 0) for x in range(22) for y in range(22) if x != y]
+    clusters += [chi(x, p) + JOIN + unmarked(x) for x in range(22) for p in range(5)]
+    clusters.sort()
+    firsts = [q.base_of(c[0]) for c in clusters]
+    assert firsts == sorted(firsts)
     with pytest.raises(ValueError):
         q.marked(0, 0)
     with pytest.raises(ValueError):

@@ -234,16 +234,15 @@ The source does not state a writing direction. Both witnesses contain vertical H
 
 ### 6.4 Code point order
 
-The source lists the 22 Cán in the section 幹音二十二字, "trunk sounds, twenty-two characters", each annotated with its name in Chữ Nôm (p. [2](evidence/pages/S1-p2.jpg)). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán, the five Chi follow the order of the marking-stroke position, counter-clockwise from the position of the marked Cán (4.1). The unmarked forms come first. The six marked forms of a base follow one another, so that all marked forms form one run of code points (+16 to +99).
+The source lists the 22 Cán in the section 幹音二十二字, "trunk sounds, twenty-two characters", each annotated with its name in Chữ Nôm (p. [2](evidence/pages/S1-p2.jpg)). The order groups the initials roughly by place of articulation. It has no encoding significance, so code points follow the order of that listing and no collation claim is made. Within each Cán, the five Chi follow the order of the marking-stroke position, counter-clockwise from the position of the marked Cán (4.1). The seven forms of a base follow one another: the unmarked form first, then the six marked forms. The code points are therefore grouped by base. Because a Phân Thiết begins with the unmarked Cán of its first base and a Hợp Thư begins with a Chi of its base, a binary comparison of code point sequences, without any collation, places both constructions of a base in the one range of that base (see 7).
 
 ## 7. Character Table and Code Chart
 
-The 164 characters fit in a block of 176 code points (11 columns of 16), proposed for the Supplementary Multilingual Plane. \[TBD: block position assigned by the UTC\] Code points follow the source order of the 22 Cán, and the six marked forms of each base are consecutive, the marked Cán first and the five Chi after it. The marked forms form one run (+16 to +99).
+The 164 characters fit in a block of 176 code points (11 columns of 16), proposed for the Supplementary Multilingual Plane. \[TBD: block position assigned by the UTC\] Code points follow the source order of the 22 Cán, and the seven forms of each base are consecutive: the unmarked form, the marked Cán and the five Chi. The 22 unmarked forms are therefore not one run; they are the forms at every seventh position (+00, +07, … +93). A cluster's position in a binary sort depends on the base of its first component, so the Phân Thiết and the Hợp Thư of a base lie in that base's range. \[TBD: no claim is made about the Unicode Collation Algorithm.\]
 
 | Group | Offset in block | Count |
 | --- | --- | --- |
-| Unmarked forms | +00 to +15 | 22 |
-| Marked forms, six per base: the marked Cán and the five Chi | +16 to +99 | 132 |
+| Seven forms per base: the unmarked form, the marked Cán and the five Chi | +00 to +99 | 154 (22 bases × 7) |
 | Tham Thư combiner | +9A | 1 |
 | Component joiner | +9B | 1 |
 | Tone marks | +9C to +A3 | 8, in the traditional order of the eight tones (see below) |
@@ -281,30 +280,30 @@ The names describe the form only and say nothing about its function. A form with
 
 The names of the 22 Cán are the names of their sounds in the source listing (6.4), where each Cán is annotated with a Chữ Nôm character; annotations without an encoded character are given as Ideographic Description Sequences. Each name is the syllable of the initial with the rhyme ông. Every form of a base takes the name of its Cán. Diacritics are dropped. To keep đông and dông apart, đ is written DD and d is written DZ, following an established convention for Vietnamese: đông → DDONG, dông → DZONG.
 
-| No. | Nôm annotation | Reading | Initial | Name in character names | UNMARKED | MARKED-1 |
+| No. | Nôm annotation | Reading | Initial | Name in character names | UNMARKED | MARKED-6 |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | 翁 | ông | Ɂ | ONG | +00 | +16 |
-| 2 | ⿰木禺 | ngông | Ng | NGONG | +01 | +1C |
-| 3 | 胸 | hông | H | HONG | +02 | +22 |
-| 4 | ⿰木功 | gông | G | GONG | +03 | +28 |
-| 5 | 工 | công | C | CONG | +04 | +2E |
-| 6 | ⿰竜羽 | lông | L | LONG | +05 | +34 |
-| 7 | ⿰竜里 | trông | Tr | TRONG | +06 | +3A |
-| 8 | 東 | đông | Đ | DDONG | +07 | +40 |
-| 9 | 農 | nông | N | NONG | +08 | +46 |
-| 10 | 宗 | tông | T | TONG | +09 | +4C |
-| 11 | 通 | thông | Th | THONG | +0A | +52 |
-| 12 | ⿰亻戍 | nhông | Nh | NHONG | +0B | +58 |
-| 13 | 柊 | chông | Ch | CHONG | +0C | +5E |
-| 14 | ⿰月容 | dông | D | DZONG | +0D | +64 |
-| 15 | 衝 | xông | X | XONG | +0E | +6A |
-| 16 | 空 | không | Kh | KHONG | +0F | +70 |
-| 17 | 滝 | sông | S | SONG | +10 | +76 |
-| 18 | ⿱山庸 | rông | R | RONG | +11 | +7C |
-| 19 | 蒙 | mông | M | MONG | +12 | +82 |
-| 20 | 芃 | bông | B | BONG | +13 | +88 |
-| 21 | ⿰木芃 | vông | V | VONG | +14 | +8E |
-| 22 | ⿰口風 | phông | Ph | PHONG | +15 | +94 |
+| 1 | 翁 | ông | Ɂ | ONG | +00 | +06 |
+| 2 | ⿰木禺 | ngông | Ng | NGONG | +07 | +0D |
+| 3 | 胸 | hông | H | HONG | +0E | +14 |
+| 4 | ⿰木功 | gông | G | GONG | +15 | +1B |
+| 5 | 工 | công | C | CONG | +1C | +22 |
+| 6 | ⿰竜羽 | lông | L | LONG | +23 | +29 |
+| 7 | ⿰竜里 | trông | Tr | TRONG | +2A | +30 |
+| 8 | 東 | đông | Đ | DDONG | +31 | +37 |
+| 9 | 農 | nông | N | NONG | +38 | +3E |
+| 10 | 宗 | tông | T | TONG | +3F | +45 |
+| 11 | 通 | thông | Th | THONG | +46 | +4C |
+| 12 | ⿰亻戍 | nhông | Nh | NHONG | +4D | +53 |
+| 13 | 柊 | chông | Ch | CHONG | +54 | +5A |
+| 14 | ⿰月容 | dông | D | DZONG | +5B | +61 |
+| 15 | 衝 | xông | X | XONG | +62 | +68 |
+| 16 | 空 | không | Kh | KHONG | +69 | +6F |
+| 17 | 滝 | sông | S | SONG | +70 | +76 |
+| 18 | ⿱山庸 | rông | R | RONG | +77 | +7D |
+| 19 | 蒙 | mông | M | MONG | +7E | +84 |
+| 20 | 芃 | bông | B | BONG | +85 | +8B |
+| 21 | ⿰木芃 | vông | V | VONG | +8C | +92 |
+| 22 | ⿰口風 | phông | Ph | PHONG | +93 | +99 |
 
 ### 7.2 Code chart
 
