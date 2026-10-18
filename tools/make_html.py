@@ -3,20 +3,24 @@
 Usage: python tools/make_html.py [OUT_DIR]     (default: ../qatt/unicode/draft)
 
 Writes OUT_DIR/index.html, OUT_DIR/evidences/E*.html (one page per evidence entry, plus an
-overview) and OUT_DIR/ucd/ (the draft character data). No images are published: the images
-of the evidence entries and the links to the scans are dropped, the passages are given as text.
-Needs markdown-it-py.
+overview) and OUT_DIR/ucd/ (the draft character data), with the images: the 16 pages of both
+manuscripts in OUT_DIR/pages, cropped to the text with a margin (this removes the watermark
+above the text and the page edges), and the cut-outs of the evidence entries in
+OUT_DIR/evidences/images. Needs markdown-it-py, Pillow and numpy.
 """
 
 from __future__ import annotations
 
 import html
 import re
+import shutil
 import sys
 from pathlib import Path
 
+import numpy as np
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
+from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import evidence  # noqa: E402
@@ -24,6 +28,27 @@ import evidence  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 REPO = "https://github.com/qtng/qatt-unicode/blob/main"
 DEFAULT_OUT = ROOT.parent / "qatt" / "unicode" / "draft"
+
+MARGIN = 8        # pixels of paper left around the text
+TOP = 100         # the watermark of the Institute lies above this row
+INK = 100         # luminance below which a pixel is ink
+EDGE = 14         # distance kept from the right edge of the paper (dark edge line)
+MIN_INK = 6       # a row or column counts as text with at least this many ink pixels
+
+
+def crop_to_text(source: Path, target: Path) -> None:
+    """Crop a scan to its text with a margin; ignores the watermark and the page edge."""
+    image = Image.open(source).convert("RGB")
+    grey = np.array(image.convert("L"))
+    height, width = grey.shape
+    columns = grey[TOP:1400].mean(axis=0)
+    paper_right = max(x for x in range(width) if columns[x] < 215) + 1
+    ink = grey[TOP:height - EDGE, :paper_right - EDGE] < INK
+    rows = np.where(ink.sum(axis=1) >= MIN_INK)[0]
+    cols = np.where(ink.sum(axis=0) >= MIN_INK)[0]
+    box = (max(int(cols.min()) - MARGIN, 0), max(int(rows.min()) + TOP - MARGIN, TOP),
+           min(int(cols.max()) + MARGIN, width), min(int(rows.max()) + TOP + MARGIN, height))
+    image.crop(box).save(target, quality=78, optimize=True)
 
 PAGE = """<!DOCTYPE html>
 <html lang="en" translate="no">
@@ -46,6 +71,7 @@ PAGE = """<!DOCTYPE html>
     th, td {{ border: 1px solid #dccfb2; padding: .25rem .5rem; vertical-align: top; }}
     th {{ background: #f7efdc; }}
     .table-wrap {{ overflow-x: auto; }}
+    main img {{ max-width: 100%; height: auto; border: 1px solid #dccfb2; }}
     code, pre {{ font-size: .85rem; }}
     pre {{ background: #f7efdc; padding: .75rem 1rem; overflow-x: auto; }}
     .anchor {{ margin-left: .4rem; opacity: 0; color: #a8362a; text-decoration: none; vertical-align: -.1em; }}
@@ -79,8 +105,11 @@ def slug(text: str) -> str:
 
 
 def fix_link(href: str, base: str = "") -> str:
-    """Rewrite a link of the Markdown files. base is "" for the proposal and "../" for the
-    evidence pages in evidences/."""
+    """Rewrite a link or image source of the Markdown files. base is "" for the proposal and
+    "../" for the pages in evidences/ and ucd/."""
+    m = re.fullmatch(r"(?:evidence/)?pages/(S\d-p\d\.jpg)", href)
+    if m:
+        return f"{base}pages/{m.group(1)}"
     m = re.fullmatch(r"(?:evidence/|\./)?(E\d+[a-z]?)\.md(#.*)?", href)
     if m:
         return f"{'evidences/' if not base else ''}{m.group(1)}.html{m.group(2) or ''}"
@@ -89,14 +118,7 @@ def fix_link(href: str, base: str = "") -> str:
     return href
 
 
-def strip_images(markdown: str) -> str:
-    """Drop the images of the evidence entries and the links to scans (not published)."""
-    markdown = re.sub(r"^!\[[^\]]*\]\([^)]*\)[ \t]*\n?", "", markdown, flags=re.M)
-    return re.sub(r"\[([^\]]*)\]\((?:\.\./|evidence/)?(?:pages|images)/[^)]*\)", r"\1", markdown)
-
-
 def render(markdown: str, base: str = "") -> str:
-    markdown = strip_images(markdown)
     md = MarkdownIt("commonmark", {"html": True}).enable("table")
     tokens = md.parse(markdown)
     for i, token in enumerate(tokens):
@@ -110,6 +132,11 @@ def render(markdown: str, base: str = "") -> str:
         for child in token.children or []:
             if child.type == "link_open":
                 child.attrSet("href", fix_link(child.attrGet("href"), base))
+                if "pages/" in child.attrGet("href"):
+                    child.attrSet("target", "_blank")
+            elif child.type == "image":
+                child.attrSet("src", fix_link(child.attrGet("src"), base))
+                child.attrSet("loading", "lazy")
     body = md.renderer.render(tokens, md.options, {})
     body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
     return body
@@ -121,7 +148,8 @@ def evidence_page(path: Path) -> tuple[str, str]:
     sections = ", ".join(f'<a href="../index.html#sec-{x.replace(".", "-")}">{x}</a>' for x in entry["sections"])
     rows = [("Claim", html.escape(entry["claim"])), ("Proposal sections", sections),
             ("Source", html.escape(", ".join(entry["source"]))),
-            ("Page", html.escape(entry["page"])),
+            ("Page", f'<a href="../pages/{entry["source"][0].replace("Source ", "S")}-p{entry["page"]}.jpg" target="_blank">{entry["page"]}</a>'
+                     if entry["page"].isdigit() else html.escape(entry["page"])),
             ("Location", html.escape(entry["location"])), ("Status", html.escape(entry["status"]))]
     table = "<table>" + "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v) + "</table>"
     body = path.read_text(encoding="utf-8").split("---\n", 2)[2]
@@ -131,7 +159,12 @@ def evidence_page(path: Path) -> tuple[str, str]:
 
 def main() -> None:
     out = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_OUT
-    out.mkdir(parents=True, exist_ok=True)
+    (out / "pages").mkdir(parents=True, exist_ok=True)
+    for scan in sorted((ROOT / "evidence" / "pages").glob("S[12]-p[1-8].jpg")):
+        crop_to_text(scan, out / "pages" / scan.name)
+    (out / "evidences" / "images").mkdir(parents=True, exist_ok=True)
+    for image in sorted((ROOT / "evidence" / "images").glob("*.png")):
+        shutil.copy2(image, out / "evidences" / "images" / image.name)
     markdown = (ROOT / "proposal.md").read_text(encoding="utf-8")
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
     (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")

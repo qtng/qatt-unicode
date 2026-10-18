@@ -3,3 +3,4 @@ hypothesis
 pyyaml
 markdown-it-py
 pillow
+numpy
