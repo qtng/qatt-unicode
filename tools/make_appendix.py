@@ -34,8 +34,8 @@ def appendix_b(entries) -> str:
              "| Page | Passage | Shows | Status |",
              "| --- | --- | --- | --- |"]
     for e in sorted(located, key=page_key):
-        lines.append(f"| {e['page']} | {cell(e['transcription']) or '–'} | {cell(e['claim'])} ({e['id']}) | {e['status']} |")
-    return evidence.link_refs("\n".join(lines), "evidence/", pages=False)
+        lines.append(f"| [{e['page']}](evidence/pages/S1-p{e['page']}.jpg) | {cell(e['transcription']) or '–'} | {cell(e['claim'])} ({e['id']}) | {e['status']} |")
+    return evidence.link_refs("\n".join(lines), "evidence/")
 
 
 def overview(entries) -> str:
