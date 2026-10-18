@@ -1,3 +1,4 @@
 pytest
 hypothesis
 pyyaml
+markdown-it-py
