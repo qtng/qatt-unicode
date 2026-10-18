@@ -80,7 +80,6 @@ Cut-outs go in `images/`. They are cut from the full pages by `python tools/make
 | [E29](E29.md) | Table of the Chi under the heading 枝字一百一十字, 'the 110 Chi characters'; the table shows 109, one left out by oversight | 4.1, 6.4, 7.1 | [3](pages/S1-p3.jpg) | cited |
 | [E30](E30.md) | Dating: the character 華 lacks its final stroke, a naming taboo for Hồ Thị Hoa, mother of Emperor Thiệu Trị (1841–1847) | 1, 2.1, 3.1 | [1](pages/S1-p1.jpg) | cited |
 | [E31](E31.md) | Author's signature: Nam Thành cư sĩ Nguyễn Tử (南城居士阮子) | 2.1 | [2](pages/S1-p2.jpg) | cited |
-| [E32](E32.md) | Classification of the manuscripts as tiểu học (小學) and catalogued as nôm văn thư (喃文書) | 2.1 | – | missing |
 | [E33](E33.md) | Name of the script: 國音新字 (Quốc Âm Tân Tự), in the heading of the preface 國音新字序 | 1, 2, 2.1 | [1](pages/S1-p1.jpg) | cited |
 | [E34](E34.md) | Marked Cán and unmarked Cán both appear standalone, with the same reading, also with tone marks; only the unmarked Cán combines, never the marked Cán | 4.1, 5.3 | [5](pages/S1-p5.jpg) | located |
 | [E35](E35.md) | The source contains no running text in the script: only single characters given as examples and spelling formulas in the phản thiết manner, within Hán Nôm text | 2.1, 4.1 | – | located |

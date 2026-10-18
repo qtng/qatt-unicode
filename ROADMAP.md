@@ -12,7 +12,7 @@ Record each passage as an entry in [evidence/](evidence/), one Markdown file per
 4. Both Tham Thư, phản thiết examples, tone marks in all four corners ([E05](evidence/E05.md), [E10](evidence/E10.md)–[E16](evidence/E16.md)).
 5. Layout of the components within a cell (proposal 4.5), from the same examples.
 6. Date, provenance and location of both sources; scholarly literature ([E17](evidence/E17.md)–[E21](evidence/E21.md)).
-7. Naming taboo (reference), catalogue classification and semicircle orientation ([E32](evidence/E32.md), [E16](evidence/E16.md)).
+7. Semicircle orientation ([E16](evidence/E16.md)).
 
 ## Phase B – Names and order
 

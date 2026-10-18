@@ -13,10 +13,9 @@ This proposal encodes Quốc Âm Tân Tự (QATT), a Vietnamese script used insi
 | Draft date | 2026-10-09 |
 | Characters | 164: 154 components, 2 joiners, 8 tone marks |
 | Model | Atomic components in reading order; every combination written with an explicit joiner |
-| Plane | Supplementary Multilingual Plane \[TBD: block position assigned by the UTC\] |
+| Plane | Supplementary Multilingual Plane; block position to be assigned by the UTC |
 | Direction | Follows Hán Nôm; the source is vertical |
 | Attested sources | Two manuscripts of one text, Institute of Hán Nôm Studies, Hanoi, AB.630; reign of Thiệu Trị (1841–1847) |
-| Official form | \[TBD: complete the UTC Proposal Summary Form\] |
 
 ## 2. Introduction
 
@@ -24,7 +23,7 @@ Quốc Âm Tân Tự (國音新字, "new script for the sounds of the national l
 
 ### 2.1 Background
 
-The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text names the script in the heading of its preface, 國音新字序, "preface to the new script for the sounds of the national language" (p. [1](evidence/pages/S1-p1.jpg)). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa (p. [1](evidence/pages/S1-p1.jpg)). \[TBD: reference for the taboo and for Hồ Thị Hoa as the emperor's mother\] The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành, at the end of the preface (p. [2](evidence/pages/S1-p2.jpg)). The manuscripts are classified under tiểu học (小學, philology and elementary learning) and catalogued as nôm văn thư (喃文書, Nôm documents). \[TBD: catalogue reference ([E32](evidence/E32.md))\]
+The script is known from one text, preserved in two manuscripts at the Institute of Hán Nôm Studies in Hanoi (3.1). The text names the script in the heading of its preface, 國音新字序, "preface to the new script for the sounds of the national language" (p. [1](evidence/pages/S1-p1.jpg)). The text is undated. It can be dated to the reign of Emperor Thiệu Trị (1841–1847), because the character 華 lacks its final stroke, a naming taboo for the emperor's mother, Hồ Thị Hoa (p. [1](evidence/pages/S1-p1.jpg)). The author signs as Nam Thành cư sĩ Nguyễn Tử (南城居士阮子), a lay scholar (cư sĩ) surnamed Nguyễn from Nam Thành, at the end of the preface (p. [2](evidence/pages/S1-p2.jpg)).
 
 In the source the script appears within Hán Nôm text and is treated exactly like Hán Nôm characters. The source contains no running text written in the script: it gives single characters as examples and spelling formulas in the phản thiết manner (4.1). Three-component characters (Tham Thư) are attested in two examples; their reading is not established (4.3). Eight tones are marked with circles and semicircles in the corners, following the Chinese yin-yang method. \[TBD: scholarly literature\]
 
@@ -230,7 +229,7 @@ The source lists the 22 Cán in the section 幹音二十二字, "trunk sounds, t
 
 ## 7. Character Table and Code Chart
 
-The 164 characters fit in a block of 176 code points (11 columns of 16), proposed for the Supplementary Multilingual Plane. \[TBD: block position assigned by the UTC\] Code points follow the source order of the 22 Cán, and the seven forms of each base are consecutive: the unmarked form, the marked Cán and the five Chi. The 22 unmarked forms are therefore not one run; they are the forms at every seventh position (+00, +07, … +93). A cluster's position in a binary sort depends on the base of its first component, so the Phân Thiết and the Hợp Thư of a base lie in that base's range. \[TBD: no claim is made about the Unicode Collation Algorithm.\]
+The 164 characters fit in a block of 176 code points (11 columns of 16), proposed for the Supplementary Multilingual Plane; the block position is assigned by the UTC. Code points follow the source order of the 22 Cán, and the seven forms of each base are consecutive: the unmarked form, the marked Cán and the five Chi. The 22 unmarked forms are therefore not one run; they are the forms at every seventh position (+00, +07, … +93). A cluster's position in a binary sort depends on the base of its first component, so the Phân Thiết and the Hợp Thư of a base lie in that base's range. \[TBD: no claim is made about the Unicode Collation Algorithm.\]
 
 | Group | Offset in block | Count |
 | --- | --- | --- |
