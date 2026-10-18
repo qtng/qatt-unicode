@@ -169,6 +169,8 @@ def main() -> None:
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
     (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")
     (out / "evidences").mkdir(exist_ok=True)
+    for stale in (out / "evidences").glob("E*.html"):   # entries that no longer exist
+        stale.unlink()
     for path in evidence.entry_files():
         ident, body = evidence_page(path)
         (out / "evidences" / f"{ident}.html").write_text(PAGE.format(title=f"{ident} | Qatt.org", body=body), encoding="utf-8")
