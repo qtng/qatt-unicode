@@ -2,24 +2,48 @@
 
 Usage: python tools/make_html.py [OUT_DIR]     (default: ../qatt/unicode)
 
-Writes OUT_DIR/index.html and copies the scans of the sources to OUT_DIR/pages.
+Writes OUT_DIR/index.html and the scans of the sources to OUT_DIR/pages, cropped to
+the text (a margin of MARGIN pixels on all four sides), which removes the digital
+watermark above the text and the page edges. The scans in evidence/ stay as they are.
 Page references (evidence/pages/S1-p2.jpg) link to the copied scans; evidence
-entries (E07) link to their files in the GitHub repository. Needs markdown-it-py.
+entries (E07) link to their files in the GitHub repository. Needs markdown-it-py, Pillow and numpy.
 """
 
 from __future__ import annotations
 
 import html
 import re
-import shutil
 import sys
 from pathlib import Path
 
+import numpy as np
 from markdown_it import MarkdownIt
+from PIL import Image
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO = "https://github.com/qtng/qatt-unicode/blob/main"
 DEFAULT_OUT = ROOT.parent / "qatt" / "unicode"
+
+MARGIN = 8        # pixels of paper left around the text
+TOP = 100         # the watermark of the Institute lies above this row
+INK = 100         # luminance below which a pixel is ink
+EDGE = 14         # distance kept from the right edge of the paper (dark edge line)
+MIN_INK = 6       # a row or column counts as text with at least this many ink pixels
+
+
+def crop_to_text(source: Path, target: Path) -> None:
+    """Crop a scan to its text with a margin; ignores the watermark and the page edge."""
+    image = Image.open(source).convert("RGB")
+    grey = np.array(image.convert("L"))
+    height, width = grey.shape
+    columns = grey[TOP:1400].mean(axis=0)
+    paper_right = max(x for x in range(width) if columns[x] < 215) + 1
+    ink = grey[TOP:height - EDGE, :paper_right - EDGE] < INK
+    rows = np.where(ink.sum(axis=1) >= MIN_INK)[0]
+    cols = np.where(ink.sum(axis=0) >= MIN_INK)[0]
+    box = (max(int(cols.min()) - MARGIN, 0), max(int(rows.min()) + TOP - MARGIN, TOP),
+           min(int(cols.max()) + MARGIN, width), min(int(rows.max()) + TOP + MARGIN, height))
+    image.crop(box).save(target, quality=78, optimize=True)
 
 PAGE = """<!DOCTYPE html>
 <html lang="en" translate="no">
@@ -110,7 +134,7 @@ def main() -> None:
     out = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_OUT
     (out / "pages").mkdir(parents=True, exist_ok=True)
     for scan in sorted((ROOT / "evidence" / "pages").glob("S[12]-p[1-8].jpg")):
-        shutil.copy2(scan, out / "pages" / scan.name)
+        crop_to_text(scan, out / "pages" / scan.name)
     markdown = (ROOT / "proposal.md").read_text(encoding="utf-8")
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
     (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")
