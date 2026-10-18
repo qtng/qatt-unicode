@@ -29,7 +29,7 @@ def page_link(page: str) -> str:
 
 def appendix_b(entries) -> str:
     located = [e for e in entries if e["status"] != "missing" and e["page"]]
-    lines = ["Passages located in the source, by page. Pages are those of Source 1 (section 3); the passages are given as text (Appendix C).",
+    lines = ["Passages located in the source, by page. Page references are to Source 1 (section 3); images are in the evidence catalogue.",
              "",
              "| Page | Passage | Shows | Status |",
              "| --- | --- | --- | --- |"]
