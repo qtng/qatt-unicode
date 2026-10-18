@@ -51,8 +51,8 @@ NUM_POSITIONS = 5   # Chi per base
 NUM_MARKED = 6                # marking-stroke positions, counted counter-clockwise from the start position
 FORMS_PER_BASE = NUM_MARKED + 1   # form 0: unmarked (no marking stroke); forms 1..6: MARKED-1 .. MARKED-6
 # +00..+99: 154 code points, seven consecutive forms per base in source order
-COMBINER_OFFSET = 0x9A        # +9A, Tham Thư combiner
-JOINER_OFFSET = 0x9B          # +9B, component joiner
+JOINER_OFFSET = 0x9A          # +9A, component joiner
+COMBINER_OFFSET = 0x9B        # +9B, Tham Thư combiner
 TONE_OFFSET = 0x9C            # +9C..+A3, 8 code points
 RESERVED_OFFSET = 0xA4        # +A4..+AF
 BLOCK_SIZE = 0xB0             # 176
@@ -140,13 +140,13 @@ def kind(ch: str) -> Kind:
     offset = ord(ch) - BLOCK_BASE
     if offset < 0 or offset >= RESERVED_OFFSET:
         return Kind.OTHER
-    if offset < COMBINER_OFFSET:
+    if offset < JOINER_OFFSET:
         form = offset % FORMS_PER_BASE
         return Kind.UNMARKED if form == 0 else Kind.MARKED_CAN if form == 1 else Kind.CHI
-    if offset == COMBINER_OFFSET:
-        return Kind.COMBINER
     if offset == JOINER_OFFSET:
         return Kind.JOINER
+    if offset == COMBINER_OFFSET:
+        return Kind.COMBINER
     return Kind.TONE
 
 

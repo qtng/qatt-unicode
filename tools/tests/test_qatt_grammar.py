@@ -44,8 +44,8 @@ def test_offsets():
     assert ord(unmarked(21)) - q.BLOCK_BASE == 0x93
     assert ord(marked_can(21)) - q.BLOCK_BASE == 0x94
     assert ord(chi(21, 4)) - q.BLOCK_BASE == 0x99
-    assert ord(COMB) - q.BLOCK_BASE == 0x9A
-    assert ord(JOIN) - q.BLOCK_BASE == 0x9B
+    assert ord(JOIN) - q.BLOCK_BASE == 0x9A
+    assert ord(COMB) - q.BLOCK_BASE == 0x9B
     tones = {tone(s, c) for s in q.TONE_SHAPES for c in q.TONE_CORNERS}
     assert {ord(t) - q.BLOCK_BASE for t in tones} == set(range(0x9C, 0xA4))
 

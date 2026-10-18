@@ -84,7 +84,7 @@ def property_file(index: int, prop: str) -> list[str]:
 def names_list() -> list[str]:
     first, last = q.BLOCK_BASE, q.BLOCK_BASE + q.BLOCK_SIZE - 1
     lines = [f"@@\t{first:05X}\t{BLOCK_NAME}\t{last:05X}"]
-    headings = {q.Kind.COMBINER: "Format characters",
+    headings = {q.Kind.JOINER: "Format characters",
                 q.Kind.TONE: "Tone marks"}
     shown = None
     for ch in assigned():

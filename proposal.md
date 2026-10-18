@@ -206,7 +206,7 @@ The eight tone marks are combining characters that follow the complete cluster. 
 
 ### 5.8 Open decision
 
-Propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add the combiner once more attestations exist. With two attested examples, the second option lowers the risk of rejection. Without the combiner the repertoire has 163 characters, the component joiner and the tone marks move up by one code point, and the size argument for Tham Thư in 5.2 no longer applies. The component joiner is needed in either case.
+Propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add the combiner once more attestations exist. With two attested examples, the second option lowers the risk of rejection. Without the combiner the repertoire has 163 characters, the tone marks move up by one code point; the component joiner keeps its position, and the size argument for Tham Thư in 5.2 no longer applies. The component joiner is needed in either case.
 
 ## 6. Character Properties
 
@@ -215,7 +215,7 @@ The proposed properties follow from the encoding model: components are letters, 
 | Characters | General\_Category | Combining class | Grapheme\_Cluster\_Break | Line\_Break | Bidi\_Class |
 | --- | --- | --- | --- | --- | --- |
 | Marked Cán, unmarked Cán, Chi | Lo | 0 | Other | ID | L |
-| Tham Thư combiner, component joiner | Cf | 0 | Extend \[TBD\] | GL \[TBD\] | BN \[TBD\] |
+| Component joiner, Tham Thư combiner | Cf | 0 | Extend \[TBD\] | GL \[TBD\] | BN \[TBD\] |
 | Tone marks (8) | Mn | 0 | Extend | CM | NSM |
 
 The draft data files list every value, including Indic\_Conjunct\_Break, East\_Asian\_Width and Vertical\_Orientation; the questions on the values marked \[TBD\] are collected for review.
@@ -243,8 +243,8 @@ The 164 characters fit in a block of 176 code points (11 columns of 16), propose
 | Group | Offset in block | Count |
 | --- | --- | --- |
 | Seven forms per base: the unmarked form, the marked Cán and the five Chi | +00 to +99 | 154 (22 bases × 7) |
-| Tham Thư combiner | +9A | 1 |
-| Component joiner | +9B | 1 |
+| Component joiner | +9A | 1 |
+| Tham Thư combiner | +9B | 1 |
 | Tone marks | +9C to +A3 | 8, in the traditional order of the eight tones (see below) |
 | Reserved | +A4 to +AF | 12 |
 
