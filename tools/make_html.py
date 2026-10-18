@@ -2,13 +2,14 @@
 
 Usage: python tools/make_html.py [OUT_DIR] [--with-scans]     (default: ../qatt/unicode/draft)
 
-Writes OUT_DIR/index.html and OUT_DIR/evidences/E*.html (one page per evidence entry, plus an overview) and OUT_DIR/ucd/ (the draft character data). The page references link to OUT_DIR/pages/S1-p2.jpg etc.;
-those files are NOT written (the copyright of the scans is not cleared, so they are
-not published). With --with-scans the scans of the sources are written to OUT_DIR/pages, cropped to
-the text (a margin of MARGIN pixels on all four sides), which removes the digital
-watermark above the text and the page edges. The scans in evidence/ stay as they are.
-Page references (evidence/pages/S1-p2.jpg) link to the copied scans; evidence
-entries (E07) link to their files in the GitHub repository. Needs markdown-it-py, Pillow and numpy.
+Writes OUT_DIR/index.html, OUT_DIR/evidences/E*.html (one page per evidence entry, plus an
+overview) and OUT_DIR/ucd/ (the draft character data). Page references link to
+OUT_DIR/pages/S1-p2.png etc., but those files are only written with --with-scans: the pages of
+both manuscripts, cropped to the text with a margin (this removes the watermark above the text
+and the page edges) and reduced to black and white, fax quality (colour, red marks and paper
+texture are gone). The scans in evidence/ stay as they are. Evidence entries link to their own
+pages; the cut-outs of the entries (evidence/images) are not published. Needs markdown-it-py,
+Pillow and numpy.
 """
 
 from __future__ import annotations
@@ -21,7 +22,7 @@ from pathlib import Path
 import numpy as np
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
-from PIL import Image
+from PIL import Image, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import evidence  # noqa: E402
@@ -37,8 +38,22 @@ EDGE = 14         # distance kept from the right edge of the paper (dark edge li
 MIN_INK = 6       # a row or column counts as text with at least this many ink pixels
 
 
+FAX_BLUR = 25     # radius of the blur that estimates the local paper tone
+FAX_LEVEL = 170   # brightness (of 255) relative to the paper above which a pixel turns white
+
+
+def to_fax(image: Image.Image) -> Image.Image:
+    """Black and white like a fax: the paper tone is divided out, then every pixel is black or white.
+    Colour, red marks, paper texture and faint watermarks are gone; the strokes stay."""
+    grey = image.convert("L")
+    paper = np.maximum(np.array(grey.filter(ImageFilter.GaussianBlur(FAX_BLUR))).astype(float), 1)
+    relative = np.clip(np.array(grey).astype(float) / paper * 255, 0, 255)
+    return Image.fromarray(((relative > FAX_LEVEL) * 255).astype("uint8")).convert("1")
+
+
 def crop_to_text(source: Path, target: Path) -> None:
-    """Crop a scan to its text with a margin; ignores the watermark and the page edge."""
+    """Crop a scan to its text with a margin (ignores the watermark and the page edge) and
+    save it as a black and white image (target is a .png)."""
     image = Image.open(source).convert("RGB")
     grey = np.array(image.convert("L"))
     height, width = grey.shape
@@ -49,7 +64,7 @@ def crop_to_text(source: Path, target: Path) -> None:
     cols = np.where(ink.sum(axis=0) >= MIN_INK)[0]
     box = (max(int(cols.min()) - MARGIN, 0), max(int(rows.min()) + TOP - MARGIN, TOP),
            min(int(cols.max()) + MARGIN, width), min(int(rows.max()) + TOP + MARGIN, height))
-    image.crop(box).save(target, quality=78, optimize=True)
+    to_fax(image.crop(box)).save(target, optimize=True)
 
 PAGE = """<!DOCTYPE html>
 <html lang="en" translate="no">
@@ -110,7 +125,7 @@ def fix_link(href: str, base: str = "") -> str:
     evidence pages in evidences/. Scans and cut-outs are not published (see the docstring)."""
     m = re.fullmatch(r"(?:evidence/)?pages/(S\d-p\d\.jpg)", href)
     if m:
-        return f"{base}pages/{m.group(1)}"
+        return f"{base}pages/{m.group(1)[:-4]}.png"
     m = re.fullmatch(r"(?:evidence/|\./)?(E\d+[a-z]?)\.md(#.*)?", href)
     if m:
         return f"{'evidences/' if not base else ''}{m.group(1)}.html{m.group(2) or ''}"
@@ -121,7 +136,7 @@ def fix_link(href: str, base: str = "") -> str:
 
 def scan_gallery() -> str:
     """Links to the 16 scans (the files are not published, see the module docstring)."""
-    items = [f'<li><a href="pages/S{source}-p{page}.jpg" target="_blank">Source {source}, p. {page}</a></li>'
+    items = [f'<li><a href="pages/S{source}-p{page}.png" target="_blank">Source {source}, p. {page}</a></li>'
              for source in (1, 2) for page in range(1, 9)]
     return '<ul class="scans">' + "".join(items) + "</ul>"
 
@@ -156,7 +171,7 @@ def evidence_page(path: Path) -> tuple[str, str]:
     sections = ", ".join(f'<a href="../index.html#sec-{x.replace(".", "-")}">{x}</a>' for x in entry["sections"])
     rows = [("Claim", html.escape(entry["claim"])), ("Proposal sections", sections),
             ("Source", html.escape(", ".join(entry["source"]))),
-            ("Page", f'<a href="../pages/{entry["source"][0].replace("Source ", "S")}-p{entry["page"]}.jpg" target="_blank">{entry["page"]}</a>' if entry["page"] else ""),
+            ("Page", f'<a href="../pages/{entry["source"][0].replace("Source ", "S")}-p{entry["page"]}.png" target="_blank">{entry["page"]}</a>' if entry["page"] else ""),
             ("Location", html.escape(entry["location"])), ("Status", html.escape(entry["status"]))]
     table = "<table>" + "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v) + "</table>"
     body = path.read_text(encoding="utf-8").split("---\n", 2)[2]
@@ -171,7 +186,7 @@ def main() -> None:
     if "--with-scans" in sys.argv:
         (out / "pages").mkdir(exist_ok=True)
         for scan in sorted((ROOT / "evidence" / "pages").glob("S[12]-p[1-8].jpg")):
-            crop_to_text(scan, out / "pages" / scan.name)
+            crop_to_text(scan, out / "pages" / (scan.stem + ".png"))
     markdown = (ROOT / "proposal.md").read_text(encoding="utf-8")
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
     (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")
