@@ -2,7 +2,7 @@
 
 Usage: python tools/make_html.py [OUT_DIR] [--with-scans]     (default: ../qatt/unicode)
 
-Writes OUT_DIR/index.html and OUT_DIR/evidences/E*.html (one page per evidence entry, plus an overview). The page references link to OUT_DIR/pages/S1-p2.jpg etc.;
+Writes OUT_DIR/index.html and OUT_DIR/evidences/E*.html (one page per evidence entry, plus an overview) and OUT_DIR/ucd/ (the draft character data). The page references link to OUT_DIR/pages/S1-p2.jpg etc.;
 those files are NOT written (the copyright of the scans is not cleared, so they are
 not published). With --with-scans the scans of the sources are written to OUT_DIR/pages, cropped to
 the text (a margin of MARGIN pixels on all four sides), which removes the digital
@@ -164,6 +164,16 @@ def main() -> None:
     overview = (ROOT / "evidence" / "README.md").read_text(encoding="utf-8")
     index_body = '<p><a href="../index.html">Proposal</a></p>\n' + render(overview, "../")
     (out / "evidences" / "index.html").write_text(PAGE.format(title="Evidence | Qatt.org", body=index_body), encoding="utf-8")
+    ucd_out = out / "ucd"
+    ucd_out.mkdir(exist_ok=True)
+    for name in ("UnicodeData-draft.txt", "Properties-draft.txt", "NamesList-draft.txt"):
+        (ucd_out / name).write_text((ROOT / "ucd" / name).read_text(encoding="utf-8"), encoding="utf-8")
+    nav = '<p><a href="../index.html">Proposal</a> · <a href="index.html">Draft character data</a> · <a href="questions.html">Questions</a></p>\n'
+    for source, target in (("README.md", "index.html"), ("questions.md", "questions.html")):
+        body = render((ROOT / "ucd" / source).read_text(encoding="utf-8"), "../")
+        body = re.sub(r"<td>(\w+-draft\.txt)</td>", r'<td><a href="\1">\1</a></td>', body)
+        body = body.replace('<a href="questions.md">', '<a href="questions.html">').replace("`questions.md`", "questions.html")
+        (ucd_out / target).write_text(PAGE.format(title="Draft character data | Qatt.org", body=nav + body), encoding="utf-8")
     print(f"wrote {out / 'index.html'} and {len(evidence.entry_files())} evidence pages")
 
 
