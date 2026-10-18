@@ -1,6 +1,6 @@
 # Roadmap
 
-Plan for resolving the open points in section 9 of the proposal. The source work comes first, because almost every other decision depends on it.
+Plan for the open points of the proposal (marked \[TBD\] in the text). The source work comes first, because almost every other decision depends on it.
 
 ## Phase A – Sources (evidence catalogue)
 
@@ -12,6 +12,7 @@ Record each passage as an entry in [evidence/](evidence/), one Markdown file per
 4. Both Tham Thư, phản thiết examples, tone marks in all four corners ([E05](evidence/E05.md), [E10](evidence/E10.md)–[E16](evidence/E16.md)).
 5. Layout of the components within a cell (proposal 4.5), from the same examples.
 6. Date, provenance and location of both sources; scholarly literature ([E17](evidence/E17.md)–[E21](evidence/E21.md)).
+7. Naming taboo (reference), catalogue classification and semicircle orientation ([E32](evidence/E32.md), [E16](evidence/E16.md)).
 
 ## Phase B – Names and order
 
@@ -34,8 +35,7 @@ Record each passage as an entry in [evidence/](evidence/), one Markdown file per
 1. UTC Proposal Summary Form (proposer: Nguyễn Quốc Trung, independent researcher).
 2. Check the Unicode roadmap for the Supplementary Multilingual Plane; the block position is assigned by the UTC.
 3. Pre-submission review by the Script Encoding Initiative (UC Berkeley).
-4. Images of the sources: a scan on Wikimedia Commons, [File:Quốc âm tân tự.png](https://commons.wikimedia.org/wiki/File:Qu%E1%BB%91c_%C3%A2m_t%C3%A2n_t%E1%BB%B1.png), licence tags Public domain (United States, published before 1931) and Public domain (Vietnam), author given as Nguyễn Tử; not downloaded.
 
 ## Deferred – Tham Thư
 
-Tham Thư is the least certain part of the script: two examples, no stated reading. Its reading and the function of its components ([E11](evidence/E11.md)) stay open. The decision in proposal 5.8, Tham Thư combiner now or later, is taken last.
+Tham Thư is the least certain part of the script: two examples, no stated reading. Its reading and the function of its components ([E11](evidence/E11.md)) stay open. Decision, taken last: propose the Tham Thư combiner now, or describe Tham Thư with IDS first and add the combiner once more attestations exist. Without the combiner the repertoire has 163 characters and the tone marks move up by one code point; the component joiner is needed in either case.

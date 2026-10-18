@@ -2,7 +2,7 @@
 
 Working repository for a Unicode encoding proposal for Quốc Âm Tân Tự (QATT), a Vietnamese script found in Hán Nôm texts.
 
-Status: draft. Open points are listed in section 9 of the proposal and marked \[TBD\] in the text.
+Status: draft. Open points are marked \[TBD\] in the text; [ROADMAP.md](ROADMAP.md) plans them.
 
 ## Contents
 

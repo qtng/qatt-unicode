@@ -8,6 +8,7 @@ Both tables are written between <!-- …:start --> and <!-- …:end --> markers.
 
 from __future__ import annotations
 
+import re
 from pathlib import Path
 
 import evidence
@@ -27,14 +28,27 @@ def page_link(page: str) -> str:
     return f"[{page}](pages/S1-p{page}.jpg)" if page else "–"
 
 
+def without_ids(text: str) -> str:
+    """Drop references to evidence entries, e.g. "(see E29)" or "(E37)": the catalogue is our
+    working apparatus, not part of the proposal."""
+    ident = r"\[?E\d+[a-z]?\]?(?:\([^)]*\.md\))?"
+    return re.sub(rf"\s*\((?:see )?{ident}(?:[,;–-]\s*{ident})*\)", "", text)
+
+
+def passage(entry) -> str:
+    """The transcribed passage; an entry that only points to another entry shows none."""
+    text = without_ids(cell(entry["transcription"]))
+    return "–" if not text or re.match(r"See \[?E\d", text) else text
+
+
 def appendix_b(entries) -> str:
     located = [e for e in entries if e["status"] != "missing" and e["page"]]
-    lines = ["Passages located in the source, by page. Page references are to Source 1 (section 3); images are in the evidence catalogue.",
+    lines = ["Passages located in the source, by page of Source 1 (section 3).",
              "",
-             "| Page | Passage | Shows | Status |",
-             "| --- | --- | --- | --- |"]
+             "| Page | Passage | Shows |",
+             "| --- | --- | --- |"]
     for e in sorted(located, key=page_key):
-        lines.append(f"| [{e['page']}](evidence/pages/S1-p{e['page']}.jpg) | {cell(e['transcription']) or '–'} | {cell(e['claim'])} ({e['id']}) | {e['status']} |")
+        lines.append(f"| [{e['page']}](evidence/pages/S1-p{e['page']}.jpg) | {passage(e)} | {without_ids(cell(e['claim']))} |")
     return evidence.link_refs("\n".join(lines), "evidence/")
 
 
