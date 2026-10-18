@@ -391,7 +391,7 @@ Passages located in the source, by page. Page references are to Source 1 (sectio
 
 ### C. Scans of the sources
 
-All 16 pages of both manuscripts (Source 1, pp. [1](evidence/pages/S1-p1.jpg)–[8](evidence/pages/S1-p8.jpg), folios 3–10; Source 2, pp. [1](evidence/pages/S2-p1.jpg)–[8](evidence/pages/S2-p8.jpg), folios 11–18) are in the evidence catalogue of the working repository. \[TBD: include the pages in the submitted document, subject to permission of the Institute of Hán Nôm Studies\]
+All 16 pages of both manuscripts (Source 1, pp. [1](evidence/pages/S1-p1.jpg)–[8](evidence/pages/S1-p8.jpg), folios 3–10; Source 2, pp. [1](evidence/pages/S2-p1.jpg)–[8](evidence/pages/S2-p8.jpg), folios 11–18) are in the evidence catalogue of the working repository. \[TBD: location of the images for the submitted document\]
 
 ### D. References
 
