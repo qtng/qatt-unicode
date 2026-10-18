@@ -20,6 +20,7 @@ from pathlib import Path
 
 import numpy as np
 from markdown_it import MarkdownIt
+from markdown_it.token import Token
 from PIL import Image
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -73,6 +74,11 @@ PAGE = """<!DOCTYPE html>
     .table-wrap {{ overflow-x: auto; }}
     code, pre {{ font-size: .85rem; }}
     pre {{ background: #f7efdc; padding: .75rem 1rem; overflow-x: auto; }}
+    .anchor {{ margin-left: .4rem; opacity: 0; color: #a8362a; text-decoration: none; vertical-align: -.1em; }}
+    .anchor svg {{ width: .75em; height: .75em; fill: currentColor; }}
+    h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .anchor:focus {{ opacity: 1; }}
+    @media (hover: none) {{ .anchor {{ opacity: .45; }} }}
+    h1, h2, h3, h4 {{ scroll-margin-top: 4.5rem; }}
     .scans {{ columns: 2; list-style: none; padding: 0; }}
   </style>
 </head>
@@ -83,6 +89,13 @@ PAGE = """<!DOCTYPE html>
 </body>
 </html>
 """
+
+
+# the link symbol of Bootstrap Icons (bi-link-45deg)
+LINK_ICON = ('<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 '
+             '8.586 5.5L8 6.086a1 1 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4 4 0 0 1-.128-1.287z"/>'
+             '<path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 '
+             '1.287l1.372-1.372a3 3 0 1 0-4.243-4.243z"/></svg>')
 
 
 def slug(text: str) -> str:
@@ -119,7 +132,12 @@ def render(markdown: str, base: str = "") -> str:
     tokens = md.parse(markdown)
     for i, token in enumerate(tokens):
         if token.type == "heading_open":
-            token.attrSet("id", slug(tokens[i + 1].content))
+            ident = slug(tokens[i + 1].content)
+            token.attrSet("id", ident)
+            link = Token("html_inline", "", 0)
+            link.content = (f'<a class="anchor" href="#{ident}" aria-label="Link to this section" title="Link to this section">'
+                            f"{LINK_ICON}</a>")
+            tokens[i + 1].children.append(link)
         for child in token.children or []:
             if child.type == "link_open":
                 child.attrSet("href", fix_link(child.attrGet("href"), base))
