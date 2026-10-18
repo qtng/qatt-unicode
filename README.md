@@ -26,7 +26,7 @@ python tools/make_appendix.py   # Appendix B of proposal.md and evidence overvie
 python tools/make_crops.py      # evidence cut-outs from the full pages (evidence/crops.csv)
 python tools/make_ucd.py        # draft character data in ucd/
 python tools/link_refs.py       # link evidence ids (E07) and page references (p. 6)
-python tools/make_html.py [DIR]  # proposal as a web page (default ../qatt/unicode); scans only with --with-scans, they are not published
+python tools/make_html.py [DIR]  # proposal as a web page (default ../qatt/unicode/draft); scans only with --with-scans, they are not published
 ```
 
 ## Running the tests

@@ -1,6 +1,6 @@
 """Render proposal.md as a web page for the QATT site.
 
-Usage: python tools/make_html.py [OUT_DIR] [--with-scans]     (default: ../qatt/unicode)
+Usage: python tools/make_html.py [OUT_DIR] [--with-scans]     (default: ../qatt/unicode/draft)
 
 Writes OUT_DIR/index.html and OUT_DIR/evidences/E*.html (one page per evidence entry, plus an overview) and OUT_DIR/ucd/ (the draft character data). The page references link to OUT_DIR/pages/S1-p2.jpg etc.;
 those files are NOT written (the copyright of the scans is not cleared, so they are
@@ -27,7 +27,7 @@ import evidence  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO = "https://github.com/qtng/qatt-unicode/blob/main"
-DEFAULT_OUT = ROOT.parent / "qatt" / "unicode"
+DEFAULT_OUT = ROOT.parent / "qatt" / "unicode" / "draft"
 
 MARGIN = 8        # pixels of paper left around the text
 TOP = 100         # the watermark of the Institute lies above this row
