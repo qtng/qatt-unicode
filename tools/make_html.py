@@ -1,8 +1,10 @@
 """Render proposal.md as a web page for the QATT site.
 
-Usage: python tools/make_html.py [OUT_DIR]     (default: ../qatt/unicode)
+Usage: python tools/make_html.py [OUT_DIR] [--with-scans]     (default: ../qatt/unicode)
 
-Writes OUT_DIR/index.html and the scans of the sources to OUT_DIR/pages, cropped to
+Writes OUT_DIR/index.html. The page references link to OUT_DIR/pages/S1-p2.jpg etc.;
+those files are NOT written (the copyright of the scans is not cleared, so they are
+not published). With --with-scans the scans of the sources are written to OUT_DIR/pages, cropped to
 the text (a margin of MARGIN pixels on all four sides), which removes the digital
 watermark above the text and the page edges. The scans in evidence/ stay as they are.
 Page references (evidence/pages/S1-p2.jpg) link to the copied scans; evidence
@@ -68,9 +70,7 @@ PAGE = """<!DOCTYPE html>
     .table-wrap {{ overflow-x: auto; }}
     code, pre {{ font-size: .85rem; }}
     pre {{ background: #f7efdc; padding: .75rem 1rem; overflow-x: auto; }}
-    .scans {{ display: grid; grid-template-columns: repeat(auto-fill, minmax(8rem, 1fr)); gap: .75rem; }}
-    .scans figure {{ margin: 0; text-align: center; font-size: .8rem; }}
-    .scans img {{ width: 100%; height: auto; border: 1px solid #dccfb2; }}
+    .scans {{ columns: 2; list-style: none; padding: 0; }}
   </style>
 </head>
 <body>
@@ -100,13 +100,10 @@ def fix_link(href: str) -> str:
 
 
 def scan_gallery() -> str:
-    figures = []
-    for source in (1, 2):
-        for page in range(1, 9):
-            name = f"S{source}-p{page}.jpg"
-            figures.append(f'<figure><a href="pages/{name}"><img src="pages/{name}" alt="Source {source}, page {page}" loading="lazy"></a>'
-                           f"<figcaption>Source {source}, p. {page}</figcaption></figure>")
-    return '<div class="scans">' + "".join(figures) + "</div>"
+    """Links to the 16 scans (the files are not published, see the module docstring)."""
+    items = [f'<li><a href="pages/S{source}-p{page}.jpg" target="_blank">Source {source}, p. {page}</a></li>'
+             for source in (1, 2) for page in range(1, 9)]
+    return '<ul class="scans">' + "".join(items) + "</ul>"
 
 
 def render(markdown: str) -> str:
@@ -131,10 +128,13 @@ def render(markdown: str) -> str:
 
 
 def main() -> None:
-    out = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_OUT
-    (out / "pages").mkdir(parents=True, exist_ok=True)
-    for scan in sorted((ROOT / "evidence" / "pages").glob("S[12]-p[1-8].jpg")):
-        crop_to_text(scan, out / "pages" / scan.name)
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    out = Path(args[0]) if args else DEFAULT_OUT
+    out.mkdir(parents=True, exist_ok=True)
+    if "--with-scans" in sys.argv:
+        (out / "pages").mkdir(exist_ok=True)
+        for scan in sorted((ROOT / "evidence" / "pages").glob("S[12]-p[1-8].jpg")):
+            crop_to_text(scan, out / "pages" / scan.name)
     markdown = (ROOT / "proposal.md").read_text(encoding="utf-8")
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
     (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")
