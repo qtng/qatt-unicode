@@ -71,6 +71,13 @@ PAGE = """<!DOCTYPE html>
     th, td {{ border: 1px solid #dccfb2; padding: .25rem .5rem; vertical-align: top; }}
     th {{ background: #f7efdc; }}
     .table-wrap {{ overflow-x: auto; }}
+    details.sec {{ border-bottom: 1px solid #dccfb2; }}
+    details.sec > summary {{ cursor: pointer; list-style: none; display: flex; align-items: baseline; gap: .6rem; }}
+    details.sec > summary::-webkit-details-marker {{ display: none; }}
+    details.sec > summary::before {{ content: "\\25B8"; color: #a8362a; transition: transform .15s; }}
+    details.sec[open] > summary::before {{ transform: rotate(90deg); }}
+    details.sec > summary h2 {{ border-bottom: 0; margin: 1rem 0; flex: 1; }}
+    details.sec > :not(summary):last-child {{ margin-bottom: 1.5rem; }}
     main img {{ max-width: 100%; height: auto; border: 1px solid #dccfb2; }}
     code, pre {{ font-size: .85rem; }}
     pre {{ background: #f7efdc; padding: .75rem 1rem; overflow-x: auto; }}
@@ -85,6 +92,16 @@ PAGE = """<!DOCTYPE html>
   <main class="container py-4">
 {body}
   </main>
+  <script>
+    // a link to an anchor inside a closed section opens the section
+    function openTarget() {{
+      const t = location.hash && document.getElementById(decodeURIComponent(location.hash.slice(1)));
+      for (let d = t && t.closest('details'); d; d = d.parentElement && d.parentElement.closest('details')) d.open = true;
+      if (t) t.scrollIntoView();
+    }}
+    addEventListener('hashchange', openTarget);
+    openTarget();
+  </script>
 </body>
 </html>
 """
@@ -118,7 +135,18 @@ def fix_link(href: str, base: str = "") -> str:
     return href
 
 
-def render(markdown: str, base: str = "") -> str:
+def accordion(body: str) -> str:
+    """Wrap every section of level 2 in <details>; the first one is open. A link to an anchor
+    inside a closed section opens it (script in PAGE)."""
+    parts = re.split(r"(?=<h2 id=)", body)
+    out = [parts[0]]
+    for i, part in enumerate(parts[1:]):
+        heading, _, rest = part.partition("</h2>")
+        out.append(f'<details class="sec"{" open" if i == 0 else ""}><summary>{heading}</h2></summary>\n{rest}</details>')
+    return "".join(out)
+
+
+def render(markdown: str, base: str = "", fold: bool = False) -> str:
     md = MarkdownIt("commonmark", {"html": True}).enable("table")
     tokens = md.parse(markdown)
     for i, token in enumerate(tokens):
@@ -139,7 +167,7 @@ def render(markdown: str, base: str = "") -> str:
                 child.attrSet("loading", "lazy")
     body = md.renderer.render(tokens, md.options, {})
     body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
-    return body
+    return accordion(body) if fold else body
 
 
 def evidence_page(path: Path) -> tuple[str, str]:
@@ -167,7 +195,7 @@ def main() -> None:
         shutil.copy2(image, out / "evidences" / "images" / image.name)
     markdown = (ROOT / "proposal.md").read_text(encoding="utf-8")
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
-    (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")
+    (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown, fold=True)), encoding="utf-8")
     (out / "evidences").mkdir(exist_ok=True)
     for stale in (out / "evidences").glob("E*.html"):   # entries that no longer exist
         stale.unlink()
