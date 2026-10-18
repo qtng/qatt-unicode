@@ -1,15 +1,11 @@
 """Render proposal.md as a web page for the QATT site.
 
-Usage: python tools/make_html.py [OUT_DIR] [--with-scans]     (default: ../qatt/unicode/draft)
+Usage: python tools/make_html.py [OUT_DIR]     (default: ../qatt/unicode/draft)
 
 Writes OUT_DIR/index.html, OUT_DIR/evidences/E*.html (one page per evidence entry, plus an
-overview) and OUT_DIR/ucd/ (the draft character data). Page references link to
-OUT_DIR/pages/S1-p2.png etc., but those files are only written with --with-scans: the pages of
-both manuscripts, cropped to the text with a margin (this removes the watermark above the text
-and the page edges) and reduced to black and white, fax quality (colour, red marks and paper
-texture are gone). The scans in evidence/ stay as they are. Evidence entries link to their own
-pages; the cut-outs of the entries (evidence/images) are not published. Needs markdown-it-py,
-Pillow and numpy.
+overview) and OUT_DIR/ucd/ (the draft character data). No images are published: the images
+of the evidence entries and the links to the scans are dropped, the passages are given as text.
+Needs markdown-it-py.
 """
 
 from __future__ import annotations
@@ -19,10 +15,8 @@ import re
 import sys
 from pathlib import Path
 
-import numpy as np
 from markdown_it import MarkdownIt
 from markdown_it.token import Token
-from PIL import Image, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import evidence  # noqa: E402
@@ -30,41 +24,6 @@ import evidence  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 REPO = "https://github.com/qtng/qatt-unicode/blob/main"
 DEFAULT_OUT = ROOT.parent / "qatt" / "unicode" / "draft"
-
-MARGIN = 8        # pixels of paper left around the text
-TOP = 100         # the watermark of the Institute lies above this row
-INK = 100         # luminance below which a pixel is ink
-EDGE = 14         # distance kept from the right edge of the paper (dark edge line)
-MIN_INK = 6       # a row or column counts as text with at least this many ink pixels
-
-
-FAX_BLUR = 25     # radius of the blur that estimates the local paper tone
-FAX_LEVEL = 170   # brightness (of 255) relative to the paper above which a pixel turns white
-
-
-def to_fax(image: Image.Image) -> Image.Image:
-    """Black and white like a fax: the paper tone is divided out, then every pixel is black or white.
-    Colour, red marks, paper texture and faint watermarks are gone; the strokes stay."""
-    grey = image.convert("L")
-    paper = np.maximum(np.array(grey.filter(ImageFilter.GaussianBlur(FAX_BLUR))).astype(float), 1)
-    relative = np.clip(np.array(grey).astype(float) / paper * 255, 0, 255)
-    return Image.fromarray(((relative > FAX_LEVEL) * 255).astype("uint8")).convert("1")
-
-
-def crop_to_text(source: Path, target: Path) -> None:
-    """Crop a scan to its text with a margin (ignores the watermark and the page edge) and
-    save it as a black and white image (target is a .png)."""
-    image = Image.open(source).convert("RGB")
-    grey = np.array(image.convert("L"))
-    height, width = grey.shape
-    columns = grey[TOP:1400].mean(axis=0)
-    paper_right = max(x for x in range(width) if columns[x] < 215) + 1
-    ink = grey[TOP:height - EDGE, :paper_right - EDGE] < INK
-    rows = np.where(ink.sum(axis=1) >= MIN_INK)[0]
-    cols = np.where(ink.sum(axis=0) >= MIN_INK)[0]
-    box = (max(int(cols.min()) - MARGIN, 0), max(int(rows.min()) + TOP - MARGIN, TOP),
-           min(int(cols.max()) + MARGIN, width), min(int(rows.max()) + TOP + MARGIN, height))
-    to_fax(image.crop(box)).save(target, optimize=True)
 
 PAGE = """<!DOCTYPE html>
 <html lang="en" translate="no">
@@ -94,7 +53,6 @@ PAGE = """<!DOCTYPE html>
     h1:hover .anchor, h2:hover .anchor, h3:hover .anchor, h4:hover .anchor, .anchor:focus {{ opacity: 1; }}
     @media (hover: none) {{ .anchor {{ opacity: .45; }} }}
     h1, h2, h3, h4 {{ scroll-margin-top: 4.5rem; }}
-    .scans {{ columns: 2; list-style: none; padding: 0; }}
   </style>
 </head>
 <body>
@@ -122,10 +80,7 @@ def slug(text: str) -> str:
 
 def fix_link(href: str, base: str = "") -> str:
     """Rewrite a link of the Markdown files. base is "" for the proposal and "../" for the
-    evidence pages in evidences/. Scans and cut-outs are not published (see the docstring)."""
-    m = re.fullmatch(r"(?:evidence/)?pages/(S\d-p\d\.jpg)", href)
-    if m:
-        return f"{base}pages/{m.group(1)[:-4]}.png"
+    evidence pages in evidences/."""
     m = re.fullmatch(r"(?:evidence/|\./)?(E\d+[a-z]?)\.md(#.*)?", href)
     if m:
         return f"{'evidences/' if not base else ''}{m.group(1)}.html{m.group(2) or ''}"
@@ -134,15 +89,14 @@ def fix_link(href: str, base: str = "") -> str:
     return href
 
 
-def scan_gallery() -> str:
-    """Links to the 16 scans (the files are not published, see the module docstring)."""
-    items = [f'<li><a href="pages/S{source}-p{page}.png" target="_blank">Source {source}, p. {page}</a></li>'
-             for source in (1, 2) for page in range(1, 9)]
-    return '<ul class="scans">' + "".join(items) + "</ul>"
+def strip_images(markdown: str) -> str:
+    """Drop the images of the evidence entries and the links to scans (not published)."""
+    markdown = re.sub(r"^!\[[^\]]*\]\([^)]*\)[ \t]*\n?", "", markdown, flags=re.M)
+    return re.sub(r"\[([^\]]*)\]\((?:\.\./|evidence/)?(?:pages|images)/[^)]*\)", r"\1", markdown)
 
 
 def render(markdown: str, base: str = "") -> str:
-    markdown = re.sub(r"!\[([^\]]*)\]\(([^)]*)\)", r"[Image: \1](\2)", markdown)   # images are not published
+    markdown = strip_images(markdown)
     md = MarkdownIt("commonmark", {"html": True}).enable("table")
     tokens = md.parse(markdown)
     for i, token in enumerate(tokens):
@@ -156,12 +110,8 @@ def render(markdown: str, base: str = "") -> str:
         for child in token.children or []:
             if child.type == "link_open":
                 child.attrSet("href", fix_link(child.attrGet("href"), base))
-                if "pages/" in (child.attrGet("href") or ""):
-                    child.attrSet("target", "_blank")
     body = md.renderer.render(tokens, md.options, {})
     body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
-    if not base:   # the scans, after the text of Appendix C
-        body = re.sub(r"(<h3 id=\"sec-C\">.*?</p>)", lambda m: m.group(1) + "\n" + scan_gallery(), body, count=1, flags=re.S)
     return body
 
 
@@ -171,7 +121,7 @@ def evidence_page(path: Path) -> tuple[str, str]:
     sections = ", ".join(f'<a href="../index.html#sec-{x.replace(".", "-")}">{x}</a>' for x in entry["sections"])
     rows = [("Claim", html.escape(entry["claim"])), ("Proposal sections", sections),
             ("Source", html.escape(", ".join(entry["source"]))),
-            ("Page", f'<a href="../pages/{entry["source"][0].replace("Source ", "S")}-p{entry["page"]}.png" target="_blank">{entry["page"]}</a>' if entry["page"] else ""),
+            ("Page", html.escape(entry["page"])),
             ("Location", html.escape(entry["location"])), ("Status", html.escape(entry["status"]))]
     table = "<table>" + "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v) + "</table>"
     body = path.read_text(encoding="utf-8").split("---\n", 2)[2]
@@ -180,13 +130,8 @@ def evidence_page(path: Path) -> tuple[str, str]:
 
 
 def main() -> None:
-    args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    out = Path(args[0]) if args else DEFAULT_OUT
+    out = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_OUT
     out.mkdir(parents=True, exist_ok=True)
-    if "--with-scans" in sys.argv:
-        (out / "pages").mkdir(exist_ok=True)
-        for scan in sorted((ROOT / "evidence" / "pages").glob("S[12]-p[1-8].jpg")):
-            crop_to_text(scan, out / "pages" / (scan.stem + ".png"))
     markdown = (ROOT / "proposal.md").read_text(encoding="utf-8")
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
     (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")

@@ -86,7 +86,7 @@ def _page_link(text: str, start: int, number: str, prefix: str) -> str:
     return f"[{number}]({prefix}pages/{source}-p{number}.jpg)"
 
 
-def link_refs(text: str, prefix: str = "") -> str:
+def link_refs(text: str, prefix: str = "", pages: bool = True) -> str:
     """Link entry ids (E07 -> [E07](<prefix>E07.md)) and page references
     (p. 6 -> p. [6](<prefix>pages/S1-p6.jpg), pp. 3-4 likewise) to their targets.
 
@@ -98,7 +98,7 @@ def link_refs(text: str, prefix: str = "") -> str:
         _, header, body = text.split("---\n", 2)
         head, text = "---\n" + header + "---\n", body
 
-    def pages(m: re.Match, whole: str) -> str:
+    def page_refs(m: re.Match, whole: str) -> str:
         first = _page_link(whole, m.start(), m.group(2), prefix)
         out = f"{m.group(1)} {first}"
         if m.group(4):
@@ -111,7 +111,8 @@ def link_refs(text: str, prefix: str = "") -> str:
         if i % 2 == 0:
             segment = parts[i]
             segment = _ID.sub(lambda m: f"[{m.group(1)}]({prefix}{m.group(1)}.md)", segment)
-            segment = _PAGES.sub(lambda m, s=segment: pages(m, s), segment)
+            if pages:
+                segment = _PAGES.sub(lambda m, s=segment: page_refs(m, s), segment)
             parts[i] = segment
     return head + "".join(parts)
 

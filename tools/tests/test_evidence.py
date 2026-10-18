@@ -46,6 +46,6 @@ def test_crops_refer_to_pages_and_images():
 
 def test_references_are_linked():
     import link_refs
-    for path, prefix in link_refs.targets():
+    for path, prefix, pages in link_refs.targets():
         text = path.read_text(encoding="utf-8")
-        assert evidence.link_refs(text, prefix) == text, f"{path.name}: run python tools/link_refs.py"
+        assert evidence.link_refs(text, prefix, pages) == text, f"{path.name}: run python tools/link_refs.py"
