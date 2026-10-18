@@ -66,10 +66,6 @@ The status column names the open items of the evidence catalogue ([E01](evidence
 
 The script has an online presence of recent date, found by the proposer ([E22](evidence/E22.md)): a website of the proposer (qatt.org), a page on Omniglot (last modified August 2026), a web converter from Quốc Ngữ to the script by an unknown author, a Facebook group named qatt, in which members write tutorials and develop fonts, regular posts on Threads by one person and posts on Reddit, and a YouTube video on the script (Maruhi Academy, about 12,000 views in October 2026). The Omniglot page takes its sample from the Vietnamese Wikipedia. \[TBD: dates of first publication, upload date and sources of the video, size and activity of the group, the existing fonts and how they encode the script, how the converter writes the script, other uses such as chunom.org\]
 
-### 3.4 Scans and images
-
-&#91;TBD: scans of the source pages with the relevant passages marked\]
-
 ## 4. Structure of the Script
 
 Quốc Âm Tân Tự is built from 22 bases, each in seven forms. Every form can stand alone; all but one per base combine in groups of two or three, and any character may carry one tone mark in one of its four corners.
@@ -332,7 +328,7 @@ Twelve points remain before the proposal can be submitted. The alternatives alre
 | Scholarly literature | 2.1, D | References |
 | Reasons for encoding and modern use | 2.2, 3.3 | Description of need and user community |
 | Evidence for the naming taboo, the catalogue classification, the omission convention and the semicircle orientation | 2.1, 4.2, 4.4 | [E32](evidence/E32.md), [E09](evidence/E09.md), [E16](evidence/E16.md); reference for the taboo |
-| Open evidence items listed in 3.2 | 3.2, B, C | Passages, pages and images |
+| Open evidence items listed in 3.2 | 3.2, B | Passages and pages |
 | Layout of the components in two-component characters and Tham Thư | 4.5, 8 | Positions from the source examples; the count section names left and right (p. [8](evidence/pages/S1-p8.jpg), [E36](evidence/E36.md)) |
 | Unicode properties: combining class, grapheme cluster rules, Bidi\_Class of both joiners | 6, 6.1, 6.2 | Review by Unicode experts |
 | Block position in the Supplementary Multilingual Plane | 7 | Assignment by the UTC |
@@ -389,11 +385,7 @@ Passages located in the source, by page. Page references are to Source 1 (sectio
 | [8](evidence/pages/S1-p8.jpg) | 音数  單幹書協契象（即識別也）成一百七十六字。單書協契象成八百八十字（內有喊字等四十六字其八聲稀微置語）。合書左從枝体右從幹体協契象成八百八十字。合書左從幹体右從枝体協契象成一萬八千四百八十字（內有一千九百三十二字其八声稀微置語）。參書倣此。  Text in parentheses: small two-column notes in the manuscript. | Counts of the characters in the section 音数: 176 single Cán, 880 single characters, 880 合書 with Chi left and Cán right, 18,480 合書 with Cán left and Chi right, each including the tone marks; eight times 22, 110, 110 and 2,310 ([E36](evidence/E36.md)) | located |
 <!-- appendix-b:end -->
 
-### C. Scans of the sources
-
-All 16 pages of both manuscripts (Source 1, pp. [1](evidence/pages/S1-p1.jpg)–[8](evidence/pages/S1-p8.jpg), folios 3–10; Source 2, pp. [1](evidence/pages/S2-p1.jpg)–[8](evidence/pages/S2-p8.jpg), folios 11–18) are in the evidence catalogue of the working repository. \[TBD: location of the images for the submitted document\]
-
-### D. References
+### C. References
 
 - Nguyễn Hữu Vinh, Đặng Thế Kiệt, Nguyễn Doãn Vượng, Lê Văn Đặng, Nguyễn Văn Sâm, Nguyễn Ngọc Bích, Trần Uyên Thi. *Tự điển chữ Nôm trích dẫn* (字典𡨸喃摘引) / *Dictionary of Nôm Characters with Excerpts*. USA: Viện Việt-Học (Institute of Vietnamese Studies), 2009. P. 403, entry 洞 đỗng (động, đùng), U+6D1E, with a cross-reference to 洞 động.
 
