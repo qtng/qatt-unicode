@@ -34,7 +34,7 @@ Record each passage as an entry in [evidence/](evidence/), one Markdown file per
 1. UTC Proposal Summary Form (proposer: Nguyễn Quốc Trung, independent researcher).
 2. Check the Unicode roadmap for the Supplementary Multilingual Plane; the block position is assigned by the UTC.
 3. Pre-submission review by the Script Encoding Initiative (UC Berkeley).
-4. Images of the sources: a scan on Wikimedia Commons, [File:Quốc âm tân tự.png](https://commons.wikimedia.org/wiki/File:Qu%E1%BB%91c_%C3%A2m_t%C3%A2n_t%E1%BB%B1.png), licence tags Public domain (United States, published before 1931) and Public domain (Vietnam), author given as Nguyễn Tử; not downloaded. The proposer states that the Institute of Hán Nôm Studies took the manuscripts over from holdings of the French colonial administration (no source yet).
+4. Images of the sources: a scan on Wikimedia Commons, [File:Quốc âm tân tự.png](https://commons.wikimedia.org/wiki/File:Qu%E1%BB%91c_%C3%A2m_t%C3%A2n_t%E1%BB%B1.png), licence tags Public domain (United States, published before 1931) and Public domain (Vietnam), author given as Nguyễn Tử; not downloaded.
 
 ## Deferred – Tham Thư
 
