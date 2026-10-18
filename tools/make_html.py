@@ -2,7 +2,7 @@
 
 Usage: python tools/make_html.py [OUT_DIR] [--with-scans]     (default: ../qatt/unicode)
 
-Writes OUT_DIR/index.html. The page references link to OUT_DIR/pages/S1-p2.jpg etc.;
+Writes OUT_DIR/index.html and OUT_DIR/evidences/E*.html (one page per evidence entry, plus an overview). The page references link to OUT_DIR/pages/S1-p2.jpg etc.;
 those files are NOT written (the copyright of the scans is not cleared, so they are
 not published). With --with-scans the scans of the sources are written to OUT_DIR/pages, cropped to
 the text (a margin of MARGIN pixels on all four sides), which removes the digital
@@ -21,6 +21,9 @@ from pathlib import Path
 import numpy as np
 from markdown_it import MarkdownIt
 from PIL import Image
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import evidence  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 REPO = "https://github.com/qtng/qatt-unicode/blob/main"
@@ -89,13 +92,17 @@ def slug(text: str) -> str:
     return re.sub(r"[^a-z0-9]+", "-", text.lower()).strip("-")
 
 
-def fix_link(href: str) -> str:
+def fix_link(href: str, base: str = "") -> str:
+    """Rewrite a link of the Markdown files. base is "" for the proposal and "../" for the
+    evidence pages in evidences/. Scans and cut-outs are not published (see the docstring)."""
     m = re.fullmatch(r"(?:evidence/)?pages/(S\d-p\d\.jpg)", href)
     if m:
-        return f"pages/{m.group(1)}"
-    m = re.fullmatch(r"(?:evidence/)?(E\d+[a-z]?\.md)", href)
+        return f"{base}pages/{m.group(1)}"
+    m = re.fullmatch(r"(?:evidence/|\./)?(E\d+[a-z]?)\.md(#.*)?", href)
     if m:
-        return f"{REPO}/evidence/{m.group(1)}"
+        return f"{'evidences/' if not base else ''}{m.group(1)}.html{m.group(2) or ''}"
+    if href == "README.md" and base:
+        return "index.html"
     return href
 
 
@@ -106,25 +113,37 @@ def scan_gallery() -> str:
     return '<ul class="scans">' + "".join(items) + "</ul>"
 
 
-def render(markdown: str) -> str:
+def render(markdown: str, base: str = "") -> str:
+    markdown = re.sub(r"!\[([^\]]*)\]\(([^)]*)\)", r"[Image: \1](\2)", markdown)   # images are not published
     md = MarkdownIt("commonmark", {"html": True}).enable("table")
     tokens = md.parse(markdown)
     for i, token in enumerate(tokens):
         if token.type == "heading_open":
             token.attrSet("id", slug(tokens[i + 1].content))
-        elif token.type == "table_open":
-            token.attrSet("class", "table")
         for child in token.children or []:
             if child.type == "link_open":
-                child.attrSet("href", fix_link(child.attrGet("href")))
-                if (child.attrGet("href") or "").startswith("pages/"):
+                child.attrSet("href", fix_link(child.attrGet("href"), base))
+                if "pages/" in (child.attrGet("href") or ""):
                     child.attrSet("target", "_blank")
     body = md.renderer.render(tokens, md.options, {})
-    body = re.sub(r"<table class=\"table\">", '<div class="table-wrap"><table>', body)
-    body = body.replace("</table>", "</table></div>")
-    # the scans, after the text of Appendix C
-    body = re.sub(r"(<h3 id=\"sec-C\">.*?</p>)", lambda m: m.group(1) + "\n" + scan_gallery(), body, count=1, flags=re.S)
+    body = body.replace("<table>", '<div class="table-wrap"><table>').replace("</table>", "</table></div>")
+    if not base:   # the scans, after the text of Appendix C
+        body = re.sub(r"(<h3 id=\"sec-C\">.*?</p>)", lambda m: m.group(1) + "\n" + scan_gallery(), body, count=1, flags=re.S)
     return body
+
+
+def evidence_page(path: Path) -> tuple[str, str]:
+    """Title and body of one evidence entry: a table of the header fields, then the text."""
+    entry = evidence.parse(path.read_text(encoding="utf-8"))
+    sections = ", ".join(f'<a href="../index.html#sec-{x.replace(".", "-")}">{x}</a>' for x in entry["sections"])
+    rows = [("Claim", html.escape(entry["claim"])), ("Proposal sections", sections),
+            ("Source", html.escape(", ".join(entry["source"]))),
+            ("Page", f'<a href="../pages/{entry["source"][0].replace("Source ", "S")}-p{entry["page"]}.jpg" target="_blank">{entry["page"]}</a>' if entry["page"] else ""),
+            ("Location", html.escape(entry["location"])), ("Status", html.escape(entry["status"]))]
+    table = "<table>" + "".join(f"<tr><th>{k}</th><td>{v}</td></tr>" for k, v in rows if v) + "</table>"
+    body = path.read_text(encoding="utf-8").split("---\n", 2)[2]
+    head = f'<p><a href="index.html">Evidence</a> · <a href="../index.html">Proposal</a></p>\n<h1>{entry["id"]}</h1>\n'
+    return entry["id"], head + table + render(body, "../")
 
 
 def main() -> None:
@@ -138,7 +157,14 @@ def main() -> None:
     markdown = (ROOT / "proposal.md").read_text(encoding="utf-8")
     title = html.escape(re.match(r"# (.*)", markdown).group(1)) + " | Qatt.org"
     (out / "index.html").write_text(PAGE.format(title=title, body=render(markdown)), encoding="utf-8")
-    print(f"wrote {out / 'index.html'}")
+    (out / "evidences").mkdir(exist_ok=True)
+    for path in evidence.entry_files():
+        ident, body = evidence_page(path)
+        (out / "evidences" / f"{ident}.html").write_text(PAGE.format(title=f"{ident} | Qatt.org", body=body), encoding="utf-8")
+    overview = (ROOT / "evidence" / "README.md").read_text(encoding="utf-8")
+    index_body = '<p><a href="../index.html">Proposal</a></p>\n' + render(overview, "../")
+    (out / "evidences" / "index.html").write_text(PAGE.format(title="Evidence | Qatt.org", body=index_body), encoding="utf-8")
+    print(f"wrote {out / 'index.html'} and {len(evidence.entry_files())} evidence pages")
 
 
 if __name__ == "__main__":
